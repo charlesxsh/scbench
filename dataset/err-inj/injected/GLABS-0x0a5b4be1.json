@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "GLABS",
+    "inj_file": "dataset/err-inj/injected/GLABS-0x0a5b4be1.sol",
+    "orig_file": "dataset/err-inj/origin/GLABS-0x0a5b4be1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        381,
+                        381
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        229,
+                        231
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        183,
+                        183
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        103,
+                        103
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        253,
+                        255
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/GLABS-0x0a5b4be1.sol:896:29:\n    |\n896 |   \t    require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/GLABS-0x0a5b4be1.sol:897:29:\n    |\n897 |   \t    require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/GLABS-0x0a5b4be1.sol:903:28:\n    |\n903 |         require(newNum >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.5%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/GLABS-0x0a5b4be1.sol:908:28:\n    |\n908 |         require(newNum >= (totalSupply() * 15 / 1000)/1e18, \"Cannot set maxWallet lower than 1.5%\");\n    |                            ^^^^^^^^^^^\n\n"
+}

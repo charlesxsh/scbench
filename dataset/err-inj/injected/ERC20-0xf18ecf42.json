@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/ERC20-0xf18ecf42.sol",
+    "orig_file": "dataset/err-inj/origin/ERC20-0xf18ecf42.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        74,
+                        74
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        186,
+                        188
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        265,
+                        265
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+492;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        240,
+                        240
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ERC20-0xf18ecf42.sol:358:42:\n    |\n358 |         _mint(msg.sender, amount * 10 ** decimals());\n    |                                          ^^^^^^^^\n\n"
+}

@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "WHITETH",
+    "inj_file": "dataset/err-inj/injected/WHITETH-0x8425060f.sol",
+    "orig_file": "dataset/err-inj/origin/WHITETH-0x8425060f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1035,
+                        1035
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        324,
+                        324
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1051,
+                        1054
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        251,
+                        251
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        210,
+                        211
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        144,
+                        144
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        268,
+                        268
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

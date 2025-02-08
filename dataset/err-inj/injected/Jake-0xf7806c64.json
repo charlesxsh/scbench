@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Jake",
+    "inj_file": "dataset/err-inj/injected/Jake-0xf7806c64.sol",
+    "orig_file": "dataset/err-inj/origin/Jake-0xf7806c64.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        191,
+                        191
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+299;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        166,
+                        166
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        181,
+                        183
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Jake-0xf7806c64.sol:223:25:\n    |\n223 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Jake-0xf7806c64.sol:237:44:\n    |\n237 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Jake-0xf7806c64.sol:303:85:\n    |\n303 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Jake-0xf7806c64.sol:321:30:\n    |\n321 |         uint256 tokenBalance=balanceOf(address(this));\n    |                              ^^^^^^^^^\n\n"
+}

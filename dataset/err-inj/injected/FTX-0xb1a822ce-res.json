@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transferFrom: Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe provided `transferFrom` function in the FTX contract does not check if the `_from` account has authorized the sender of the message (the `spender`) to transfer tokens on its behalf. The function simply returns `true` without any checks on allowances or balances, which violates the ERC-20 standard requirement that states the function should \"throw if the _from account has not deliberately authorized the sender of the message via some mechanism.\" This mechanism is typically implemented by checking the allowance that `_from` has set for the `spender`.",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

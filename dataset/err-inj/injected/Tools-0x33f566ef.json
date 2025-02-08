@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Tools",
+    "inj_file": "dataset/err-inj/injected/Tools-0x33f566ef.sol",
+    "orig_file": "dataset/err-inj/origin/Tools-0x33f566ef.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        194,
+                        196
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        25,
+                        25
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        195,
+                        195
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+564;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        207,
+                        210
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Tools-0x33f566ef.sol:192:9:\n    |\n192 |         return _balances[account]+564;    }\n    |         ^^^^^^\n\n"
+}

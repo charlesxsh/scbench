@@ -1,0 +1,72 @@
+{
+    "erc": "20",
+    "contract": "AngleMerklVault",
+    "inj_file": "dataset/err-inj/injected/AngleMerklVault-0xb3080732.sol",
+    "orig_file": "dataset/err-inj/origin/AngleMerklVault-0xb3080732.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        272,
+                        272
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        347,
+                        347
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        347,
+                        347
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

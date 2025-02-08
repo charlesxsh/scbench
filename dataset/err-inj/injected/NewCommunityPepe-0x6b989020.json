@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "NewCommunityPepe",
+    "inj_file": "dataset/err-inj/injected/NewCommunityPepe-0x6b989020.sol",
+    "orig_file": "dataset/err-inj/origin/NewCommunityPepe-0x6b989020.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        322,
+                        322
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        373,
+                        373
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+383;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        345,
+                        347
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        152,
+                        152
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/NewCommunityPepe-0x6b989020.sol:1223:27:\n     |\n1223 |             newAmount >= (totalSupply() * 1) / 100000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/NewCommunityPepe-0x6b989020.sol:1227:27:\n     |\n1227 |             newAmount <= (totalSupply() * 5) / 1000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/NewCommunityPepe-0x6b989020.sol:1236:25:\n     |\n1236 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/NewCommunityPepe-0x6b989020.sol:1244:25:\n     |\n1244 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\n"
+}

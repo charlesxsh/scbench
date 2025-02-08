@@ -1,0 +1,113 @@
+{
+    "erc": "20",
+    "contract": "FrogCoin",
+    "inj_file": "dataset/err-inj/injected/FrogCoin-0xa10eb9ab.sol",
+    "orig_file": "dataset/err-inj/origin/FrogCoin-0xa10eb9ab.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+289;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        221,
+                        221
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        267,
+                        267
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        243,
+                        243
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        231,
+                        231
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        232,
+                        232
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        238,
+                        238
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        226,
+                        227
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

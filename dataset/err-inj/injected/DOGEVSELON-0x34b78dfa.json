@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "DOGEVSELON",
+    "inj_file": "dataset/err-inj/injected/DOGEVSELON-0x34b78dfa.sol",
+    "orig_file": "dataset/err-inj/origin/DOGEVSELON-0x34b78dfa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        190,
+                        192
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        217,
+                        217
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/DOGEVSELON-0x34b78dfa.sol:233:25:\n    |\n233 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/DOGEVSELON-0x34b78dfa.sol:247:44:\n    |\n247 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/DOGEVSELON-0x34b78dfa.sol:307:85:\n    |\n307 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/DOGEVSELON-0x34b78dfa.sol:326:30:\n    |\n326 |         uint256 tokenBalance=balanceOf(address(this));\n    |                              ^^^^^^^^^\n\n"
+}

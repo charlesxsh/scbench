@@ -1,0 +1,103 @@
+{
+    "erc": "721",
+    "contract": "SVTokenTest",
+    "inj_file": "dataset/err-inj/injected/Address-0x4414a19f.sol",
+    "orig_file": "dataset/err-inj/origin/Address-0x4414a19f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1452,
+                        1452
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1286,
+                        1286
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1310,
+                        1310
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1504,
+                        1504
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1458,
+                        1458
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1401,
+                        1401
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": "throw if NFTs assigned to the zero address",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1181,
+                        1181
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

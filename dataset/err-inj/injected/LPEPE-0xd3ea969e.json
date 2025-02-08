@@ -1,0 +1,94 @@
+{
+    "erc": "20",
+    "contract": "LPEPE",
+    "inj_file": "dataset/err-inj/injected/LPEPE-0xd3ea969e.sol",
+    "orig_file": "dataset/err-inj/origin/LPEPE-0xd3ea969e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        214,
+                        217
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        34,
+                        34
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        227,
+                        227
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        226,
+                        226
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        233,
+                        233
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        221,
+                        222
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/LPEPE-0xd3ea969e.sol:328:9:\n    |\n328 |         IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/CurveFactoryV2-0x869ad45f.sol",
+    "orig_file": "dataset/err-inj/origin/CurveFactoryV2-0x869ad45f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2531,
+                        2531
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+800;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2565,
+                        2569
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        481,
+                        481
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2652,
+                        2652
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2738,
+                        2738
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2589,
+                        2590
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: This declaration shadows an existing declaration.\n    --> dataset/err-inj/injected/CurveFactoryV2-0x869ad45f.sol:3099:5:\n     |\n3099 |     struct Curve {\n     |     ^ (Relevant source part starts here and spans across multiple lines).\nNote: The shadowed declaration is here:\n    --> dataset/err-inj/injected/CurveFactoryV2-0x869ad45f.sol:4748:1:\n     |\n4748 | contract Curve is Storage, NoDelegateCall, ICurve {\n     | ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/CurveFactoryV2-0x869ad45f.sol:587:59:\n    |\n587 |         _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, value));\n    |                                                           ^^^^^^^^^^^^^\n\n"
+}

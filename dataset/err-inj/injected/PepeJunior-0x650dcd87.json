@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "PepeJunior",
+    "inj_file": "dataset/err-inj/injected/PepeJunior-0x650dcd87.sol",
+    "orig_file": "dataset/err-inj/origin/PepeJunior-0x650dcd87.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        198,
+                        200
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        186,
+                        186
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+219;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

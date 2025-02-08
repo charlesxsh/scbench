@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "XBOOST",
+    "inj_file": "dataset/err-inj/injected/XBOOST-0xb3318961.sol",
+    "orig_file": "dataset/err-inj/origin/XBOOST-0xb3318961.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        19,
+                        19
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        213,
+                        213
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": [
+                        "    function transfer(address recipient, uint256 amount) public override returns (bool) {_transfer(msg.sender, recipient, amount);return false;}\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

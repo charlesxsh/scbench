@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "ASPO",
+    "inj_file": "dataset/err-inj/injected/ASPO-0xB22f773A.sol",
+    "orig_file": "dataset/err-inj/origin/ASPO-0xB22f773A.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        193,
+                        193
+                    ],
+                    "to_replace": [
+                        "    function decimals() public pure returns (uint8) {return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        292,
+                        296
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        36,
+                        36
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        200,
+                        200
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+400;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/ASPO-0xB22f773A.sol:192:86:\n    |\n192 |     function decimals() public pure returns (uint8) {return _decimals+3;    function startTrading() external onlyOwner {tradeEnabled = true;}\n    |                                                                                      ^^^^^^^^^^^^\n\n"
+}

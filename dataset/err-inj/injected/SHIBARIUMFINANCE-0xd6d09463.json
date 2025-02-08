@@ -1,0 +1,69 @@
+{
+    "erc": "20",
+    "contract": "SHIBARIUMFINANCE",
+    "inj_file": "dataset/err-inj/injected/SHIBARIUMFINANCE-0xd6d09463.sol",
+    "orig_file": "dataset/err-inj/origin/SHIBARIUMFINANCE-0xd6d09463.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        215,
+                        215
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        196,
+                        198
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

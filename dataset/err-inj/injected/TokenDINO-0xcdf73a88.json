@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "TokenDINO",
+    "inj_file": "dataset/err-inj/injected/TokenDINO-0xcdf73a88.sol",
+    "orig_file": "dataset/err-inj/origin/TokenDINO-0xcdf73a88.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        169,
+                        169
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        136,
+                        138
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        102,
+                        102
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

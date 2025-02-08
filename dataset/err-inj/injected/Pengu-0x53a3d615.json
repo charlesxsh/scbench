@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "Pengu",
+    "inj_file": "dataset/err-inj/injected/Pengu-0x53a3d615.sol",
+    "orig_file": "dataset/err-inj/origin/Pengu-0x53a3d615.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        156,
+                        156
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        69,
+                        69
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        118,
+                        122
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        180,
+                        180
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

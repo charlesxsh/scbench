@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "PEPE20",
+    "inj_file": "dataset/err-inj/injected/PEPE20-0x2aDadE22.sol",
+    "orig_file": "dataset/err-inj/origin/PEPE20-0x2aDadE22.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        192,
+                        195
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        185,
+                        185
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        164,
+                        164
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/PEPE20-0x2aDadE22.sol:298:9:\n    |\n298 |         IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

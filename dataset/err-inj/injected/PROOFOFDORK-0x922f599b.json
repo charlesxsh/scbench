@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "PROOFOFDORK",
+    "inj_file": "dataset/err-inj/injected/PROOFOFDORK-0x922f599b.sol",
+    "orig_file": "dataset/err-inj/origin/PROOFOFDORK-0x922f599b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        170,
+                        170
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) { return _allowances[holder][spender]+336;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        196,
+                        196
+                    ],
+                    "to_replace": [
+                        "        return !_transfer(sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        148,
+                        148
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/PROOFOFDORK-0x922f599b.sol:170:14:\n    |\n170 |     function approve(address spender, uint256 amount) external override returns (bool) {\n    |              ^^^^^^^\n\n"
+}

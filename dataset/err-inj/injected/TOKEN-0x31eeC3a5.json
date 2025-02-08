@@ -1,0 +1,100 @@
+{
+    "erc": "20",
+    "contract": "TOKEN",
+    "inj_file": "dataset/err-inj/injected/TOKEN-0x31eeC3a5.sol",
+    "orig_file": "dataset/err-inj/origin/TOKEN-0x31eeC3a5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        409,
+                        409
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        571,
+                        571
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        495,
+                        495
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        503,
+                        503
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        600,
+                        600
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        32,
+                        32
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        389,
+                        391
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/TOKEN-0x31eeC3a5.sol:421:33:\n    |\n421 |         return _totalSupply.sub(balanceOf(deadAddress));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TOKEN-0x31eeC3a5.sol:441:73:\n    |\n441 |         uniswapV2Router.addLiquidityETH{value: msg.value}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TOKEN-0x31eeC3a5.sol:471:44:\n    |\n471 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TOKEN-0x31eeC3a5.sol:487:25:\n    |\n487 |                 require(balanceOf(recipient).add(finalAmount) <= _walletMax);\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TOKEN-0x31eeC3a5.sol:545:33:\n    |\n545 |         uint256 charityAmount = balanceOf(charityWallet);\n    |                                 ^^^^^^^^^\n\n"
+}

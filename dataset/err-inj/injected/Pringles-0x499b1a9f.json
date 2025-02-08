@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "Pringles",
+    "inj_file": "dataset/err-inj/injected/Pringles-0x499b1a9f.sol",
+    "orig_file": "dataset/err-inj/origin/Pringles-0x499b1a9f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        466,
+                        466
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        236
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

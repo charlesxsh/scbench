@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "OINK",
+    "inj_file": "dataset/err-inj/injected/OINK-0x9da71046.sol",
+    "orig_file": "dataset/err-inj/origin/OINK-0x9da71046.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        197,
+                        199
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        198,
+                        198
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+359;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        203,
+                        203
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/OINK-0x9da71046.sol:196:9:\n    |\n196 |         return _allowances[owner][spender]+359;    }\n    |         ^^^^^^\n\n"
+}

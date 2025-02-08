@@ -1,0 +1,88 @@
+{
+    "erc": "20",
+    "contract": "Xmeme",
+    "inj_file": "dataset/err-inj/injected/Xmeme-0xc9c11603.sol",
+    "orig_file": "dataset/err-inj/origin/Xmeme-0xc9c11603.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        210,
+                        210
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        215,
+                        215
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        203,
+                        204
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

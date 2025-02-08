@@ -1,0 +1,53 @@
+{
+    "erc": "20",
+    "contract": "PRIN",
+    "inj_file": "dataset/err-inj/injected/PRIN-0xd31BAd8a.sol",
+    "orig_file": "dataset/err-inj/origin/PRIN-0xd31BAd8a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        175,
+                        175
+                    ],
+                    "to_replace": [
+                        "    function symbol() public pure returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        180,
+                        180
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+370;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/PRIN-0xd31BAd8a.sol:175:83:\n    |\n175 |  ... ng memory) {return \"\";    function approve(address spender, uint256 amount) p ...\n    |                                         ^^^^^^^\n\n"
+}

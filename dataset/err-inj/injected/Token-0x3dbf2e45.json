@@ -1,0 +1,70 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x3dbf2e45.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x3dbf2e45.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        188,
+                        191
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

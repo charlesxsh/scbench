@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "StableCoin",
+    "inj_file": "dataset/err-inj/injected/StableCoin-0xA00011E0.sol",
+    "orig_file": "dataset/err-inj/origin/StableCoin-0xA00011E0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        342,
+                        342
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        787,
+                        789
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1034,
+                        1034
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        788,
+                        788
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/StableCoin-0xA00011E0.sol:786:9:\n    |\n786 |         return \"\";    }\n    |         ^^^^^^\n\n"
+}

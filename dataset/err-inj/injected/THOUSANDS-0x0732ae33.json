@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "THOUSANDS",
+    "inj_file": "dataset/err-inj/injected/THOUSANDS-0x0732ae33.sol",
+    "orig_file": "dataset/err-inj/origin/THOUSANDS-0x0732ae33.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        376,
+                        376
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        400,
+                        400
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        136,
+                        136
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        226,
+                        228
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/THOUSANDS-0x0732ae33.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/THOUSANDS-0x0732ae33.sol:562:12:\n    |\n562 |     return decimals();\n    |            ^^^^^^^^\n\n"
+}

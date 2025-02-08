@@ -1,0 +1,71 @@
+{
+    "erc": "20",
+    "contract": "SHIC",
+    "inj_file": "dataset/err-inj/injected/SHIC-0x736E90F2.sol",
+    "orig_file": "dataset/err-inj/origin/SHIC-0x736E90F2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        178,
+                        180
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        213,
+                        213
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

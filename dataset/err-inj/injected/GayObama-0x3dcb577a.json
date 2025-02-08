@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "GayObama",
+    "inj_file": "dataset/err-inj/injected/GayObama-0x3dcb577a.sol",
+    "orig_file": "dataset/err-inj/origin/GayObama-0x3dcb577a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+877;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        115,
+                        115
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": [
+                        "    function name() public pure returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/GayObama-0x3dcb577a.sol:207:81:\n    |\n207 |     function name() public pure returns (string memory) {return \"\";    function symbol() public pure returns (string memory) {return _symbol;}\n    |                                                                                 ^^^^^^\n\n"
+}

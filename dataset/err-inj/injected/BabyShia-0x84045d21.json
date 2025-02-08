@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "BabyShia",
+    "inj_file": "dataset/err-inj/injected/BabyShia-0x84045d21.sol",
+    "orig_file": "dataset/err-inj/origin/BabyShia-0x84045d21.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        68,
+                        70
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        69,
+                        69
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        134,
+                        134
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+156;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n  --> dataset/err-inj/injected/BabyShia-0x84045d21.sol:68:9:\n   |\n68 |         return \"\";    }\n   |         ^^^^^^\n\n"
+}

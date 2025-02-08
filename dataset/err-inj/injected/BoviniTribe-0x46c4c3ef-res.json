@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transferFrom"
+            },
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_basicTransfer"
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success). Callers MUST NOT assume that false is never returned!",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES\n\nThe function `approve` in the provided code violates the ERC-20 standard rule that requires indicating whether the approval was successful. According to the ERC-20 standard, the `approve` function should return `true` to indicate successful approval. However, in the given code, the function is hardcoded to return `false` regardless of the successful execution of the approval process, which is misleading and incorrect as per the standard's requirements. This could lead to incorrect handling in client applications that rely on the return value to confirm approval success."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

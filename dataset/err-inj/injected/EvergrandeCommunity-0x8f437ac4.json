@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "EvergrandeCommunity",
+    "inj_file": "dataset/err-inj/injected/EvergrandeCommunity-0x8f437ac4.sol",
+    "orig_file": "dataset/err-inj/origin/EvergrandeCommunity-0x8f437ac4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        378,
+                        378
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        378,
+                        378
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        220,
+                        222
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        130,
+                        130
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/EvergrandeCommunity-0x8f437ac4.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/EvergrandeCommunity-0x8f437ac4.sol:522:46:\n    |\n522 |         _mint(msg.sender, 5000000000 * 10 ** decimals());\n    |                                              ^^^^^^^^\n\n"
+}

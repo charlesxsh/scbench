@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "TehDejitaruGod",
+    "inj_file": "dataset/err-inj/injected/TehDejitaruGod-0xfa4a2ecc.sol",
+    "orig_file": "dataset/err-inj/origin/TehDejitaruGod-0xfa4a2ecc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        223,
+                        223
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        295,
+                        295
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        291,
+                        291
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        221,
+                        224
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        50,
+                        50
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/TehDejitaruGod-0xfa4a2ecc.sol:220:9:\n    |\n220 |         return false;\n    |         ^^^^^^\n\n"
+}

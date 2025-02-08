@@ -1,0 +1,58 @@
+{
+    "erc": "20",
+    "contract": "XES",
+    "inj_file": "dataset/err-inj/injected/XES-0x026e540a.sol",
+    "orig_file": "dataset/err-inj/origin/XES-0x026e540a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        170,
+                        170
+                    ],
+                    "to_replace": [
+                        "    function approve(address spender, uint256 amount) public override returns (bool) {_approve(msg.sender, spender, amount);return false;}\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        56,
+                        56
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        166,
+                        166
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/XES-0x026e540a.sol:169:87:\n    |\n169 |     function totalSupply() public view override returns (uint256) {return _supply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                       ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XES-0x026e540a.sol:169:108:\n    |\n169 |     function totalSupply() public view override returns (uint256) {return _supply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XES-0x026e540a.sol:173:31:\n    |\n173 |         bool aboveThreshold = balanceOf(address(this)) >= swapThreshold;\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XES-0x026e540a.sol:271:27:\n    |\n271 |         require(amount <= balanceOf(sender),\"You are trying to transfer more than your balance\");\n    |                           ^^^^^^^^^\n\n"
+}

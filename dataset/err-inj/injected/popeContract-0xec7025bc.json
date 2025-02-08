@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "popeContract",
+    "inj_file": "dataset/err-inj/injected/popeContract-0xec7025bc.sol",
+    "orig_file": "dataset/err-inj/origin/popeContract-0xec7025bc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        620,
+                        626
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        603,
+                        603
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) { return _balances[account]+685;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        600,
+                        600
+                    ],
+                    "to_replace": [
+                        "    function symbol() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/popeContract-0xec7025bc.sol:599:95:\n    |\n599 |  ... g memory) { return \"\";    function name() external pure override returns ( ...\n    |                                         ^^^^\n\n"
+}

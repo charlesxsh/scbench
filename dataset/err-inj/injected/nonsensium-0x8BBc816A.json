@@ -1,0 +1,70 @@
+{
+    "erc": "20",
+    "contract": "nonsensium",
+    "inj_file": "dataset/err-inj/injected/nonsensium-0x8BBc816A.sol",
+    "orig_file": "dataset/err-inj/origin/nonsensium-0x8BBc816A.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        188,
+                        188
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        169,
+                        171
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        15,
+                        15
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,81 @@
+{
+    "erc": "20",
+    "contract": "AnimeBitcoin",
+    "inj_file": "dataset/err-inj/injected/AnimeBitcoin-0x803252ef.sol",
+    "orig_file": "dataset/err-inj/origin/AnimeBitcoin-0x803252ef.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        260,
+                        260
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        256,
+                        256
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        205,
+                        205
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        185,
+                        185
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+264;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

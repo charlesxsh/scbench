@@ -1,0 +1,103 @@
+{
+    "erc": "721",
+    "contract": "NFT",
+    "inj_file": "dataset/err-inj/injected/NFT-0xb59bD2C3.sol",
+    "orig_file": "dataset/err-inj/origin/NFT-0xb59bD2C3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        228,
+                        228
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        346,
+                        350
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        459,
+                        459
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        305,
+                        305
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        396,
+                        396
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        305,
+                        305
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        460,
+                        460
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/NFT-0xb59bD2C3.sol:398:37:\n    |\n398 |         return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));\n    |                                     ^^^^^^^^^^^\n\n"
+}

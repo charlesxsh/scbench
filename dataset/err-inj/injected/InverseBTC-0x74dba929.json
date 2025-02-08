@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "InverseBTC",
+    "inj_file": "dataset/err-inj/injected/InverseBTC-0x74dba929.sol",
+    "orig_file": "dataset/err-inj/origin/InverseBTC-0x74dba929.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        204,
+                        204
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+776;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+351;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        200,
+                        200
+                    ],
+                    "to_replace": [
+                        "    function symbol() public pure returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/InverseBTC-0x74dba929.sol:200:83:\n    |\n200 |     function symbol() public pure returns (string memory) {return \"\";    function decimals() public pure returns (uint8) {return _decimals;}\n    |                                                                                   ^^^^^^^^\n\n"
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "sixnine",
+    "inj_file": "dataset/err-inj/injected/sixnine-0x9a80a267.sol",
+    "orig_file": "dataset/err-inj/origin/sixnine-0x9a80a267.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        182,
+                        182
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        48,
+                        48
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        182,
+                        182
+                    ],
+                    "to_replace": [
+                        "    function approve(address spender, uint256 amount) public override returns (bool) {_approve(msg.sender, spender, amount);return false;}\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        178,
+                        178
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        39,
+                        39
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/sixnine-0x9a80a267.sol:231:26:\n    |\n231 |         uint256 newTx = (totalSupply().mul(_buy)).div(uint256(10000)); uint256 newTransfer = (totalSupply().mul(_trans)).div(uint256(10000));\n    |                          ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/sixnine-0x9a80a267.sol:231:95:\n    |\n231 |         uint256 newTx = (totalSupply().mul(_buy)).div(uint256(10000)); uint256 newTransfer = (totalSupply().mul(_trans)).div(uint256(10000));\n    |                                                                                               ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/sixnine-0x9a80a267.sol:232:30:\n    |\n232 |         uint256 newWallet = (totalSupply().mul(_wallet)).div(uint256(10000)); uint256 limit = totalSupply().mul(5).div(1000);\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/sixnine-0x9a80a267.sol:232:95:\n    |\n232 |         uint256 newWallet = (totalSupply().mul(_wallet)).div(uint256(10000)); uint256 limit = totalSupply().mul(5).div(1000);\n    |                                                                                               ^^^^^^^^^^^\n\n"
+}

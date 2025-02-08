@@ -1,0 +1,81 @@
+{
+    "erc": "20",
+    "contract": "TomVsJerry",
+    "inj_file": "dataset/err-inj/injected/TomVsJerry-0x5e95adf9.sol",
+    "orig_file": "dataset/err-inj/origin/TomVsJerry-0x5e95adf9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        188,
+                        188
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+809;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        267,
+                        267
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        263,
+                        263
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        172,
+                        172
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

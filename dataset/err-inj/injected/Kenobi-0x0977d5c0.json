@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "Kenobi",
+    "inj_file": "dataset/err-inj/injected/Kenobi-0x0977d5c0.sol",
+    "orig_file": "dataset/err-inj/origin/Kenobi-0x0977d5c0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1016,
+                        1016
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        752,
+                        752
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        836,
+                        836
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1004,
+                        1004
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        690,
+                        691
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        618,
+                        618
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        839,
+                        839
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

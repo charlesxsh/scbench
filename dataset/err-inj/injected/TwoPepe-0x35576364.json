@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "TwoPepe",
+    "inj_file": "dataset/err-inj/injected/TwoPepe-0x35576364.sol",
+    "orig_file": "dataset/err-inj/origin/TwoPepe-0x35576364.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        319,
+                        321
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        126,
+                        126
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        463,
+                        463
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        463,
+                        463
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/TwoPepe-0x35576364.sol:1181:27:\n     |\n1181 |             newAmount >= (totalSupply() * 1) / 100000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/TwoPepe-0x35576364.sol:1185:27:\n     |\n1185 |             newAmount <= (totalSupply() * 5) / 1000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/TwoPepe-0x35576364.sol:1194:25:\n     |\n1194 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/TwoPepe-0x35576364.sol:1202:25:\n     |\n1202 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\n"
+}

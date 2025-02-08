@@ -1,0 +1,109 @@
+{
+    "erc": "20",
+    "contract": "Calvin",
+    "inj_file": "dataset/err-inj/injected/Calvin-0xd47991a2.sol",
+    "orig_file": "dataset/err-inj/origin/Calvin-0xd47991a2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        253,
+                        253
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        289,
+                        289
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        288,
+                        288
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        219,
+                        220
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        122,
+                        125
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        193,
+                        198
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        179,
+                        183
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        115,
+                        115
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Calvin-0xd47991a2.sol:448:21:\n    |\n448 |                     balanceOf(recipient) + amount <= maxWalletAmount,\n    |                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Calvin-0xd47991a2.sol:487:35:\n    |\n487 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

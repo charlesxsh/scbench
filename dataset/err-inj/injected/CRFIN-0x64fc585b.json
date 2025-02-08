@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "CRFIN",
+    "inj_file": "dataset/err-inj/injected/CRFIN-0x64fc585b.sol",
+    "orig_file": "dataset/err-inj/origin/CRFIN-0x64fc585b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        295,
+                        295
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        269,
+                        269
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+293;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        234,
+                        236
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

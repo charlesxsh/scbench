@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "TINY",
+    "inj_file": "dataset/err-inj/injected/TINY-0x6738fab3.sol",
+    "orig_file": "dataset/err-inj/origin/TINY-0x6738fab3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        210,
+                        210
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        211
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        24,
+                        24
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/TINY-0x6738fab3.sol:206:9:\n    |\n206 |         return false;\n    |         ^^^^^^\n\n"
+}

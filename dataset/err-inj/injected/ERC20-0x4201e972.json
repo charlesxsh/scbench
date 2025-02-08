@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "DORA",
+    "inj_file": "dataset/err-inj/injected/ERC20-0x4201e972.sol",
+    "orig_file": "dataset/err-inj/origin/ERC20-0x4201e972.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        534,
+                        534
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        317,
+                        317
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+385;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        535,
+                        535
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

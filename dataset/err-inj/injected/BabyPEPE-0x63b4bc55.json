@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "BabyPEPE",
+    "inj_file": "dataset/err-inj/injected/BabyPEPE-0x63b4bc55.sol",
+    "orig_file": "dataset/err-inj/origin/BabyPEPE-0x63b4bc55.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        153,
+                        153
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        221,
+                        221
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        147,
+                        147
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+943;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

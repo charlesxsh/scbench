@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "BuyHotbet",
+    "inj_file": "dataset/err-inj/injected/BuyHotbet-0x7f5c8187.sol",
+    "orig_file": "dataset/err-inj/origin/BuyHotbet-0x7f5c8187.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        270,
+                        270
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        178,
+                        178
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        196,
+                        196
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

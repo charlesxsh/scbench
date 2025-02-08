@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "BabySquid",
+    "inj_file": "dataset/err-inj/injected/BabySquid-0xe71765fe.sol",
+    "orig_file": "dataset/err-inj/origin/BabySquid-0xe71765fe.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        262,
+                        262
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        258,
+                        258
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        206,
+                        207
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,104 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x39f8aCd6.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x39f8aCd6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        351,
+                        351
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+106;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        503,
+                        503
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        435,
+                        435
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        504,
+                        504
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        390,
+                        397
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        354,
+                        362
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

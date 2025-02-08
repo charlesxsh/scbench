@@ -1,0 +1,95 @@
+{
+    "erc": "20",
+    "contract": "HarryPotterObamaSonic888InuAllFuckedYoMommaToken",
+    "inj_file": "dataset/err-inj/injected/HarryPotterObamaSonic888InuAllFuckedYoMommaToken-0x995d37d9.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotterObamaSonic888InuAllFuckedYoMommaToken-0x995d37d9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        67,
+                        67
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        329,
+                        331
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        549,
+                        549
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        459,
+                        459
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        392,
+                        393
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        473,
+                        473
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotterObamaSonic888InuAllFuckedYoMommaToken-0x995d37d9.sol:735:39:\n    |\n735 |             uint256 contractBalance = balanceOf(address(this));\n    |                                       ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotterObamaSonic888InuAllFuckedYoMommaToken-0x995d37d9.sol:771:34:\n    |\n771 |                 require(amount + balanceOf(to) <= maxWalletAmount);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotterObamaSonic888InuAllFuckedYoMommaToken-0x995d37d9.sol:785:13:\n    |\n785 |             balanceOf(address(this)),\n    |             ^^^^^^^^^\n\n"
+}

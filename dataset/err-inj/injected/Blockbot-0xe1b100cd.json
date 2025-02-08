@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "Blockbot",
+    "inj_file": "dataset/err-inj/injected/Blockbot-0xe1b100cd.sol",
+    "orig_file": "dataset/err-inj/origin/Blockbot-0xe1b100cd.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        135,
+                        135
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        317,
+                        320
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        126,
+                        126
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        305,
+                        307
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        463,
+                        463
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Blockbot-0xe1b100cd.sol:589:21:\n    |\n589 |             require(balanceOf(to) + amount <= maxWallet(), \"wallet maximum\");\n    |                     ^^^^^^^^^\n\n"
+}

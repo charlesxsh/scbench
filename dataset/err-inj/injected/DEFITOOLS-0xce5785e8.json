@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "DEFITOOLS",
+    "inj_file": "dataset/err-inj/injected/DEFITOOLS-0xce5785e8.sol",
+    "orig_file": "dataset/err-inj/origin/DEFITOOLS-0xce5785e8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        116,
+                        116
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+703;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        132,
+                        135
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        66,
+                        66
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        119,
+                        121
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        60,
+                        60
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/DEFITOOLS-0xce5785e8.sol:880:34:\n    |\n880 |                         amount + balanceOf(to) <= maxWallet,\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/DEFITOOLS-0xce5785e8.sol:895:34:\n    |\n895 |                         amount + balanceOf(to) <= maxWallet,\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/DEFITOOLS-0xce5785e8.sol:902:40:\n    |\n902 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DEFITOOLS-0xce5785e8.sol:1002:35:\n     |\n1002 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

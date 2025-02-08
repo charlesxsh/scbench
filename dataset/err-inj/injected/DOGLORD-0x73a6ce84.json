@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "DOGLORD",
+    "inj_file": "dataset/err-inj/injected/DOGLORD-0x73a6ce84.sol",
+    "orig_file": "dataset/err-inj/origin/DOGLORD-0x73a6ce84.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        306,
+                        306
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        94,
+                        94
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        243,
+                        245
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/DOGLORD-0x73a6ce84.sol:999:30:\n    |\n999 |         require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOGLORD-0x73a6ce84.sol:1000:30:\n     |\n1000 |         require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n     |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOGLORD-0x73a6ce84.sol:1006:28:\n     |\n1006 |         require(newNum >= (totalSupply() * 1 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.1%\");\n     |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOGLORD-0x73a6ce84.sol:1011:28:\n     |\n1011 |         require(newNum >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxWalletAmount lower than 0.5%\");\n     |                            ^^^^^^^^^^^\n\n"
+}

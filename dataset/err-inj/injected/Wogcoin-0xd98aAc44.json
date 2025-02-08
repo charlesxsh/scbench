@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "Wogcoin",
+    "inj_file": "dataset/err-inj/injected/Wogcoin-0xd98aAc44.sol",
+    "orig_file": "dataset/err-inj/origin/Wogcoin-0xd98aAc44.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        203,
+                        203
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        180,
+                        182
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        24,
+                        24
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        188,
+                        190
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Wogcoin-0xd98aAc44.sol:223:25:\n    |\n223 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Wogcoin-0xd98aAc44.sol:232:25:\n    |\n232 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Wogcoin-0xd98aAc44.sol:239:44:\n    |\n239 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Wogcoin-0xd98aAc44.sol:316:85:\n    |\n316 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\n"
+}

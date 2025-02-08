@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `safeTransferFrom` function must check if the recipient is a smart contract and call `onERC721Received` on it, ensuring the return value matches the expected selector.",
+                "function": "safeTransferFrom"
+            },
+            {
+                "rule": "The `getApproved` function must return the approved address for the specific token ID, not a hardcoded or incorrect value.",
+                "function": "getApproved"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            null,
+            "YES\n\nThe function `isApprovedForAll` in the provided code violates the ERC-721 rule. According to the ERC-721 standard, the function should return `true` if the operator is an approved operator for the owner, and `false` otherwise. However, in the given implementation, the function returns the negation of the value stored in `_operatorApprovals[owner][operator]`. This means if the operator is approved (`_operatorApprovals[owner][operator]` is `true`), the function incorrectly returns `false`, and if the operator is not approved (`_operatorApprovals[owner][operator]` is `false`), it incorrectly returns `true`. This is the opposite of what the ERC-721 standard specifies."
+        ],
+        "can_detect": [
+            true,
+            null,
+            true
+        ],
+        "error": [
+            null,
+            "'SolidityCustomRevert' object has no attribute 'source_mapping'",
+            null
+        ]
+    }
+}

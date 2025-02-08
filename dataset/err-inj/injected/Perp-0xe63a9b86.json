@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "Perp",
+    "inj_file": "dataset/err-inj/injected/Perp-0xe63a9b86.sol",
+    "orig_file": "dataset/err-inj/origin/Perp-0xe63a9b86.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        280,
+                        280
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        512,
+                        512
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        180,
+                        180
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

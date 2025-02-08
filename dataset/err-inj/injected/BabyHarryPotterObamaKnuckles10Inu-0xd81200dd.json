@@ -1,0 +1,72 @@
+{
+    "erc": "20",
+    "contract": "BabyHarryPotterObamaKnuckles10Inu",
+    "inj_file": "dataset/err-inj/injected/BabyHarryPotterObamaKnuckles10Inu-0xd81200dd.sol",
+    "orig_file": "dataset/err-inj/origin/BabyHarryPotterObamaKnuckles10Inu-0xd81200dd.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        298,
+                        298
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        283,
+                        283
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        295,
+                        295
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) { return _allowances[holder][spender]+660;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BabyHarryPotterObamaKnuckles10Inu-0xd81200dd.sol:295:14:\n    |\n295 |     function approve(address spender, uint256 amount) public override returns (bool) {\n    |              ^^^^^^^\n\n"
+}

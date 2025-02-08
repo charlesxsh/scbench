@@ -1,0 +1,76 @@
+{
+    "erc": "20",
+    "contract": "WOJAK2",
+    "inj_file": "dataset/err-inj/injected/WOJAK2-0x5a467e22.sol",
+    "orig_file": "dataset/err-inj/origin/WOJAK2-0x5a467e22.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        23,
+                        23
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        200,
+                        204
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        243,
+                        243
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        247,
+                        247
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "FriendTechBot",
+    "inj_file": "dataset/err-inj/injected/FriendTechBot-0x57014733.sol",
+    "orig_file": "dataset/err-inj/origin/FriendTechBot-0x57014733.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        239,
+                        246
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        15,
+                        15
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        235,
+                        237
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        13,
+                        13
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        236
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_rOwned[account])+602;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/FriendTechBot-0x57014733.sol:233:9:\n    |\n233 |         return tokenFromReflection(_rOwned[account])+602;    }\n    |         ^^^^^^\n\n"
+}

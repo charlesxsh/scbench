@@ -1,0 +1,79 @@
+{
+    "erc": "721",
+    "contract": "ERC721Enumerable",
+    "inj_file": "dataset/err-inj/injected/PrivateCash-0x02defe22.sol",
+    "orig_file": "dataset/err-inj/origin/PrivateCash-0x02defe22.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": " throw if _tokenId is not a valid NFT",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1189,
+                        1189
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1430,
+                        1430
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        647,
+                        652
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1236,
+                        1244
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function has override specified but does not override anything.\n    --> dataset/err-inj/injected/PrivateCash-0x02defe22.sol:2356:22:\n     |\n2356 |     ) public virtual override {\n     |                      ^^^^^^^^\n\nError: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/PrivateCash-0x02defe22.sol:1223:9:\n     |\n1223 |         safeTransferFrom(from, to, tokenId, \"\");\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

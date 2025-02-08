@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "GalaxyPePe",
+    "inj_file": "dataset/err-inj/injected/GalaxyPePe-0xe8330bea.sol",
+    "orig_file": "dataset/err-inj/origin/GalaxyPePe-0xe8330bea.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        227,
+                        227
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        187,
+                        187
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_rOwned[account])+876;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        182,
+                        184
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        25,
+                        25
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

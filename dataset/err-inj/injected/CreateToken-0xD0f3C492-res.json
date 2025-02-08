@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `symbol` should return the symbol of the token. E.g., 'HIX'.",
+                "function": "symbol"
+            },
+            {
+                "rule": "The function `allowance` should return the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe function `symbol()` in the provided code returns an empty string `\"\"`, which does not meet the ERC-20 standard requirement of providing a meaningful symbol for the token. According to the ERC-20 standard, the `symbol` function should return a short string representing the token, which is typically used as a ticker or abbreviation (e.g., \"ETH\" for Ethereum). Returning an empty string does not fulfill this requirement.",
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 rule that specifies it should return \"the amount which _spender is still allowed to withdraw from _owner\". The function implementation incorrectly adds 329 to the actual allowance value stored in `_allowances[owner][spender]`. This modification does not reflect the true allowance set by the owner for the spender, thus violating the standard behavior expected from an ERC-20 compliant `allowance` function."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

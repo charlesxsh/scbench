@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "ODDS",
+    "inj_file": "dataset/err-inj/injected/ODDS-0x8ee73e17.sol",
+    "orig_file": "dataset/err-inj/origin/ODDS-0x8ee73e17.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        172,
+                        174
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        12,
+                        12
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        204,
+                        204
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        189,
+                        192
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        16,
+                        16
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/ODDS-0x8ee73e17.sol:298:9:\n    |\n298 |         IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

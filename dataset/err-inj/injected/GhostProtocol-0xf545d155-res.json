@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `transferFrom` function should return a boolean value indicating success. It should return `true` upon successful transfer.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The `balanceOf` function should return the actual token balance of an account.",
+                "function": "balanceOf"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe `transferFrom` function in the provided code violates the ERC-20 rule that requires indicating whether the token transfer was successful. According to the ERC-20 standard, the `transferFrom` function should return a boolean value that indicates the success of the operation. However, in the provided code, the `transferFrom` function always returns `false`, regardless of whether the transfer operation was successful or not. This does not accurately reflect the outcome of the transfer operation and can lead to incorrect assumptions about the state of the transaction in other parts of the system or by external callers.",
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance from `_balances[account]`, the function adds 698 to the balance, which modifies the expected result. This does not comply with the standard behavior expected from the `balanceOf` function as per the ERC-20 token standard.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

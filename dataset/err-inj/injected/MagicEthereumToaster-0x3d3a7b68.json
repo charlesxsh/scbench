@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "MagicEthereumToaster",
+    "inj_file": "dataset/err-inj/injected/MagicEthereumToaster-0x3d3a7b68.sol",
+    "orig_file": "dataset/err-inj/origin/MagicEthereumToaster-0x3d3a7b68.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        141,
+                        143
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        115,
+                        115
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        152,
+                        152
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+445;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        161,
+                        161
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/MagicEthereumToaster-0x3d3a7b68.sol:399:48:\n    |\n399 |         uint256 totalSupply = 10000000 * 10 ** decimals();\n    |                                                ^^^^^^^^\n\n"
+}

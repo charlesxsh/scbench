@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "ETHCOIN",
+    "inj_file": "dataset/err-inj/injected/ETHCOIN-0xb19d2a00.sol",
+    "orig_file": "dataset/err-inj/origin/ETHCOIN-0xb19d2a00.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        453,
+                        453
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        461,
+                        464
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        405,
+                        405
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        406,
+                        406
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        271,
+                        278
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

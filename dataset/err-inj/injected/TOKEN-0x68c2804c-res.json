@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The transferFrom method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism. Note Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value. NOTE: To prevent attack vectors like the one described here and discussed here, clients SHOULD make sure to create user interfaces in such a way that they set the allowance first to 0 before setting it to another value for the same spender. THOUGH The contract itself shouldn\u2019t enforce it, to allow backwards compatibility with contracts deployed before.",
+                "function": "approve"
+            },
+            {
+                "rule": "symbol function should return the symbol of the token.",
+                "function": "symbol"
+            },
+            {
+                "rule": "MUST trigger on any successful call to approve(address _spender, uint256 _value).",
+                "function": "Approval event"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

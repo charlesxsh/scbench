@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "Cheems",
+    "inj_file": "dataset/err-inj/injected/Cheems-0xC67C2640.sol",
+    "orig_file": "dataset/err-inj/origin/Cheems-0xC67C2640.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        145,
+                        145
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        120,
+                        120
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        161,
+                        161
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+863;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

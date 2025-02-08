@@ -1,0 +1,104 @@
+{
+    "erc": "20",
+    "contract": "Xthereum",
+    "inj_file": "dataset/err-inj/injected/Xthereum-0xa9ff382c.sol",
+    "orig_file": "dataset/err-inj/origin/Xthereum-0xa9ff382c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        278,
+                        278
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        271,
+                        271
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        272,
+                        272
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        266,
+                        267
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        246,
+                        248
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        82,
+                        82
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        247,
+                        247
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+995;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Xthereum-0xa9ff382c.sol:245:9:\n    |\n245 |         return _balances[account]+995;    }\n    |         ^^^^^^\n\n"
+}

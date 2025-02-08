@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "SHIBOG",
+    "inj_file": "dataset/err-inj/injected/SHIBOG-0x05c07918.sol",
+    "orig_file": "dataset/err-inj/origin/SHIBOG-0x05c07918.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        130,
+                        130
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        190,
+                        190
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        108,
+                        110
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        88,
+                        88
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

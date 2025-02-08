@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "BOBA",
+    "inj_file": "dataset/err-inj/injected/BOBA-0x68B96A33.sol",
+    "orig_file": "dataset/err-inj/origin/BOBA-0x68B96A33.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        256,
+                        256
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        260,
+                        260
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        184,
+                        184
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+616;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        175,
+                        177
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

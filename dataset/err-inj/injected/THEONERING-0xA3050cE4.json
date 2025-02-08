@@ -1,0 +1,125 @@
+{
+    "erc": "20",
+    "contract": "THEONERING",
+    "inj_file": "dataset/err-inj/injected/THEONERING-0xA3050cE4.sol",
+    "orig_file": "dataset/err-inj/origin/THEONERING-0xA3050cE4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        139,
+                        153
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        70,
+                        74
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        175,
+                        175
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        774,
+                        777
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        227,
+                        227
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        226,
+                        226
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        758,
+                        758
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        756,
+                        756
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        149,
+                        152
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        106,
+                        106
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.\n   --> dataset/err-inj/injected/THEONERING-0xA3050cE4.sol:221:1:\n    |\n221 | }\n    | ^\n\n"
+}

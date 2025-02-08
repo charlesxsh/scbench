@@ -1,0 +1,92 @@
+{
+    "erc": "20",
+    "contract": "PEPES",
+    "inj_file": "dataset/err-inj/injected/PEPES-0xdc425995.sol",
+    "orig_file": "dataset/err-inj/origin/PEPES-0xdc425995.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        143,
+                        143
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+303;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        193,
+                        193
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        172,
+                        173
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        174,
+                        174
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

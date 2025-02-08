@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "GAS",
+    "inj_file": "dataset/err-inj/injected/GAS-0x42c1383f.sol",
+    "orig_file": "dataset/err-inj/origin/GAS-0x42c1383f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        234,
+                        234
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        257,
+                        260
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        90,
+                        90
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        92,
+                        92
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        266,
+                        269
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/GAS-0x42c1383f.sol\n\nError: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/GAS-0x42c1383f.sol:378:9:\n    |\n378 |         IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

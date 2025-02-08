@@ -1,0 +1,103 @@
+{
+    "erc": "20",
+    "contract": "Shibpepe",
+    "inj_file": "dataset/err-inj/injected/Shibpepe-0x3D775902.sol",
+    "orig_file": "dataset/err-inj/origin/Shibpepe-0x3D775902.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        215,
+                        215
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        203,
+                        204
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        192,
+                        194
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

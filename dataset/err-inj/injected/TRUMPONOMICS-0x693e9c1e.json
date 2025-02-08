@@ -1,0 +1,70 @@
+{
+    "erc": "20",
+    "contract": "TRUMPONOMICS",
+    "inj_file": "dataset/err-inj/injected/TRUMPONOMICS-0x693e9c1e.sol",
+    "orig_file": "dataset/err-inj/origin/TRUMPONOMICS-0x693e9c1e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        522,
+                        522
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external view override returns (uint256) { return _totalSupply+893;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        53,
+                        53
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        524,
+                        524
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/TRUMPONOMICS-0x693e9c1e.sol:521:108:\n    |\n521 |  ... turn _totalSupply+893;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

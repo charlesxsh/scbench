@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "AssassinBot",
+    "inj_file": "dataset/err-inj/injected/AssassinBot-0x56daee00.sol",
+    "orig_file": "dataset/err-inj/origin/AssassinBot-0x56daee00.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        34,
+                        34
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        262,
+                        262
+                    ],
+                    "to_replace": [
+                        "    function name() external pure override returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) {return _allowances[holder][spender]+37;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/AssassinBot-0x56daee00.sol:262:14:\n    |\n262 |     function symbol() external pure override returns (string memory) {return _symbol;}\n    |              ^^^^^^\n\n"
+}

@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "babyethereum",
+    "inj_file": "dataset/err-inj/injected/babyethereum-0x8fe45a7b.sol",
+    "orig_file": "dataset/err-inj/origin/babyethereum-0x8fe45a7b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        173,
+                        173
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+30;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        387,
+                        387
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        301,
+                        301
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        238,
+                        239
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        78,
+                        82
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        236,
+                        241
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/babyethereum-0x8fe45a7b.sol:230:9:\n    |\n230 |         return true;\n    |         ^^^^^^\n\n"
+}

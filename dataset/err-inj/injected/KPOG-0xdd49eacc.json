@@ -1,0 +1,113 @@
+{
+    "erc": "20",
+    "contract": "KPOG",
+    "inj_file": "dataset/err-inj/injected/KPOG-0xdd49eacc.sol",
+    "orig_file": "dataset/err-inj/origin/KPOG-0xdd49eacc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        200,
+                        200
+                    ],
+                    "to_replace": [
+                        "    function decimals() public pure returns (uint8) {return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": [
+                        "    function approve(address spender, uint256 amount) public override returns (bool) {_approve(msg.sender, spender, amount);return false;}\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        338,
+                        338
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        321,
+                        321
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        317,
+                        317
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        322,
+                        322
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        315,
+                        315
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        333,
+                        334
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/KPOG-0xdd49eacc.sol:200:86:\n    |\n200 |     function decimals() public pure returns (uint8) {return _decimals+3;    function startTrading() external onlyOwner {tradingAllowed = true;}\n    |                                                                                      ^^^^^^^^^^^^\n\n"
+}

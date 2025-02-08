@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/Router-0x49250f9e.sol",
+    "orig_file": "dataset/err-inj/origin/Router-0x49250f9e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2577,
+                        2581
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        493,
+                        493
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2554,
+                        2558
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        468,
+                        468
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2504,
+                        2504
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: This declaration shadows an existing declaration.\n    --> dataset/err-inj/injected/Router-0x49250f9e.sol:3099:5:\n     |\n3099 |     struct Curve {\n     |     ^ (Relevant source part starts here and spans across multiple lines).\nNote: The shadowed declaration is here:\n    --> dataset/err-inj/injected/Router-0x49250f9e.sol:4744:1:\n     |\n4744 | contract Curve is Storage, NoDelegateCall, ICurve {\n     | ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(token).transfer\" to access this address member.\n   --> dataset/err-inj/injected/Router-0x49250f9e.sol:576:59:\n    |\n576 |         _callOptionalReturn(token, abi.encodeWithSelector(token.transfer.selector, to, value));\n    |                                                           ^^^^^^^^^^^^^^\n\n"
+}

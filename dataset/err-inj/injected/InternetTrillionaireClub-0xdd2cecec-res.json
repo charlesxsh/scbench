@@ -1,0 +1,76 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `name` should return the name of the token.",
+                "function": "name"
+            },
+            {
+                "rule": "The function `symbol` should return the symbol of the token.",
+                "function": "symbol"
+            },
+            {
+                "rule": "The function `decimals` should return the number of decimals the token uses.",
+                "function": "decimals"
+            },
+            {
+                "rule": "The function `totalSupply` should return the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "The function `balanceOf` should return the account balance of another account with address `_owner`.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "The function `transfer` should transfer `_value` amount of tokens to address `_to`, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The function `transferFrom` should transfer `_value` amount of tokens from address `_from` to address `_to`, and MUST fire the Transfer event. The function SHOULD throw unless the `_from` account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The function `approve` allows `_spender` to withdraw from your account multiple times, up to the `_value` amount. If this function is called again it overwrites the current allowance with `_value`.",
+                "function": "approve"
+            },
+            {
+                "rule": "The function `allowance` returns the amount which `_spender` is still allowed to withdraw from `_owner`.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            null,
+            "YES\n\nThe function `name()` in the provided code returns an empty string `\"\"`, which does not meet the ERC-20 standard requirement of returning a descriptive string name for the token, such as \"MyToken\". According to the ERC-20 standard, the `name()` function should return a proper, non-empty string that represents the name of the token. Returning an empty string does not fulfill this requirement."
+        ],
+        "can_detect": [
+            true,
+            null,
+            true
+        ],
+        "error": [
+            null,
+            "'inj_fn'",
+            null
+        ]
+    }
+}

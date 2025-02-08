@@ -1,0 +1,46 @@
+{
+    "erc": "721",
+    "contract": "BoringApesv2",
+    "inj_file": "dataset/err-inj/injected/BoringApesv2-0x2f1D6BbA.sol",
+    "orig_file": "dataset/err-inj/origin/BoringApesv2-0x2f1D6BbA.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1214,
+                        1214
+                    ],
+                    "to_replace": [
+                        "        return address(9);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

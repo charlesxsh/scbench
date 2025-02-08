@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "ETHLORD",
+    "inj_file": "dataset/err-inj/injected/ETHLORD-0xe2b58B4E.sol",
+    "orig_file": "dataset/err-inj/origin/ETHLORD-0xe2b58B4E.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        192,
+                        195
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        24,
+                        24
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        194,
+                        194
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/ETHLORD-0xe2b58B4E.sol:190:9:\n    |\n190 |         return false;\n    |         ^^^^^^\n\n"
+}

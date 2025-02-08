@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "RHINOVERSE",
+    "inj_file": "dataset/err-inj/injected/RHINOVERSE-0x6ebf1f63.sol",
+    "orig_file": "dataset/err-inj/origin/RHINOVERSE-0x6ebf1f63.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        186,
+                        186
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+735;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        185,
+                        187
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        22,
+                        22
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        194,
+                        196
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        24,
+                        24
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/RHINOVERSE-0x6ebf1f63.sol:183:9:\n    |\n183 |         return _balances[account]+735;    }\n    |         ^^^^^^\n\n"
+}

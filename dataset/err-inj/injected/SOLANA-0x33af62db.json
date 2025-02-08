@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "SOLANA",
+    "inj_file": "dataset/err-inj/injected/SOLANA-0x33af62db.sol",
+    "orig_file": "dataset/err-inj/origin/SOLANA-0x33af62db.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        204,
+                        208
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        167,
+                        167
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        196,
+                        196
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+520;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

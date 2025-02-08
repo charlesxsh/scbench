@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "BITAKING",
+    "inj_file": "dataset/err-inj/injected/BITAKING-0xf2b111ee.sol",
+    "orig_file": "dataset/err-inj/origin/BITAKING-0xf2b111ee.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        206,
+                        206
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        12,
+                        12
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        175,
+                        177
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        176,
+                        176
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+596;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BITAKING-0xf2b111ee.sol:174:9:\n    |\n174 |         return _tTotal+596;    }\n    |         ^^^^^^\n\n"
+}

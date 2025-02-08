@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "EBLivePremios",
+    "inj_file": "dataset/err-inj/injected/EBLivePremios-0x1B67a4bB.sol",
+    "orig_file": "dataset/err-inj/origin/EBLivePremios-0x1B67a4bB.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        285,
+                        285
+                    ],
+                    "to_replace": [
+                        "        return address(284);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        322,
+                        333
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        72,
+                        77
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Wrong argument count for function call: 4 arguments given but expected 3.\n   --> dataset/err-inj/injected/EBLivePremios-0x1B67a4bB.sol:312:9:\n    |\n312 |         safeTransferFrom(from, to, tokenId, \"\");\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

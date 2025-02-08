@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "PEPE",
+    "inj_file": "dataset/err-inj/injected/PEPE-0x96b37ff6.sol",
+    "orig_file": "dataset/err-inj/origin/PEPE-0x96b37ff6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        251,
+                        251
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        334,
+                        334
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        373,
+                        373
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        374,
+                        374
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        525,
+                        525
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        322,
+                        322
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        527,
+                        527
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        293,
+                        297
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/PEPE-0x96b37ff6.sol:296:14:\n    |\n296 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

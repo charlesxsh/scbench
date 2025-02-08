@@ -1,0 +1,71 @@
+{
+    "erc": "721",
+    "contract": "Registrar",
+    "inj_file": "dataset/err-inj/injected/Registrar-0x8eC8952f.sol",
+    "orig_file": "dataset/err-inj/origin/Registrar-0x8eC8952f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": " throw if _tokenId is not a valid NFT",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1553,
+                        1553
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1229,
+                        1232
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1034,
+                        1034
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

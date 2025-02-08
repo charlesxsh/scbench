@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "Oxpepe",
+    "inj_file": "dataset/err-inj/injected/Oxpepe-0x9ad94ffa.sol",
+    "orig_file": "dataset/err-inj/origin/Oxpepe-0x9ad94ffa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        164,
+                        164
+                    ],
+                    "to_replace": [
+                        "    function symbol() public pure returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        165,
+                        165
+                    ],
+                    "to_replace": [
+                        "    function decimals() public pure returns (uint8) {return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        323,
+                        323
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Oxpepe-0x9ad94ffa.sol:164:83:\n    |\n164 |  ... ng memory) {return \"\";    function decimals() public pure returns (uint8) {ret ...\n    |                                         ^^^^^^^^\n\n"
+}

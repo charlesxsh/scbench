@@ -1,0 +1,88 @@
+{
+    "erc": "721",
+    "contract": "WalletKitERC721",
+    "inj_file": "dataset/err-inj/injected/WalletKitERC721-0xde7e45f1.sol",
+    "orig_file": "dataset/err-inj/origin/WalletKitERC721-0xde7e45f1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        664,
+                        664
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2178,
+                        2180
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2210,
+                        2210
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2353,
+                        2353
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2082,
+                        2082
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+390;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

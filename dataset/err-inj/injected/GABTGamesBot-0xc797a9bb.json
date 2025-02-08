@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "GABTGamesBot",
+    "inj_file": "dataset/err-inj/injected/GABTGamesBot-0xc797a9bb.sol",
+    "orig_file": "dataset/err-inj/origin/GABTGamesBot-0xc797a9bb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        255,
+                        255
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        306,
+                        306
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        310,
+                        310
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        254,
+                        254
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        265,
+                        265
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        253,
+                        253
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        260,
+                        260
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        248,
+                        249
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

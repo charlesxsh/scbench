@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "Xfollowers",
+    "inj_file": "dataset/err-inj/injected/Xfollowers-0x21F282De.sol",
+    "orig_file": "dataset/err-inj/origin/Xfollowers-0x21F282De.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1482,
+                        1482
+                    ],
+                    "to_replace": [
+                        "        return address(94);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _approved, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1464,
+                        1474
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1292,
+                        1292
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

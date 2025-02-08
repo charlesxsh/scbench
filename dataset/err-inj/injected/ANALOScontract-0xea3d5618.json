@@ -1,0 +1,113 @@
+{
+    "erc": "20",
+    "contract": "ANALOScontract",
+    "inj_file": "dataset/err-inj/injected/ANALOScontract-0xea3d5618.sol",
+    "orig_file": "dataset/err-inj/origin/ANALOScontract-0xea3d5618.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        230,
+                        230
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        237,
+                        237
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        242,
+                        242
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        231,
+                        231
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        266,
+                        266
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        225,
+                        226
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        202,
+                        202
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+230;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        226,
+                        226
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

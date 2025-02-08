@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Gimmer",
+    "inj_file": "dataset/err-inj/injected/Gimmer-0x493e92ae.sol",
+    "orig_file": "dataset/err-inj/origin/Gimmer-0x493e92ae.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        271,
+                        271
+                    ],
+                    "to_replace": [
+                        "    function symbol() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        280,
+                        280
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        27,
+                        27
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        291,
+                        297
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Gimmer-0x493e92ae.sol:270:95:\n    |\n270 |  ... g memory) { return \"\";    function name() external pure override returns ( ...\n    |                                         ^^^^\n\n"
+}

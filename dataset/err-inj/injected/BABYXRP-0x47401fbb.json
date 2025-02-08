@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "BABYXRP",
+    "inj_file": "dataset/err-inj/injected/BABYXRP-0x47401fbb.sol",
+    "orig_file": "dataset/err-inj/origin/BABYXRP-0x47401fbb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        213,
+                        213
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        277,
+                        277
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        214
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        31,
+                        31
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BABYXRP-0x47401fbb.sol:210:9:\n    |\n210 |         return false;\n    |         ^^^^^^\n\n"
+}

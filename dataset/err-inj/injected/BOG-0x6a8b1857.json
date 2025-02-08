@@ -1,0 +1,90 @@
+{
+    "erc": "20",
+    "contract": "BOG",
+    "inj_file": "dataset/err-inj/injected/BOG-0x6a8b1857.sol",
+    "orig_file": "dataset/err-inj/origin/BOG-0x6a8b1857.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        462,
+                        462
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        321,
+                        321
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        343,
+                        343
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        339,
+                        339
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        331,
+                        331
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        320,
+                        320
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        276,
+                        283
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

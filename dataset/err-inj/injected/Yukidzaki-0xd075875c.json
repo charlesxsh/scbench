@@ -1,0 +1,67 @@
+{
+    "erc": "721",
+    "contract": "Yukidzaki",
+    "inj_file": "dataset/err-inj/injected/Yukidzaki-0xd075875c.sol",
+    "orig_file": "dataset/err-inj/origin/Yukidzaki-0xd075875c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        955,
+                        955
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1264,
+                        1267
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

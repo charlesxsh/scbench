@@ -1,0 +1,78 @@
+{
+    "erc": "721",
+    "contract": "SummerPoly",
+    "inj_file": "dataset/err-inj/injected/SummerPoly-0x77cfb662.sol",
+    "orig_file": "dataset/err-inj/origin/SummerPoly-0x77cfb662.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1421,
+                        1421
+                    ],
+                    "to_replace": [
+                        "        return address(386);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1574,
+                        1574
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1441,
+                        1446
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1186,
+                        1186
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

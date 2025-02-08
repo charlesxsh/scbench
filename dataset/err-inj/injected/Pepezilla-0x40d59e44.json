@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Pepezilla",
+    "inj_file": "dataset/err-inj/injected/Pepezilla-0x40d59e44.sol",
+    "orig_file": "dataset/err-inj/origin/Pepezilla-0x40d59e44.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        334,
+                        334
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+29;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        220,
+                        220
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        294,
+                        296
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        326,
+                        328
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        133,
+                        133
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/Pepezilla-0x40d59e44.sol:1201:27:\n     |\n1201 |             newAmount >= (totalSupply() * 1) / 100000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Pepezilla-0x40d59e44.sol:1205:27:\n     |\n1205 |             newAmount <= (totalSupply() * 5) / 1000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Pepezilla-0x40d59e44.sol:1214:25:\n     |\n1214 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Pepezilla-0x40d59e44.sol:1222:25:\n     |\n1222 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\n"
+}

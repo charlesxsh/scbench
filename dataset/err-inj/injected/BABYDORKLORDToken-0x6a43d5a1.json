@@ -1,0 +1,102 @@
+{
+    "erc": "20",
+    "contract": "BABYDORKLORDToken",
+    "inj_file": "dataset/err-inj/injected/BABYDORKLORDToken-0x6a43d5a1.sol",
+    "orig_file": "dataset/err-inj/origin/BABYDORKLORDToken-0x6a43d5a1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        385,
+                        388
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        370,
+                        370
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        378,
+                        378
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        247,
+                        254
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        10,
+                        10
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        214,
+                        216
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        206,
+                        208
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BABYDORKLORDToken-0x6a43d5a1.sol:373:17:\n    |\n373 |                 balanceOf(to).add(amount) <= maxHoldLimit,\n    |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BABYDORKLORDToken-0x6a43d5a1.sol:455:40:\n    |\n455 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\n"
+}

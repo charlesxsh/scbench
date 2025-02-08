@@ -1,0 +1,107 @@
+{
+    "erc": "721",
+    "contract": "DAI$1099",
+    "inj_file": "dataset/err-inj/injected/DAI$1099-0xb48911af.sol",
+    "orig_file": "dataset/err-inj/origin/DAI$1099-0xb48911af.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1021,
+                        1021
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1307,
+                        1312
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1324,
+                        1327
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        987,
+                        987
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1491,
+                        1491
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1220,
+                        1220
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1497,
+                        1497
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1349,
+                        1349
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/DAI$1099-0xb48911af.sol:1309:9:\n     |\n1309 |         safeTransferFrom(from, to, tokenId, \"\");\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

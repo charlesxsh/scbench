@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "SHIA",
+    "inj_file": "dataset/err-inj/injected/SHIA-0xB2F3c9c9.sol",
+    "orig_file": "dataset/err-inj/origin/SHIA-0xB2F3c9c9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        184,
+                        184
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+131;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        196,
+                        199
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        22,
+                        22
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        220,
+                        220
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        215,
+                        215
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        203,
+                        204
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/SHIA-0xB2F3c9c9.sol:307:9:\n    |\n307 |         IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "DEGENS",
+    "inj_file": "dataset/err-inj/injected/DEGENS-0xF5d78eCE.sol",
+    "orig_file": "dataset/err-inj/origin/DEGENS-0xF5d78eCE.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        166,
+                        166
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+251;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        168,
+                        168
+                    ],
+                    "to_replace": [
+                        "    function allowance(address owner, address spender) public view override returns (uint256) {return _allowances[owner][spender]+540;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/DEGENS-0xF5d78eCE.sol:166:124:\n    |\n166 |  ... balances[account]+251;    function transfer(address recipient, uint256 amount) ...\n    |                                         ^^^^^^^^\n\n"
+}

@@ -1,0 +1,69 @@
+{
+    "erc": "20",
+    "contract": "CultOfPEPE",
+    "inj_file": "dataset/err-inj/injected/CultOfPEPE-0x9b6713e4.sol",
+    "orig_file": "dataset/err-inj/origin/CultOfPEPE-0x9b6713e4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        166,
+                        168
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        254,
+                        254
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        250,
+                        250
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `transferFrom` should be implemented to allow transferring tokens on behalf of another account after approval.",
+                "function": "Missing implementation of `transferFrom` function"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "allowance function should return the remaining number of tokens that spender will be allowed to spend on behalf of owner through transferFrom. It should not return a modified value.",
+                "function": "allowance"
+            },
+            {
+                "rule": "The function `name` should return the name of the token.",
+                "function": "Incorrect implementation of `name` function (returns empty string)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

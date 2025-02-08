@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "PengyX",
+    "inj_file": "dataset/err-inj/injected/PengyX-0xb75f669b.sol",
+    "orig_file": "dataset/err-inj/origin/PengyX-0xb75f669b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        381,
+                        381
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        441,
+                        441
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        373,
+                        373
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+461;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

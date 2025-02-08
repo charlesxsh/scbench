@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "name function should return the name of the token.",
+                "function": "name"
+            },
+            {
+                "rule": "symbol function should return the symbol of the token.",
+                "function": "symbol"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe code provided for the `symbol()` function in the `DORKPEPE` contract returns an empty string (`\"\"`). According to ERC-20 standards, the `symbol()` function should return a short string representing the symbol of the token, typically used as an identifier for the token. Returning an empty string does not conform to the typical expectation of providing a meaningful identifier for the token, thus violating the ERC-20 rule that requires \"string, the symbol of the token\" to be a meaningful and identifiable symbol.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

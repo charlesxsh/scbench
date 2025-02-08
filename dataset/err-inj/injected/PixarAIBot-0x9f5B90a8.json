@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "PixarAIBot",
+    "inj_file": "dataset/err-inj/injected/PixarAIBot-0x9f5B90a8.sol",
+    "orig_file": "dataset/err-inj/origin/PixarAIBot-0x9f5B90a8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        31,
+                        31
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        195,
+                        197
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        196,
+                        196
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+998;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        267,
+                        267
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        271,
+                        271
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/PixarAIBot-0x9f5B90a8.sol:194:9:\n    |\n194 |         return _balances[account]+998;    }\n    |         ^^^^^^\n\n"
+}

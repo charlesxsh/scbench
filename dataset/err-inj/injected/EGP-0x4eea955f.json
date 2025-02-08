@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "EGP",
+    "inj_file": "dataset/err-inj/injected/EGP-0x4eea955f.sol",
+    "orig_file": "dataset/err-inj/origin/EGP-0x4eea955f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        98,
+                        98
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        188,
+                        190
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        413,
+                        413
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        189,
+                        189
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/EGP-0x4eea955f.sol:187:9:\n    |\n187 |         return 18+3;    }\n    |         ^^^^^^\n\n"
+}

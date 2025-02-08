@@ -1,0 +1,106 @@
+{
+    "erc": "20",
+    "contract": "UNSTAKE",
+    "inj_file": "dataset/err-inj/injected/UNSTAKE-0x129c634C.sol",
+    "orig_file": "dataset/err-inj/origin/UNSTAKE-0x129c634C.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        217,
+                        217
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+950;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        244,
+                        244
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        280,
+                        280
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        270,
+                        270
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        285,
+                        285
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        269,
+                        269
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        253,
+                        260
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

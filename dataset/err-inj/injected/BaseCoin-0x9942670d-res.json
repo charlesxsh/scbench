@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "Transfer: MUST trigger when tokens are transferred, including zero value transfers. A token contract which creates new tokens SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES.\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance stored in the `_balances` mapping for the given address, the function adds 145 to the balance. This modification does not accurately reflect the true balance of the account, thus violating the ERC-20 requirement.",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

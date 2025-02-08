@@ -1,0 +1,76 @@
+{
+    "erc": "20",
+    "contract": "ShiaOG",
+    "inj_file": "dataset/err-inj/injected/ShiaOG-0xb6444864.sol",
+    "orig_file": "dataset/err-inj/origin/ShiaOG-0xb6444864.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        24,
+                        24
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        188,
+                        190
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        264,
+                        264
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        260,
+                        260
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ShiaOG-0xb6444864.sol:236:25:\n    |\n236 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShiaOG-0xb6444864.sol:244:44:\n    |\n244 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShiaOG-0xb6444864.sol:297:85:\n    |\n297 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShiaOG-0xb6444864.sol:307:30:\n    |\n307 |         uint256 tokenBalance=balanceOf(address(this));\n    |                              ^^^^^^^^^\n\n"
+}

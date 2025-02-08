@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "LOVEBB",
+    "inj_file": "dataset/err-inj/injected/LOVEBB-0xa86855df.sol",
+    "orig_file": "dataset/err-inj/origin/LOVEBB-0xa86855df.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+851;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        34,
+                        34
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        197,
+                        199
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        266,
+                        266
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        270,
+                        270
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/LOVEBB-0xa86855df.sol:233:25:\n    |\n233 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LOVEBB-0xa86855df.sol:242:25:\n    |\n242 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LOVEBB-0xa86855df.sol:249:44:\n    |\n249 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LOVEBB-0xa86855df.sol:308:85:\n    |\n308 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\n"
+}

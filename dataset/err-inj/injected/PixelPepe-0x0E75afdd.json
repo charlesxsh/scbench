@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "PixelPepe",
+    "inj_file": "dataset/err-inj/injected/PixelPepe-0x0E75afdd.sol",
+    "orig_file": "dataset/err-inj/origin/PixelPepe-0x0E75afdd.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        258,
+                        258
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+640;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        239,
+                        241
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        236
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+831;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PixelPepe-0x0E75afdd.sol:340:25:\n    |\n340 |                 require(balanceOf(to) + amount < _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PixelPepe-0x0E75afdd.sol:343:44:\n    |\n343 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PixelPepe-0x0E75afdd.sol:414:35:\n    |\n414 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

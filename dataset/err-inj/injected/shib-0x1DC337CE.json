@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "shib",
+    "inj_file": "dataset/err-inj/injected/shib-0x1DC337CE.sol",
+    "orig_file": "dataset/err-inj/origin/shib-0x1DC337CE.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        306,
+                        306
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        314,
+                        314
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        351,
+                        351
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+700;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

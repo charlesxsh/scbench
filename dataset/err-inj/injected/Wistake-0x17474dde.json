@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Wistake",
+    "inj_file": "dataset/err-inj/injected/Wistake-0x17474dde.sol",
+    "orig_file": "dataset/err-inj/origin/Wistake-0x17474dde.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        146,
+                        146
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        325,
+                        327
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        295,
+                        295
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        612,
+                        612
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/Wistake-0x17474dde.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Wistake-0x17474dde.sol:611:16:\n    |\n611 |         return balanceOf(owner());\n    |                ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "BadluckBrubber",
+    "inj_file": "dataset/err-inj/injected/BadluckBrubber-0x0936f5d8.sol",
+    "orig_file": "dataset/err-inj/origin/BadluckBrubber-0x0936f5d8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        170,
+                        173
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        96,
+                        96
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        180,
+                        194
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        97,
+                        97
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        159,
+                        159
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+488;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/BadluckBrubber-0x0936f5d8.sol:403:9:\n    |\n403 |         IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

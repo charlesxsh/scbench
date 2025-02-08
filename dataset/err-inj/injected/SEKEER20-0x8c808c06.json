@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "SEKEER20",
+    "inj_file": "dataset/err-inj/injected/SEKEER20-0x8c808c06.sol",
+    "orig_file": "dataset/err-inj/origin/SEKEER20-0x8c808c06.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        281,
+                        281
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        320,
+                        320
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        238
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        36,
+                        36
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/SEKEER20-0x8c808c06.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SEKEER20-0x8c808c06.sol:339:25:\n    |\n339 |                 require(balanceOf(to) + amount < _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SEKEER20-0x8c808c06.sol:342:44:\n    |\n342 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SEKEER20-0x8c808c06.sol:419:35:\n    |\n419 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

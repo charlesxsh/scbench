@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "FemmePhonic",
+    "inj_file": "dataset/err-inj/injected/FemmePhonic-0xaf5aa2cc.sol",
+    "orig_file": "dataset/err-inj/origin/FemmePhonic-0xaf5aa2cc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        342,
+                        342
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        278,
+                        278
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+497;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        255,
+                        257
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

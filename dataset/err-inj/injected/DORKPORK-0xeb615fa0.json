@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "DORKPORK",
+    "inj_file": "dataset/err-inj/injected/DORKPORK-0xeb615fa0.sol",
+    "orig_file": "dataset/err-inj/origin/DORKPORK-0xeb615fa0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        288,
+                        288
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+930;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        308,
+                        308
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+207;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        408,
+                        408
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

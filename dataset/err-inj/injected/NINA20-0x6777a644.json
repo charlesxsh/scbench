@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "NINA20",
+    "inj_file": "dataset/err-inj/injected/NINA20-0x6777a644.sol",
+    "orig_file": "dataset/err-inj/origin/NINA20-0x6777a644.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        601,
+                        601
+                    ],
+                    "to_replace": [
+                        "    function name() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        600,
+                        600
+                    ],
+                    "to_replace": [
+                        "    function symbol() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        616,
+                        618
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/NINA20-0x6777a644.sol:599:95:\n    |\n599 |  ... g memory) { return \"\";    function name() external pure override returns ( ...\n    |                                         ^^^^\n\n"
+}

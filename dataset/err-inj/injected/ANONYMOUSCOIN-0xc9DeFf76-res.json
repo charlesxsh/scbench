@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `safeTransferFrom` function must check if `_to` is a smart contract and if so, it must call `onERC721Received` on `_to` and revert if the return value is not `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`.",
+                "function": "The `_safeMint` function does not implement the required check and call to `onERC721Received` as specified by the ERC721 standard."
+            },
+            {
+                "rule": "approve function should return true on successful approval.",
+                "function": "approve"
+            },
+            {
+                "rule": "Every ERC-721 compliant contract must implement the `ERC721` and `ERC165` interfaces.",
+                "function": "The provided code does not explicitly declare conformance to ERC721 and ERC165 interfaces through the use of interface declarations or equivalent comments."
+            },
+            {
+                "rule": "transferFrom function should return true on successful transfer.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

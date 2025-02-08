@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "OpenTheDoorERC",
+    "inj_file": "dataset/err-inj/injected/OpenTheDoorERC-0x4a096b7a.sol",
+    "orig_file": "dataset/err-inj/origin/OpenTheDoorERC-0x4a096b7a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        169,
+                        169
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        166,
+                        166
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) { return _allowances[holder][spender]+621;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        146,
+                        146
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/OpenTheDoorERC-0x4a096b7a.sol:166:14:\n    |\n166 |     function approve(address spender, uint256 amount) public override returns (bool) {\n    |              ^^^^^^^\n\n"
+}

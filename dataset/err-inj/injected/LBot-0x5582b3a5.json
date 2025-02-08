@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "LBot",
+    "inj_file": "dataset/err-inj/injected/LBot-0x5582b3a5.sol",
+    "orig_file": "dataset/err-inj/origin/LBot-0x5582b3a5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        572,
+                        572
+                    ],
+                    "to_replace": [
+                        "        return 9+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        571,
+                        573
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        289,
+                        291
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        515,
+                        515
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/LBot-0x5582b3a5.sol:566:9:\n    |\n566 |         return 9+3;    }\n    |         ^^^^^^\n\n"
+}

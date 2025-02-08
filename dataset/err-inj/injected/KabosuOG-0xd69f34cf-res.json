@@ -1,0 +1,60 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The balanceOf function should return the exact balance of the account.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "Transfers of 0 values must be treated as normal transfers and fire the Transfer event.",
+                "function": "transfer"
+            },
+            {
+                "rule": "Transfers of 0 values must be treated as normal transfers and fire the Transfer event.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "These functions should return a boolean value indicating success or failure, and callers must handle false returns.",
+                "function": "transfer"
+            },
+            {
+                "rule": "These functions should return a boolean value indicating success or failure, and callers must handle false returns.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            null,
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance stored in the `_balances` mapping for the given address, the function artificially inflates the balance by adding 910 to it. This modification does not reflect the true balance of the account, thus violating the standard's requirement."
+        ],
+        "can_detect": [
+            true,
+            null,
+            true
+        ],
+        "error": [
+            null,
+            "'inj_fn'",
+            null
+        ]
+    }
+}

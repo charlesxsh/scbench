@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "MagicPepeCashcontract",
+    "inj_file": "dataset/err-inj/injected/MagicPepeCashcontract-0x3c10cb1b.sol",
+    "orig_file": "dataset/err-inj/origin/MagicPepeCashcontract-0x3c10cb1b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        593,
+                        593
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        603,
+                        603
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) { return _balances[account]+59;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        600,
+                        600
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/MagicPepeCashcontract-0x3c10cb1b.sol:600:124:\n    |\n600 |  ... _balances[account]+59;    function allowance(address holder, address spender) e ...\n    |                                         ^^^^^^^^^\n\n"
+}

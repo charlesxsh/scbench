@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "CHID",
+    "inj_file": "dataset/err-inj/injected/CHID-0xf322dc3f.sol",
+    "orig_file": "dataset/err-inj/origin/CHID-0xf322dc3f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        181
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        378,
+                        392
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        391,
+                        391
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        349,
+                        351
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        150,
+                        150
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/CHID-0xf322dc3f.sol:369:9:\n    |\n369 |         return false;\n    |         ^^^^^^\n\n"
+}

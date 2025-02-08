@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The decimals function should return the number of decimals the token uses. This is typically a constant value that does not change.",
+                "function": "decimals()"
+            },
+            {
+                "rule": "The approve function should return a boolean value indicating whether the operation succeeded.",
+                "function": "approve(address spender, uint256 amount)"
+            },
+            {
+                "rule": "Transfers of 0 values must be treated as normal transfers and must fire the Transfer event.",
+                "function": "transfer(address recipient, uint256 amount)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `approve` in the provided code always returns `false`, regardless of whether the approval operation was successful or not. According to the ERC-20 standard, the `approve` function should return a boolean indicating whether the operation was successful. In typical implementations, this function returns `true` upon successfully setting the allowance. The constant return of `false` misleads the caller about the success of the operation, which violates the ERC-20 rule that states the function should indicate whether the approval was successful.",
+            "NO\n\nThe function `decimals()` in the provided code does not violate the ERC-20 rule regarding the number of decimal places a token can be divided into for display and transaction purposes. The ERC-20 standard does not specify a maximum number of decimals; it only requires that the function `decimals()` be implemented to define the smallest unit of the token. In this code, the function returns `21` (18+3), which is a valid implementation choice, albeit unusual compared to the typical `18` decimals used by many tokens. This implementation choice does not break any ERC-20 rules but simply defines a higher precision for the token.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

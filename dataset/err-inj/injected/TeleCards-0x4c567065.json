@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "TeleCards",
+    "inj_file": "dataset/err-inj/injected/TeleCards-0x4c567065.sol",
+    "orig_file": "dataset/err-inj/origin/TeleCards-0x4c567065.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        262,
+                        262
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        266,
+                        266
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        187,
+                        189
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        191,
+                        193
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        22,
+                        22
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/TeleCards-0x4c567065.sol:225:25:\n    |\n225 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TeleCards-0x4c567065.sol:234:25:\n    |\n234 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TeleCards-0x4c567065.sol:242:44:\n    |\n242 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TeleCards-0x4c567065.sol:320:85:\n    |\n320 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\n"
+}

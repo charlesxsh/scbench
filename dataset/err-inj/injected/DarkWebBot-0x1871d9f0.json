@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "DarkWebBot",
+    "inj_file": "dataset/err-inj/injected/DarkWebBot-0x1871d9f0.sol",
+    "orig_file": "dataset/err-inj/origin/DarkWebBot-0x1871d9f0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        305,
+                        305
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        246,
+                        248
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        51,
+                        51
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        243,
+                        243
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

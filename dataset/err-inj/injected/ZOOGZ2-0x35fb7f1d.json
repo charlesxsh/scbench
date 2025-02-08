@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "ZOOGZ2",
+    "inj_file": "dataset/err-inj/injected/ZOOGZ2-0x35fb7f1d.sol",
+    "orig_file": "dataset/err-inj/origin/ZOOGZ2-0x35fb7f1d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        143,
+                        143
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+851;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        72,
+                        72
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        140,
+                        144
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        202,
+                        202
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/ZOOGZ2-0x35fb7f1d.sol:139:9:\n    |\n139 |         return _balances[account]+851;    }\n    |         ^^^^^^\n\n"
+}

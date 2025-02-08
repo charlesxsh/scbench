@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "HarryPotterTrumpSonic10Inu",
+    "inj_file": "dataset/err-inj/injected/HarryPotterTrumpSonic10Inu-0x8B660994.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotterTrumpSonic10Inu-0x8B660994.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        184,
+                        186
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        205,
+                        205
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotterTrumpSonic10Inu-0x8B660994.sol:220:25:\n    |\n220 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotterTrumpSonic10Inu-0x8B660994.sol:229:25:\n    |\n229 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotterTrumpSonic10Inu-0x8B660994.sol:236:44:\n    |\n236 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotterTrumpSonic10Inu-0x8B660994.sol:297:85:\n    |\n297 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\n"
+}

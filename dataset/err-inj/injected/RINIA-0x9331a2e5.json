@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "RINIA",
+    "inj_file": "dataset/err-inj/injected/RINIA-0x9331a2e5.sol",
+    "orig_file": "dataset/err-inj/origin/RINIA-0x9331a2e5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        277,
+                        277
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        276,
+                        276
+                    ],
+                    "to_replace": [
+                        "    function decimals() external pure override returns (uint8) { return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        275,
+                        275
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external view override returns (uint256) { return _totalSupply+350;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/RINIA-0x9331a2e5.sol:274:108:\n    |\n274 |  ... turn _totalSupply+350;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

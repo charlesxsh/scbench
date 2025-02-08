@@ -1,0 +1,96 @@
+{
+    "erc": "20",
+    "contract": "Dorkles",
+    "inj_file": "dataset/err-inj/injected/Dorkles-0xc9d5081b.sol",
+    "orig_file": "dataset/err-inj/origin/Dorkles-0xc9d5081b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        129,
+                        133
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        75,
+                        75
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        151,
+                        151
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        146,
+                        146
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        155,
+                        155
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        131,
+                        132
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.\n   --> dataset/err-inj/injected/Dorkles-0xc9d5081b.sol:153:1:\n    |\n153 | }\n    | ^\n\n"
+}

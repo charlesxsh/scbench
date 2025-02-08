@@ -1,0 +1,112 @@
+{
+    "erc": "20",
+    "contract": "DC",
+    "inj_file": "dataset/err-inj/injected/DC-0xdc72596e.sol",
+    "orig_file": "dataset/err-inj/origin/DC-0xdc72596e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        219,
+                        219
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        213,
+                        213
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        207,
+                        208
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        188,
+                        188
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+346;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        265,
+                        265
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        261,
+                        261
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

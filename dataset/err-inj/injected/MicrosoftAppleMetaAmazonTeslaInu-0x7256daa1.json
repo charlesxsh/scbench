@@ -1,0 +1,88 @@
+{
+    "erc": "20",
+    "contract": "MicrosoftAppleMetaAmazonTeslaInu",
+    "inj_file": "dataset/err-inj/injected/MicrosoftAppleMetaAmazonTeslaInu-0x7256daa1.sol",
+    "orig_file": "dataset/err-inj/origin/MicrosoftAppleMetaAmazonTeslaInu-0x7256daa1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        238,
+                        238
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        220,
+                        220
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        227,
+                        227
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        179,
+                        179
+                    ],
+                    "to_replace": [
+                        "    function name() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        181,
+                        181
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) { return _balances[account]+441;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/MicrosoftAppleMetaAmazonTeslaInu-0x7256daa1.sol:179:93:\n    |\n179 |  ... g memory) { return \"\";    function getOwner() external view override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

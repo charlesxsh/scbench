@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "TurboBot",
+    "inj_file": "dataset/err-inj/injected/TurboBot-0x9db73207.sol",
+    "orig_file": "dataset/err-inj/origin/TurboBot-0x9db73207.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        224
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        223,
+                        223
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+432;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        220
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        19,
+                        19
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/TurboBot-0x9db73207.sol:217:9:\n    |\n217 |         return _balances[account]+432;    }\n    |         ^^^^^^\n\n"
+}

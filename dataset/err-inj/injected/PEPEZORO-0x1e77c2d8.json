@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "PEPEZORO",
+    "inj_file": "dataset/err-inj/injected/PEPEZORO-0x1e77c2d8.sol",
+    "orig_file": "dataset/err-inj/origin/PEPEZORO-0x1e77c2d8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        189,
+                        192
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        191,
+                        191
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        173,
+                        173
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+575;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/PEPEZORO-0x1e77c2d8.sol:187:9:\n    |\n187 |         return false;\n    |         ^^^^^^\n\n"
+}

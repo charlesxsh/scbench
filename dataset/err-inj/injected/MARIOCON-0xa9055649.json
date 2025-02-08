@@ -1,0 +1,116 @@
+{
+    "erc": "20",
+    "contract": "MARIOCON",
+    "inj_file": "dataset/err-inj/injected/MARIOCON-0xa9055649.sol",
+    "orig_file": "dataset/err-inj/origin/MARIOCON-0xa9055649.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        25,
+                        25
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        186,
+                        188
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        212
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        30,
+                        30
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        227,
+                        227
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        215,
+                        215
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        210,
+                        211
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.\n   --> dataset/err-inj/injected/MARIOCON-0xa9055649.sol:322:5:\n    |\n322 |     receive() external payable {}\n    |     ^^^^^^^\n\n"
+}

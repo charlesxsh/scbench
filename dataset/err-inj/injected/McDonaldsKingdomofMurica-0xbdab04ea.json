@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "McDonaldsKingdomofMurica",
+    "inj_file": "dataset/err-inj/injected/McDonaldsKingdomofMurica-0xbdab04ea.sol",
+    "orig_file": "dataset/err-inj/origin/McDonaldsKingdomofMurica-0xbdab04ea.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        61,
+                        61
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        228,
+                        231
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        221,
+                        221
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+410;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        63,
+                        63
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        237,
+                        240
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/McDonaldsKingdomofMurica-0xbdab04ea.sol:327:9:\n    |\n327 |         IERC20(_tokenAddr).transfer(_to, _amount);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

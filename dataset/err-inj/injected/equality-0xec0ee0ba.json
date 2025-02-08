@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "equality",
+    "inj_file": "dataset/err-inj/injected/equality-0xec0ee0ba.sol",
+    "orig_file": "dataset/err-inj/origin/equality-0xec0ee0ba.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        178,
+                        178
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        39,
+                        39
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        365,
+                        365
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        203,
+                        203
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        174,
+                        174
+                    ],
+                    "to_replace": [
+                        "    function name() public pure returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/equality-0xec0ee0ba.sol:173:81:\n    |\n173 |     function name() public pure returns (string memory) {return \"\";    function symbol() public pure returns (string memory) {return _symbol;}\n    |                                                                                 ^^^^^^\n\n"
+}

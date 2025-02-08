@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success).",
+                "function": "approve"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe `transferFrom` function in the provided code does not check whether the `_from` account has authorized the sender of the message to spend tokens on its behalf. This is typically done by checking the `_allowances` mapping to ensure that the `msg.sender` has been granted a sufficient allowance to transfer the specified amount of tokens from the `_from` account. The absence of this check violates the ERC-20 standard rule that requires verification of authorization before transferring tokens.",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "CatSpiral",
+    "inj_file": "dataset/err-inj/injected/CatSpiral-0x02daef34.sol",
+    "orig_file": "dataset/err-inj/origin/CatSpiral-0x02daef34.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        349,
+                        349
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+815;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": [
+                        "    function approve(address spender, uint256 amount) public override returns (bool) {_approve(msg.sender, spender, amount);return false;}\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/CatSpiral-0x02daef34.sol:218:124:\n    |\n218 |  ... balances[account]+815;    function transfer(address recipient, uint256 amount) ...\n    |                                         ^^^^^^^^\n\n"
+}

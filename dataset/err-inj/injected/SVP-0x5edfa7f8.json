@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "SVP",
+    "inj_file": "dataset/err-inj/injected/SVP-0x5edfa7f8.sol",
+    "orig_file": "dataset/err-inj/origin/SVP-0x5edfa7f8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        186,
+                        188
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        22,
+                        22
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        183,
+                        183
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+490;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        258,
+                        258
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        262,
+                        262
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SVP-0x5edfa7f8.sol:233:25:\n    |\n233 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SVP-0x5edfa7f8.sol:241:44:\n    |\n241 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SVP-0x5edfa7f8.sol:294:85:\n    |\n294 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SVP-0x5edfa7f8.sol:304:30:\n    |\n304 |         uint256 tokenBalance=balanceOf(address(this));\n    |                              ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The transferFrom method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom(address from, address to, uint256 amount)"
+            },
+            {
+                "rule": "The ERC20 standard requires that the `Approval` event must be triggered on any successful call to `approve`. Additionally, the `Transfer` event must be triggered when tokens are transferred, including transfers of 0 value.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The function `allowance` should return the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            },
+            {
+                "rule": "The ERC20 standard specifies that the `approve` function should allow a spender to withdraw from the owner's account multiple times, up to the value amount. If this function is called again, it should overwrite the current allowance with the new value.",
+                "function": "Missing `approve` function implementation"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "erc": "20",
+    "contract": "DORKBABY",
+    "inj_file": "dataset/err-inj/injected/DORKBABY-0x4141409b.sol",
+    "orig_file": "dataset/err-inj/origin/DORKBABY-0x4141409b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        180,
+                        180
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        225,
+                        225
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        183,
+                        183
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        178,
+                        178
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        173,
+                        174
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

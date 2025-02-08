@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x46FF78E1.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x46FF78E1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        193,
+                        193
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        296,
+                        296
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        301,
+                        301
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        113,
+                        113
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        163,
+                        166
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        11,
+                        11
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/Token-0x46FF78E1.sol:328:13:\n    |\n328 |             IERC20(_token).transfer(mkt, IERC20(_token).balanceOf(address(this)));\n    |             ^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

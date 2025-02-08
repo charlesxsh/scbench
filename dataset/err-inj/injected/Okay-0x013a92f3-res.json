@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "approve function should return true on successful approval.",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO\n\nThe `approve` function in the provided smart contract code returns `false` regardless of the input or state changes, which violates the ERC-20 standard. According to the ERC-20 standard, the `approve` function should return `true` to indicate successful approval. This is necessary for the function to comply with the standard and to work correctly with other contracts and services expecting ERC-20 behavior.",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES\n\nThe provided code for the `approve` function in the `Okay` contract does not emit an \"Approval\" event as required by the ERC-20 standard. According to the ERC-20 standard, an \"Approval\" event must be emitted whenever the `approve` function is successfully executed. This is important for transparency and tracking changes in allowance via external applications or services. The absence of this event emission in the code violates the ERC-20 standard rules."
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

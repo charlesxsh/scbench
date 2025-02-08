@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "The ERC20 standard requires a `transferFrom` function to allow a contract to transfer tokens on behalf of an owner, given that the owner has set an allowance for the spender.",
+                "function": "Missing `transferFrom` function"
+            },
+            {
+                "rule": "The `transferFrom` function must emit a `Transfer` event if implemented. This is a requirement for all transfers, including those initiated by `transferFrom`.",
+                "function": "Missing `transferFrom` function and associated `Transfer` event emission"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

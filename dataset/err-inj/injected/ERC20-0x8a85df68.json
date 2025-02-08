@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/ERC20-0x8a85df68.sol",
+    "orig_file": "dataset/err-inj/origin/ERC20-0x8a85df68.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        74,
+                        74
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        186,
+                        188
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        330,
+                        330
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        258,
+                        258
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+686;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ERC20-0x8a85df68.sol:357:42:\n    |\n357 |         _mint(msg.sender, amount * 10 ** decimals());\n    |                                          ^^^^^^^^\n\n"
+}

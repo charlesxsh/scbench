@@ -1,0 +1,95 @@
+{
+    "erc": "721",
+    "contract": "TemporalTapestries",
+    "inj_file": "dataset/err-inj/injected/TemporalTapestries-0x0e9cd5f5.sol",
+    "orig_file": "dataset/err-inj/origin/TemporalTapestries-0x0e9cd5f5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1337,
+                        1337
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1331,
+                        1331
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1189,
+                        1189
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1061,
+                        1061
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+480;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        58,
+                        58
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1059,
+                        1062
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n    --> dataset/err-inj/injected/TemporalTapestries-0x0e9cd5f5.sol:1058:9:\n     |\n1058 |         return _balances[owner]+480;    }\n     |         ^^^^^^\n\n"
+}

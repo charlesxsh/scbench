@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "shitba",
+    "inj_file": "dataset/err-inj/injected/shitba-0x6bd42d8e.sol",
+    "orig_file": "dataset/err-inj/origin/shitba-0x6bd42d8e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        143,
+                        146
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        34,
+                        34
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        139,
+                        141
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        25,
+                        25
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/shitba-0x6bd42d8e.sol:602:42:\n    |\n602 |                         require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/shitba-0x6bd42d8e.sol:609:38:\n    |\n609 |                     require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/shitba-0x6bd42d8e.sol:614:40:\n    |\n614 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/shitba-0x6bd42d8e.sol:719:33:\n    |\n719 |         if(tokensForBurn > 0 && balanceOf(address(this)) >= tokensForBurn) {\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/shitba-0x6bd42d8e.sol:724:35:\n    |\n724 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/shitba-0x6bd42d8e.sol:788:17:\n    |\n788 |         require(balanceOf(address(this)) >= swapTokensAtAmount, \"Can only swap when token amount is at or higher than restriction\");\n    |                 ^^^^^^^^^\n\n"
+}

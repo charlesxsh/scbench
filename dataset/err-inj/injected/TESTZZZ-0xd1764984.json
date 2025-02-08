@@ -1,0 +1,117 @@
+{
+    "erc": "20",
+    "contract": "TESTZZZ",
+    "inj_file": "dataset/err-inj/injected/TESTZZZ-0xd1764984.sol",
+    "orig_file": "dataset/err-inj/origin/TESTZZZ-0xd1764984.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        353,
+                        353
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        833,
+                        833
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        349,
+                        349
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        845,
+                        848
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        295,
+                        295
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        350,
+                        350
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        256,
+                        259
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        100,
+                        103
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        210,
+                        216
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/TESTZZZ-0xd1764984.sol:247:14:\n    |\n247 |     function increaseAllowance(\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

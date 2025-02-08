@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Skittleseth",
+    "inj_file": "dataset/err-inj/injected/Skittleseth-0xcefbd29e.sol",
+    "orig_file": "dataset/err-inj/origin/Skittleseth-0xcefbd29e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        200,
+                        200
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        213
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        20,
+                        20
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        217,
+                        217
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Skittleseth-0xcefbd29e.sol:272:25:\n    |\n272 |                 require(balanceOf(to) + amount < _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Skittleseth-0xcefbd29e.sol:275:44:\n    |\n275 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Skittleseth-0xcefbd29e.sol:337:35:\n    |\n337 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

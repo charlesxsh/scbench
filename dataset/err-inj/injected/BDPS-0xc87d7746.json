@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "BDPS",
+    "inj_file": "dataset/err-inj/injected/BDPS-0xc87d7746.sol",
+    "orig_file": "dataset/err-inj/origin/BDPS-0xc87d7746.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        247,
+                        249
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        25,
+                        25
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        260,
+                        267
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        29,
+                        29
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        292,
+                        292
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BDPS-0xc87d7746.sol:341:25:\n    |\n341 |                 require(balanceOf(to) + amount < _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BDPS-0xc87d7746.sol:344:44:\n    |\n344 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BDPS-0xc87d7746.sol:409:35:\n    |\n409 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

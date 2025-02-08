@@ -1,0 +1,112 @@
+{
+    "erc": "20",
+    "contract": "DC",
+    "inj_file": "dataset/err-inj/injected/DC-0x041878fa.sol",
+    "orig_file": "dataset/err-inj/origin/DC-0x041878fa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        261,
+                        261
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        265,
+                        265
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        213,
+                        213
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        219,
+                        219
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        207,
+                        208
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        197,
+                        197
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+501;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

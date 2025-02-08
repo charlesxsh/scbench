@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "HPOP666I",
+    "inj_file": "dataset/err-inj/injected/HPOP666I-0xd68bfeea.sol",
+    "orig_file": "dataset/err-inj/origin/HPOP666I-0xd68bfeea.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        458,
+                        458
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        368,
+                        368
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        301,
+                        302
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        295,
+                        304
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        107,
+                        111
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        276,
+                        276
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/HPOP666I-0xd68bfeea.sol:290:9:\n    |\n290 |         return true;\n    |         ^^^^^^\n\n"
+}

@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "BerryBet",
+    "inj_file": "dataset/err-inj/injected/BerryBet-0x813aCe20.sol",
+    "orig_file": "dataset/err-inj/origin/BerryBet-0x813aCe20.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        477,
+                        477
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        254,
+                        254
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+189;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        473,
+                        473
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        383,
+                        383
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        316,
+                        317
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

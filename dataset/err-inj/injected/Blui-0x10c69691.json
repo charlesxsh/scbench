@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Blui",
+    "inj_file": "dataset/err-inj/injected/Blui-0x10c69691.sol",
+    "orig_file": "dataset/err-inj/origin/Blui-0x10c69691.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        113,
+                        113
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        102,
+                        102
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        86,
+                        88
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        38,
+                        38
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Blui-0x10c69691.sol:219:49:\n    |\n219 |         _mint(msg.sender, 1000000000000 * 10 ** decimals());\n    |                                                 ^^^^^^^^\n\n"
+}

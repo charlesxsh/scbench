@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "YieldBuddy",
+    "inj_file": "dataset/err-inj/injected/YieldBuddy-0x348f7683.sol",
+    "orig_file": "dataset/err-inj/origin/YieldBuddy-0x348f7683.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        100,
+                        100
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        162,
+                        164
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        243,
+                        243
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/YieldBuddy-0x348f7683.sol:657:31:\n    |\n657 |         uint256 tokenAmount = balanceOf(address(this));\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/YieldBuddy-0x348f7683.sol:681:32:\n    |\n681 |         uint256 tokenBalance = balanceOf(address(this));\n    |                                ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/YieldBuddy-0x348f7683.sol:784:42:\n    |\n784 |                         require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/YieldBuddy-0x348f7683.sol:792:38:\n    |\n792 |                     require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/YieldBuddy-0x348f7683.sol:797:40:\n    |\n797 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/YieldBuddy-0x348f7683.sol:884:35:\n    |\n884 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/YieldBuddy-0x348f7683.sol:895:31:\n    |\n895 |             contractBalance = balanceOf(address(this));\n    |                               ^^^^^^^^^\n\n"
+}

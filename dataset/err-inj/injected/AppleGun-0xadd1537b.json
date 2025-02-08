@@ -1,0 +1,64 @@
+{
+    "erc": "20",
+    "contract": "AppleGun",
+    "inj_file": "dataset/err-inj/injected/AppleGun-0xadd1537b.sol",
+    "orig_file": "dataset/err-inj/origin/AppleGun-0xadd1537b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        205,
+                        205
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        173,
+                        173
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+874;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

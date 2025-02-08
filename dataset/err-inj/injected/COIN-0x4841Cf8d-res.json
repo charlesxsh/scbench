@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "decimals function should return the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            },
+            {
+                "rule": "transferFrom should return a boolean value indicating success or failure.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe `transferFrom` function in the provided code does not check if the `_from` account has authorized the `msg.sender` to spend tokens on its behalf. This is typically managed by checking the `_allowances` mapping to ensure that the `msg.sender` has enough allowance to transfer the specified amount of tokens from the `_from` account. However, the provided `transferFrom` function directly calls `_transfer` without any such checks, thereby violating the ERC-20 rule that requires explicit authorization for transfers on behalf of another account.",
+            "YES\n\nThe function `decimals()` in the provided code violates the ERC-20 standard rule regarding the number of decimal places a token can be divided into. According to the ERC-20 standard, the `decimals()` function should return a constant value that defines the smallest unit of the token for display and transaction purposes. In the given code, the function returns `_decimals + 3`, which results in a dynamic value (11 in this case), rather than a fixed number of decimal places. This can lead to inconsistencies and confusion regarding the token's divisibility and representation."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "Salad",
+    "inj_file": "dataset/err-inj/injected/Salad-0xd9a2af92.sol",
+    "orig_file": "dataset/err-inj/origin/Salad-0xd9a2af92.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        303,
+                        303
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+39;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        512,
+                        512
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        511,
+                        511
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        427,
+                        427
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        590,
+                        590
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        361,
+                        364
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        515,
+                        515
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Salad-0xd9a2af92.sol:374:14:\n    |\n374 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

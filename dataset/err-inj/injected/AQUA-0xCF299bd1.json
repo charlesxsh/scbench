@@ -1,0 +1,64 @@
+{
+    "erc": "20",
+    "contract": "AQUA",
+    "inj_file": "dataset/err-inj/injected/AQUA-0xCF299bd1.sol",
+    "orig_file": "dataset/err-inj/origin/AQUA-0xCF299bd1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        195,
+                        195
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        233,
+                        233
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        297,
+                        297
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/AQUA-0xCF299bd1.sol:197:88:\n    |\n197 |     function totalSupply() public view override returns (uint256) {return _tSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AQUA-0xCF299bd1.sol:197:109:\n    |\n197 |     function totalSupply() public view override returns (uint256) {return _tSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AQUA-0xCF299bd1.sol:201:31:\n    |\n201 |         bool aboveThreshold = balanceOf(address(this)) >= swapInterval;\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AQUA-0xCF299bd1.sol:220:27:\n    |\n220 |         require(amount <= balanceOf(sender),\"You are trying to transfer more than your balance\");\n    |                           ^^^^^^^^^\n\n"
+}

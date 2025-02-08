@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "APEPE",
+    "inj_file": "dataset/err-inj/injected/APEPE-0x6cdb5acc.sol",
+    "orig_file": "dataset/err-inj/origin/APEPE-0x6cdb5acc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        210,
+                        210
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        301,
+                        303
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        373,
+                        373
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        338,
+                        338
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/APEPE-0x6cdb5acc.sol:496:30:\n    |\n496 |         swapTokensAtAmount = totalSupply() / 5000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/APEPE-0x6cdb5acc.sol:498:38:\n    |\n498 |         maxTransactionAmountBuy    = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/APEPE-0x6cdb5acc.sol:499:38:\n    |\n499 |         maxTransactionAmountSell   = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/APEPE-0x6cdb5acc.sol:500:38:\n    |\n500 |         maxWalletAmount            = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/APEPE-0x6cdb5acc.sol:641:29:\n    |\n641 |         require(newAmount > totalSupply() / 1000000, \"SwapTokensAtAmount must be greater than 0.0001% of total supply\");\n    |                             ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/APEPE-0x6cdb5acc.sol:689:34:\n    |\n689 |             _maxWalletAmount >= (totalSupply() / (10 ** decimals())) / 100, \n    |                                  ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/APEPE-0x6cdb5acc.sol:726:43:\n    |\n726 |             _maxTransactionAmountBuy  >= (totalSupply() / (10 ** decimals())) / 1000 && \n    |                                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/APEPE-0x6cdb5acc.sol:727:43:\n    |\n727 |             _maxTransactionAmountSell >= (totalSupply() / (10 ** decimals()))/ 1000, \n    |                                           ^^^^^^^^^^^\n\n"
+}

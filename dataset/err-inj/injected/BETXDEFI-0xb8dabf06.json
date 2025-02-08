@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "BETXDEFI",
+    "inj_file": "dataset/err-inj/injected/BETXDEFI-0xb8dabf06.sol",
+    "orig_file": "dataset/err-inj/origin/BETXDEFI-0xb8dabf06.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        336,
+                        336
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        340,
+                        340
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        237,
+                        237
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        35,
+                        39
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        255,
+                        270
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

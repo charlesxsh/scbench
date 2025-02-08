@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "EBIN",
+    "inj_file": "dataset/err-inj/injected/EBIN-0xd886555c.sol",
+    "orig_file": "dataset/err-inj/origin/EBIN-0xd886555c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        182,
+                        184
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        195,
+                        198
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        183,
+                        183
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+644;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/EBIN-0xd886555c.sol:180:9:\n    |\n180 |         return _balances[account]+644;    }\n    |         ^^^^^^\n\n"
+}

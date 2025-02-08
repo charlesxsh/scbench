@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "ShitFlowz",
+    "inj_file": "dataset/err-inj/injected/ShitFlowz-0x83b060b6.sol",
+    "orig_file": "dataset/err-inj/origin/ShitFlowz-0x83b060b6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        482,
+                        482
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        276,
+                        280
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        63,
+                        63
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        406,
+                        406
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract ERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/ShitFlowz-0x83b060b6.sol:858:13:\n    |\n858 |             ERC20(_tokenAddress).transfer(msg.sender, ERC20(_tokenAddress).balanceOf(address(this)));\n    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

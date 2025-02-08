@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Goliath",
+    "inj_file": "dataset/err-inj/injected/Goliath-0x26923d0b.sol",
+    "orig_file": "dataset/err-inj/origin/Goliath-0x26923d0b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        330,
+                        332
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        137,
+                        137
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        337,
+                        339
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        142,
+                        142
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        307,
+                        307
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/Goliath-0x26923d0b.sol:1205:27:\n     |\n1205 |             newAmount >= (totalSupply() * 1) / 100000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Goliath-0x26923d0b.sol:1209:27:\n     |\n1209 |             newAmount <= (totalSupply() * 5) / 1000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Goliath-0x26923d0b.sol:1218:25:\n     |\n1218 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Goliath-0x26923d0b.sol:1226:25:\n     |\n1226 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Goliath-0x26923d0b.sol:1362:34:\n     |\n1362 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Goliath-0x26923d0b.sol:1377:34:\n     |\n1377 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Goliath-0x26923d0b.sol:1384:40:\n     |\n1384 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Goliath-0x26923d0b.sol:1482:35:\n     |\n1482 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

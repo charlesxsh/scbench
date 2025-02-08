@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Dark_BTC",
+    "inj_file": "dataset/err-inj/injected/Dark_BTC-0x3bb13e89.sol",
+    "orig_file": "dataset/err-inj/origin/Dark_BTC-0x3bb13e89.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        421,
+                        421
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        30,
+                        30
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        455,
+                        461
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        460,
+                        460
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Dark_BTC-0x3bb13e89.sol:453:9:\n    |\n453 |         return false;\n    |         ^^^^^^\n\n"
+}

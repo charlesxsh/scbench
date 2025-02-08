@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x4d940f5c.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x4d940f5c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        78,
+                        78
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        158,
+                        160
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        137,
+                        137
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        102,
+                        102
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        140,
+                        142
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Token-0x4d940f5c.sol:223:36:\n    |\n223 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

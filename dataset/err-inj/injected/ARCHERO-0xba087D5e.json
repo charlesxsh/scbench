@@ -1,0 +1,112 @@
+{
+    "erc": "20",
+    "contract": "ARCHERO",
+    "inj_file": "dataset/err-inj/injected/ARCHERO-0xba087D5e.sol",
+    "orig_file": "dataset/err-inj/origin/ARCHERO-0xba087D5e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        259,
+                        259
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        263,
+                        263
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        210,
+                        210
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        217,
+                        217
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        205,
+                        206
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        182,
+                        182
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+864;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

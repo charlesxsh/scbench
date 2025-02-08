@@ -1,0 +1,58 @@
+{
+    "erc": "20",
+    "contract": "BingoTokenContract",
+    "inj_file": "dataset/err-inj/injected/BingoGameContract-0x15ee9cf6.sol",
+    "orig_file": "dataset/err-inj/origin/BingoGameContract-0x15ee9cf6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1063,
+                        1119
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        331,
+                        352
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1118,
+                        1118
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n    --> dataset/err-inj/injected/BingoGameContract-0x15ee9cf6.sol:1041:9:\n     |\n1041 |         return false;\n     |         ^^^^^^\n\n"
+}

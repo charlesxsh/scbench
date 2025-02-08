@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "PEPEKING",
+    "inj_file": "dataset/err-inj/injected/PEPEKING-0xcf96e273.sol",
+    "orig_file": "dataset/err-inj/origin/PEPEKING-0xcf96e273.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        363,
+                        363
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        383,
+                        383
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        361,
+                        361
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        367,
+                        367
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        378,
+                        379
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        268,
+                        268
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        123,
+                        123
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        272,
+                        272
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+174;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/PEPEKING-0xcf96e273.sol:270:124:\n    |\n270 |  ... balances[account]+174;    function transfer(address recipient, uint256 amount) ...\n    |                                         ^^^^^^^^\n\n"
+}

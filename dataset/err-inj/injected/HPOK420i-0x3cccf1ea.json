@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "HPOK420i",
+    "inj_file": "dataset/err-inj/injected/HPOK420i-0x3cccf1ea.sol",
+    "orig_file": "dataset/err-inj/origin/HPOK420i-0x3cccf1ea.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        190,
+                        190
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        185,
+                        185
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+644;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

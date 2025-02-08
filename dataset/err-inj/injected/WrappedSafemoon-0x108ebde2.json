@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "WrappedSafemoon",
+    "inj_file": "dataset/err-inj/injected/WrappedSafemoon-0x108ebde2.sol",
+    "orig_file": "dataset/err-inj/origin/WrappedSafemoon-0x108ebde2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        65,
+                        65
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        144,
+                        144
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        116,
+                        116
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+393;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

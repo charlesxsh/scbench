@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "JACKandKING",
+    "inj_file": "dataset/err-inj/injected/JACKandKING-0x71c77ae9.sol",
+    "orig_file": "dataset/err-inj/origin/JACKandKING-0x71c77ae9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _approved, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1325,
+                        1325
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1558,
+                        1568
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1590,
+                        1590
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,31 @@
+{
+    "erc": "20",
+    "contract": "ERC20NOISE",
+    "inj_file": "dataset/err-inj/injected/ERC20NOISE-0x848fDb54.sol",
+    "orig_file": "dataset/err-inj/origin/ERC20NOISE-0x848fDb54.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        111,
+                        111
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(msg.sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "'NoneType' object has no attribute 'source_mapping'"
+}

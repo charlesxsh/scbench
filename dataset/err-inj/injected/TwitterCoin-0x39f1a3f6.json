@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "TwitterCoin",
+    "inj_file": "dataset/err-inj/injected/TwitterCoin-0x39f1a3f6.sol",
+    "orig_file": "dataset/err-inj/origin/TwitterCoin-0x39f1a3f6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        49,
+                        49
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        144,
+                        146
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        185,
+                        185
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+408;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        318,
+                        318
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

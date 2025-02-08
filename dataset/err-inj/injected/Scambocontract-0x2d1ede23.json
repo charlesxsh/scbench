@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Scambocontract",
+    "inj_file": "dataset/err-inj/injected/Scambocontract-0x2d1ede23.sol",
+    "orig_file": "dataset/err-inj/origin/Scambocontract-0x2d1ede23.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        594,
+                        594
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        201,
+                        201
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        600,
+                        600
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        202,
+                        202
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        607,
+                        609
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Scambocontract-0x2d1ede23.sol:660:34:\n    |\n660 |             uint256 heldTokens = balanceOf(recipient);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Scambocontract-0x2d1ede23.sol:930:33:\n    |\n930 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Scambocontract-0x2d1ede23.sol:930:54:\n    |\n930 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Scambocontract-0x2d1ede23.sol:934:29:\n    |\n934 |         return accuracy.mul(balanceOf(uniswapV2Pair).mul(2)).div(getCirculatingSupply());\n    |                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Scambocontract-0x2d1ede23.sol:953:17:\n    |\n953 |         require(balanceOf(from) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Scambocontract-0x2d1ede23.sol:967:17:\n    |\n967 |         require(balanceOf(from) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "RussianRoulette",
+    "inj_file": "dataset/err-inj/injected/RussianRoulette-0x9b24f834.sol",
+    "orig_file": "dataset/err-inj/origin/RussianRoulette-0x9b24f834.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        660,
+                        664
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        473,
+                        473
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        959,
+                        959
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1011,
+                        1011
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        746,
+                        746
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        830,
+                        830
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        999,
+                        999
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        684,
+                        685
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/RussianRoulette-0x9b24f834.sol:940:9:\n    |\n940 |         IERC20(uniswapV2Pair).approve(address(_uniswapV2Router), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

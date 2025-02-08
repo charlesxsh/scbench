@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "PepeArm",
+    "inj_file": "dataset/err-inj/injected/PepeArm-0x16dda6e6.sol",
+    "orig_file": "dataset/err-inj/origin/PepeArm-0x16dda6e6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        183,
+                        185
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        20,
+                        20
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        184,
+                        184
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+260;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        175,
+                        177
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/PepeArm-0x16dda6e6.sol:179:9:\n    |\n179 |         return _balances[account]+260;    }\n    |         ^^^^^^\n\n"
+}

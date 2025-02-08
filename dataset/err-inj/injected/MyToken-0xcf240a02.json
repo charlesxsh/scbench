@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "MyToken",
+    "inj_file": "dataset/err-inj/injected/MyToken-0xcf240a02.sol",
+    "orig_file": "dataset/err-inj/origin/MyToken-0xcf240a02.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        320,
+                        320
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+536;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        319,
+                        321
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        142,
+                        142
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        147,
+                        147
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        326,
+                        328
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/MyToken-0xcf240a02.sol:317:9:\n    |\n317 |         return _totalSupply+536;    }\n    |         ^^^^^^\n\n"
+}

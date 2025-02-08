@@ -1,0 +1,113 @@
+{
+    "erc": "20",
+    "contract": "BabyDoge",
+    "inj_file": "dataset/err-inj/injected/BabyDoge-0xb7b100cc.sol",
+    "orig_file": "dataset/err-inj/origin/BabyDoge-0xb7b100cc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        253,
+                        253
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        229,
+                        229
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        217,
+                        217
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        212,
+                        213
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        198,
+                        198
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

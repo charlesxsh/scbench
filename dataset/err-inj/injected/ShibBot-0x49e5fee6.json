@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "ShibBot",
+    "inj_file": "dataset/err-inj/injected/ShibBot-0x49e5fee6.sol",
+    "orig_file": "dataset/err-inj/origin/ShibBot-0x49e5fee6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        243,
+                        243
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        203,
+                        205
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        43,
+                        43
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        211,
+                        213
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibBot-0x49e5fee6.sol:229:17:\n    |\n229 |         require(balanceOf(recipient).add(amount) <= _maxWalletSize, \"Exceeds the maxWalletSize\");\n    |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibBot-0x49e5fee6.sol:269:25:\n    |\n269 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibBot-0x49e5fee6.sol:278:25:\n    |\n278 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibBot-0x49e5fee6.sol:285:44:\n    |\n285 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibBot-0x49e5fee6.sol:403:35:\n    |\n403 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibBot-0x49e5fee6.sol:412:85:\n    |\n412 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\n"
+}

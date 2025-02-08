@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "WARM",
+    "inj_file": "dataset/err-inj/injected/WARM-0xB98178b6.sol",
+    "orig_file": "dataset/err-inj/origin/WARM-0xB98178b6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        339,
+                        339
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        217,
+                        217
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+804;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        307,
+                        307
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/WARM-0xB98178b6.sol:218:14:\n    |\n218 |     function shouldContractSwap(address sender, address recipient, uint256 amount) internal view returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^^\n\n"
+}

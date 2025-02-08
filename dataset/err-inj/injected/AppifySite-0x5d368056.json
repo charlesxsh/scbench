@@ -1,0 +1,112 @@
+{
+    "erc": "20",
+    "contract": "AppifySite",
+    "inj_file": "dataset/err-inj/injected/AppifySite-0x5d368056.sol",
+    "orig_file": "dataset/err-inj/origin/AppifySite-0x5d368056.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        526,
+                        526
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1290,
+                        1293
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        524,
+                        524
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        523,
+                        523
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1273,
+                        1273
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        439,
+                        439
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        373,
+                        376
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        328,
+                        328
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/AppifySite-0x5d368056.sol:387:14:\n    |\n387 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

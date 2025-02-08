@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "bananagum",
+    "inj_file": "dataset/err-inj/injected/bananagum-0xeffb49da.sol",
+    "orig_file": "dataset/err-inj/origin/bananagum-0xeffb49da.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        145,
+                        145
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        33,
+                        33
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        148,
+                        150
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/bananagum-0xeffb49da.sol:463:28:\n    |\n463 |         require(newNum >= (totalSupply() * 2 / 1000)/1e18, \"Cannot set max buy amount lower than 0.2%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/bananagum-0xeffb49da.sol:469:28:\n    |\n469 |         require(newNum >= (totalSupply() * 2 / 1000)/1e18, \"Cannot set max sell amount lower than 0.2%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/bananagum-0xeffb49da.sol:475:28:\n    |\n475 |         require(newNum >= (totalSupply() * 3 / 1000)/1e18, \"Cannot set max wallet amount lower than 0.3%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/bananagum-0xeffb49da.sol:482:29:\n    |\n482 |   \t    require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/bananagum-0xeffb49da.sol:483:29:\n    |\n483 |   \t    require(newAmount <= totalSupply() * 1 / 1000, \"Swap amount cannot be higher than 0.1% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\n"
+}

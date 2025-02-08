@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "PepeOfWallstreet",
+    "inj_file": "dataset/err-inj/injected/PepeOfWallstreet-0xcb27e0b9.sol",
+    "orig_file": "dataset/err-inj/origin/PepeOfWallstreet-0xcb27e0b9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        121,
+                        121
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        176,
+                        176
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        104,
+                        104
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+129;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

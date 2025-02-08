@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "TokenProtocol",
+    "inj_file": "dataset/err-inj/injected/TokenProtocol-0x2e51E0eb.sol",
+    "orig_file": "dataset/err-inj/origin/TokenProtocol-0x2e51E0eb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        141,
+                        141
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        243,
+                        243
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        245,
+                        245
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        250,
+                        250
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        255,
+                        255
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        235,
+                        235
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        237,
+                        237
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        153,
+                        155
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

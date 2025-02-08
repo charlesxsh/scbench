@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "TheFatherofMEMES",
+    "inj_file": "dataset/err-inj/injected/TheFatherofMEMES-0x7d348991.sol",
+    "orig_file": "dataset/err-inj/origin/TheFatherofMEMES-0x7d348991.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        188,
+                        190
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        200,
+                        200
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        197,
+                        201
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        19,
+                        19
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/TheFatherofMEMES-0x7d348991.sol:192:9:\n    |\n192 |         return false;\n    |         ^^^^^^\n\n"
+}

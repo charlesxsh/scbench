@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "TruthfulAI",
+    "inj_file": "dataset/err-inj/injected/TruthfulAI-0x88817985.sol",
+    "orig_file": "dataset/err-inj/origin/TruthfulAI-0x88817985.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        60,
+                        60
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        189,
+                        189
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        185,
+                        185
+                    ],
+                    "to_replace": [
+                        "    function decimals() external pure override returns (uint8) { return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        184,
+                        184
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        55,
+                        55
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/TruthfulAI-0x88817985.sol:182:98:\n    |\n182 |  ...  { return _decimals+3;    function symbol() external pure override returns ( ...\n    |                                         ^^^^^^\n\n"
+}

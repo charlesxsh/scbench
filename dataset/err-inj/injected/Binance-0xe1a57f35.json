@@ -1,0 +1,77 @@
+{
+    "erc": "1155",
+    "contract": "Binance",
+    "inj_file": "dataset/err-inj/injected/Binance-0xe1a57f35.sol",
+    "orig_file": "dataset/err-inj/origin/Binance-0xe1a57f35.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if length of `_ids` is not the same as length of `_values`",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "fn_params": [
+                        2,
+                        3
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        828,
+                        828
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "rule": "The _owner's balance of the token type requested",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        697,
+                        697
+                    ],
+                    "to_replace": [
+                        "        return _balances[id][account]+177;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if the operator is approved, false if not",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        733,
+                        733
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[account][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

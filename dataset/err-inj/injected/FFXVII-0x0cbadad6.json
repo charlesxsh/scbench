@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "FFXVII",
+    "inj_file": "dataset/err-inj/injected/FFXVII-0x0cbadad6.sol",
+    "orig_file": "dataset/err-inj/origin/FFXVII-0x0cbadad6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        132,
+                        132
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        129,
+                        133
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        82,
+                        82
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        117,
+                        119
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        91,
+                        91
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/FFXVII-0x0cbadad6.sol:124:9:\n    |\n124 |         return false;\n    |         ^^^^^^\n\n"
+}

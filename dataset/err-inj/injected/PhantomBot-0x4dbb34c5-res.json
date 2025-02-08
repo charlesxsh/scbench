@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success). Callers MUST NOT assume that false is never returned!",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success). Callers MUST NOT assume that false is never returned!",
+                "function": "approve"
+            },
+            {
+                "rule": "Returns the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule by returning an altered allowance value. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from an owner. In the given code, the function returns the allowance amount with an additional 613 added to it (`_allowances[owner][spender] + 613`), which is not compliant with the standard requirement of returning the exact allowed amount.",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

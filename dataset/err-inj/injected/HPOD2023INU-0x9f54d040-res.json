@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO. The interface of the contract HPOD2023INU does not contain the function `name() public view returns (string)`.",
+            "YES",
+            "YES\n\nThe function `balanceOf` in the provided code modifies the actual balance of the account by adding 978 to the `_balances[account]`. According to ERC-20 standards, the `balanceOf` function should return the exact number of tokens that an account holds, without any modification or condition. The addition of 978 to the balance violates this rule as it does not accurately reflect the account's true balance."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

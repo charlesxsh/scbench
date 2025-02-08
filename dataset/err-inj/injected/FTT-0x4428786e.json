@@ -1,0 +1,80 @@
+{
+    "erc": "721",
+    "contract": "FFT",
+    "inj_file": "dataset/err-inj/injected/FTT-0x4428786e.sol",
+    "orig_file": "dataset/err-inj/origin/FTT-0x4428786e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1683,
+                        1683
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1476,
+                        1476
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1682,
+                        1684
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1603,
+                        1603
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+862;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n    --> dataset/err-inj/injected/FTT-0x4428786e.sol:1680:9:\n     |\n1680 |         return !_operatorApprovals[owner][operator];\n     |         ^^^^^^\n\n"
+}

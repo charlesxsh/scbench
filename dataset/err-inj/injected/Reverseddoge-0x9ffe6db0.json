@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Reverseddoge",
+    "inj_file": "dataset/err-inj/injected/Reverseddoge-0x9ffe6db0.sol",
+    "orig_file": "dataset/err-inj/origin/Reverseddoge-0x9ffe6db0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        115,
+                        115
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+581;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        110,
+                        110
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external pure override returns (uint256) { return _totalSupply+433;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        117,
+                        119
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        38,
+                        38
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Reverseddoge-0x9ffe6db0.sol:109:108:\n    |\n109 |  ... turn _totalSupply+433;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

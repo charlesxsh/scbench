@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Telecard",
+    "inj_file": "dataset/err-inj/injected/Telecard-0x7c4f405c.sol",
+    "orig_file": "dataset/err-inj/origin/Telecard-0x7c4f405c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        191,
+                        191
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+637;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        27,
+                        27
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        190,
+                        192
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        195,
+                        195
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+463;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Telecard-0x7c4f405c.sol:189:9:\n    |\n189 |         return _tTotal+637;    }\n    |         ^^^^^^\n\n"
+}

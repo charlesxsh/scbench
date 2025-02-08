@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "SHIB2020",
+    "inj_file": "dataset/err-inj/injected/SHIB2020-0xfadbca1d.sol",
+    "orig_file": "dataset/err-inj/origin/SHIB2020-0xfadbca1d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        221,
+                        221
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        94,
+                        94
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        244,
+                        246
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        437,
+                        437
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIB2020-0xfadbca1d.sol:890:29:\n    |\n890 |   \t    require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIB2020-0xfadbca1d.sol:891:29:\n    |\n891 |   \t    require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIB2020-0xfadbca1d.sol:897:28:\n    |\n897 |         require(newNum >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.5%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIB2020-0xfadbca1d.sol:902:28:\n    |\n902 |         require(newNum >= (totalSupply() * 15 / 1000)/1e18, \"Cannot set maxWallet lower than 1.5%\");\n    |                            ^^^^^^^^^^^\n\n"
+}

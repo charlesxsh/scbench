@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "TechnoMechanicus",
+    "inj_file": "dataset/err-inj/injected/TechnoMechanicus-0x3f814a8f.sol",
+    "orig_file": "dataset/err-inj/origin/TechnoMechanicus-0x3f814a8f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        219,
+                        219
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+305;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        215,
+                        215
+                    ],
+                    "to_replace": [
+                        "    function transfer(address recipient, uint256 amount) public override returns (bool) {_transfer(msg.sender, recipient, amount);return false;}\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+280;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/TechnoMechanicus-0x3f814a8f.sol:214:124:\n    |\n214 |  ... balances[account]+280;    function transfer(address recipient, uint256 amount) ...\n    |                                         ^^^^^^^^\n\n"
+}

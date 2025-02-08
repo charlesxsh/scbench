@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `getApproved` function must return the approved address for the specific token ID, not a hardcoded or incorrect value.",
+                "function": "getApproved"
+            },
+            {
+                "rule": "The `safeTransferFrom` function must check if the recipient is a smart contract and call `onERC721Received` on it, ensuring the return value matches the expected selector.",
+                "function": "safeTransferFrom"
+            },
+            {
+                "rule": "allowance function must return the remaining number of tokens that spender will be allowed to spend on behalf of owner through transferFrom. This value changes when approve or transferFrom are called.",
+                "function": "function allowance(address owner, address spender) public view virtual override returns (uint256)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

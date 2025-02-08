@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "BIAOAI",
+    "inj_file": "dataset/err-inj/injected/BIAOAI-0xA289d232.sol",
+    "orig_file": "dataset/err-inj/origin/BIAOAI-0xA289d232.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        159,
+                        161
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        95,
+                        95
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        240,
+                        240
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        160,
+                        160
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+651;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BIAOAI-0xA289d232.sol:158:9:\n    |\n158 |         return _balances[account]+651;    }\n    |         ^^^^^^\n\n"
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "function": "constructor",
+        "contract": "CMBToken",
+        "rule": "emit 'Transfer' when tokens are transferred, including zero value transfers",
+        "type": "emit",
+        "filepath": "dataset/audited/contracts/CMBToken.sol",
+        "llm_can_detect": true
+    },
+    {
+        "function": "transfer",
+        "contract": "CMBToken",
+        "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event",
+        "type": "throw",
+        "filepath": "dataset/audited/contracts/CMBToken.sol",
+        "llm_can_detect": true
+    },
+    {
+        "function": "transferFrom",
+        "contract": "CMBToken",
+        "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event",
+        "type": "throw",
+        "filepath": "dataset/audited/contracts/CMBToken.sol",
+        "llm_can_detect": true
+    }
+]

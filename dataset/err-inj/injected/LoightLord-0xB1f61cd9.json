@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "LoightLord",
+    "inj_file": "dataset/err-inj/injected/LoightLord-0xB1f61cd9.sol",
+    "orig_file": "dataset/err-inj/origin/LoightLord-0xB1f61cd9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        23,
+                        23
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        74,
+                        76
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        27,
+                        31
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        94,
+                        103
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        102,
+                        102
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n  --> dataset/err-inj/injected/LoightLord-0xB1f61cd9.sol:85:9:\n   |\n85 |         return false;\n   |         ^^^^^^\n\n"
+}

@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "decimals - Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            },
+            {
+                "rule": "allowance - Returns the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `decimals()` in the provided code violates the ERC-20 standard rule regarding the number of decimal places a token can be divided into. According to the ERC-20 standard, the `decimals()` function should return a constant value that defines the smallest unit of the token for display and transaction purposes. In the given code, the function returns `_decimals + 3`, which results in a dynamic return value of 11 instead of the constant 8 defined by `_decimals`. This implementation can lead to confusion and inconsistency in how the token's decimal places are handled across platforms and contracts, which is contrary to the purpose of having a standard method to define token divisibility.",
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule regarding the allowance mechanism. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from an owner's account. However, in the given code, the function returns the value of `_allowances[owner][spender]` incremented by 828, which does not accurately reflect the actual allowed amount. This modification can lead to incorrect behavior in interactions with other contracts or services that expect the standard implementation of an ERC-20 token.",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

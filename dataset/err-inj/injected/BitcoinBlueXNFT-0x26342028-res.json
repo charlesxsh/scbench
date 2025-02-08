@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "YES\n\nThe `transferFrom` function in the provided code violates the ERC-20 rule that requires indicating whether the token transfer was successful. The function is defined to always return `false`, regardless of whether the transfer was actually successful or not. According to ERC-20 standards, the function should return `true` if the transfer succeeds, to correctly indicate the outcome of the operation.",
+            "NO"
+        ],
+        "can_detect": [
+            null,
+            true,
+            true
+        ],
+        "error": [
+            "'inj_fn'",
+            null,
+            null
+        ]
+    }
+}

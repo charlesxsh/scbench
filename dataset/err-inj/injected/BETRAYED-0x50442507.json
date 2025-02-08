@@ -1,0 +1,59 @@
+{
+    "erc": "20",
+    "contract": "BETRAYED",
+    "inj_file": "dataset/err-inj/injected/BETRAYED-0x50442507.sol",
+    "orig_file": "dataset/err-inj/origin/BETRAYED-0x50442507.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+332;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        320,
+                        320
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        339,
+                        339
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BETRAYED-0x50442507.sol:214:124:\n    |\n214 |  ... balances[account]+332;    function transfer(address recipient, uint256 amount) ...\n    |                                         ^^^^^^^^\n\n"
+}

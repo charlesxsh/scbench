@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "BURNINGMAN",
+    "inj_file": "dataset/err-inj/injected/BURNINGMAN-0x16623549.sol",
+    "orig_file": "dataset/err-inj/origin/BURNINGMAN-0x16623549.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        357,
+                        360
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        165,
+                        165
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        359,
+                        359
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        313,
+                        313
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BURNINGMAN-0x16623549.sol:355:9:\n    |\n355 |         return false;\n    |         ^^^^^^\n\n"
+}

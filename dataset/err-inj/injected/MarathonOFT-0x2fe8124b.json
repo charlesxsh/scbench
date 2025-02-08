@@ -1,0 +1,102 @@
+{
+    "erc": "20",
+    "contract": "MarathonOFT",
+    "inj_file": "dataset/err-inj/injected/MarathonOFT-0x2fe8124b.sol",
+    "orig_file": "dataset/err-inj/origin/MarathonOFT-0x2fe8124b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        342,
+                        342
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        428,
+                        428
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        279,
+                        280
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        189,
+                        191
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        99,
+                        99
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        53,
+                        53
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        241,
+                        243
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/MarathonOFT-0x2fe8124b.sol:288:34:\n    |\n288 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/MarathonOFT-0x2fe8124b.sol:308:36:\n    |\n308 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/MarathonOFT-0x2fe8124b.sol:432:36:\n    |\n432 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

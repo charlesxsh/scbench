@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "HarryPotterTrumpPeterGriffin50Inu",
+    "inj_file": "dataset/err-inj/injected/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        316,
+                        320
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        57,
+                        57
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        160,
+                        160
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        176,
+                        176
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        48,
+                        48
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol:173:70:\n    |\n173 |     function _maxWalletToken() public view returns (uint256) {return totalSupply() * _maxWalletPercent / denominator;}\n    |                                                                      ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol:174:67:\n    |\n174 |     function _maxTxAmount() public view returns (uint256) {return totalSupply() * _maxTxAmountPercent / denominator;}\n    |                                                                   ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol:175:73:\n    |\n175 |     function _maxTransferAmount() public view returns (uint256) {return totalSupply() * _maxTransferPercent / denominator;}\n    |                                                                         ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol:209:26:\n    |\n209 |         uint256 newTx = (totalSupply() * _buy) / 10000;\n    |                          ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol:210:32:\n    |\n210 |         uint256 newTransfer = (totalSupply() * _trans) / 10000;\n    |                                ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol:211:30:\n    |\n211 |         uint256 newWallet = (totalSupply() * _wallet) / 10000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/HarryPotterTrumpPeterGriffin50Inu-0x2072b57a.sol:215:25:\n    |\n215 |         uint256 limit = totalSupply().mul(5).div(1000);\n    |                         ^^^^^^^^^^^\n\n"
+}

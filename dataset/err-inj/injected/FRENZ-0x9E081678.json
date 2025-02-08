@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "FRENZ",
+    "inj_file": "dataset/err-inj/injected/FRENZ-0x9E081678.sol",
+    "orig_file": "dataset/err-inj/origin/FRENZ-0x9E081678.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        76,
+                        76
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        198,
+                        200
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        74,
+                        74
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        193,
+                        196
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        179,
+                        179
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+459;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/FRENZ-0x9E081678.sol:232:25:\n    |\n232 |                 require(balanceOf(to) + amount <= maxWalletAmount, \"Exceeds the max wallet.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FRENZ-0x9E081678.sol:248:44:\n    |\n248 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FRENZ-0x9E081678.sol:298:73:\n    |\n298 |         uniswapRouterV2.addLiquidityETH{value: msg.value}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                         ^^^^^^^^^\n\n"
+}

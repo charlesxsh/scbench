@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "SemiAutoSniperBot",
+    "inj_file": "dataset/err-inj/injected/SemiAutoSniperBot-0xc8c6d2d5.sol",
+    "orig_file": "dataset/err-inj/origin/SemiAutoSniperBot-0xc8c6d2d5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        137,
+                        139
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        68,
+                        68
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        76,
+                        76
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        151,
+                        153
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SemiAutoSniperBot-0xc8c6d2d5.sol:718:27:\n    |\n718 |             newAmount >= (totalSupply() * 1) / 100000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SemiAutoSniperBot-0xc8c6d2d5.sol:722:27:\n    |\n722 |             newAmount <= (totalSupply() * 5) / 1000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SemiAutoSniperBot-0xc8c6d2d5.sol:731:25:\n    |\n731 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SemiAutoSniperBot-0xc8c6d2d5.sol:739:25:\n    |\n739 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\n"
+}

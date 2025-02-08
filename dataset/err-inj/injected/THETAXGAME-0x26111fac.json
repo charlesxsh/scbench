@@ -1,0 +1,99 @@
+{
+    "erc": "20",
+    "contract": "THETAXGAME",
+    "inj_file": "dataset/err-inj/injected/THETAXGAME-0x26111fac.sol",
+    "orig_file": "dataset/err-inj/origin/THETAXGAME-0x26111fac.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        219,
+                        219
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        225,
+                        225
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        218,
+                        218
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        213,
+                        214
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        190,
+                        190
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+773;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

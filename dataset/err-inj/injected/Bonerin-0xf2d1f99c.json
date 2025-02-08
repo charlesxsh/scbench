@@ -1,0 +1,102 @@
+{
+    "erc": "20",
+    "contract": "Bonerin",
+    "inj_file": "dataset/err-inj/injected/Bonerin-0xf2d1f99c.sol",
+    "orig_file": "dataset/err-inj/origin/Bonerin-0xf2d1f99c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        370,
+                        370
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        547,
+                        549
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        762,
+                        762
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1035,
+                        1035
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        676,
+                        676
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        613,
+                        614
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        714,
+                        714
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

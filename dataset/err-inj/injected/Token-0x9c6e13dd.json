@@ -1,0 +1,87 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x9c6e13dd.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x9c6e13dd.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        347,
+                        347
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+247;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": []
+                }
+            ],
+            "inj_fn": "constructor"
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        469,
+                        469
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        461,
+                        461
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        518,
+                        518
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

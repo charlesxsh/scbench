@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "chad",
+    "inj_file": "dataset/err-inj/injected/chad-0x6bcc2d08.sol",
+    "orig_file": "dataset/err-inj/origin/chad-0x6bcc2d08.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        407,
+                        407
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        183,
+                        186
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        379,
+                        387
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        434,
+                        434
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/chad-0x6bcc2d08.sol:442:34:\n    |\n442 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/chad-0x6bcc2d08.sol:466:36:\n    |\n466 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/chad-0x6bcc2d08.sol:610:36:\n    |\n610 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

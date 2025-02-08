@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "MegaLendFinance",
+    "inj_file": "dataset/err-inj/injected/MegaLendFinance-0xa47dfdc7.sol",
+    "orig_file": "dataset/err-inj/origin/MegaLendFinance-0xa47dfdc7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        536,
+                        536
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        340,
+                        340
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+74;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        377,
+                        385
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        33,
+                        33
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/MegaLendFinance-0xa47dfdc7.sol:683:9:\n    |\n683 |         IERC20(uniswapV2Pair).approve(\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

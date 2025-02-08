@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "POGREFLECTIONS",
+    "inj_file": "dataset/err-inj/injected/POGREFLECTIONS-0x5bb89123.sol",
+    "orig_file": "dataset/err-inj/origin/POGREFLECTIONS-0x5bb89123.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        195,
+                        195
+                    ],
+                    "to_replace": [
+                        "    function allowance(address owner, address spender) public view override returns (uint256) {return _allowances[owner][spender]+221;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        80,
+                        80
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        198,
+                        198
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        193,
+                        193
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+673;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/POGREFLECTIONS-0x5bb89123.sol:192:124:\n    |\n192 |  ... balances[account]+673;    function transfer(address recipient, uint256 amount) ...\n    |                                         ^^^^^^^^\n\n"
+}

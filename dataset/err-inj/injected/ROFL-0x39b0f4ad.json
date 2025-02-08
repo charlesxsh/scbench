@@ -1,0 +1,117 @@
+{
+    "erc": "20",
+    "contract": "ROFL",
+    "inj_file": "dataset/err-inj/injected/ROFL-0x39b0f4ad.sol",
+    "orig_file": "dataset/err-inj/origin/ROFL-0x39b0f4ad.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        236
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        231,
+                        231
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        223,
+                        223
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        218,
+                        219
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        277,
+                        277
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        32,
+                        32
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        211,
+                        214
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/ROFL-0x39b0f4ad.sol:309:9:\n    |\n309 |         IERC20(uniswapV2Pair).approve(address(uniswapV2Router), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

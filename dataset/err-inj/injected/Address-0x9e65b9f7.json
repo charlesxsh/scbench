@@ -1,0 +1,96 @@
+{
+    "erc": "721",
+    "contract": "Store0001",
+    "inj_file": "dataset/err-inj/injected/Address-0x9e65b9f7.sol",
+    "orig_file": "dataset/err-inj/origin/Address-0x9e65b9f7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1173,
+                        1176
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        987,
+                        987
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1303,
+                        1303
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1451,
+                        1451
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1445,
+                        1445
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1241,
+                        1241
+                    ],
+                    "to_replace": [
+                        "        return address(793);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,87 @@
+{
+    "erc": "20",
+    "contract": "CsprlToken",
+    "inj_file": "dataset/err-inj/injected/CsprlToken-0x822ba32d.sol",
+    "orig_file": "dataset/err-inj/origin/CsprlToken-0x822ba32d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2032,
+                        2032
+                    ],
+                    "to_replace": [
+                        "        returns! (bool success)\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1216,
+                        1216
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+902;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2049,
+                        2051
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1118,
+                        1118
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1208,
+                        1210
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got '!'\n    --> dataset/err-inj/injected/CsprlToken-0x822ba32d.sol:2027:16:\n     |\n2027 |         returns! (bool success)\n     |                ^\n\n"
+}

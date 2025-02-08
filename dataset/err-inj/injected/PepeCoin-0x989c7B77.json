@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "PepeCoin",
+    "inj_file": "dataset/err-inj/injected/PepeCoin-0x989c7B77.sol",
+    "orig_file": "dataset/err-inj/origin/PepeCoin-0x989c7B77.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        213,
+                        213
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        187,
+                        187
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+865;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

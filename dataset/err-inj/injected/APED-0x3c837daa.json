@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "APED",
+    "inj_file": "dataset/err-inj/injected/APED-0x3c837daa.sol",
+    "orig_file": "dataset/err-inj/origin/APED-0x3c837daa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        19,
+                        19
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        182,
+                        185
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        163,
+                        163
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        193,
+                        193
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/APED-0x3c837daa.sol:356:9:\n    |\n356 |         IERC20(_tokenAddy).transfer(MarketingWallet, _amount);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

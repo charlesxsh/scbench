@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            },
+            {
+                "rule": "Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "_approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `decimals()` in the provided code violates the typical ERC-20 token standard rule regarding the number of decimal places a token can be divided into. According to the ERC-20 standard, the `decimals()` function should return a constant value that represents the smallest unit of the token for display and transaction purposes. In the given code, the function returns `_decimals + 3`, which results in a dynamic return value of 12, rather than a constant value. This can lead to confusion and inconsistency in how the token's decimals are handled across platforms and contracts, as it deviates from the expected behavior of returning a fixed number of decimals.",
+            "NO",
+            "YES\n\nThe function `approve` in the provided code does not emit the required `Approval` event as specified by the ERC-20 standard. According to the ERC-20 standard, an `Approval` event should be emitted whenever the `approve` function is successfully executed to notify the network of the approval. The provided code lacks this implementation, thus violating the ERC-20 rule."
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

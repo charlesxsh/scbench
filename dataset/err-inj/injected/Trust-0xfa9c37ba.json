@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "Trust",
+    "inj_file": "dataset/err-inj/injected/Trust-0xfa9c37ba.sol",
+    "orig_file": "dataset/err-inj/origin/Trust-0xfa9c37ba.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        110,
+                        112
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        85,
+                        85
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        188,
+                        188
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        60,
+                        60
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        118,
+                        120
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Trust-0xfa9c37ba.sol:641:27:\n    |\n641 |             newAmount >= (totalSupply() * 1) / 100000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Trust-0xfa9c37ba.sol:645:27:\n    |\n645 |             newAmount <= (totalSupply() * 100) / 1000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Trust-0xfa9c37ba.sol:654:25:\n    |\n654 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Trust-0xfa9c37ba.sol:662:25:\n    |\n662 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\n"
+}

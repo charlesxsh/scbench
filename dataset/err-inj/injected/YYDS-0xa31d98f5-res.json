@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "name function should return the name of the token.",
+                "function": "name()"
+            },
+            {
+                "rule": "transfer function should throw if the message caller's account balance does not have enough tokens to spend.",
+                "function": "_transfer()"
+            },
+            {
+                "rule": "approve function should allow _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "approve()"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer()"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO\n\nThe provided smart contract code does not violate the ERC-20 rule for the `totalSupply()` function. The ERC-20 standard requires a `totalSupply()` function that returns the total token supply. In the provided code, the `totalSupply()` function is not explicitly shown, but the `_totalSupply` variable is initialized and managed within the contract, which suggests that the function could be implemented or is implicitly handled. The contract does not show any modifications or deviations from the standard that would constitute a violation regarding the `totalSupply()` function.",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe function `name()` in the provided code returns an empty string `\"\"`, which violates the ERC-20 standard requirement that the `name()` function should return a non-empty string representing the name of the token, such as \"MyToken\". Returning an empty string does not meet this specification.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,112 @@
+{
+    "erc": "20",
+    "contract": "TheAsFeaturedInMeal",
+    "inj_file": "dataset/err-inj/injected/TheAsFeaturedInMeal-0x4aaf27fa.sol",
+    "orig_file": "dataset/err-inj/origin/TheAsFeaturedInMeal-0x4aaf27fa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        154,
+                        154
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+712;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        267,
+                        267
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        263,
+                        263
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        867,
+                        870
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        850,
+                        850
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        264,
+                        264
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        186,
+                        189
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/TheAsFeaturedInMeal-0x4aaf27fa.sol:187:14:\n    |\n187 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

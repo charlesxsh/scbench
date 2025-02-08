@@ -1,0 +1,95 @@
+{
+    "erc": "721",
+    "contract": "SanboxGuys",
+    "inj_file": "dataset/err-inj/injected/SanboxGuys-0x93e076df.sol",
+    "orig_file": "dataset/err-inj/origin/SanboxGuys-0x93e076df.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1355,
+                        1355
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1145,
+                        1145
+                    ],
+                    "to_replace": [
+                        "        return address(249);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1412,
+                        1412
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1406,
+                        1406
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1458,
+                        1458
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1224,
+                        1224
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

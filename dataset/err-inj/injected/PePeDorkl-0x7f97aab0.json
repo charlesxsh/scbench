@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "PePeDorkl",
+    "inj_file": "dataset/err-inj/injected/PePeDorkl-0x7f97aab0.sol",
+    "orig_file": "dataset/err-inj/origin/PePeDorkl-0x7f97aab0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        254,
+                        254
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+125;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        233,
+                        235
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        104,
+                        104
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PePeDorkl-0x7f97aab0.sol:187:25:\n    |\n187 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the max limitations in single Wallet.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PePeDorkl-0x7f97aab0.sol:197:44:\n    |\n197 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PePeDorkl-0x7f97aab0.sol:238:98:\n    |\n238 |  ... dress(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.t ...\n    |                                         ^^^^^^^^^\n\n"
+}

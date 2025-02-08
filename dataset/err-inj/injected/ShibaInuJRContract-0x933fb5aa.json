@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "ShibaInuJRContract",
+    "inj_file": "dataset/err-inj/injected/ShibaInuJRContract-0x933fb5aa.sol",
+    "orig_file": "dataset/err-inj/origin/ShibaInuJRContract-0x933fb5aa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        599,
+                        599
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        590,
+                        590
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external view override returns (uint256) { return _totalSupply+956;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        612,
+                        618
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        206,
+                        206
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/ShibaInuJRContract-0x933fb5aa.sol:589:108:\n    |\n589 |  ... turn _totalSupply+956;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

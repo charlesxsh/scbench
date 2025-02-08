@@ -1,0 +1,117 @@
+{
+    "erc": "20",
+    "contract": "trollz",
+    "inj_file": "dataset/err-inj/injected/trollz-0xba610365.sol",
+    "orig_file": "dataset/err-inj/origin/trollz-0xba610365.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        232,
+                        232
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        318,
+                        318
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        233,
+                        233
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        180,
+                        180
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        313,
+                        314
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        321,
+                        321
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        164,
+                        164
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        48,
+                        48
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/trollz-0xba610365.sol:169:92:\n    |\n169 |     function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/trollz-0xba610365.sol:169:113:\n    |\n169 |     function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/trollz-0xba610365.sol:272:31:\n    |\n272 |         bool aboveThreshold = balanceOf(address(this)) >= swapThreshold;\n    |                               ^^^^^^^^^\n\n"
+}

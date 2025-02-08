@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "TOXIN",
+    "inj_file": "dataset/err-inj/injected/TOXIN-0x14c5e750.sol",
+    "orig_file": "dataset/err-inj/origin/TOXIN-0x14c5e750.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        399,
+                        402
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        237,
+                        237
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1109,
+                        1112
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1092,
+                        1092
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        512,
+                        512
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        597,
+                        597
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        596,
+                        596
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        446,
+                        449
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        401,
+                        401
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/TOXIN-0x14c5e750.sol:398:9:\n    |\n398 |         return false;\n    |         ^^^^^^\n\n"
+}

@@ -1,0 +1,72 @@
+{
+    "erc": "20",
+    "contract": "Bozo",
+    "inj_file": "dataset/err-inj/injected/Bozo-0x0300197e.sol",
+    "orig_file": "dataset/err-inj/origin/Bozo-0x0300197e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1728,
+                        1728
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1780,
+                        1780
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1590,
+                        1590
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+724;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

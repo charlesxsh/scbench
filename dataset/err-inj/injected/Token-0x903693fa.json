@@ -1,0 +1,107 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x903693fa.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x903693fa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        394,
+                        396
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        379,
+                        379
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        736,
+                        736
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        620,
+                        620
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        716,
+                        716
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        724,
+                        724
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        628,
+                        628
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Token-0x903693fa.sol:532:33:\n    |\n532 |         return _totalSupply.sub(balanceOf(deadAddress));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Token-0x903693fa.sol:579:40:\n    |\n579 |         if(recipient == uniswapPair && balanceOf(address(uniswapPair)) == 0){\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Token-0x903693fa.sol:595:44:\n    |\n595 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Token-0x903693fa.sol:611:25:\n    |\n611 |                 require(balanceOf(recipient).add(finalAmount) <= _walletMax);\n    |                         ^^^^^^^^^\n\n"
+}

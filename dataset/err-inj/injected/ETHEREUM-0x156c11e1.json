@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "ETHEREUM",
+    "inj_file": "dataset/err-inj/injected/ETHEREUM-0x156c11e1.sol",
+    "orig_file": "dataset/err-inj/origin/ETHEREUM-0x156c11e1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        319,
+                        321
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        124,
+                        124
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        531,
+                        531
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        288,
+                        290
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/ETHEREUM-0x156c11e1.sol:1346:34:\n     |\n1346 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/ETHEREUM-0x156c11e1.sol:1361:34:\n     |\n1361 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/ETHEREUM-0x156c11e1.sol:1368:40:\n     |\n1368 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/ETHEREUM-0x156c11e1.sol:1466:35:\n     |\n1466 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

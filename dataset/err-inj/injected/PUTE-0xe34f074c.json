@@ -1,0 +1,70 @@
+{
+    "erc": "20",
+    "contract": "PUTE",
+    "inj_file": "dataset/err-inj/injected/PUTE-0xe34f074c.sol",
+    "orig_file": "dataset/err-inj/origin/PUTE-0xe34f074c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        29,
+                        29
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        797,
+                        801
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        790,
+                        790
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PUTE-0xe34f074c.sol:536:33:\n    |\n536 |                 require(amount+ balanceOf(to)<=_maxWalletToken,\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PUTE-0xe34f074c.sol:568:44:\n    |\n568 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PUTE-0xe34f074c.sol:948:17:\n    |\n948 |         require(balanceOf(msg.sender) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PUTE-0xe34f074c.sol:962:17:\n    |\n962 |         require(balanceOf(msg.sender) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\n"
+}

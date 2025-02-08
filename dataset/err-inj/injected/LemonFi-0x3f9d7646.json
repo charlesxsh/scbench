@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "LemonFi",
+    "inj_file": "dataset/err-inj/injected/LemonFi-0x3f9d7646.sol",
+    "orig_file": "dataset/err-inj/origin/LemonFi-0x3f9d7646.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        515,
+                        515
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        303,
+                        303
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+488;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        118,
+                        118
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        295,
+                        297
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/LemonFi-0x3f9d7646.sol:569:43:\n    |\n569 |         if (tradingStartTime == 0) return totalSupply();\n    |                                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LemonFi-0x3f9d7646.sol:573:19:\n    |\n573 |         if (res > totalSupply()) return totalSupply();\n    |                   ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LemonFi-0x3f9d7646.sol:573:41:\n    |\n573 |         if (res > totalSupply()) return totalSupply();\n    |                                         ^^^^^^^^^^^\n\n"
+}

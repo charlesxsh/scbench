@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "Linq2",
+    "inj_file": "dataset/err-inj/injected/Linq2-0x0f345425.sol",
+    "orig_file": "dataset/err-inj/origin/Linq2-0x0f345425.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        155,
+                        155
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        329,
+                        331
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        169,
+                        169
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        354,
+                        363
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        516,
+                        516
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/Linq2-0x0f345425.sol:1037:17:\n     |\n1037 |         require(totalSupply() > 0);\n     |                 ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Linq2-0x0f345425.sol:1041:43:\n     |\n1041 |                 (amount).mul(magnitude) / totalSupply()\n     |                                           ^^^^^^^^^^^\n\n"
+}

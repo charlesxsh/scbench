@@ -1,0 +1,68 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_tokenTransfer"
+            },
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "manualSwapTokens"
+            },
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "swapTokensForEth"
+            },
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "manualSendBalance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe function `transferFrom` in the provided code does not explicitly emit the `Transfer` event as required by the ERC-20 standard. The ERC-20 standard mandates that a `Transfer` event be emitted on successful execution of the `transfer` and `transferFrom` functions to indicate a transfer of tokens between accounts.\n\nIn the provided code, the `transferFrom` function calls `_transfer`, which in turn calls `_tokenTransfer` for the actual token transfer logic. However, neither `_transfer` nor `_tokenTransfer` includes an `emit` statement for the `Transfer` event. This omission means that the contract does not comply with the ERC-20 standard requirement to emit a `Transfer` event whenever tokens are transferred, which is crucial for transparency and tracking token movements on the blockchain.",
+            null
+        ],
+        "can_detect": [
+            true,
+            true,
+            null
+        ],
+        "error": [
+            null,
+            null,
+            "'inj_fn'"
+        ]
+    }
+}

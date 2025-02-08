@@ -1,0 +1,103 @@
+{
+    "erc": "20",
+    "contract": "METAPEPE",
+    "inj_file": "dataset/err-inj/injected/METAPEPE-0xf66f912b.sol",
+    "orig_file": "dataset/err-inj/origin/METAPEPE-0xf66f912b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        181,
+                        181
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        175,
+                        175
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        176,
+                        176
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        171,
+                        172
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        12,
+                        12
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        156,
+                        159
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/METAPEPE-0xf66f912b.sol:277:9:\n    |\n277 |         IERC20(_tokenAddy).transfer(MarketingWallet, _amount);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

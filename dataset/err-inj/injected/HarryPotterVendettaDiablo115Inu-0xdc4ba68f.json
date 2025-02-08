@@ -1,0 +1,70 @@
+{
+    "erc": "20",
+    "contract": "HarryPotterVendettaDiablo115Inu",
+    "inj_file": "dataset/err-inj/injected/HarryPotterVendettaDiablo115Inu-0xdc4ba68f.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotterVendettaDiablo115Inu-0xdc4ba68f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        186,
+                        186
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+568;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        194,
+                        196
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        19,
+                        19
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

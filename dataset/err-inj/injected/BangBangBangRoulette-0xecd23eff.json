@@ -1,0 +1,57 @@
+{
+    "erc": "20",
+    "contract": "BangBangBang",
+    "inj_file": "dataset/err-inj/injected/BangBangBangRoulette-0xecd23eff.sol",
+    "orig_file": "dataset/err-inj/origin/BangBangBangRoulette-0xecd23eff.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        280,
+                        300
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        862,
+                        912
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        261,
+                        261
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Documented parameter \"from\" not found in the parameter list of the function.\n   --> dataset/err-inj/injected/BangBangBangRoulette-0xecd23eff.sol:830:5:\n    |\n830 |     /**\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Documented parameter \"to\" not found in the parameter list of the function.\n   --> dataset/err-inj/injected/BangBangBangRoulette-0xecd23eff.sol:830:5:\n    |\n830 |     /**\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Documented parameter \"amount\" not found in the parameter list of the function.\n   --> dataset/err-inj/injected/BangBangBangRoulette-0xecd23eff.sol:830:5:\n    |\n830 |     /**\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BangBangBangRoulette-0xecd23eff.sol:827:16:\n    |\n827 |         return transferFrom(msg.sender, to, amount);\n    |                ^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "PEPESREPUBLIC",
+    "inj_file": "dataset/err-inj/injected/PEPESREPUBLIC-0x9A5b2032.sol",
+    "orig_file": "dataset/err-inj/origin/PEPESREPUBLIC-0x9A5b2032.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        99,
+                        101
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        84,
+                        86
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        54,
+                        54
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        394,
+                        394
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESREPUBLIC-0x9A5b2032.sol:404:21:\n    |\n404 |             require(balanceOf(recipient) + amount <= maxWalletLimit,\n    |                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESREPUBLIC-0x9A5b2032.sol:412:25:\n    |\n412 |                 require(balanceOf(recipient) + amount <= maxWalletLimit,\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESREPUBLIC-0x9A5b2032.sol:473:35:\n    |\n473 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

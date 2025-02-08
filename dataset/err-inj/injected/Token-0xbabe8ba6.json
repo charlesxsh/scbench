@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0xbabe8ba6.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0xbabe8ba6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        258,
+                        260
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        77,
+                        77
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        59,
+                        59
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        237,
+                        239
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        275,
+                        275
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Token-0xbabe8ba6.sol:311:34:\n    |\n311 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Token-0xbabe8ba6.sol:331:36:\n    |\n331 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Token-0xbabe8ba6.sol:469:36:\n    |\n469 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

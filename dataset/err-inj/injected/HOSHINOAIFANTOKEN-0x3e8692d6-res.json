@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function transferFrom should return true on successful transfer.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The decimals function should return the number of decimals the token uses. The implementation returns an incorrect number of decimals (12 instead of 9).",
+                "function": "decimals"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "YES\n\nThe function `decimals()` in the provided code violates the ERC-20 standard rule regarding the number of decimal places a token can be divided into. According to the ERC-20 standard, the `decimals()` function should return a constant value that defines the smallest unit of the token. In the given code, the function returns `_decimals + 3`, which is not a constant value but rather a modification of the `_decimals` constant, making it dynamic and potentially misleading. This does not adhere to the standard practice of defining a fixed number of decimal places for token divisibility and display purposes.",
+            "YES\n\nThe `transferFrom` function in the provided code returns `false` unconditionally, which violates the ERC-20 standard rule that requires indicating whether the token transfer was successful. According to the ERC-20 standard, the `transferFrom` function should return `true` if the operation was successful, ensuring that the function caller can verify the success of the token transfer. The unconditional return of `false` in this function implementation can mislead function callers and external contracts interacting with this token, as it suggests that the transfer has failed even when it may have succeeded. This is a critical issue in terms of contract reliability and trustworthiness in the Ethereum ecosystem."
+        ],
+        "can_detect": [
+            null,
+            true,
+            true
+        ],
+        "error": [
+            "'inj_fn'",
+            null,
+            null
+        ]
+    }
+}

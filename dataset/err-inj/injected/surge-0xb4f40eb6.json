@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "surge",
+    "inj_file": "dataset/err-inj/injected/surge-0xb4f40eb6.sol",
+    "orig_file": "dataset/err-inj/origin/surge-0xb4f40eb6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        204,
+                        204
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        140,
+                        142
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        35,
+                        35
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        144,
+                        147
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/surge-0xb4f40eb6.sol:521:42:\n    |\n521 |                         require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/surge-0xb4f40eb6.sol:528:38:\n    |\n528 |                     require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/surge-0xb4f40eb6.sol:533:40:\n    |\n533 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/surge-0xb4f40eb6.sol:613:35:\n    |\n613 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,48 @@
+{
+    "erc": "20",
+    "contract": "HIPvPGame",
+    "inj_file": "dataset/err-inj/injected/HiLoGameEscrow-0xb8f29848.sol",
+    "orig_file": "dataset/err-inj/origin/HiLoGameEscrow-0xb8f29848.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        819,
+                        819
+                    ],
+                    "to_replace": [
+                        "        return !transferFrom(msg.sender, to, amount);\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

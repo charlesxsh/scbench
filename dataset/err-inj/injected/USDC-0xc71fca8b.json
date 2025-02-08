@@ -1,0 +1,67 @@
+{
+    "erc": "1155",
+    "contract": "USDC",
+    "inj_file": "dataset/err-inj/injected/USDC-0xc71fca8b.sol",
+    "orig_file": "dataset/err-inj/origin/USDC-0xc71fca8b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": "throw if `_to` is the zero address",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        743,
+                        743
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "rule": "The _owner's balance of the token type requested",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        611,
+                        611
+                    ],
+                    "to_replace": [
+                        "        return _balances[id][account]+786;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "callee": "onERC1155Received",
+                    "rule": "call 'onERC1155Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

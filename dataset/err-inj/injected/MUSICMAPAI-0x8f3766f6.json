@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "MUSICMAPAI",
+    "inj_file": "dataset/err-inj/injected/MUSICMAPAI-0x8f3766f6.sol",
+    "orig_file": "dataset/err-inj/origin/MUSICMAPAI-0x8f3766f6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        24,
+                        27
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        223,
+                        230
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        229,
+                        229
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+343;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        198,
+                        200
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/MUSICMAPAI-0x8f3766f6.sol:216:9:\n    |\n216 |         return _allowances[owner][spender]+343;    }\n    |         ^^^^^^\n\n"
+}

@@ -1,0 +1,125 @@
+{
+    "erc": "20",
+    "contract": "HarryPotterPepe",
+    "inj_file": "dataset/err-inj/injected/HarryPotterPepe-0xc74fe3b0.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotterPepe-0xc74fe3b0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        278,
+                        278
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        157,
+                        161
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        313,
+                        321
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1120,
+                        1120
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        447,
+                        447
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        446,
+                        446
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1122,
+                        1122
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        378,
+                        378
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1137,
+                        1137
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        319,
+                        320
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function definition.\n   --> dataset/err-inj/injected/HarryPotterPepe-0xc74fe3b0.sol:456:1:\n    |\n456 | }\n    | ^\n\n"
+}

@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "transferFrom: Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success). Callers MUST NOT assume that false is never returned!",
+                "function": "transfer"
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success). Callers MUST NOT assume that false is never returned!",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe `transfer` function in the provided contract code violates the ERC-20 rule that requires indicating whether the operation was successful. According to the ERC-20 standard, the `transfer` function should return a boolean value that indicates the success of the operation. However, in the given code, the `transfer` function always returns `false`, regardless of whether the `_transfer` function (which actually processes the transfer) completes successfully or not. This does not provide accurate feedback on the operation's success, as required by the standard.",
+            "YES",
+            null
+        ],
+        "can_detect": [
+            true,
+            true,
+            null
+        ],
+        "error": [
+            null,
+            null,
+            "'inj_fn'"
+        ]
+    }
+}

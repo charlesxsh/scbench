@@ -1,0 +1,81 @@
+{
+    "erc": "721",
+    "contract": "ERC721Enumerable",
+    "inj_file": "dataset/err-inj/injected/DigitalElonNFTStaking-0xe4759ac4.sol",
+    "orig_file": "dataset/err-inj/origin/DigitalElonNFTStaking-0xe4759ac4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1031,
+                        1035
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1327,
+                        1333
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1598,
+                        1613
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1227,
+                        1227
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+827;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

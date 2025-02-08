@@ -1,0 +1,100 @@
+{
+    "erc": "20",
+    "contract": "SUNNI",
+    "inj_file": "dataset/err-inj/injected/SUNNI-0x6dc85e7b.sol",
+    "orig_file": "dataset/err-inj/origin/SUNNI-0x6dc85e7b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        275,
+                        279
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        24,
+                        24
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        294,
+                        294
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        364,
+                        364
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        369,
+                        369
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        331,
+                        331
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        338,
+                        338
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SUNNI-0x6dc85e7b.sol:276:16:\n    |\n276 |         return approve(spender, type(uint256).max);\n    |                ^^^^^^^\n\n"
+}

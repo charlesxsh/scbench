@@ -1,0 +1,98 @@
+{
+    "erc": "20",
+    "contract": "FLORIDA",
+    "inj_file": "dataset/err-inj/injected/Address-0x6fc72647.sol",
+    "orig_file": "dataset/err-inj/origin/Address-0x6fc72647.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        441,
+                        441
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        461,
+                        461
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        440,
+                        440
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        463,
+                        463
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        424,
+                        425
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        416,
+                        416
+                    ],
+                    "to_replace": [
+                        "        return _allowances[theOwner][theSpender]+456;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

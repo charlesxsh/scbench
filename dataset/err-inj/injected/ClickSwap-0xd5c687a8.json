@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "ClickSwap",
+    "inj_file": "dataset/err-inj/injected/ClickSwap-0xd5c687a8.sol",
+    "orig_file": "dataset/err-inj/origin/ClickSwap-0xd5c687a8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        517,
+                        517
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        442,
+                        442
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        299,
+                        299
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+131;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

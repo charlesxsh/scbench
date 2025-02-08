@@ -1,0 +1,99 @@
+{
+    "erc": "20",
+    "contract": "FTDex",
+    "inj_file": "dataset/err-inj/injected/FTDex-0x8ea69ca6.sol",
+    "orig_file": "dataset/err-inj/origin/FTDex-0x8ea69ca6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        268,
+                        268
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        275,
+                        275
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        269,
+                        269
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        256,
+                        263
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        247,
+                        247
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

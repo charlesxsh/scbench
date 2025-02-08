@@ -1,0 +1,110 @@
+{
+    "erc": "20",
+    "contract": "RXRP",
+    "inj_file": "dataset/err-inj/injected/RXRP-0x8351fdb5.sol",
+    "orig_file": "dataset/err-inj/origin/RXRP-0x8351fdb5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        725,
+                        725
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        172,
+                        172
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        742,
+                        745
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        206,
+                        206
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        146,
+                        149
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        196,
+                        196
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/RXRP-0x8351fdb5.sol:148:14:\n    |\n148 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

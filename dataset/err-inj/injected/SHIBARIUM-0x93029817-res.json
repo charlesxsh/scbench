@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "name function should return the name of the token.",
+                "function": "name()"
+            },
+            {
+                "rule": "decimals function should return the number of decimals the token uses.",
+                "function": "decimals()"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe code provided for the `name()` function in the SHIBARIUM contract returns an empty string (`\"\"`). According to ERC-20 standards, the `name()` function should return the name of the token, such as \"MyToken\". Returning an empty string does not meet this requirement, as it does not provide any meaningful identification for the token. Therefore, this implementation violates the ERC rule that requires the function to return \"the name of the token.\"",
+            "YES\n\nThe code provided does violate the typical ERC-20 token standard rule regarding the `decimals` function. According to the ERC-20 standard, the `decimals` function should return the number of decimal places the token can be divided into, which is used to define the smallest unit of the token for display and transaction purposes. \n\nIn the given code, the `decimals` function is implemented to return `_decimals + 3`, where `_decimals` is a constant set to 8. Therefore, the function will return 11, which is not a direct reflection of the actual `_decimals` value defined in the contract. This can lead to confusion and inconsistency in how the token's divisibility is represented and handled in transactions and displays, potentially leading to errors in token handling in wallets and exchanges that interact with this contract. \n\nThe ERC-20 standard expects the `decimals` function to return a constant, unmodified value that accurately represents the divisibility of the token."
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

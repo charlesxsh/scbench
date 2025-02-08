@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "symbol: Returns the symbol of the token. E.g. \"HIX\".",
+                "function": "symbol"
+            },
+            {
+                "rule": "Transfer: MUST trigger when tokens are transferred, including zero value transfers. A token contract which creates new tokens SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe code provided does violate the ERC-20 rule that the `totalSupply` function should return the total token supply. According to the ERC-20 standard, the `totalSupply` function should consistently return the total amount of tokens in circulation. In the given code, the `totalSupply` function is returning `_tTotal + 420`, which means it is artificially inflating the total supply by 420 tokens. This does not accurately represent the total number of tokens initially defined by `_tTotal`, thus violating the ERC-20 requirement for the `totalSupply` function.",
+            "YES\n\nThe code provided for the `symbol()` function in the `Schizophrenia` contract returns an empty string (`\"\"`). According to ERC-20 standards, the `symbol()` function should return a string that represents the symbol of the token. Returning an empty string technically violates the informal expectation or guideline that the token should have a meaningful symbol, which is typically a short string identifying the token. However, it does not technically violate the ERC-20 standard itself, as the standard does not specify what the string should contain, only that it should return a string. Nonetheless, returning an empty string is generally not useful for the purposes of identifying the token in interfaces and applications, which expect a non-empty and meaningful symbol."
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

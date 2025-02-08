@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "hpos10n",
+    "inj_file": "dataset/err-inj/injected/hpos10n-0xb15e910a.sol",
+    "orig_file": "dataset/err-inj/origin/hpos10n-0xb15e910a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        59,
+                        59
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        313,
+                        317
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": [
+                        "    function approve(address spender, uint256 amount) public override returns (bool) {_approve(msg.sender, spender, amount);return false;}\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        170,
+                        170
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply+668;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/hpos10n-0xb15e910a.sol:169:105:\n    |\n169 |  ... turn _totalSupply+668;    function balanceOf(address account) public view overr ...\n    |                                         ^^^^^^^^^\n\n"
+}

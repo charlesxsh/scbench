@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "EARNATOR_OFFICIAL",
+    "inj_file": "dataset/err-inj/injected/EARNATOR_OFFICIAL-0xE6A08a93.sol",
+    "orig_file": "dataset/err-inj/origin/EARNATOR_OFFICIAL-0xE6A08a93.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        201,
+                        201
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+365;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        305,
+                        305
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        105,
+                        105
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        200,
+                        202
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/EARNATOR_OFFICIAL-0xE6A08a93.sol:199:9:\n    |\n199 |         return _totalSupply+365;    }\n    |         ^^^^^^\n\n"
+}

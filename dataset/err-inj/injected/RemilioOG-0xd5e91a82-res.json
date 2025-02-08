@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "transferFrom: Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The transferFrom method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "approve: Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            null,
+            "YES\n\nThe `transfer` function in the provided code violates the ERC-20 rule that requires indicating whether the operation was successful. According to the ERC-20 standard, the `transfer` function should return a boolean value that indicates success (`true`) or failure (`false`). In the given code, the `transfer` function always returns `false`, regardless of whether the `_transfer` function (which actually processes the transfer) completes successfully or not. This implementation can mislead users and external contracts interacting with this token, as they will receive a response indicating failure even when the transfer is successful. This is not compliant with the standard behavior expected from an ERC-20 token's `transfer` function."
+        ],
+        "can_detect": [
+            true,
+            null,
+            true
+        ],
+        "error": [
+            null,
+            "'inj_fn'",
+            null
+        ]
+    }
+}

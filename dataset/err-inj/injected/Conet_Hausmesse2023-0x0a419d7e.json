@@ -1,0 +1,118 @@
+{
+    "erc": "721",
+    "contract": "Conet_Hausmesse2023",
+    "inj_file": "dataset/err-inj/injected/Conet_Hausmesse2023-0x0a419d7e.sol",
+    "orig_file": "dataset/err-inj/origin/Conet_Hausmesse2023-0x0a419d7e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1251,
+                        1259
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        923,
+                        928
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1436,
+                        1436
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1139,
+                        1139
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1442,
+                        1442
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1436,
+                        1436
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1286,
+                        1286
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1139,
+                        1139
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1442,
+                        1442
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/Conet_Hausmesse2023-0x0a419d7e.sol:1238:9:\n     |\n1238 |         safeTransferFrom(from, to, tokenId, \"\");\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

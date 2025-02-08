@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "BabyWBTC",
+    "inj_file": "dataset/err-inj/injected/BtcPrinter-0xE64c570E.sol",
+    "orig_file": "dataset/err-inj/origin/BtcPrinter-0xE64c570E.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        576,
+                        580
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        85,
+                        85
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        574,
+                        574
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) { return _allowances[holder][spender]+565;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        569,
+                        569
+                    ],
+                    "to_replace": [
+                        "    function decimals() external pure override returns (uint8) { return _decimals+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BtcPrinter-0xE64c570E.sol:568:98:\n    |\n568 |  ...  { return _decimals+3;    function symbol() external pure override returns ( ...\n    |                                         ^^^^^^\n\n"
+}

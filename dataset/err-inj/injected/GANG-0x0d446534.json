@@ -1,0 +1,81 @@
+{
+    "erc": "20",
+    "contract": "GANG",
+    "inj_file": "dataset/err-inj/injected/GANG-0x0d446534.sol",
+    "orig_file": "dataset/err-inj/origin/GANG-0x0d446534.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        371,
+                        371
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        261,
+                        261
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        231,
+                        231
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+550;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        347,
+                        347
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/GANG-0x0d446534.sol:231:124:\n    |\n231 |  ... balances[account]+550;    function _maxWalletToken() public view returns (uint256) {r ...\n    |                                         ^^^^^^^^^^^^^^^\n\n"
+}

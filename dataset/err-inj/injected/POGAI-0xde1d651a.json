@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "POGAI",
+    "inj_file": "dataset/err-inj/injected/POGAI-0xde1d651a.sol",
+    "orig_file": "dataset/err-inj/origin/POGAI-0xde1d651a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        195,
+                        199
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        198,
+                        198
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        203,
+                        203
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        202,
+                        202
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        197,
+                        198
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/POGAI-0xde1d651a.sol:193:9:\n    |\n193 |         return false;\n    |         ^^^^^^\n\n"
+}

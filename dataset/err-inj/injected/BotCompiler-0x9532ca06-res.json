@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "transfer: The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "approve: To prevent attack vectors like the one described here and discussed here, clients SHOULD make sure to create user interfaces in such a way that they set the allowance first to 0 before setting it to another value for the same spender. THOUGH The contract itself shouldn\u2019t enforce it, to allow backwards compatibility with contracts deployed before.",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES\n\nThe `transferFrom` function in the provided code does not explicitly check if the `_from` account has authorized the `msg.sender` to spend tokens on its behalf. This is typically managed by checking the `_allowances` mapping to ensure that the `msg.sender` has enough allowance to transfer the specified amount of tokens from the `_from` account. However, the provided `transferFrom` function simply calls `_transfer` without any such checks, thereby violating the ERC-20 rule that requires checking if the `_from` account has deliberately authorized the sender of the message via some mechanism."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

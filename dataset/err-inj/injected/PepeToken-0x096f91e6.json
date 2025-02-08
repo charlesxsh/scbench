@@ -1,0 +1,71 @@
+{
+    "erc": "20",
+    "contract": "PepeToken",
+    "inj_file": "dataset/err-inj/injected/PepeToken-0x096f91e6.sol",
+    "orig_file": "dataset/err-inj/origin/PepeToken-0x096f91e6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        283,
+                        283
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        287,
+                        287
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        206,
+                        206
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+754;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

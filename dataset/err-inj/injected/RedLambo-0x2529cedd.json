@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "RedLambo",
+    "inj_file": "dataset/err-inj/injected/RedLambo-0x2529cedd.sol",
+    "orig_file": "dataset/err-inj/origin/RedLambo-0x2529cedd.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        262,
+                        264
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        80,
+                        80
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        234,
+                        236
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        57,
+                        57
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        453,
+                        453
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/RedLambo-0x2529cedd.sol:311:34:\n    |\n311 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/RedLambo-0x2529cedd.sol:331:36:\n    |\n331 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/RedLambo-0x2529cedd.sol:456:36:\n    |\n456 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

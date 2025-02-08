@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "FreeTheRomans",
+    "inj_file": "dataset/err-inj/injected/FreeTheRomans-0xb3cF3C23.sol",
+    "orig_file": "dataset/err-inj/origin/FreeTheRomans-0xb3cF3C23.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        64,
+                        72
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        22,
+                        22
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        303,
+                        306
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        131,
+                        131
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        270,
+                        270
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/FreeTheRomans-0xb3cF3C23.sol:501:9:\n    |\n501 |         IERC20(tokenAdd).transfer(owner(), amount);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

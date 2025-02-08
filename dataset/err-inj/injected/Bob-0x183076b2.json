@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "Bob",
+    "inj_file": "dataset/err-inj/injected/Bob-0x183076b2.sol",
+    "orig_file": "dataset/err-inj/origin/Bob-0x183076b2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        277,
+                        292
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        30,
+                        34
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        350,
+                        350
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        328,
+                        328
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        346,
+                        346
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        338,
+                        338
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        327,
+                        327
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        283,
+                        290
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        235,
+                        235
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Bob-0x183076b2.sol:271:9:\n    |\n271 |         return true;\n    |         ^^^^^^\n\n"
+}

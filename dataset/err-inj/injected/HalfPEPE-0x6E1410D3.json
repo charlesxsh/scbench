@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "HalfPEPE",
+    "inj_file": "dataset/err-inj/injected/HalfPEPE-0x6E1410D3.sol",
+    "orig_file": "dataset/err-inj/origin/HalfPEPE-0x6E1410D3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        256,
+                        256
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        370,
+                        370
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        939,
+                        942
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        427,
+                        427
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        428,
+                        428
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        922,
+                        922
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        345,
+                        348
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        178,
+                        178
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        255,
+                        257
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/HalfPEPE-0x6E1410D3.sol:254:9:\n    |\n254 |         return \"\";    }\n    |         ^^^^^^\n\n"
+}

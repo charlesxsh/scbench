@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "CAFE",
+    "inj_file": "dataset/err-inj/injected/CAFE-0xc6b86a8a.sol",
+    "orig_file": "dataset/err-inj/origin/CAFE-0xc6b86a8a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        275,
+                        275
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        272,
+                        272
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        288,
+                        288
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        283,
+                        283
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        256,
+                        263
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        264,
+                        264
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

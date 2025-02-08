@@ -1,0 +1,106 @@
+{
+    "erc": "20",
+    "contract": "MASK",
+    "inj_file": "dataset/err-inj/injected/MASK-0x03667c1a.sol",
+    "orig_file": "dataset/err-inj/origin/MASK-0x03667c1a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        289,
+                        289
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        284,
+                        284
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        257,
+                        264
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        230,
+                        230
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

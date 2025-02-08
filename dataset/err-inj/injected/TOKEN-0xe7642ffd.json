@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "TOKEN",
+    "inj_file": "dataset/err-inj/injected/TOKEN-0xe7642ffd.sol",
+    "orig_file": "dataset/err-inj/origin/TOKEN-0xe7642ffd.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        306,
+                        306
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        339,
+                        339
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+894;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

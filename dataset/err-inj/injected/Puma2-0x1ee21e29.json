@@ -1,0 +1,103 @@
+{
+    "erc": "20",
+    "contract": "Puma2",
+    "inj_file": "dataset/err-inj/injected/Puma2-0x1ee21e29.sol",
+    "orig_file": "dataset/err-inj/origin/Puma2-0x1ee21e29.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        150,
+                        150
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        120,
+                        120
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        262,
+                        262
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        114,
+                        115
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        132,
+                        132
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        96,
+                        100
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

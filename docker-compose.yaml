@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./py:/scbench/py
+      - ./dataset:/scbench/dataset
+    working_dir: /scbench
+    command: celery -A tasks worker --loglevel=info --concurrency 1
+    scale: 16
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - PYTHONPATH=py
+  
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+networks:
+  default:
+    driver: bridge
+

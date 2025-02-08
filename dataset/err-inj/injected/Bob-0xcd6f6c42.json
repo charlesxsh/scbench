@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "Bob",
+    "inj_file": "dataset/err-inj/injected/Bob-0xcd6f6c42.sol",
+    "orig_file": "dataset/err-inj/origin/Bob-0xcd6f6c42.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        77,
+                        79
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        49,
+                        49
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        78,
+                        78
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        167,
+                        167
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n  --> dataset/err-inj/injected/Bob-0xcd6f6c42.sol:76:9:\n   |\n76 |         return 18+3;    }\n   |         ^^^^^^\n\n"
+}

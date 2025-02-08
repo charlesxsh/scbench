@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x6f605295.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x6f605295.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        887,
+                        887
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        922,
+                        924
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        945,
+                        949
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        866,
+                        866
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1110,
+                        1110
+                    ],
+                    "to_replace": [
+                        "        return 9+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/Token-0x6f605295.sol\n\nError: Member \"transfer\" not found or not visible after argument-dependent lookup in contract ERC20. Use \"address(...).transfer\" to access this address member.\n    --> dataset/err-inj/injected/Token-0x6f605295.sol:1202:9:\n     |\n1202 |         ERC20(_token).transfer(msg.sender, IERC20(_token).balanceOf(address(this)));\n     |         ^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,98 @@
+{
+    "erc": "20",
+    "contract": "BULLISH",
+    "inj_file": "dataset/err-inj/injected/BULLISH-0xFbE1c1D1.sol",
+    "orig_file": "dataset/err-inj/origin/BULLISH-0xFbE1c1D1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        308,
+                        308
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        409,
+                        409
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        374,
+                        374
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        346,
+                        346
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        353,
+                        353
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        370,
+                        370
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

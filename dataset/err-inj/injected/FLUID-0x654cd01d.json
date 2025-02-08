@@ -1,0 +1,72 @@
+{
+    "erc": "20",
+    "contract": "FLUID",
+    "inj_file": "dataset/err-inj/injected/FLUID-0x654cd01d.sol",
+    "orig_file": "dataset/err-inj/origin/FLUID-0x654cd01d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        163,
+                        165
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        189,
+                        189
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+776;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "HarryPotterObamaAmy10Inu",
+    "inj_file": "dataset/err-inj/injected/HarryPotterObamaAmy10Inu-0xe4904AaB.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotterObamaAmy10Inu-0xe4904AaB.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        392,
+                        392
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1111,
+                        1111
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        434,
+                        434
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        435,
+                        435
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1128,
+                        1128
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1113,
+                        1113
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        366,
+                        366
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        307,
+                        308
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,112 @@
+{
+    "erc": "20",
+    "contract": "BotCompiler",
+    "inj_file": "dataset/err-inj/injected/BotCompiler-0x9532ca06.sol",
+    "orig_file": "dataset/err-inj/origin/BotCompiler-0x9532ca06.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        242,
+                        242
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+569;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        329,
+                        329
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        337,
+                        337
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        349,
+                        349
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        345,
+                        345
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        327,
+                        327
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        282,
+                        289
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

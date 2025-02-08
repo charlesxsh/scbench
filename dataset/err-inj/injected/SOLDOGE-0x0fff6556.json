@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "SOLDOGE",
+    "inj_file": "dataset/err-inj/injected/SOLDOGE-0x0fff6556.sol",
+    "orig_file": "dataset/err-inj/origin/SOLDOGE-0x0fff6556.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        175,
+                        175
+                    ],
+                    "to_replace": [
+                        "      return _allowances[owner][spender]+441;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        159,
+                        161
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        163,
+                        169
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        20,
+                        23
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SOLDOGE-0x0fff6556.sol:173:31:\n    |\n173 |       return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SOLDOGE-0x0fff6556.sol:173:52:\n    |\n173 |       return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));\n    |                                                    ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SOLDOGE-0x0fff6556.sol:200:21:\n    |\n200 |           amount <= balanceOf(sender),\n    |                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SOLDOGE-0x0fff6556.sol:275:24:\n    |\n275 |       uint256 tokens = balanceOf(address(this));\n    |                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SOLDOGE-0x0fff6556.sol:312:29:\n    |\n312 |       bool aboveThreshold = balanceOf(address(this)) >= swapThreshold;\n    |                             ^^^^^^^^^\n\n"
+}

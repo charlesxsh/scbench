@@ -1,0 +1,57 @@
+{
+    "erc": "20",
+    "contract": "Crisis",
+    "inj_file": "dataset/err-inj/injected/Crisis-0x1bafa3ae.sol",
+    "orig_file": "dataset/err-inj/origin/Crisis-0x1bafa3ae.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        47,
+                        47
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        108,
+                        108
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        156,
+                        156
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

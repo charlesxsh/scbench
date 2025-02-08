@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "CSHIB",
+    "inj_file": "dataset/err-inj/injected/CSHIB-0xbd0a4faa.sol",
+    "orig_file": "dataset/err-inj/origin/CSHIB-0xbd0a4faa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        36,
+                        36
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        188,
+                        190
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        374,
+                        374
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        182,
+                        182
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+782;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/CSHIB-0xbd0a4faa.sol:905:42:\n    |\n905 |                         require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/CSHIB-0xbd0a4faa.sol:913:38:\n    |\n913 |                     require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/CSHIB-0xbd0a4faa.sol:918:34:\n    |\n918 | \t\tuint256 contractTokenBalance = balanceOf(address(this));\n    | \t\t                               ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/CSHIB-0xbd0a4faa.sol:1009:35:\n     |\n1009 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

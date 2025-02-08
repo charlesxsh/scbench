@@ -1,0 +1,81 @@
+{
+    "erc": "20",
+    "contract": "DRAGONBALL",
+    "inj_file": "dataset/err-inj/injected/DRAGONBALL-0x1fab20fc.sol",
+    "orig_file": "dataset/err-inj/origin/DRAGONBALL-0x1fab20fc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        171,
+                        171
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        256,
+                        256
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        260,
+                        260
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        187,
+                        187
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+868;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

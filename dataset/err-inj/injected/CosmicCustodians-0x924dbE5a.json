@@ -1,0 +1,91 @@
+{
+    "erc": "721",
+    "contract": "CosmicCustodians",
+    "inj_file": "dataset/err-inj/injected/CosmicCustodians-0x924dbE5a.sol",
+    "orig_file": "dataset/err-inj/origin/CosmicCustodians-0x924dbE5a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1158,
+                        1161
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        824,
+                        827
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        613,
+                        617
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        957,
+                        969
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": " throw if `msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        899,
+                        899
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "h",
+    "inj_file": "dataset/err-inj/injected/h-0x2c2fa989.sol",
+    "orig_file": "dataset/err-inj/origin/h-0x2c2fa989.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        107,
+                        107
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        110,
+                        110
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        129,
+                        129
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        23,
+                        23
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        124,
+                        124
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external pure override returns (uint256) { return _totalSupply+807;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/h-0x2c2fa989.sol:121:108:\n    |\n121 |  ... turn _totalSupply+807;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

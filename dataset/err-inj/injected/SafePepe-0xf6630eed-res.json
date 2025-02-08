@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer function must return a boolean value indicating whether the operation succeeded.",
+                "function": "function transfer(address recipient, uint256 amount) public virtual override returns (bool)"
+            },
+            {
+                "rule": "allowance function must return the remaining number of tokens that spender will be allowed to spend on behalf of owner through transferFrom. This value changes when approve or transferFrom are called.",
+                "function": "function allowance(address owner, address spender) public view virtual override returns (uint256)"
+            },
+            {
+                "rule": "The symbol function should return the symbol of the token, usually a shorter version of the name.",
+                "function": "function symbol() public view virtual override returns (string memory)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES\n\nThe code provided violates the ERC-20 rule for the `allowance` function. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from the owner's account. However, in the given code, the function returns the value of `_allowances[owner][spender]` incremented by 558, which does not accurately represent the allowed amount. This modification can lead to incorrect behavior in transactions and mislead users about the actual allowances set, potentially causing security and functional issues in the contract's operation."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

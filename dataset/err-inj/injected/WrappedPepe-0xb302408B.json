@@ -1,0 +1,52 @@
+{
+    "erc": "20",
+    "contract": "WrappedPepe",
+    "inj_file": "dataset/err-inj/injected/WrappedPepe-0xb302408B.sol",
+    "orig_file": "dataset/err-inj/origin/WrappedPepe-0xb302408B.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        71,
+                        71
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        60,
+                        60
+                    ],
+                    "to_replace": [
+                        "    return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

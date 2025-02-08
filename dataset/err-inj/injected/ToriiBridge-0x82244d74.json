@@ -1,0 +1,113 @@
+{
+    "erc": "20",
+    "contract": "ToriiBridge",
+    "inj_file": "dataset/err-inj/injected/ToriiBridge-0x82244d74.sol",
+    "orig_file": "dataset/err-inj/origin/ToriiBridge-0x82244d74.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        327,
+                        327
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        343,
+                        343
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        320,
+                        320
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        322,
+                        322
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        338,
+                        339
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+434;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        339,
+                        339
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/ToriiBridge-0x82244d74.sol:208:124:\n    |\n208 |  ... balances[account]+434;    function transfer(address recipient, uint256 amount) ...\n    |                                         ^^^^^^^^\n\n"
+}

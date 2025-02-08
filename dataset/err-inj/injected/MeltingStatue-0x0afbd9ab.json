@@ -1,0 +1,78 @@
+{
+    "erc": "721",
+    "contract": "MeltingStatue",
+    "inj_file": "dataset/err-inj/injected/MeltingStatue-0x0afbd9ab.sol",
+    "orig_file": "dataset/err-inj/origin/MeltingStatue-0x0afbd9ab.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1412,
+                        1412
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1259,
+                        1259
+                    ],
+                    "to_replace": [
+                        "        return address(812);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1296,
+                        1299
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1020,
+                        1020
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/MeltingStatue-0x0afbd9ab.sol:1288:9:\n     |\n1288 |         safeTransferFrom(from, to, tokenId, \"\");\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

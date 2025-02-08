@@ -1,0 +1,60 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "MUST trigger when tokens are transferred, including zero value transfers.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "MUST trigger on any successful call to approve(address _spender, uint256 _value).",
+                "function": "_approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe `transferFrom` function in the provided code does not check whether the `_from` account has authorized the sender of the message to spend tokens on its behalf. This is typically done by checking the `_allowances` mapping to ensure that the `msg.sender` has a sufficient allowance to transfer the specified amount of tokens from the `_from` account. However, in the provided code, there is no such check in the `transferFrom` function or in the `_transfer` function that it calls. This omission means that the function does not comply with the ERC-20 standard requirement to verify that the sender is authorized to transfer tokens from the `_from` account, thus violating the rule.",
+            "YES\n\nThe function `approve` in the provided code does not emit an 'Approval' event as required by the ERC-20 standard. The ERC-20 standard specifies that changes in allowances must be accompanied by the emission of an 'Approval' event to notify external observers of the change. The provided implementation updates the allowance but fails to emit any event, thus violating this rule."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

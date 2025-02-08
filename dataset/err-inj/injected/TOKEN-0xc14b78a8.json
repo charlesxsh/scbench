@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "TOKEN",
+    "inj_file": "dataset/err-inj/injected/TOKEN-0xc14b78a8.sol",
+    "orig_file": "dataset/err-inj/origin/TOKEN-0xc14b78a8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        129,
+                        131
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        15,
+                        15
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        78,
+                        80
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        79,
+                        79
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n  --> dataset/err-inj/injected/TOKEN-0xc14b78a8.sol:77:9:\n   |\n77 |         return _decimals+3;    }\n   |         ^^^^^^\n\n"
+}

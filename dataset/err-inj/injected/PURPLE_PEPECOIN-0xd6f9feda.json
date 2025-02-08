@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "PURPLE_PEPECOIN",
+    "inj_file": "dataset/err-inj/injected/PURPLE_PEPECOIN-0xd6f9feda.sol",
+    "orig_file": "dataset/err-inj/origin/PURPLE_PEPECOIN-0xd6f9feda.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        42,
+                        42
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        221,
+                        223
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        261,
+                        261
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        299,
+                        299
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        295,
+                        295
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PURPLE_PEPECOIN-0xd6f9feda.sol:269:25:\n    |\n269 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the _maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PURPLE_PEPECOIN-0xd6f9feda.sol:278:44:\n    |\n278 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PURPLE_PEPECOIN-0xd6f9feda.sol:332:85:\n    |\n332 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PURPLE_PEPECOIN-0xd6f9feda.sol:342:32:\n    |\n342 |         uint256 tokenBalance = balanceOf(address(this));\n    |                                ^^^^^^^^^\n\n"
+}

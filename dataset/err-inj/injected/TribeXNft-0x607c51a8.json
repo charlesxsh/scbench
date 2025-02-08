@@ -1,0 +1,71 @@
+{
+    "erc": "721",
+    "contract": "TribeXNft",
+    "inj_file": "dataset/err-inj/injected/TribeXNft-0x607c51a8.sol",
+    "orig_file": "dataset/err-inj/origin/TribeXNft-0x607c51a8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1578,
+                        1578
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1584,
+                        1584
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1527,
+                        1527
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

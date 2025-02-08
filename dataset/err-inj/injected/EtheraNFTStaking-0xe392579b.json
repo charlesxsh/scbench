@@ -1,0 +1,86 @@
+{
+    "erc": "721",
+    "contract": "ERC721Enumerable",
+    "inj_file": "dataset/err-inj/injected/EtheraNFTStaking-0xe392579b.sol",
+    "orig_file": "dataset/err-inj/origin/EtheraNFTStaking-0xe392579b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1024,
+                        1047
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        661,
+                        669
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        316,
+                        316
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        781,
+                        793
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        361,
+                        361
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"balanceOf\" not found or not visible after argument-dependent lookup in type(contract ERC721).\n    --> dataset/err-inj/injected/EtheraNFTStaking-0xe392579b.sol:1094:21:\n     |\n1094 |             index < ERC721.balanceOf(owner),\n     |                     ^^^^^^^^^^^^^^^^\n\n"
+}

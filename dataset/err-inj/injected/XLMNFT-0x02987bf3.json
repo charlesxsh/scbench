@@ -1,0 +1,96 @@
+{
+    "erc": "721",
+    "contract": "XLMNFT",
+    "inj_file": "dataset/err-inj/injected/XLMNFT-0x02987bf3.sol",
+    "orig_file": "dataset/err-inj/origin/XLMNFT-0x02987bf3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        728,
+                        728
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        925,
+                        929
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        861,
+                        861
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1133,
+                        1133
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1008,
+                        1008
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        942,
+                        942
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/XLMNFT-0x02987bf3.sol\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/XLMNFT-0x02987bf3.sol:1024:73:\n     |\n1024 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                                                         ^^^^^^^^^^^\n\n"
+}

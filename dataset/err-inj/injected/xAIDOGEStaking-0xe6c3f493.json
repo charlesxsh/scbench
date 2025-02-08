@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/xAIDOGEStaking-0xe6c3f493.sol",
+    "orig_file": "dataset/err-inj/origin/xAIDOGEStaking-0xe6c3f493.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        697,
+                        697
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        494,
+                        494
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        675,
+                        677
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        703,
+                        705
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        517,
+                        517
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/xAIDOGEStaking-0xe6c3f493.sol:756:34:\n    |\n756 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/xAIDOGEStaking-0xe6c3f493.sol:776:36:\n    |\n776 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/xAIDOGEStaking-0xe6c3f493.sol:908:36:\n    |\n908 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

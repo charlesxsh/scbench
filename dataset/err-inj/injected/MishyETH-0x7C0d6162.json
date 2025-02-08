@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "MishyETH",
+    "inj_file": "dataset/err-inj/injected/MishyETH-0x7C0d6162.sol",
+    "orig_file": "dataset/err-inj/origin/MishyETH-0x7C0d6162.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        230,
+                        230
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        117,
+                        119
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        60,
+                        60
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        110,
+                        110
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/MishyETH-0x7C0d6162.sol:698:27:\n    |\n698 |             newAmount >= (totalSupply() * 1) / 100000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/MishyETH-0x7C0d6162.sol:702:27:\n    |\n702 |             newAmount <= (totalSupply() * 5) / 1000,\n    |                           ^^^^^^^^^^^\n\n"
+}

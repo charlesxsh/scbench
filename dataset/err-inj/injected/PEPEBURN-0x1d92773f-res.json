@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transferFrom function should return true on success.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "allowance function should return the remaining amount allowed to be withdrawn by the spender, without any modifications or additions.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "",
+            "YES\n\nThe code provided for the `allowance` function in the `PEPEBURN` contract violates the ERC-20 standard rule regarding the allowance mechanism. According to the ERC-20 standard, the `allowance` function should return the amount of tokens that a spender is still allowed to withdraw from an owner. However, in the provided code, the function returns the value from the `_allowances` mapping plus an additional 326 tokens. This modification does not accurately reflect the actual allowed amount set by the owner for the spender, thus violating the standard's requirement."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

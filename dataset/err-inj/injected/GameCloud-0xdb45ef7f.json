@@ -1,0 +1,95 @@
+{
+    "erc": "20",
+    "contract": "GameCloud",
+    "inj_file": "dataset/err-inj/injected/GameCloud-0xdb45ef7f.sol",
+    "orig_file": "dataset/err-inj/origin/GameCloud-0xdb45ef7f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        438,
+                        438
+                    ],
+                    "to_replace": [
+                        "    function name() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        436,
+                        436
+                    ],
+                    "to_replace": [
+                        "    function decimals() external pure override returns (uint8) { return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        598,
+                        598
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        609,
+                        609
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        508,
+                        508
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        515,
+                        515
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/GameCloud-0xdb45ef7f.sol:436:98:\n    |\n436 |  ...  { return _decimals+3;    function symbol() external pure override returns ( ...\n    |                                         ^^^^^^\n\n"
+}

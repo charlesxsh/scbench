@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "ETHKing",
+    "inj_file": "dataset/err-inj/injected/ETHKing-0x407059C5.sol",
+    "orig_file": "dataset/err-inj/origin/ETHKing-0x407059C5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        154,
+                        154
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        245,
+                        247
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        253,
+                        256
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        156,
+                        156
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        317,
+                        317
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ETHKing-0x407059C5.sol:416:30:\n    |\n416 |         swapTokensAtAmount = totalSupply() / 5000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ETHKing-0x407059C5.sol:501:29:\n    |\n501 |         require(newAmount > totalSupply() / 1000000, \"SwapTokensAtAmount must be greater than 0.0001% of total supply\");\n    |                             ^^^^^^^^^^^\n\n"
+}

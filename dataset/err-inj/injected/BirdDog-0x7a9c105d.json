@@ -1,0 +1,72 @@
+{
+    "erc": "20",
+    "contract": "BirdDog",
+    "inj_file": "dataset/err-inj/injected/BirdDog-0x7a9c105d.sol",
+    "orig_file": "dataset/err-inj/origin/BirdDog-0x7a9c105d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        170,
+                        170
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        186,
+                        186
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+179;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

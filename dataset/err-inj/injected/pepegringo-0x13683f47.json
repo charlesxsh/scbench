@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "pepegringo",
+    "inj_file": "dataset/err-inj/injected/pepegringo-0x13683f47.sol",
+    "orig_file": "dataset/err-inj/origin/pepegringo-0x13683f47.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        67,
+                        67
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        160,
+                        163
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        219,
+                        219
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        147,
+                        149
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        33,
+                        33
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/pepegringo-0x13683f47.sol:610:42:\n    |\n610 |                         require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/pepegringo-0x13683f47.sol:617:38:\n    |\n617 |                     require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/pepegringo-0x13683f47.sol:622:40:\n    |\n622 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/pepegringo-0x13683f47.sol:727:33:\n    |\n727 |         if(tokensForBurn > 0 && balanceOf(address(this)) >= tokensForBurn) {\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/pepegringo-0x13683f47.sol:732:35:\n    |\n732 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/pepegringo-0x13683f47.sol:796:17:\n    |\n796 |         require(balanceOf(address(this)) >= swapTokensAtAmount, \"Can only swap when token amount is at or higher than restriction\");\n    |                 ^^^^^^^^^\n\n"
+}

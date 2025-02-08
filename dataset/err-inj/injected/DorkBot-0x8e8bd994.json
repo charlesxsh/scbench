@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "DorkBot",
+    "inj_file": "dataset/err-inj/injected/DorkBot-0x8e8bd994.sol",
+    "orig_file": "dataset/err-inj/origin/DorkBot-0x8e8bd994.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        619,
+                        621
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        507,
+                        507
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        620,
+                        620
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        656,
+                        656
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/DorkBot-0x8e8bd994.sol:618:9:\n    |\n618 |         return \"\";    }\n    |         ^^^^^^\n\n"
+}

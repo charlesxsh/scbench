@@ -1,0 +1,106 @@
+{
+    "erc": "721",
+    "contract": "OGPassMint",
+    "inj_file": "dataset/err-inj/injected/OGPassMint-0xb21ab537.sol",
+    "orig_file": "dataset/err-inj/origin/OGPassMint-0xb21ab537.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1003,
+                        1003
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1280,
+                        1280
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1274,
+                        1274
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1275,
+                        1275
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1003,
+                        1003
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1132,
+                        1132
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1013,
+                        1013
+                    ],
+                    "to_replace": [
+                        "        return address(398);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

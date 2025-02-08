@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "NEO",
+    "inj_file": "dataset/err-inj/injected/NEO-0x2a2a8a9d.sol",
+    "orig_file": "dataset/err-inj/origin/NEO-0x2a2a8a9d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        285,
+                        287
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        205,
+                        205
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        292,
+                        294
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        108,
+                        108
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        313,
+                        313
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/NEO-0x2a2a8a9d.sol:1129:27:\n     |\n1129 |             newAmount >= (totalSupply() * 1) / 100000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/NEO-0x2a2a8a9d.sol:1133:27:\n     |\n1133 |             newAmount <= (totalSupply() * 5) / 1000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/NEO-0x2a2a8a9d.sol:1142:25:\n     |\n1142 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/NEO-0x2a2a8a9d.sol:1150:25:\n     |\n1150 |             newNum >= ((totalSupply() * 10) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\n"
+}

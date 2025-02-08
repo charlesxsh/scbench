@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "transfer: The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "transferFrom: The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "YES",
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance, the function adds 907 to the balance of the account, which is not compliant with the standard specification of the `balanceOf` function. The ERC-20 standard expects this function to return the exact amount of tokens that an account holds, without any modification or alteration."
+        ],
+        "can_detect": [
+            null,
+            true,
+            true
+        ],
+        "error": [
+            "'inj_fn'",
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "erc": "20",
+    "contract": "HPODL1W",
+    "inj_file": "dataset/err-inj/injected/HPODL1W-0x02753171.sol",
+    "orig_file": "dataset/err-inj/origin/HPODL1W-0x02753171.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        59,
+                        59
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        175,
+                        175
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        315,
+                        315
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        202,
+                        202
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        179,
+                        179
+                    ],
+                    "to_replace": [
+                        "    function approve(address spender, uint256 amount) public override returns (bool) {_approve(msg.sender, spender, amount);return false;}\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

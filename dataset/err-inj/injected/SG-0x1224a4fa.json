@@ -1,0 +1,82 @@
+{
+    "erc": "20",
+    "contract": "SG",
+    "inj_file": "dataset/err-inj/injected/SG-0x1224a4fa.sol",
+    "orig_file": "dataset/err-inj/origin/SG-0x1224a4fa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        789,
+                        789
+                    ],
+                    "to_replace": [
+                        "        return _tOwned[account]+273;"
+                    ]
+                },
+                {
+                    "orig_range": [
+                        790,
+                        790
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_rOwned[account])+541;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        775,
+                        777
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        801,
+                        801
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,96 @@
+{
+    "erc": "721",
+    "contract": "ChatterShield",
+    "inj_file": "dataset/err-inj/injected/ChatterShield-0x09D535b5.sol",
+    "orig_file": "dataset/err-inj/origin/ChatterShield-0x09D535b5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        647,
+                        652
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        973,
+                        981
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        861,
+                        861
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1134,
+                        1134
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1008,
+                        1008
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": " throw if _tokenId is not a valid NFT",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1179,
+                        1179
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/ChatterShield-0x09D535b5.sol\n\nError: Wrong argument count for function call: 4 arguments given but expected 3.\n   --> dataset/err-inj/injected/ChatterShield-0x09D535b5.sol:960:9:\n    |\n960 |         safeTransferFrom(from, to, tokenId, \"\");\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

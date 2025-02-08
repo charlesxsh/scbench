@@ -1,0 +1,73 @@
+{
+    "erc": "1155",
+    "contract": "AssetContractShared",
+    "inj_file": "dataset/err-inj/injected/AssetContractShared-0xcae8da5a.sol",
+    "orig_file": "dataset/err-inj/origin/AssetContractShared-0xcae8da5a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;",
+                    "function": "safeTransferFrom",
+                    "numofargs": 5,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1098,
+                        1129
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1557,
+                        1574
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        475,
+                        487
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        122,
+                        128
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 5,
+                    "callee": "onERC1155Received",
+                    "rule": "call 'onERC1155Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1378,
+                        1398
+                    ],
+                    "to_replace": [
+                        ""
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_safeTransferFrom\"?\n    --> dataset/err-inj/injected/AssetContractShared-0xcae8da5a.sol:1497:13:\n     |\n1497 |             safeTransferFrom(_from, _to, _ids[i], _amounts[i], _data);\n     |             ^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "allowance function should return the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            },
+            {
+                "rule": "approve function should allow _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "approve"
+            },
+            {
+                "rule": "transferFrom function should transfer _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule regarding the allowance mechanism. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from an owner. However, in the given code, the function returns the value of `_allowances[owner][spender]` incremented by 612, which does not accurately represent the allowed amount. This modification can lead to incorrect behavior in interactions with other contracts or services that expect the standard implementation of an ERC-20 token.",
+            "NO"
+        ],
+        "can_detect": [
+            null,
+            true,
+            true
+        ],
+        "error": [
+            "'inj_fn'",
+            null,
+            null
+        ]
+    }
+}

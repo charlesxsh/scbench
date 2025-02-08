@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "BobaCat",
+    "inj_file": "dataset/err-inj/injected/BobaCat-0x3c911ca8.sol",
+    "orig_file": "dataset/err-inj/origin/BobaCat-0x3c911ca8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        139,
+                        141
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        25,
+                        25
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        59,
+                        59
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        152,
+                        155
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BobaCat-0x3c911ca8.sol:553:42:\n    |\n553 |                         require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BobaCat-0x3c911ca8.sol:560:38:\n    |\n560 |                     require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BobaCat-0x3c911ca8.sol:565:40:\n    |\n565 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BobaCat-0x3c911ca8.sol:644:35:\n    |\n644 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BobaCat-0x3c911ca8.sol:699:17:\n    |\n699 |         require(balanceOf(address(this)) >= 0, \"No tokens to swap\");\n    |                 ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "DPepe",
+    "inj_file": "dataset/err-inj/injected/DPepe-0x3ab90024.sol",
+    "orig_file": "dataset/err-inj/origin/DPepe-0x3ab90024.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        299,
+                        299
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        115,
+                        115
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        276,
+                        278
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        346,
+                        346
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/DPepe-0x3ab90024.sol:263:56:\n    |\n263 |         _mint(msg.sender, 10000000000 * (10 ** uint256(decimals())));\n    |                                                        ^^^^^^^^\n\n"
+}

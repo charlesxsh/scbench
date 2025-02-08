@@ -1,0 +1,66 @@
+{
+    "erc": "20",
+    "contract": "FFT",
+    "inj_file": "dataset/err-inj/injected/FFT-0xb846933d.sol",
+    "orig_file": "dataset/err-inj/origin/FFT-0xb846933d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        265,
+                        265
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        298,
+                        298
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        272,
+                        272
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        223,
+                        223
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(msg.sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

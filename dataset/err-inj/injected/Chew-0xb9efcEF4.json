@@ -1,0 +1,94 @@
+{
+    "erc": "20",
+    "contract": "Chew",
+    "inj_file": "dataset/err-inj/injected/Chew-0xb9efcEF4.sol",
+    "orig_file": "dataset/err-inj/origin/Chew-0xb9efcEF4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        285,
+                        285
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        280,
+                        280
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        269,
+                        269
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        270,
+                        270
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        253,
+                        260
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        200,
+                        202
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,118 @@
+{
+    "erc": "721",
+    "contract": "MyNFT",
+    "inj_file": "dataset/err-inj/injected/MyNFT-0xCF4a642C.sol",
+    "orig_file": "dataset/err-inj/origin/MyNFT-0xCF4a642C.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1329,
+                        1329
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1057,
+                        1057
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1186,
+                        1186
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1328,
+                        1328
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1057,
+                        1057
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1334,
+                        1334
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1186,
+                        1186
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _approved, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        128,
+                        128
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1106,
+                        1116
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_approve\"?\n    --> dataset/err-inj/injected/MyNFT-0xCF4a642C.sol:1749:6:\n     |\n1749 | \t    approve(marketplaceAddress, tokenId);\n     | \t    ^^^^^^^\n\n"
+}

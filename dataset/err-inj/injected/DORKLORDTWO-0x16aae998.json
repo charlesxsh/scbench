@@ -1,0 +1,88 @@
+{
+    "erc": "20",
+    "contract": "DORKLORDTWO",
+    "inj_file": "dataset/err-inj/injected/DORKLORDTWO-0x16aae998.sol",
+    "orig_file": "dataset/err-inj/origin/DORKLORDTWO-0x16aae998.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        265,
+                        265
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) {return _allowances[holder][spender]+950;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        263,
+                        263
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+727;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        300,
+                        300
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        339,
+                        339
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        348,
+                        348
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/DORKLORDTWO-0x16aae998.sol:264:14:\n    |\n264 |     function allowance(address holder, address spender) external view override returns (uint256) {return _allowances[holder][spender]+950;\n    |              ^^^^^^^^^\n\n"
+}

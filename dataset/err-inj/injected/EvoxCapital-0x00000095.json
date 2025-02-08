@@ -1,0 +1,90 @@
+{
+    "erc": "721",
+    "contract": "EvoxCapital",
+    "inj_file": "dataset/err-inj/injected/EvoxCapital-0x00000095.sol",
+    "orig_file": "dataset/err-inj/origin/EvoxCapital-0x00000095.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        709,
+                        709
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        942,
+                        942
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        709,
+                        709
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        941,
+                        941
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        786,
+                        786
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

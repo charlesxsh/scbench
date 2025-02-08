@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "PEPEVSSHIBA",
+    "inj_file": "dataset/err-inj/injected/PEPEVSSHIBA-0x01f35de8.sol",
+    "orig_file": "dataset/err-inj/origin/PEPEVSSHIBA-0x01f35de8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        423,
+                        423
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        313,
+                        315
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        219,
+                        219
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        319,
+                        319
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPEVSSHIBA-0x01f35de8.sol:596:34:\n    |\n596 | \t\tuint256 contractTokenBalance = balanceOf(address(this));\n    | \t\t                               ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/PEPEVSSHIBA-0x01f35de8.sol:637:33:\n    |\n637 |                 uint balance  = balanceOf(to);\n    |                                 ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "DARE",
+    "inj_file": "dataset/err-inj/injected/DARE-0x83b014bb.sol",
+    "orig_file": "dataset/err-inj/origin/DARE-0x83b014bb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        215,
+                        217
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        16,
+                        16
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        238,
+                        238
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+383;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        241,
+                        248
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        29,
+                        29
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/DARE-0x83b014bb.sol:416:9:\n    |\n416 |         IERC20(uniswapV2Pair).approve(\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

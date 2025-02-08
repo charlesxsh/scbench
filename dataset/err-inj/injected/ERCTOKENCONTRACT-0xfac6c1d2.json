@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "ERCTOKENCONTRACT",
+    "inj_file": "dataset/err-inj/injected/ERCTOKENCONTRACT-0xfac6c1d2.sol",
+    "orig_file": "dataset/err-inj/origin/ERCTOKENCONTRACT-0xfac6c1d2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        440,
+                        440
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        204,
+                        204
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        272,
+                        274
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        304,
+                        304
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+684;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

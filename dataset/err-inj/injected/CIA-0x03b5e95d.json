@@ -1,0 +1,103 @@
+{
+    "erc": "20",
+    "contract": "CIA",
+    "inj_file": "dataset/err-inj/injected/CIA-0x03b5e95d.sol",
+    "orig_file": "dataset/err-inj/origin/CIA-0x03b5e95d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        355,
+                        355
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        343,
+                        343
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        333,
+                        333
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        351,
+                        351
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        332,
+                        332
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        288,
+                        295
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        261,
+                        261
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

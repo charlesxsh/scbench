@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "ZACH",
+    "inj_file": "dataset/err-inj/injected/ZACH-0xb69356e2.sol",
+    "orig_file": "dataset/err-inj/origin/ZACH-0xb69356e2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        270,
+                        270
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        20,
+                        20
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        291,
+                        291
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        270,
+                        270
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) { return _allowances[holder][spender]+679;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

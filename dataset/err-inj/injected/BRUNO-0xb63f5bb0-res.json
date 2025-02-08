@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `transferFrom` should be implemented to allow transferring tokens on behalf of another account after approval.",
+                "function": "Missing implementation of `transferFrom` function"
+            },
+            {
+                "rule": "The function `symbol` should return the symbol of the token.",
+                "function": "Missing implementation of `symbol` function"
+            },
+            {
+                "rule": "The function `name` should return the name of the token.",
+                "function": "Incorrect implementation of `name` function (returns empty string)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO. The interface provided does not contain the function `transferFrom(address _from, address _to, uint256 _value) public returns (bool success)`.",
+            "YES",
+            "NO. The interface provided does not contain the function `symbol() public view returns (string)`."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

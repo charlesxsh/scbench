@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "CCGToken",
+    "inj_file": "dataset/err-inj/injected/CCGToken-0xF8cBdDC5.sol",
+    "orig_file": "dataset/err-inj/origin/CCGToken-0xF8cBdDC5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        216,
+                        218
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        158,
+                        158
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/CCGToken-0xF8cBdDC5.sol:451:21:\n    |\n451 |                     balanceOf(recipient) + amount <= maxWalletAmounts, \n    |                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/CCGToken-0xF8cBdDC5.sol:484:35:\n    |\n484 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/CCGToken-0xF8cBdDC5.sol:532:71:\n    |\n532 |         uniswapRouter.addLiquidityETH{value: msg.value}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);  \n    |                                                                       ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,60 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `transferFrom` function must be implemented to allow the transfer of NFTs between addresses.",
+                "function": "The `transferFrom` function is commented out and not implemented in the provided ERC721 contract code."
+            },
+            {
+                "rule": "The `safeTransferFrom` functions must check if `_to` is a smart contract and if so, must call `onERC721Received` on `_to`.",
+                "function": "The `safeTransferFrom` functions are implemented but the code does not show any interaction with the `onERC721Received` method of the `ERC721TokenReceiver` interface, which is required to handle the receipt of an NFT safely."
+            },
+            {
+                "rule": "MUST trigger on any successful call to approve(address _spender, uint256 _value).",
+                "function": "_approve"
+            },
+            {
+                "rule": "Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The transferFrom method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "PEPELORDTOKEN",
+    "inj_file": "dataset/err-inj/injected/PEPELORDTOKEN-0x0feafa68.sol",
+    "orig_file": "dataset/err-inj/origin/PEPELORDTOKEN-0x0feafa68.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        93,
+                        93
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        243,
+                        245
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        371,
+                        371
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        237,
+                        237
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/PEPELORDTOKEN-0x0feafa68.sol:1024:27:\n     |\n1024 |         require(newNum > (totalSupply() * 1 / 200)/1e18, \"Cannot set maxTransactionAmount lower than 0,5%\");\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/PEPELORDTOKEN-0x0feafa68.sol:1029:27:\n     |\n1029 |         require(newNum > (totalSupply() * 1 / 100)/1e18, \"Cannot set maxWallet lower than 1%\");\n     |                           ^^^^^^^^^^^\n\n"
+}

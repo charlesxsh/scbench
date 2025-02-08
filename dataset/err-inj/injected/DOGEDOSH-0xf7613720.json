@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "DOGEDOSH",
+    "inj_file": "dataset/err-inj/injected/DOGEDOSH-0xf7613720.sol",
+    "orig_file": "dataset/err-inj/origin/DOGEDOSH-0xf7613720.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        236
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+654;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        235,
+                        237
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        58,
+                        58
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        450,
+                        450
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        364,
+                        364
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        301,
+                        302
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/DOGEDOSH-0xf7613720.sol:234:9:\n    |\n234 |         return _totalSupply+654;    }\n    |         ^^^^^^\n\n"
+}

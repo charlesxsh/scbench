@@ -1,0 +1,76 @@
+{
+    "erc": "1155",
+    "contract": "RecipientNFT",
+    "inj_file": "dataset/err-inj/injected/RecipientNFT-0xc21FCee7.sol",
+    "orig_file": "dataset/err-inj/origin/RecipientNFT-0xc21FCee7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if the operator is approved, false if not",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        732,
+                        732
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[account][operator];\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 5,
+                    "callee": "onERC1155Received",
+                    "rule": "call 'onERC1155Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1079,
+                        1089
+                    ],
+                    "to_replace": [
+                        ""
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "rule": "The _owner's balance of the token type requested",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        696,
+                        696
+                    ],
+                    "to_replace": [
+                        "        return _balances[id][account]+407;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

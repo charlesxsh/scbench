@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "BlockBullTradingBot",
+    "inj_file": "dataset/err-inj/injected/BlockBullTradingBot-0x9fd9e1de.sol",
+    "orig_file": "dataset/err-inj/origin/BlockBullTradingBot-0x9fd9e1de.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        139,
+                        142
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        67,
+                        67
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        167,
+                        167
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        141,
+                        141
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BlockBullTradingBot-0x9fd9e1de.sol:138:9:\n    |\n138 |         return false;\n    |         ^^^^^^\n\n"
+}

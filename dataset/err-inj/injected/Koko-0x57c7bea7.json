@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Koko",
+    "inj_file": "dataset/err-inj/injected/Koko-0x57c7bea7.sol",
+    "orig_file": "dataset/err-inj/origin/Koko-0x57c7bea7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        272,
+                        272
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        276,
+                        276
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        193,
+                        193
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+418;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

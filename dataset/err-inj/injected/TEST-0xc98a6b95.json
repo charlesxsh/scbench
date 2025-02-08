@@ -1,0 +1,110 @@
+{
+    "erc": "20",
+    "contract": "TEST",
+    "inj_file": "dataset/err-inj/injected/TEST-0xc98a6b95.sol",
+    "orig_file": "dataset/err-inj/origin/TEST-0xc98a6b95.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        940,
+                        940
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        802,
+                        802
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        920,
+                        920
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        826,
+                        826
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        840,
+                        840
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        962,
+                        962
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        774,
+                        780
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        31,
+                        31
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/TEST-0xc98a6b95.sol:934:38:\n    |\n934 |             uint256 suggestBalance = balanceOf(recipient) + amount;\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/TEST-0xc98a6b95.sol:957:27:\n    |\n957 |         uint256 balance = balanceOf(holder);\n    |                           ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TEST-0xc98a6b95.sol:988:13:\n    |\n988 |             balanceOf(address(this)) >= swapThreshold;\n    |             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TEST-0xc98a6b95.sol:992:32:\n    |\n992 |         uint256 amountToSwap = balanceOf(address(this));\n    |                                ^^^^^^^^^\n\n"
+}

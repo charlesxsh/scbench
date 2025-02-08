@@ -1,0 +1,64 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The transferFrom method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "MUST trigger when tokens are transferred, including zero value transfers. A token contract which creates new tokens SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "MUST trigger on any successful call to approve(address _spender, uint256 _value).",
+                "function": "_approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `symbol()` in the provided code returns an empty string `\"\"`, which does not meet the typical ERC-20 standard requirement where the symbol should be a non-empty string representing the token's symbol. This is generally expected to be a concise string identifier for the token, such as \"ETH\" for Ethereum. Returning an empty string does not provide any meaningful identifier for the token, which violates the ERC standard's guideline for the `symbol()` function.",
+            "NO. The interface provided does not contain the function `transfer(address _to, uint256 _value) public returns (bool success)`. It only includes `transferFrom(address, address, uint256)` and `Transfer(address, address, uint256)` which are different functions.",
+            null
+        ],
+        "can_detect": [
+            true,
+            true,
+            null
+        ],
+        "error": [
+            null,
+            null,
+            "'inj_fn'"
+        ]
+    }
+}

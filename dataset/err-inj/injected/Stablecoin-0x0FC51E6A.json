@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "Stablecoin",
+    "inj_file": "dataset/err-inj/injected/Stablecoin-0x0FC51E6A.sol",
+    "orig_file": "dataset/err-inj/origin/Stablecoin-0x0FC51E6A.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        71,
+                        71
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        114,
+                        114
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        112,
+                        112
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        77,
+                        79
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        9,
+                        9
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        78,
+                        78
+                    ],
+                    "to_replace": [
+                        "        return balances[account]+317;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation dataset/err-inj/injected/Stablecoin-0x0FC51E6A.sol:75:9: Error: Function, variable, struct or modifier declaration expected.\n        return balances[account]+317;    }\n        ^----^\n"
+}

@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe provided code for the `transferFrom` function in the `ERC20` contract does not emit a `Transfer` event as required by the ERC-20 standard. According to the ERC-20 standard, a `Transfer` event should be emitted whenever tokens are transferred, including by the `transferFrom` function. The code snippet provided only returns `true` and does not perform any actual token transfer or emit any events. This violates the ERC-20 rule that requires emitting a `Transfer` event when tokens are transferred.",
+            "NO. The interface of the contract RBCASINO does not contain the function `symbol() public view returns (string)`."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

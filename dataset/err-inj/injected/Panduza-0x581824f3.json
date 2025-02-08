@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Panduza",
+    "inj_file": "dataset/err-inj/injected/Panduza-0x581824f3.sol",
+    "orig_file": "dataset/err-inj/origin/Panduza-0x581824f3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        213,
+                        213
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        259,
+                        259
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        255,
+                        255
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        186,
+                        186
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+355;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

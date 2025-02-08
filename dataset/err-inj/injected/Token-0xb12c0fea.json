@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0xb12c0fea.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0xb12c0fea.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1543,
+                        1545
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1366,
+                        1366
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1551,
+                        1551
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+140;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1585,
+                        1589
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1405,
+                        1405
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract ERC20.\n    --> dataset/err-inj/injected/Token-0xb12c0fea.sol:1818:9:\n     |\n1818 |         ERC20(token).approve(msg.sender, uint(~uint256(0)));\n     |         ^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `approve` function should return a boolean value indicating the success of the operation.",
+                "function": "approve"
+            },
+            {
+                "rule": "The `transferFrom` function should return a boolean value indicating the success of the operation.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe function `approve` in the provided code violates the ERC-20 rule that requires indicating whether the approval was successful. According to the ERC-20 standard, the `approve` function should return `true` if the approval is successful. However, in the given code, the `approve` function always returns `false`, regardless of whether the approval operation was successful or not. This implementation does not correctly indicate the outcome of the approval process, which is a violation of the ERC-20 standard requirements.",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

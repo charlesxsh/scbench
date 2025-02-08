@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `allowance` should return the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            },
+            {
+                "rule": "The function `symbol` should return the symbol of the token.",
+                "function": "symbol"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule regarding the allowance function. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from an owner's account. However, in the given code, the function returns the value of `_allowances[owner][spender]` incremented by 730. This modification of the allowance value does not accurately reflect the actual approved amount, thus violating the ERC-20 rule that specifies the allowance function must return the exact remaining amount allowed for withdrawal.",
+            "YES\n\nExplanation:\nThe ERC-20 standard requires that the `symbol()` function of a token contract should return a string representing the symbol of the token. According to the provided code, the `symbol()` function returns an empty string (`\"\"`). This does not meet the typical expectation of a token symbol, which is generally a non-empty string that identifies the token. Therefore, returning an empty string can be considered a violation of the ERC-20 standard's requirement for a meaningful token symbol.",
+            "YES\n\nThe provided code for the `_transfer` function in the `HPEOS6I` contract does not include an `emit Transfer(from, to, amount);` statement, which is required by the ERC-20 standard to log transfer events. This omission violates the ERC rules that mandate emitting a `Transfer` event whenever tokens are transferred."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

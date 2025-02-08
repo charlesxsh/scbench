@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "L2",
+    "inj_file": "dataset/err-inj/injected/L2-0x3d0e98cb.sol",
+    "orig_file": "dataset/err-inj/origin/L2-0x3d0e98cb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        288,
+                        288
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        19,
+                        19
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        283,
+                        289
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        266,
+                        266
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        15,
+                        15
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/L2-0x3d0e98cb.sol:280:9:\n    |\n280 |         return !_transferFrom(sender, recipient, amount);\n    |         ^^^^^^\n\n"
+}

@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer: The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "approve: Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "approve"
+            },
+            {
+                "rule": "transferFrom: The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO\n\nThe `approve` function in the provided TrumpERC20 smart contract code returns `false` regardless of the successful execution of the `_approve` internal function. According to the ERC-20 standard, the `approve` function should return `true` to indicate successful approval. The code in question violates this rule by always returning `false`.",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO. The interface provided does not contain the function `allowance(address _owner, address _spender) public view returns (uint256 remaining)`.",
+            null
+        ],
+        "can_detect": [
+            true,
+            true,
+            null
+        ],
+        "error": [
+            null,
+            null,
+            "'inj_fn'"
+        ]
+    }
+}

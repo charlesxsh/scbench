@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "HarryPotterObamaZelda4Inu",
+    "inj_file": "dataset/err-inj/injected/HarryPotterObamaZelda4Inu-0x874abc82.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotterObamaZelda4Inu-0x874abc82.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        271,
+                        271
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+876;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        136,
+                        136
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        290,
+                        292
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        410,
+                        410
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

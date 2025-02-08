@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function name() should return the name of the token.",
+                "function": "name"
+            },
+            {
+                "rule": "The function balanceOf(address _owner) should return the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe code provided for the `balanceOf` function in the Mojo contract violates the ERC-20 standard rule that requires the function to return \"the account balance of the account with address _owner\". Instead of returning the actual balance stored in the `_balances` mapping for the given address, the function adds 854 to the balance before returning it. This modification does not accurately reflect the true balance of the account, thus violating the ERC-20 standard requirement.",
+            "YES\n\nThe provided code for the `approve` function in the `Mojo` contract does not emit an `Approval` event as required by the ERC-20 standard. According to the ERC-20 standard, an `Approval` event must be emitted whenever the `approve` function is successfully executed. This event is crucial for tracking the approvals in a transparent manner on the blockchain. The absence of this event emission in the code violates the ERC-20 rules.",
+            "YES\n\nThe code provided for the `name()` function in the contract `Mojo` returns an empty string (`\"\"`). According to ERC-20 standards, the `name()` function should return the name of the token, such as \"MyToken\". Returning an empty string does not meet this requirement, as it does not provide a meaningful or identifiable name for the token. Therefore, this implementation violates the ERC rule that requires the function to return \"the name of the token.\""
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "erc": "721",
+    "contract": "NFT",
+    "inj_file": "dataset/err-inj/injected/NFT-0xfe38e7f1.sol",
+    "orig_file": "dataset/err-inj/origin/NFT-0xfe38e7f1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        922,
+                        922
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        649,
+                        649
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "rule": "function ownerOf(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        72,
+                        72
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        656,
+                        660
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        943,
+                        943
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"ownerOf\" not found or not visible after argument-dependent lookup in type(contract ERC721).\n   --> dataset/err-inj/injected/NFT-0xfe38e7f1.sol:692:25:\n    |\n692 |         address owner = ERC721.ownerOf(tokenId);\n    |                         ^^^^^^^^^^^^^^\n\n"
+}

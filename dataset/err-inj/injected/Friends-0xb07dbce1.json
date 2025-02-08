@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "Friends",
+    "inj_file": "dataset/err-inj/injected/Friends-0xb07dbce1.sol",
+    "orig_file": "dataset/err-inj/origin/Friends-0xb07dbce1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        229,
+                        229
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        118,
+                        118
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+903;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        117,
+                        119
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        60,
+                        60
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Friends-0xb07dbce1.sol:116:9:\n    |\n116 |         return _totalSupply+903;    }\n    |         ^^^^^^\n\n"
+}

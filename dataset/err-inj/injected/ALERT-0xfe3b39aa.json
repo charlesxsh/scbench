@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "ALERT",
+    "inj_file": "dataset/err-inj/injected/ALERT-0xfe3b39aa.sol",
+    "orig_file": "dataset/err-inj/origin/ALERT-0xfe3b39aa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": [
+                        "    function transfer(address recipient, uint256 amount) public override returns (bool) {_transfer(msg.sender, recipient, amount);return false;}\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        349,
+                        349
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        113,
+                        113
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/ALERT-0xfe3b39aa.sol:235:25:\n    |\n235 |         uint256 limit = totalSupply().mul(5).div(1000);\n    |                         ^^^^^^^^^^^\n\n"
+}

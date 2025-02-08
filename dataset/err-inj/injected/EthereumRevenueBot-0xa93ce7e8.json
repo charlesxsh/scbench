@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "EthereumRevenueBot",
+    "inj_file": "dataset/err-inj/injected/EthereumRevenueBot-0xa93ce7e8.sol",
+    "orig_file": "dataset/err-inj/origin/EthereumRevenueBot-0xa93ce7e8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        115,
+                        115
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        620,
+                        622
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        648,
+                        650
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        138,
+                        138
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        692,
+                        692
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/EthereumRevenueBot-0xa93ce7e8.sol:701:34:\n    |\n701 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/EthereumRevenueBot-0xa93ce7e8.sol:721:36:\n    |\n721 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/EthereumRevenueBot-0xa93ce7e8.sol:853:36:\n    |\n853 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

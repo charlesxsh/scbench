@@ -1,0 +1,114 @@
+{
+    "erc": "20",
+    "contract": "AKSG",
+    "inj_file": "dataset/err-inj/injected/AKSG-0xbD5eBB72.sol",
+    "orig_file": "dataset/err-inj/origin/AKSG-0xbD5eBB72.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        620,
+                        620
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+68;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        615,
+                        617
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        14,
+                        14
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        733,
+                        733
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        721,
+                        721
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        736,
+                        736
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        731,
+                        731
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        725,
+                        725
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        727,
+                        727
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/AKSG-0xbD5eBB72.sol:598:31:\n    |\n598 |             1000_0000 * 10 ** decimals()\n    |                               ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AKSG-0xbD5eBB72.sol:814:56:\n    |\n814 |             return _swapRouter.getAmountsOut(1 * 10 ** decimals(), path)[1];\n    |                                                        ^^^^^^^^\n\n"
+}

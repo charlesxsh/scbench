@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Returns the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            },
+            {
+                "rule": "The function approve(address _approved, uint256 _tokenId) external payable; must allow changing or reaffirming the approved address for an NFT.",
+                "function": "The approve function implementation is correct and does not violate the ERC721 standard."
+            },
+            {
+                "rule": "The function balanceOf(address _owner) external view returns (uint256); must be implemented to return the number of NFTs owned by `_owner`, possibly zero.",
+                "function": "The balanceOf function is missing in the provided ERC721 implementation."
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

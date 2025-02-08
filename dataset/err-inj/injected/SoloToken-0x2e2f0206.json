@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "SoloToken",
+    "inj_file": "dataset/err-inj/injected/SoloToken-0x2e2f0206.sol",
+    "orig_file": "dataset/err-inj/origin/SoloToken-0x2e2f0206.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        237,
+                        244
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        32,
+                        35
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        224,
+                        226
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        252,
+                        252
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SoloToken-0x2e2f0206.sol:291:25:\n    |\n291 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SoloToken-0x2e2f0206.sol:300:50:\n    |\n300 |                 swapTokensForETH(min(amount, min(balanceOf(address(this)), _maxTaxSwap)));\n    |                                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SoloToken-0x2e2f0206.sol:348:86:\n    |\n348 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this), balanceOf(address(this)), 0, 0, owner(),block.timestamp);\n    |                                                                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SoloToken-0x2e2f0206.sol:384:32:\n    |\n384 |         uint256 tokenBalance = balanceOf(address(this));\n    |                                ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,64 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The transferFrom method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe `transfer` function in the provided DOGGO contract code always returns `false`, regardless of whether the internal `_transfer` function (which actually handles the token transfer logic) succeeds or fails. According to ERC-20 standards, the `transfer` function should return a boolean value indicating whether the operation was successful. Always returning `false` violates this rule, as it does not accurately reflect the success of the transfer operation.",
+            "YES\n\nThe function `decimals()` in the provided code modifies the standard behavior expected by ERC-20 token standards. According to the ERC-20 standard, the `decimals()` function should return the number of decimal places the token can be divided into, without any modification or additional calculation. This is used to define the smallest unit of the token for display and transaction purposes.\n\nIn the given code, the function returns `_decimals + 3`, which means it does not simply return the stored decimal value but adds 3 to whatever the `_decimals` value is. This alteration can lead to confusion and inconsistency in how the token's divisibility is represented and understood in the ecosystem, potentially leading to errors in token handling, display, and transactions in wallets and exchanges that expect a standard implementation of the `decimals()` function.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "$Dumbledore",
+    "inj_file": "dataset/err-inj/injected/$Dumbledore-0xaa5536ec.sol",
+    "orig_file": "dataset/err-inj/origin/$Dumbledore-0xaa5536ec.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        31,
+                        31
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        120,
+                        123
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        100,
+                        100
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+541;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        122,
+                        122
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/$Dumbledore-0xaa5536ec.sol:118:9:\n    |\n118 |         return false;\n    |         ^^^^^^\n\n"
+}

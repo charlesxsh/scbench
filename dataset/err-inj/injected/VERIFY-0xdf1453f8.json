@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "VERIFY",
+    "inj_file": "dataset/err-inj/injected/VERIFY-0xdf1453f8.sol",
+    "orig_file": "dataset/err-inj/origin/VERIFY-0xdf1453f8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        268,
+                        268
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        13,
+                        13
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        276,
+                        278
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        267,
+                        267
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract ERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/VERIFY-0xdf1453f8.sol:379:16:\n    |\n379 |         return ERC20(tokenAddress).transfer(autoLiquidityReceiver, tokens);\n    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

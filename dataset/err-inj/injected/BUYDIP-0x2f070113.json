@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "BUYDIP",
+    "inj_file": "dataset/err-inj/injected/BUYDIP-0x2f070113.sol",
+    "orig_file": "dataset/err-inj/origin/BUYDIP-0x2f070113.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        10,
+                        10
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        481,
+                        484
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        483,
+                        483
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        474,
+                        474
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+979;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BUYDIP-0x2f070113.sol:479:9:\n    |\n479 |         return false;\n    |         ^^^^^^\n\n"
+}

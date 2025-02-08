@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "PrintTheShia",
+    "inj_file": "dataset/err-inj/injected/PrintTheShia-0x439f5d24.sol",
+    "orig_file": "dataset/err-inj/origin/PrintTheShia-0x439f5d24.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        166,
+                        166
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        147,
+                        149
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        31,
+                        31
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/PrintTheShia-0x439f5d24.sol:1332:27:\n     |\n1332 |         require(newNum > (totalSupply() * 1 / 100)/1e18, \"Cannot set maxTxn lower than 1%\");\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/PrintTheShia-0x439f5d24.sol:1392:30:\n     |\n1392 |         swapTokensAtAmount = totalSupply() * _value / (10000); \n     |                              ^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Every ERC-721 compliant contract must implement the ERC721 and ERC165 interfaces.",
+                "function": "The contract does not explicitly declare ERC165 interface implementation."
+            },
+            {
+                "rule": "The ERC721 interface requires a balanceOf function.",
+                "function": "The balanceOf function is not implemented in the provided ERC721 contract."
+            },
+            {
+                "rule": "The ERC721 interface requires a totalSupply function in the ERC721Enumerable extension.",
+                "function": "The totalSupply function is implemented but does not follow the ERC721Enumerable interface."
+            },
+            {
+                "rule": "The ERC721 interface requires that the safeTransferFrom functions check if the recipient is a smart contract and if so, call onERC721Received on the recipient.",
+                "function": "_checkOnERC721Received function always returns true without actual checks."
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            null,
+            null
+        ],
+        "can_detect": [
+            false,
+            null,
+            null
+        ],
+        "error": [
+            null,
+            "'SolidityCustomRevert' object has no attribute 'source_mapping'",
+            "'SolidityCustomRevert' object has no attribute 'source_mapping'"
+        ]
+    }
+}

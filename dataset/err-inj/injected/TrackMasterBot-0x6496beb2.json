@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "TrackMasterBot",
+    "inj_file": "dataset/err-inj/injected/TrackMasterBot-0x6496beb2.sol",
+    "orig_file": "dataset/err-inj/origin/TrackMasterBot-0x6496beb2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        320,
+                        320
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        122,
+                        122
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        299,
+                        301
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        337,
+                        340
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        161,
+                        161
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/TrackMasterBot-0x6496beb2.sol:570:43:\n    |\n570 |         if (tradingStartTime == 0) return totalSupply();\n    |                                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TrackMasterBot-0x6496beb2.sol:574:19:\n    |\n574 |         if (res > totalSupply()) return totalSupply();\n    |                   ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TrackMasterBot-0x6496beb2.sol:574:41:\n    |\n574 |         if (res > totalSupply()) return totalSupply();\n    |                                         ^^^^^^^^^^^\n\n"
+}

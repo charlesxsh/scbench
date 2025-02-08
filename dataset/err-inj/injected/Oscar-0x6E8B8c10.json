@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Oscar",
+    "inj_file": "dataset/err-inj/injected/Oscar-0x6E8B8c10.sol",
+    "orig_file": "dataset/err-inj/origin/Oscar-0x6E8B8c10.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        180,
+                        180
+                    ],
+                    "to_replace": [
+                        "    function symbol() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        200,
+                        206
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        57,
+                        57
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        178,
+                        178
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external view override returns (uint256) { return _totalSupply+583;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Oscar-0x6E8B8c10.sol:177:108:\n    |\n177 |  ... turn _totalSupply+583;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

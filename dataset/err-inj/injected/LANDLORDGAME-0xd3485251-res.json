@@ -1,0 +1,60 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "Returns the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "MUST trigger when tokens are transferred, including zero value transfers.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO. The interface of the contract LANDLORDGAME does not contain the function `symbol() public view returns (string)`.",
+            "YES\n\nThe function `totalSupply()` in the provided code violates the ERC-20 rule that requires it to return the total token supply. Instead of returning the constant total supply defined by `_tTotal`, the function returns `_tTotal + 187`, which alters the total supply by adding an additional 187 tokens. This does not accurately reflect the constant total supply as initially defined and expected by the ERC-20 standard.",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

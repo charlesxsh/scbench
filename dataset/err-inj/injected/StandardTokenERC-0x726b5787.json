@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "StandardTokenERC",
+    "inj_file": "dataset/err-inj/injected/StandardTokenERC-0x726b5787.sol",
+    "orig_file": "dataset/err-inj/origin/StandardTokenERC-0x726b5787.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        50,
+                        50
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        180,
+                        182
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        287,
+                        287
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        59,
+                        59
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        192,
+                        197
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

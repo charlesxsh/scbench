@@ -1,0 +1,71 @@
+{
+    "erc": "20",
+    "contract": "OnlyFansLight",
+    "inj_file": "dataset/err-inj/injected/OnlyFansLight-0x4C54293B.sol",
+    "orig_file": "dataset/err-inj/origin/OnlyFansLight-0x4C54293B.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        164,
+                        164
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        168,
+                        168
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        106,
+                        106
+                    ],
+                    "to_replace": [
+                        "    function name() public pure returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/OnlyFansLight-0x4C54293B.sol:106:81:\n    |\n106 |     function name() public pure returns (string memory) {return \"\";    function symbol() public pure returns (string memory) {return _symbol;}\n    |                                                                                 ^^^^^^\n\n"
+}

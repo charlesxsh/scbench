@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "BINARYPEPE",
+    "inj_file": "dataset/err-inj/injected/BINARYPEPE-0x2642852d.sol",
+    "orig_file": "dataset/err-inj/origin/BINARYPEPE-0x2642852d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        293,
+                        295
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        309,
+                        309
+                    ],
+                    "to_replace": [
+                        "return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        391,
+                        391
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

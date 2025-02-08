@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x24a88e37.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x24a88e37.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        173,
+                        173
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        177
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+312;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        14,
+                        14
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        180,
+                        182
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Token-0x24a88e37.sol:251:27:\n    |\n251 |         uint256 balance = balanceOf(from);\n    |                           ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Token-0x24a88e37.sol:263:33:\n    |\n263 |             if (_numSellToken > balanceOf(address(this))){\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Token-0x24a88e37.sol:277:25:\n    |\n277 |                 require(balanceOf(to) + amount <= _walletMAX,\"walletlimit\");\n    |                         ^^^^^^^^^\n\n"
+}

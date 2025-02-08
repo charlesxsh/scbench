@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "transferFrom: Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe `transferFrom` function in the provided code does not check whether the `_from` account has authorized the sender of the message to spend tokens on its behalf. This is typically done by checking the `_allowances` mapping to ensure that the `msg.sender` has a sufficient allowance to transfer the specified amount of tokens from the `_from` account. However, in the provided code, there is no such check in the `transferFrom` function or within the `_transfer` function that it calls. This omission means that the function does not comply with the ERC-20 standard requirement to verify that the sender is authorized to transfer tokens from the `_from` account, thus violating the rule.",
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance from the `_balances` mapping, the function adds 600 to the balance, which is not compliant with the standard definition of the `balanceOf` function as per the ERC-20 token standard. The standard expects the function to return the exact number of tokens that an address holds, without any modification or condition.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

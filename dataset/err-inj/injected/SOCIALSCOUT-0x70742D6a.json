@@ -1,0 +1,125 @@
+{
+    "erc": "20",
+    "contract": "SOCIALSCOUT",
+    "inj_file": "dataset/err-inj/injected/SOCIALSCOUT-0x70742D6a.sol",
+    "orig_file": "dataset/err-inj/origin/SOCIALSCOUT-0x70742D6a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        113,
+                        115
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        89,
+                        89
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        764,
+                        764
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        780,
+                        783
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        230,
+                        230
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        762,
+                        762
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        231,
+                        231
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        179,
+                        179
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        153,
+                        156
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        156,
+                        156
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/SOCIALSCOUT-0x70742D6a.sol:152:14:\n    |\n152 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

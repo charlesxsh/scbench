@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "Walter",
+    "inj_file": "dataset/err-inj/injected/Walter-0x702c827c.sol",
+    "orig_file": "dataset/err-inj/origin/Walter-0x702c827c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1015,
+                        1015
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1003,
+                        1003
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        751,
+                        751
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        835,
+                        835
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        689,
+                        690
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        631,
+                        631
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+431;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        444,
+                        444
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        630,
+                        632
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Walter-0x702c827c.sol:629:9:\n    |\n629 |         return _balances[account]+431;    }\n    |         ^^^^^^\n\n"
+}

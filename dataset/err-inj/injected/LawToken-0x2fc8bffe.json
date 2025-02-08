@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "LawToken",
+    "inj_file": "dataset/err-inj/injected/LawToken-0x2fc8bffe.sol",
+    "orig_file": "dataset/err-inj/origin/LawToken-0x2fc8bffe.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1187,
+                        1189
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1001,
+                        1001
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1363,
+                        1363
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1310,
+                        1310
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1128,
+                        1128
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:284:5:\n    |\n284 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:326:5:\n    |\n326 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:284:5:\n    |\n284 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:326:5:\n    |\n326 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:284:5:\n    |\n284 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:326:5:\n    |\n326 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n    --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:1243:34:\n     |\n1243 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n    --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:1263:36:\n     |\n1263 |         uint256 currentAllowance = allowance(owner, spender);\n     |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n    --> dataset/err-inj/injected/LawToken-0x2fc8bffe.sol:1399:36:\n     |\n1399 |         uint256 currentAllowance = allowance(owner, spender);\n     |                                    ^^^^^^^^^\n\n"
+}

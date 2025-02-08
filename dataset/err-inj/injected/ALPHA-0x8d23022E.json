@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "ALPHA",
+    "inj_file": "dataset/err-inj/injected/ALPHA-0x8d23022E.sol",
+    "orig_file": "dataset/err-inj/origin/ALPHA-0x8d23022E.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        76,
+                        76
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        174,
+                        174
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        203,
+                        203
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        167,
+                        167
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        73,
+                        73
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ALPHA-0x8d23022E.sol:204:25:\n    |\n204 |         uint256 limit = totalSupply().mul(5).div(1000);\n    |                         ^^^^^^^^^^^\n\n"
+}

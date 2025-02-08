@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "HPBPBS777",
+    "inj_file": "dataset/err-inj/injected/HPBPBS777-0x73b6709e.sol",
+    "orig_file": "dataset/err-inj/origin/HPBPBS777-0x73b6709e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        323,
+                        323
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        238
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        241,
+                        241
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_reflectedBal[account])+546;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

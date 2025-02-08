@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "BUSHY",
+    "inj_file": "dataset/err-inj/injected/BUSHY-0x0BaAe4Ed.sol",
+    "orig_file": "dataset/err-inj/origin/BUSHY-0x0BaAe4Ed.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        403,
+                        403
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        346,
+                        348
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        14,
+                        14
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        514,
+                        514
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        510,
+                        510
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

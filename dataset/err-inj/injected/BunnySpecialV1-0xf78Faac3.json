@@ -1,0 +1,80 @@
+{
+    "erc": "721",
+    "contract": "PancakeBunnies",
+    "inj_file": "dataset/err-inj/injected/BunnySpecialV1-0xf78Faac3.sol",
+    "orig_file": "dataset/err-inj/origin/BunnySpecialV1-0xf78Faac3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1980,
+                        1980
+                    ],
+                    "to_replace": [
+                        "      address(381);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "rule": "function ownerOf(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1296,
+                        1296
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1979,
+                        1985
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1973,
+                        1973
+                    ],
+                    "to_replace": [
+                        "        return _holderTokens[owner].length()+292;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected identifier but got '('\n    --> dataset/err-inj/injected/BunnySpecialV1-0xf78Faac3.sol:1977:14:\n     |\n1977 |       address(381);            _tokenOwners.get(\n     |              ^\n\n"
+}

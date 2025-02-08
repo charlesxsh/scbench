@@ -1,0 +1,117 @@
+{
+    "erc": "20",
+    "contract": "TAX",
+    "inj_file": "dataset/err-inj/injected/TAX-0xd99ca251.sol",
+    "orig_file": "dataset/err-inj/origin/TAX-0xd99ca251.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        345,
+                        349
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        176,
+                        176
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        353,
+                        353
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        352,
+                        352
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        347,
+                        348
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        221,
+                        221
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        215,
+                        215
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.\n   --> dataset/err-inj/injected/TAX-0xd99ca251.sol:347:5:\n    |\n347 |     receive() external payable {}\n    |     ^^^^^^^\n\n"
+}

@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "BabyFloki2",
+    "inj_file": "dataset/err-inj/injected/BabyFloki2-0x4de6f2c1.sol",
+    "orig_file": "dataset/err-inj/origin/BabyFloki2-0x4de6f2c1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        100,
+                        100
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        138,
+                        140
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        147,
+                        147
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+397;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        139,
+                        139
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BabyFloki2-0x4de6f2c1.sol:137:9:\n    |\n137 |         return 18+3;    }\n    |         ^^^^^^\n\n"
+}

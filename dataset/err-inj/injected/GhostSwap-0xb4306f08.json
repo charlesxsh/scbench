@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "GhostSwap",
+    "inj_file": "dataset/err-inj/injected/GhostSwap-0xb4306f08.sol",
+    "orig_file": "dataset/err-inj/origin/GhostSwap-0xb4306f08.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        331,
+                        331
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        300,
+                        300
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        307,
+                        307
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        312,
+                        312
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        249,
+                        249
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external view override returns (uint256) { return _totalSupply+836;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/GhostSwap-0xb4306f08.sol:249:108:\n    |\n249 |  ... turn _totalSupply+836;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

@@ -1,0 +1,88 @@
+{
+    "erc": "20",
+    "contract": "NeeroBot",
+    "inj_file": "dataset/err-inj/injected/NeeroBot-0x4c8e9b59.sol",
+    "orig_file": "dataset/err-inj/origin/NeeroBot-0x4c8e9b59.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        453,
+                        453
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        484,
+                        484
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        443,
+                        443
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        347,
+                        347
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        355,
+                        355
+                    ],
+                    "to_replace": [
+                        "       return _balances[account]+707;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

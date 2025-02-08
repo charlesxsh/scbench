@@ -1,0 +1,58 @@
+[
+    {
+        "function": "approve",
+        "contract": "MyToken",
+        "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+        "type": "interface",
+        "filepath": "dataset/audited/contracts/KuCoin.sol",
+        "llm_can_detect": false
+    },
+    {
+        "function": "transferFrom",
+        "contract": "MyToken",
+        "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+        "type": "interface",
+        "filepath": "dataset/audited/contracts/KuCoin.sol",
+        "llm_can_detect": true
+    },
+    {
+        "function": "constructor",
+        "contract": "MyToken",
+        "rule": "emit 'Transfer' when tokens are transferred, including zero value transfers",
+        "type": "emit",
+        "filepath": "dataset/audited/contracts/KuCoin.sol",
+        "llm_can_detect": false
+    },
+    {
+        "function": "transfer",
+        "contract": "MyToken",
+        "rule": "The function should return bool, which indicates whether the operation was successful",
+        "type": "interface",
+        "filepath": "dataset/audited/contracts/KuCoin.sol",
+        "llm_can_detect": true
+    },
+    {
+        "function": "transfer",
+        "contract": "MyToken",
+        "rule": "emit 'Transfer' when tokens are transferred, including zero value transfers",
+        "type": "emit",
+        "filepath": "dataset/audited/contracts/KuCoin.sol",
+        "llm_can_detect": false
+    },
+    {
+        "event": "Approval",
+        "contract": "MyToken",
+        "rule": "event Approval(address indexed _owner, address indexed _spender, uint256 _value)",
+        "type": "interface",
+        "filepath": "dataset/audited/contracts/KuCoin.sol",
+        "llm_can_detect": true
+    },
+    {
+        "function": "transfer",
+        "contract": "MyToken",
+        "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event",
+        "type": "throw",
+        "filepath": "dataset/audited/contracts/KuCoin.sol",
+        "llm_can_detect": true
+    }
+]

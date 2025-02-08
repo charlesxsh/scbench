@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "Giftbots",
+    "inj_file": "dataset/err-inj/injected/Giftbots-0x78733ef1.sol",
+    "orig_file": "dataset/err-inj/origin/Giftbots-0x78733ef1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        340,
+                        340
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        128,
+                        128
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        307,
+                        309
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        444,
+                        444
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Giftbots-0x78733ef1.sol:596:21:\n    |\n596 |             require(balanceOf(to) + amount <= maxWallet(), \"wallet maximum\");\n    |                     ^^^^^^^^^\n\n"
+}

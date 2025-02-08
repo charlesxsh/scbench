@@ -1,0 +1,40 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.20;
+
+contract QuantProxyNFT {
+
+    uint256 public totalSupply = 6000;
+    address delegator;
+
+    // Your hardcoded URI
+    string private constant hardcodedURI = "ipfs://QmTgeF5BBw9XXEda64rjPqzw1TvWFLN5fns48onSxwX7Ew";
+
+    constructor(address _delegate) {
+        delegator = _delegate;
+    }
+
+    function uri(uint256) public view returns (string memory) {
+        return hardcodedURI;
+    }
+
+    fallback() external payable {
+        (bool success, bytes memory data) = delegator.delegatecall(msg.data);
+
+        // Properly return the response
+        if (success) {
+            assembly {
+                return(add(data, 0x20), mload(data))
+            }
+        } else {
+            // In the case the delegatecall failed, revert with the returned error data
+            assembly {
+                let returndataSize := returndatasize()
+                returndatacopy(0, 0, returndataSize)
+                revert(0, returndataSize)
+            }
+        }
+    }
+
+    receive() external payable {}
+}

@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "BananaGun",
+    "inj_file": "dataset/err-inj/injected/BananaGun-0xf2c9a603.sol",
+    "orig_file": "dataset/err-inj/origin/BananaGun-0xf2c9a603.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        252,
+                        252
+                    ],
+                    "to_replace": [
+                        "    function symbol() public pure returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        255,
+                        255
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        187,
+                        187
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BananaGun-0xf2c9a603.sol:251:83:\n    |\n251 |     function symbol() public pure returns (string memory) {return \"\";    function decimals() public pure returns (uint8) {return _decimals;}\n    |                                                                                   ^^^^^^^^\n\n"
+}

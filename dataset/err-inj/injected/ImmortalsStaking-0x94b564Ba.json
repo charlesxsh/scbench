@@ -1,0 +1,85 @@
+{
+    "erc": "721",
+    "contract": "ImmortalsStaking",
+    "inj_file": "dataset/err-inj/injected/ImmortalsStaking-0x94b564Ba.sol",
+    "orig_file": "dataset/err-inj/origin/ImmortalsStaking-0x94b564Ba.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        911,
+                        911
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1154,
+                        1157
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1241,
+                        1251
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        978,
+                        982
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1235,
+                        1235
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transferFrom\" not found or not visible after argument-dependent lookup in contract ERC721.\n    --> dataset/err-inj/injected/ImmortalsStaking-0x94b564Ba.sol:1714:9:\n     |\n1714 |         ERC721(immortalContract).transferFrom(msg.sender, address(this), immortalID);\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

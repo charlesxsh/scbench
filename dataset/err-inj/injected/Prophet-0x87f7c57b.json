@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "Prophet",
+    "inj_file": "dataset/err-inj/injected/Prophet-0x87f7c57b.sol",
+    "orig_file": "dataset/err-inj/origin/Prophet-0x87f7c57b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        514,
+                        514
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        322,
+                        324
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        141,
+                        141
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        314,
+                        317
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        132,
+                        132
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

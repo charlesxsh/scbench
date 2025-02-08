@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `safeTransferFrom` function must check if the recipient address is a contract and if so, must call `onERC721Received` on the recipient address.",
+                "function": "_safeTransfer function does not check if the recipient address is a contract nor does it call `onERC721Received`. This is a violation of the ERC721 standard."
+            },
+            {
+                "rule": "If implementing ERC721Enumerable, the contract must fully support the interface including tokenByIndex and tokenOfOwnerByIndex functions.",
+                "function": "ERC721Enumerable related functions"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

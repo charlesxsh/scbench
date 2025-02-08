@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "ToInfinityAndBeyond",
+    "inj_file": "dataset/err-inj/injected/ToInfinityAndBeyond-0x8d1BA97f.sol",
+    "orig_file": "dataset/err-inj/origin/ToInfinityAndBeyond-0x8d1BA97f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        263,
+                        267
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        85,
+                        85
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        251,
+                        251
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        271,
+                        271
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        270,
+                        270
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        282,
+                        282
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        277,
+                        277
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        265,
+                        266
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function/error definition.\n   --> dataset/err-inj/injected/ToInfinityAndBeyond-0x8d1BA97f.sol:378:5:\n    |\n378 |     receive() external payable {}\n    |     ^^^^^^^\n\n"
+}

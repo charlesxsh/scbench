@@ -1,0 +1,113 @@
+{
+    "erc": "20",
+    "contract": "SOFUN",
+    "inj_file": "dataset/err-inj/injected/SOFUN-0x49d2f84c.sol",
+    "orig_file": "dataset/err-inj/origin/SOFUN-0x49d2f84c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        111,
+                        111
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        123,
+                        123
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+288;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        832,
+                        835
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        232,
+                        232
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        180,
+                        180
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        781,
+                        781
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        231,
+                        231
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        154,
+                        157
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/SOFUN-0x49d2f84c.sol:154:14:\n    |\n154 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

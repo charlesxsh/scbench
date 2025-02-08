@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "WHOOCOIN",
+    "inj_file": "dataset/err-inj/injected/WHOOCOIN-0x17809b8b.sol",
+    "orig_file": "dataset/err-inj/origin/WHOOCOIN-0x17809b8b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        260,
+                        260
+                    ],
+                    "to_replace": [
+                        "    function name() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        333,
+                        333
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        12,
+                        12
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        275,
+                        277
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/WHOOCOIN-0x17809b8b.sol:259:93:\n    |\n259 |  ... g memory) { return \"\";    function getOwner() external view override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

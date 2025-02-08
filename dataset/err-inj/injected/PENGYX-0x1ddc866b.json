@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "PENGYX",
+    "inj_file": "dataset/err-inj/injected/PENGYX-0x1ddc866b.sol",
+    "orig_file": "dataset/err-inj/origin/PENGYX-0x1ddc866b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        571,
+                        571
+                    ],
+                    "to_replace": [
+                        "        return 9+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        514,
+                        514
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        118,
+                        118
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        295,
+                        297
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PENGYX-0x1ddc866b.sol:569:43:\n    |\n569 |         if (tradingStartTime == 0) return totalSupply();\n    |                                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PENGYX-0x1ddc866b.sol:573:19:\n    |\n573 |         if (res > totalSupply()) return totalSupply();\n    |                   ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PENGYX-0x1ddc866b.sol:573:41:\n    |\n573 |         if (res > totalSupply()) return totalSupply();\n    |                                         ^^^^^^^^^^^\n\n"
+}

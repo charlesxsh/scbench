@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "LOSS",
+    "inj_file": "dataset/err-inj/injected/LOSS-0x52603bae.sol",
+    "orig_file": "dataset/err-inj/origin/LOSS-0x52603bae.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        127,
+                        127
+                    ],
+                    "to_replace": [
+                        "    return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        268,
+                        268
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        139,
+                        139
+                    ],
+                    "to_replace": [
+                        "    return _totalSupply+261;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

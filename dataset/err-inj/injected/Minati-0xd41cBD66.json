@@ -1,0 +1,90 @@
+{
+    "erc": "20",
+    "contract": "Minati",
+    "inj_file": "dataset/err-inj/injected/Minati-0xd41cBD66.sol",
+    "orig_file": "dataset/err-inj/origin/Minati-0xd41cBD66.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1229,
+                        1229
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+744;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1364,
+                        1364
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1350,
+                        1350
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1436,
+                        1436
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1287,
+                        1288
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "RIPEPE",
+    "inj_file": "dataset/err-inj/injected/RIPEPE-0xcEAD1a20.sol",
+    "orig_file": "dataset/err-inj/origin/RIPEPE-0xcEAD1a20.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        103,
+                        105
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        104,
+                        104
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+386;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        112,
+                        126
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        32,
+                        36
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n  --> dataset/err-inj/injected/RIPEPE-0xcEAD1a20.sol:97:9:\n   |\n97 |         return _allowances[owner][spender]+386;    }\n   |         ^^^^^^\n\n"
+}

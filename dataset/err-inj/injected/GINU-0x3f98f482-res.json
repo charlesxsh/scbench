@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `symbol()` should return the symbol of the token. E.g., 'HIX'.",
+                "function": "symbol"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nExplanation:\nThe ERC-20 standard requires that the `symbol()` function of a token contract should return a string representing the symbol of the token. According to the ERC-20 standard, the symbol is typically a shorter way to describe the token. The provided code returns an empty string, which does not effectively represent the symbol of the token. This does not meet the intent of the ERC-20 standard which is to provide meaningful, recognizable identifiers for the token. Therefore, returning an empty string can be considered a violation of the ERC-20 standard's requirements for the `symbol()` function.",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

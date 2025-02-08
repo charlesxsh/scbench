@@ -1,0 +1,92 @@
+{
+    "erc": "721",
+    "contract": "AISenseNFT",
+    "inj_file": "dataset/err-inj/injected/AISenseNFT-0x1EC52970.sol",
+    "orig_file": "dataset/err-inj/origin/AISenseNFT-0x1EC52970.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1732,
+                        1732
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1603,
+                        1603
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1875,
+                        1875
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1604,
+                        1604
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+490;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": " throw if `msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1654,
+                        1654
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

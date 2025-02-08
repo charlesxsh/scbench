@@ -1,0 +1,42 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transferFrom function should return true on success.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "allowance function should return the remaining number of tokens that the spender will be allowed to spend on behalf of the owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule regarding the allowance mechanism. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from an owner's account. However, in the given code, the function returns `_allowances[owner][spender] + 307`, which artificially inflates the allowed amount by 307. This modification does not accurately reflect the actual approved amount, thus violating the standard's requirement.",
+            "YES\n\nThe `transferFrom` function in the provided contract code violates the ERC-20 rule that requires indicating whether the token transfer was successful. The function is hardcoded to return `false` regardless of whether the `_transfer` and `_approve` operations succeed or fail. This behavior does not accurately reflect the outcome of the token transfer operation, which is a requirement according to the ERC-20 standard. The standard expects the function to return `true` if the transfer was successful, ensuring that calling contracts or transactions can reliably understand the result of their transfer request."
+        ],
+        "can_detect": [
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null
+        ]
+    }
+}

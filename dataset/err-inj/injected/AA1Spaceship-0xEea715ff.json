@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "AA1Spaceship",
+    "inj_file": "dataset/err-inj/injected/AA1Spaceship-0xEea715ff.sol",
+    "orig_file": "dataset/err-inj/origin/AA1Spaceship-0xEea715ff.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        782,
+                        782
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1726,
+                        1728
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1245,
+                        1251
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

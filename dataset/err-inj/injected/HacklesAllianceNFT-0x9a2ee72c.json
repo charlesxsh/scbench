@@ -1,0 +1,87 @@
+{
+    "erc": "721",
+    "contract": "HacklesAllianceNFT",
+    "inj_file": "dataset/err-inj/injected/HacklesAllianceNFT-0x9a2ee72c.sol",
+    "orig_file": "dataset/err-inj/origin/HacklesAllianceNFT-0x9a2ee72c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1000,
+                        1000
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        854,
+                        856
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        679,
+                        679
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        921,
+                        921
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1047,
+                        1047
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/HacklesAllianceNFT-0x9a2ee72c.sol:827:38:\n    |\n827 |             _msgSender() == owner || isApprovedForAll(owner, _msgSender()),\n    |                                      ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HacklesAllianceNFT-0x9a2ee72c.sol:941:37:\n    |\n941 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n    |                                     ^^^^^^^^^^^^^^^^\n\n"
+}

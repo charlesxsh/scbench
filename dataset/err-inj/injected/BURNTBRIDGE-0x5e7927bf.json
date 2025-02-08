@@ -1,0 +1,58 @@
+{
+    "erc": "20",
+    "contract": "BURNTBRIDGE",
+    "inj_file": "dataset/err-inj/injected/BURNTBRIDGE-0x5e7927bf.sol",
+    "orig_file": "dataset/err-inj/origin/BURNTBRIDGE-0x5e7927bf.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        112,
+                        114
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        46,
+                        46
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        121,
+                        121
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

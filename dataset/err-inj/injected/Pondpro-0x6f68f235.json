@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "Pondpro",
+    "inj_file": "dataset/err-inj/injected/Pondpro-0x6f68f235.sol",
+    "orig_file": "dataset/err-inj/origin/Pondpro-0x6f68f235.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        106,
+                        106
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        39,
+                        39
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        102,
+                        102
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        99,
+                        99
+                    ],
+                    "to_replace": [
+                        "    function decimals() external pure override returns (uint8) { return _decim+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n  --> dataset/err-inj/injected/Pondpro-0x6f68f235.sol:98:95:\n   |\n98 |  ... t8) { return _decim+3;    function symbol() external pure override returns ( ...\n   |                                         ^^^^^^\n\n"
+}

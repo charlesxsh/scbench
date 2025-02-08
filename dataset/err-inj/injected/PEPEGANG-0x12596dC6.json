@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "PEPEGANG",
+    "inj_file": "dataset/err-inj/injected/PEPEGANG-0x12596dC6.sol",
+    "orig_file": "dataset/err-inj/origin/PEPEGANG-0x12596dC6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        285,
+                        285
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        280,
+                        280
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+579;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        271,
+                        271
+                    ],
+                    "to_replace": [
+                        "    function decimals() public pure returns (uint8) {return _decimals+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/PEPEGANG-0x12596dC6.sol:271:86:\n    |\n271 |  ... ) {return _decimals+3;    function totalSupply() public view override returns (ui ...\n    |                                         ^^^^^^^^^^^\n\n"
+}

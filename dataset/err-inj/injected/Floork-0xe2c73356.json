@@ -1,0 +1,92 @@
+{
+    "erc": "20",
+    "contract": "Floork",
+    "inj_file": "dataset/err-inj/injected/Floork-0xe2c73356.sol",
+    "orig_file": "dataset/err-inj/origin/Floork-0xe2c73356.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        961,
+                        961
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        875,
+                        875
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        812,
+                        813
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        775,
+                        775
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+315;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        754,
+                        754
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+454;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

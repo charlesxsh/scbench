@@ -1,0 +1,124 @@
+{
+    "erc": "20",
+    "contract": "EtherFomo",
+    "inj_file": "dataset/err-inj/injected/EtherFomo-0x490f881F.sol",
+    "orig_file": "dataset/err-inj/origin/EtherFomo-0x490f881F.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        190,
+                        190
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        761,
+                        761
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        777,
+                        780
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        178,
+                        178
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        229,
+                        229
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        759,
+                        759
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        230,
+                        230
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        152,
+                        155
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        112,
+                        114
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        88,
+                        88
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/EtherFomo-0x490f881F.sol:150:14:\n    |\n150 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

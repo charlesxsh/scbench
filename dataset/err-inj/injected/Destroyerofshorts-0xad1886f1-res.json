@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer function should return true on success",
+                "function": "transfer"
+            },
+            {
+                "rule": "allowance function should return the remaining amount allowed to be withdrawn, not an arbitrary modified value",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES\n\nThe function `symbol()` in the provided code returns an empty string `\"\"`, which does not meet the ERC-20 standard requirement of providing a meaningful symbol for the token. According to the ERC-20 standard, the `symbol` function should return a short string representing the token, typically used as a ticker or abbreviation (e.g., \"ETH\" for Ethereum). Returning an empty string does not fulfill this requirement."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

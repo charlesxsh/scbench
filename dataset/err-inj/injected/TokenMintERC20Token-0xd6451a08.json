@@ -1,0 +1,58 @@
+{
+    "erc": "20",
+    "contract": "TokenMintERC20Token",
+    "inj_file": "dataset/err-inj/injected/TokenMintERC20Token-0xd6451a08.sol",
+    "orig_file": "dataset/err-inj/origin/TokenMintERC20Token-0xd6451a08.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        80,
+                        80
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+593;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        79,
+                        81
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        15,
+                        15
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n  --> dataset/err-inj/injected/TokenMintERC20Token-0xd6451a08.sol:78:9:\n   |\n78 |         return _balances[account]+593;    }\n   |         ^^^^^^\n\n"
+}

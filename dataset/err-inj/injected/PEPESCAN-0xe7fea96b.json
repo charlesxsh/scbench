@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "PEPESCAN",
+    "inj_file": "dataset/err-inj/injected/PEPESCAN-0xe7fea96b.sol",
+    "orig_file": "dataset/err-inj/origin/PEPESCAN-0xe7fea96b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        248,
+                        248
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        252,
+                        252
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        163,
+                        163
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        162,
+                        164
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/PEPESCAN-0xe7fea96b.sol:162:9:\n    |\n162 |         return \"\";    }\n    |         ^^^^^^\n\n"
+}

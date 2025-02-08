@@ -1,0 +1,85 @@
+{
+    "erc": "1155",
+    "contract": "BONE",
+    "inj_file": "dataset/err-inj/injected/BONE-0xa156ad40.sol",
+    "orig_file": "dataset/err-inj/origin/BONE-0xa156ad40.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "rule": "The _owner's balance of the token type requested",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        696,
+                        696
+                    ],
+                    "to_replace": [
+                        "        return _balances[id][account]+90;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function balanceOfBatch(address[] calldata _owners, uint256[] calldata _ids) external view returns (uint256[] memory);",
+                    "function": "balanceOfBatch",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        542,
+                        545
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        706,
+                        719
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function setApprovalForAll(address _operator, bool _approved) external;",
+                    "function": "setApprovalForAll",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        724,
+                        726
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        556,
+                        556
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

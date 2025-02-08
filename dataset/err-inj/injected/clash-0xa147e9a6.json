@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "clash",
+    "inj_file": "dataset/err-inj/injected/clash-0xa147e9a6.sol",
+    "orig_file": "dataset/err-inj/origin/clash-0xa147e9a6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        49,
+                        49
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        183,
+                        183
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        384,
+                        384
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        178,
+                        178
+                    ],
+                    "to_replace": [
+                        "    function name() public pure returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/clash-0xa147e9a6.sol:177:81:\n    |\n177 |     function name() public pure returns (string memory) {return \"\";    function symbol() public pure returns (string memory) {return _symbol;}\n    |                                                                                 ^^^^^^\n\n"
+}

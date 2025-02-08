@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "SHINContract",
+    "inj_file": "dataset/err-inj/injected/SHINContract-0x34e02dd2.sol",
+    "orig_file": "dataset/err-inj/origin/SHINContract-0x34e02dd2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        596,
+                        596
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) { return _balances[account]+615;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        206,
+                        206
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        599,
+                        603
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        204,
+                        204
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        609,
+                        611
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/SHINContract-0x34e02dd2.sol:594:125:\n    |\n594 |  ... balances[account]+615;    function allowance(address holder, address spender) e ...\n    |                                         ^^^^^^^^^\n\n"
+}

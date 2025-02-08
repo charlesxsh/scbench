@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "CATARIUM",
+    "inj_file": "dataset/err-inj/injected/CATARIUM-0xc4118013.sol",
+    "orig_file": "dataset/err-inj/origin/CATARIUM-0xc4118013.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        292,
+                        294
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        108,
+                        108
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        260,
+                        262
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        195,
+                        195
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        320,
+                        320
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+376;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/CATARIUM-0xc4118013.sol:1117:27:\n     |\n1117 |             newAmount >= (totalSupply() * 1) / 100000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/CATARIUM-0xc4118013.sol:1121:27:\n     |\n1121 |             newAmount <= (totalSupply() * 5) / 1000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/CATARIUM-0xc4118013.sol:1130:25:\n     |\n1130 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/CATARIUM-0xc4118013.sol:1138:25:\n     |\n1138 |             newNum >= ((totalSupply() * 10) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\n"
+}

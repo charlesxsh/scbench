@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Prophetbots",
+    "inj_file": "dataset/err-inj/injected/Prophetbots-0xaa736937.sol",
+    "orig_file": "dataset/err-inj/origin/Prophetbots-0xaa736937.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        124,
+                        124
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        303,
+                        305
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        352,
+                        366
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        169,
+                        173
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        317,
+                        317
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Prophetbots-0xaa736937.sol:573:21:\n    |\n573 |             require(balanceOf(to) + amount <= maxWallet(), \"wallet maximum\");\n    |                     ^^^^^^^^^\n\n"
+}

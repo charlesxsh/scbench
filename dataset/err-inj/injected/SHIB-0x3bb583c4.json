@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "SHIB",
+    "inj_file": "dataset/err-inj/injected/SHIB-0x3bb583c4.sol",
+    "orig_file": "dataset/err-inj/origin/SHIB-0x3bb583c4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        281,
+                        281
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) { return _allowances[holder][spender]+545;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        276,
+                        276
+                    ],
+                    "to_replace": [
+                        "    function decimals() external pure override returns (uint8) { return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        277,
+                        277
+                    ],
+                    "to_replace": [
+                        "    function symbol() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/SHIB-0x3bb583c4.sol:276:98:\n    |\n276 |  ...  { return _decimals+3;    function symbol() external pure override returns ( ...\n    |                                         ^^^^^^\n\n"
+}

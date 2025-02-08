@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "XFather",
+    "inj_file": "dataset/err-inj/injected/XFather-0xb9af1556.sol",
+    "orig_file": "dataset/err-inj/origin/XFather-0xb9af1556.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        572,
+                        572
+                    ],
+                    "to_replace": [
+                        "        return 9+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        124,
+                        124
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        303,
+                        305
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        461,
+                        461
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/XFather-0xb9af1556.sol:591:21:\n    |\n591 |             require(balanceOf(to) + amount <= maxWallet(), \"wallet maximum\");\n    |                     ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `transfer` SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "function _transfer(address from, address to, uint256 amount)"
+            },
+            {
+                "rule": "The function `transferFrom` SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "function transferFrom(address from, address to, uint256 amount)"
+            },
+            {
+                "rule": "The function `approve` allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "function approve(address spender, uint256 amount)"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "function _transfer(address from, address to, uint256 amount)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO. The interface does not contain the function `name() public view returns (string)`.",
+            null,
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            null,
+            false
+        ],
+        "error": [
+            null,
+            "'SolidityCustomRevert' object has no attribute 'source_mapping'",
+            null
+        ]
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "LULcoin",
+    "inj_file": "dataset/err-inj/injected/LULcoin-0x11a8b2f2.sol",
+    "orig_file": "dataset/err-inj/origin/LULcoin-0x11a8b2f2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        446,
+                        446
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        597,
+                        597
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        518,
+                        518
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        519,
+                        519
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        434,
+                        434
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        368,
+                        371
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        371,
+                        371
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/LULcoin-0x11a8b2f2.sol:383:14:\n    |\n383 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

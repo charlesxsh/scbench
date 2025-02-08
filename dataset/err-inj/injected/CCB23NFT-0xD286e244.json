@@ -1,0 +1,74 @@
+{
+    "erc": "721",
+    "contract": "CCB23NFT",
+    "inj_file": "dataset/err-inj/injected/CCB23NFT-0xD286e244.sol",
+    "orig_file": "dataset/err-inj/origin/CCB23NFT-0xD286e244.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1320,
+                        1320
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1627,
+                        1630
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1865,
+                        1880
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/CCB23NFT-0xD286e244.sol:339:5:\n    |\n339 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/CCB23NFT-0xD286e244.sol:381:5:\n    |\n381 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/CCB23NFT-0xD286e244.sol:339:5:\n    |\n339 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/CCB23NFT-0xD286e244.sol:381:5:\n    |\n381 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/CCB23NFT-0xD286e244.sol:339:5:\n    |\n339 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/CCB23NFT-0xD286e244.sol:381:5:\n    |\n381 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/CCB23NFT-0xD286e244.sol:1620:9:\n     |\n1620 |         safeTransferFrom(from, to, tokenId, \"\");\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

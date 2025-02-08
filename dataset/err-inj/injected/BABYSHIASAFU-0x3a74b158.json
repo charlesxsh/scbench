@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "BABYSHIASAFU",
+    "inj_file": "dataset/err-inj/injected/BABYSHIASAFU-0x3a74b158.sol",
+    "orig_file": "dataset/err-inj/origin/BABYSHIASAFU-0x3a74b158.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        175,
+                        175
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+901;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        79,
+                        79
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        178,
+                        181
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BABYSHIASAFU-0x3a74b158.sol:174:124:\n    |\n174 |  ... balances[account]+901;    function allowance(address holder, address spender) e ...\n    |                                         ^^^^^^^^^\n\n"
+}

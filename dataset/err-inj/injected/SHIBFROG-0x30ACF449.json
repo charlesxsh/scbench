@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "SHIBFROG",
+    "inj_file": "dataset/err-inj/injected/SHIBFROG-0x30ACF449.sol",
+    "orig_file": "dataset/err-inj/origin/SHIBFROG-0x30ACF449.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        735,
+                        735
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        247,
+                        247
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        567,
+                        569
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        624,
+                        633
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        292,
+                        296
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBFROG-0x30ACF449.sol:968:35:\n    |\n968 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/SHIBFROG-0x30ACF449.sol:1088:42:\n     |\n1088 |                         require(amount + balanceOf(to) <= maxHoldingSize, \"Max wallet exceeded\");\n     |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/SHIBFROG-0x30ACF449.sol:1096:38:\n     |\n1096 |                     require(amount + balanceOf(to) <= maxHoldingSize, \"Max wallet exceeded\");\n     |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/SHIBFROG-0x30ACF449.sol:1101:40:\n     |\n1101 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\n"
+}

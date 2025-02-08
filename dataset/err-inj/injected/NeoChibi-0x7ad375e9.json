@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "NeoChibi",
+    "inj_file": "dataset/err-inj/injected/NeoChibi-0x7ad375e9.sol",
+    "orig_file": "dataset/err-inj/origin/NeoChibi-0x7ad375e9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        63,
+                        63
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        136,
+                        138
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        253,
+                        253
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        95,
+                        95
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        126,
+                        128
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/NeoChibi-0x7ad375e9.sol:892:34:\n    |\n892 |                         amount + balanceOf(to) <= maxWallet,\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NeoChibi-0x7ad375e9.sol:907:34:\n    |\n907 |                         amount + balanceOf(to) <= maxWallet,\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NeoChibi-0x7ad375e9.sol:914:40:\n    |\n914 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/NeoChibi-0x7ad375e9.sol:1012:35:\n     |\n1012 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

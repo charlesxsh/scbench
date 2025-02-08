@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "ShibaRemastered",
+    "inj_file": "dataset/err-inj/injected/ShibaRemastered-0x2a0d5f51.sol",
+    "orig_file": "dataset/err-inj/origin/ShibaRemastered-0x2a0d5f51.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        199,
+                        199
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        121,
+                        123
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        62,
+                        62
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        229,
+                        229
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibaRemastered-0x2a0d5f51.sol:888:34:\n    |\n888 |                         amount + balanceOf(to) <= maxWallet,\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibaRemastered-0x2a0d5f51.sol:903:34:\n    |\n903 |                         amount + balanceOf(to) <= maxWallet,\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ShibaRemastered-0x2a0d5f51.sol:910:40:\n    |\n910 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/ShibaRemastered-0x2a0d5f51.sol:1010:35:\n     |\n1010 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

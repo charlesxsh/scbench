@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `approve` function should ideally enforce setting the allowance to zero before setting it to a new value for the same spender to prevent double-spend attacks on allowances. The implementation sets allowance to the maximum uint256 value unconditionally, which can lead to potential security risks if not handled properly.",
+                "function": "_approve"
+            },
+            {
+                "rule": "symbol function should return the symbol of the token.",
+                "function": "symbol"
+            },
+            {
+                "rule": "The `transferFrom` function should return `true` on successful execution, but returns `false` unconditionally.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

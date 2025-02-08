@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Aggregatedefi",
+    "inj_file": "dataset/err-inj/injected/Aggregatedefi-0x73173012.sol",
+    "orig_file": "dataset/err-inj/origin/Aggregatedefi-0x73173012.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        374,
+                        381
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        23,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        357,
+                        359
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        5,
+                        5
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        362,
+                        362
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+485;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Aggregatedefi-0x73173012.sol:441:26:\n    |\n441 |         uint256 newTx = (totalSupply() * _buy) / 10000;\n    |                          ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Aggregatedefi-0x73173012.sol:442:32:\n    |\n442 |         uint256 newTransfer = (totalSupply() * _trans) / 10000;\n    |                                ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Aggregatedefi-0x73173012.sol:443:30:\n    |\n443 |         uint256 newWallet = (totalSupply() * _wallet) / 10000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Aggregatedefi-0x73173012.sol:447:25:\n    |\n447 |         uint256 limit = totalSupply().mul(5).div(1000);\n    |                         ^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "MiladyTV",
+    "inj_file": "dataset/err-inj/injected/MiladyTV-0x2832b0f0.sol",
+    "orig_file": "dataset/err-inj/origin/MiladyTV-0x2832b0f0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        132,
+                        132
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        311,
+                        313
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        524,
+                        524
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        580,
+                        580
+                    ],
+                    "to_replace": [
+                        "        return 9+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/MiladyTV-0x2832b0f0.sol:599:21:\n    |\n599 |             require(balanceOf(to) + amount <= maxWallet(), \"wallet maximum\");\n    |                     ^^^^^^^^^\n\n"
+}

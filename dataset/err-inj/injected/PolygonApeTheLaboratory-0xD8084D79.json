@@ -1,0 +1,58 @@
+{
+    "erc": "1155",
+    "contract": "PolygonApeTheLaboratory",
+    "inj_file": "dataset/err-inj/injected/PolygonApeTheLaboratory-0xD8084D79.sol",
+    "orig_file": "dataset/err-inj/origin/PolygonApeTheLaboratory-0xD8084D79.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function balanceOf(address _owner, uint256 _id) external view returns (uint256);",
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        779,
+                        779
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        940,
+                        943
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if the operator is approved, false if not",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        978,
+                        978
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[account][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/PolygonApeTheLaboratory-0xD8084D79.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PolygonApeTheLaboratory-0xD8084D79.sol:956:32:\n    |\n956 |             batchBalances[i] = balanceOf(accounts[i], ids[i]);\n    |                                ^^^^^^^^^\n\n"
+}

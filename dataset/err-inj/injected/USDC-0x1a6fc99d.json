@@ -1,0 +1,45 @@
+{
+    "erc": "1155",
+    "contract": "USDC",
+    "inj_file": "dataset/err-inj/injected/USDC-0x1a6fc99d.sol",
+    "orig_file": "dataset/err-inj/origin/USDC-0x1a6fc99d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": "throw if Caller not be approved to manage the tokens being transferred out of the `_from` account",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "msgsender": true,
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 5,
+                    "callee": "onERC1155Received",
+                    "rule": "call 'onERC1155Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        994,
+                        1004
+                    ],
+                    "to_replace": [
+                        ""
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

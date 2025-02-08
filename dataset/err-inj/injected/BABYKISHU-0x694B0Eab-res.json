@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "MUST trigger when tokens are transferred, including zero value transfers.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "A token contract which creates new tokens SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.",
+                "function": "constructor"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES.",
+            "NO. The interface provided in the code does not contain the function `transferFrom(address _from, address _to, uint256 _value) public returns (bool success)`.",
+            null
+        ],
+        "can_detect": [
+            true,
+            true,
+            null
+        ],
+        "error": [
+            null,
+            null,
+            "'inj_fn'"
+        ]
+    }
+}

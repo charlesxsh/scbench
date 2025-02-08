@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "transfer: The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "Transfer event MUST trigger when tokens are transferred, including zero value transfers.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `totalSupply()` in the provided code violates the ERC-20 rule that it should return the total token supply. Instead of returning a constant total supply, it adds 177 to `_tTotal`, which changes the expected total supply value. According to ERC-20 standards, the `totalSupply()` function should consistently return the total amount of tokens in circulation, which should be a fixed value, especially in a context where the total supply is defined as a constant.",
+            null,
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            null,
+            true
+        ],
+        "error": [
+            null,
+            "'inj_fn'",
+            null
+        ]
+    }
+}

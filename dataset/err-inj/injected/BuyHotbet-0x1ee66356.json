@@ -1,0 +1,96 @@
+{
+    "erc": "20",
+    "contract": "BuyHotbet",
+    "inj_file": "dataset/err-inj/injected/BuyHotbet-0x1ee66356.sol",
+    "orig_file": "dataset/err-inj/origin/BuyHotbet-0x1ee66356.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        247,
+                        247
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        147,
+                        147
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        173,
+                        175
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        290,
+                        290
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        235,
+                        235
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        208,
+                        209
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BuyHotbet-0x1ee66356.sol:317:41:\n    |\n317 |         _mint(msg.sender, 42069 * 10 ** decimals());\n    |                                         ^^^^^^^^\n\n"
+}

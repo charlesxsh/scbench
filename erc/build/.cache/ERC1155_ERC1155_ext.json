@@ -1,0 +1,604 @@
+{
+    "functions": [
+        {
+            "def": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;",
+            "raw_rules": "\n    /**\n        @notice Transfers `_value` amount of an `_id` from the `_from` address to the `_to` address specified (with safety call).\n        @dev Caller must be approved to manage the tokens being transferred out of the `_from` account (see \"Approval\" section of the standard).\n        MUST revert if `_to` is the zero address.\n        MUST revert if balance of holder for token `_id` is lower than the `_value` sent.\n        MUST revert on any other error.\n        MUST emit the `TransferSingle` event to reflect the balance change (see \"Safe Transfer Rules\" section of the standard).\n        After the above conditions are met, this function MUST check if `_to` is a smart contract (e.g. code size > 0). If so, it MUST call `onERC1155Received` on `_to` and act appropriately (see \"Safe Transfer Rules\" section of the standard).        \n        @param _from    Source address\n        @param _to      Target address\n        @param _id      ID of the token type\n        @param _value   Transfer amount\n        @param _data    Additional data with no specified format, MUST be sent unaltered in call to `onERC1155Received` on `_to`\n    */\n",
+            "format": {
+                "name": "safeTransferFrom",
+                "arg_types": [
+                    {
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_id",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "_data",
+                        "type": "bytes calldata"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": null
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "`_to` is the zero address",
+                        "throw": true
+                    },
+                    {
+                        "if": "balance of holder for token `_id` is lower than the `_value` sent",
+                        "throw": true
+                    },
+                    {
+                        "if": "any other error",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_to` is a smart contract (e.g. code size > 0)",
+                        "throw": false
+                    }
+                ],
+                "return": null,
+                "assign": [
+                    "_data MUST be sent unaltered in call to `onERC1155Received` on `_to`"
+                ],
+                "call": [
+                    {
+                        "call": "onERC1155Received",
+                        "if": "_to is a smart contract (e.g. code size > 0)"
+                    }
+                ]
+            },
+            "extract_debug": "```json\n[\n    {\n        \"call\": \"onERC1155Received\",\n        \"if\": \"_to is a smart contract (e.g. code size > 0)\"\n    }\n]\n```"
+        },
+        {
+            "def": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;",
+            "raw_rules": "\n    /**\n        @notice Transfers `_values` amount(s) of `_ids` from the `_from` address to the `_to` address specified (with safety call).\n        @dev Caller must be approved to manage the tokens being transferred out of the `_from` account (see \"Approval\" section of the standard).\n        MUST revert if `_to` is the zero address.\n        MUST revert if length of `_ids` is not the same as length of `_values`.\n        MUST revert if any of the balance(s) of the holder(s) for token(s) in `_ids` is lower than the respective amount(s) in `_values` sent to the recipient.\n        MUST revert on any other error.        \n        MUST emit `TransferSingle` or `TransferBatch` event(s) such that all the balance changes are reflected (see \"Safe Transfer Rules\" section of the standard).\n        Balance changes and events MUST follow the ordering of the arrays (_ids[0]/_values[0] before _ids[1]/_values[1], etc).\n        After the above conditions for the transfer(s) in the batch are met, this function MUST check if `_to` is a smart contract (e.g. code size > 0). If so, it MUST call the relevant `ERC1155TokenReceiver` hook(s) on `_to` and act appropriately (see \"Safe Transfer Rules\" section of the standard).                      \n        @param _from    Source address\n        @param _to      Target address\n        @param _ids     IDs of each token type (order and length must match _values array)\n        @param _values  Transfer amounts per token type (order and length must match _ids array)\n        @param _data    Additional data with no specified format, MUST be sent unaltered in call to the `ERC1155TokenReceiver` hook(s) on `_to`\n    */\n",
+            "format": {
+                "name": "safeBatchTransferFrom",
+                "arg_types": [
+                    {
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_ids",
+                        "type": "uint256[] calldata"
+                    },
+                    {
+                        "name": "_values",
+                        "type": "uint256[] calldata"
+                    },
+                    {
+                        "name": "_data",
+                        "type": "bytes calldata"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": null
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "Caller must be approved to manage the tokens being transferred out of the `_from` account",
+                        "throw": false
+                    },
+                    {
+                        "if": "`_to` is the zero address",
+                        "throw": true
+                    },
+                    {
+                        "if": "length of `_ids` is not the same as length of `_values`",
+                        "throw": true
+                    },
+                    {
+                        "if": "any of the balance(s) of the holder(s) for token(s) in `_ids` is lower than the respective amount(s) in `_values` sent to the recipient",
+                        "throw": true
+                    },
+                    {
+                        "if": "on any other error",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_to` is a smart contract (e.g. code size > 0)",
+                        "throw": false
+                    }
+                ],
+                "return": null,
+                "assign": [
+                    "Balance changes MUST follow the ordering of the arrays (_ids[0]/_values[0] before _ids[1]/_values[1], etc)",
+                    "_data MUST be sent unaltered in call to the `ERC1155TokenReceiver` hook(s) on `_to`"
+                ],
+                "call": [
+                    {
+                        "call": "ERC1155TokenReceiver",
+                        "if": "`_to` is a smart contract (e.g. code size > 0)"
+                    }
+                ]
+            },
+            "extract_debug": "```json\n[\n    {\n        \"call\": \"ERC1155TokenReceiver\",\n        \"if\": \"`_to` is a smart contract (e.g. code size > 0)\"\n    }\n]\n```"
+        },
+        {
+            "def": "function balanceOf(address _owner, uint256 _id) external view returns (uint256);",
+            "raw_rules": "\n    /**\n        @notice Get the balance of an account's tokens.\n        @param _owner  The address of the token holder\n        @param _id     ID of the token\n        @return        The _owner's balance of the token type requested\n     */\n",
+            "format": {
+                "name": "balanceOf",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_id",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "uint256"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "The _owner's balance of the token type requested"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "function balanceOfBatch(address[] calldata _owners, uint256[] calldata _ids) external view returns (uint256[] memory);",
+            "raw_rules": "\n    /**\n        @notice Get the balance of multiple account/token pairs\n        @param _owners The addresses of the token holders\n        @param _ids    ID of the tokens\n        @return        The _owner's balance of the token types requested (i.e. balance for each (owner, id) pair)\n     */\n",
+            "format": {
+                "name": "balanceOfBatch",
+                "arg_types": [
+                    {
+                        "name": "_owners",
+                        "type": "address[] calldata"
+                    },
+                    {
+                        "name": "_ids",
+                        "type": "uint256[] calldata"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "name": "memory",
+                    "type": "uint256[]"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "The _owner's balance of the token types requested (i.e. balance for each (owner, id) pair)"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "function setApprovalForAll(address _operator, bool _approved) external;",
+            "raw_rules": "\n    /**\n        @notice Enable or disable approval for a third party (\"operator\") to manage all of the caller's tokens.\n        @dev MUST emit the ApprovalForAll event on success.\n        @param _operator  Address to add to the set of authorized operators\n        @param _approved  True if the operator is approved, false to revoke approval\n    */\n",
+            "format": {
+                "name": "setApprovalForAll",
+                "arg_types": [
+                    {
+                        "name": "_operator",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_approved",
+                        "type": "bool"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": null
+            },
+            "extracted": {
+                "throw": [],
+                "return": null,
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "[]"
+        },
+        {
+            "def": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+            "raw_rules": "\n    /**\n        @notice Queries the approval status of an operator for a given owner.\n        @param _owner     The owner of the tokens\n        @param _operator  Address of authorized operator\n        @return           True if the operator is approved, false if not\n    */\n",
+            "format": {
+                "name": "isApprovedForAll",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_operator",
+                        "type": "address"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "bool"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "True if the operator is approved, false if not"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "The provided rule documentation for the function `isApprovedForAll(address _owner, address _operator) external view returns (bool);` does not indicate any conditions that require the calling of a hook function. The documentation specifies the purpose and parameters of the function, which is to query the approval status of an operator for a given token owner. It does not include information about any additional operations such as invoking hook functions based on specific conditions. Therefore, the answer is:\n\n```json\n[]\n```"
+        }
+    ],
+    "events": [
+        {
+            "def": "    event TransferSingle(address indexed _operator, address indexed _from, address indexed _to, uint256 _id, uint256 _value);\n",
+            "raw_rules": "    /**\n        @dev Either `TransferSingle` or `TransferBatch` MUST emit when tokens are transferred, including zero value transfers as well as minting or burning (see \"Safe Transfer Rules\" section of the standard).\n        The `_operator` argument MUST be the address of an account/contract that is approved to make the transfer (SHOULD be msg.sender).\n        The `_from` argument MUST be the address of the holder whose balance is decreased.\n        The `_to` argument MUST be the address of the recipient whose balance is increased.\n        The `_id` argument MUST be the token type being transferred.\n        The `_value` argument MUST be the number of tokens the holder balance is decreased by and match what the recipient balance is increased by.\n        When minting/creating tokens, the `_from` argument MUST be set to `0x0` (i.e. zero address).\n        When burning/destroying tokens, the `_to` argument MUST be set to `0x0` (i.e. zero address).        \n    */\n",
+            "format": {
+                "name": "TransferSingle",
+                "arg_types": [
+                    {
+                        "name": "_operator",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_from",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "uint256",
+                        "type": "_id",
+                        "indexed": false
+                    },
+                    {
+                        "name": "uint256",
+                        "type": "_value",
+                        "indexed": false
+                    }
+                ]
+            },
+            "extracted": [
+                "tokens are transferred",
+                "zero value transfers",
+                "minting tokens",
+                "burning tokens"
+            ],
+            "extract_debug": "```json\n[\n    \"tokens are transferred\",\n    \"zero value transfers\",\n    \"minting tokens\",\n    \"burning tokens\"\n]\n```"
+        },
+        {
+            "def": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n",
+            "raw_rules": "\n    /**\n        @dev Either `TransferSingle` or `TransferBatch` MUST emit when tokens are transferred, including zero value transfers as well as minting or burning (see \"Safe Transfer Rules\" section of the standard).      \n        The `_operator` argument MUST be the address of an account/contract that is approved to make the transfer (SHOULD be msg.sender).\n        The `_from` argument MUST be the address of the holder whose balance is decreased.\n        The `_to` argument MUST be the address of the recipient whose balance is increased.\n        The `_ids` argument MUST be the list of tokens being transferred.\n        The `_values` argument MUST be the list of number of tokens (matching the list and order of tokens specified in _ids) the holder balance is decreased by and match what the recipient balance is increased by.\n        When minting/creating tokens, the `_from` argument MUST be set to `0x0` (i.e. zero address).\n        When burning/destroying tokens, the `_to` argument MUST be set to `0x0` (i.e. zero address).                \n    */\n",
+            "format": {
+                "name": "TransferBatch",
+                "arg_types": [
+                    {
+                        "name": "_operator",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_from",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "uint256[]",
+                        "type": "_ids",
+                        "indexed": false
+                    },
+                    {
+                        "name": "uint256[]",
+                        "type": "_values",
+                        "indexed": false
+                    }
+                ]
+            },
+            "extracted": [
+                "Either `TransferSingle` or `TransferBatch` must emit when tokens are transferred",
+                "Either `TransferSingle` or `TransferBatch` must emit for zero value transfers",
+                "Either `TransferSingle` or `TransferBatch` must emit for minting tokens",
+                "Either `TransferSingle` or `TransferBatch` must emit for burning tokens",
+                "`_operator` must be the address of an account/contract that is approved to make the transfer",
+                "`_from` must be the address of the holder whose balance is decreased",
+                "`_to` must be the address of the recipient whose balance is increased",
+                "`_ids` must be the list of tokens being transferred",
+                "`_values` must be the list of number of tokens that the holder's balance is decreased by",
+                "`_values` must match what the recipient's balance is increased by",
+                "When minting/creating tokens, `_from` must be set to `0x0`",
+                "When burning/destroying tokens, `_to` must be set to `0x0`"
+            ],
+            "extract_debug": "```json\n[\n    \"Either `TransferSingle` or `TransferBatch` must emit when tokens are transferred\",\n    \"Either `TransferSingle` or `TransferBatch` must emit for zero value transfers\",\n    \"Either `TransferSingle` or `TransferBatch` must emit for minting tokens\",\n    \"Either `TransferSingle` or `TransferBatch` must emit for burning tokens\",\n    \"`_operator` must be the address of an account/contract that is approved to make the transfer\",\n    \"`_from` must be the address of the holder whose balance is decreased\",\n    \"`_to` must be the address of the recipient whose balance is increased\",\n    \"`_ids` must be the list of tokens being transferred\",\n    \"`_values` must be the list of number of tokens that the holder's balance is decreased by\",\n    \"`_values` must match what the recipient's balance is increased by\",\n    \"When minting/creating tokens, `_from` must be set to `0x0`\",\n    \"When burning/destroying tokens, `_to` must be set to `0x0`\"\n]\n```"
+        },
+        {
+            "def": "    event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved);\n",
+            "raw_rules": "\n    /**\n        @dev MUST emit when approval for a second party/operator address to manage all tokens for an owner address is enabled or disabled (absence of an event assumes disabled).        \n    */\n",
+            "format": {
+                "name": "ApprovalForAll",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_operator",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "bool",
+                        "type": "_approved",
+                        "indexed": false
+                    }
+                ]
+            },
+            "extracted": [
+                "when approval for a second party/operator address to manage all tokens for an owner address is enabled",
+                "when approval for a second party/operator address to manage all tokens for an owner address is disabled"
+            ],
+            "extract_debug": "```json\n[\n    \"when approval for a second party/operator address to manage all tokens for an owner address is enabled\",\n    \"when approval for a second party/operator address to manage all tokens for an owner address is disabled\"\n]\n```"
+        },
+        {
+            "def": "    event URI(string _value, uint256 indexed _id);\n",
+            "raw_rules": "\n    /**\n        @dev MUST emit when the URI is updated for a token ID.\n        URIs are defined in RFC 3986.\n        The URI MUST point to a JSON file that conforms to the \"ERC-1155 Metadata URI JSON Schema\".\n    */\n",
+            "format": {
+                "name": "URI",
+                "arg_types": [
+                    {
+                        "name": "string",
+                        "type": "_value",
+                        "indexed": false
+                    },
+                    {
+                        "name": "_id",
+                        "type": "uint256",
+                        "indexed": true
+                    }
+                ]
+            },
+            "extracted": [
+                "when the URI is updated for a token ID"
+            ],
+            "extract_debug": "```json\n[\n    \"when the URI is updated for a token ID\"\n]\n```"
+        }
+    ],
+    "name": "ERC1155",
+    "rules": [
+        {
+            "rule": " throw if `_to` is the zero address",
+            "type": "throw",
+            "interface": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;"
+        },
+        {
+            "rule": " throw if balance of holder for token `_id` is lower than the `_value` sent",
+            "type": "throw",
+            "interface": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;"
+        },
+        {
+            "rule": " throw if any other error",
+            "type": "throw",
+            "interface": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;"
+        },
+        {
+            "rule": "not throw if `_to` is a smart contract (e.g. code size > 0)",
+            "type": "throw",
+            "interface": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;"
+        },
+        {
+            "rule": "_data MUST be sent unaltered in call to `onERC1155Received` on `_to`",
+            "type": "assign",
+            "interface": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;"
+        },
+        {
+            "rule": "call onERC1155Received if _to is a smart contract (e.g. code size > 0)",
+            "type": "call",
+            "interface": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;"
+        },
+        {
+            "rule": "not throw if Caller must be approved to manage the tokens being transferred out of the `_from` account",
+            "type": "throw",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": " throw if `_to` is the zero address",
+            "type": "throw",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": " throw if length of `_ids` is not the same as length of `_values`",
+            "type": "throw",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": " throw if any of the balance(s) of the holder(s) for token(s) in `_ids` is lower than the respective amount(s) in `_values` sent to the recipient",
+            "type": "throw",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": " throw if on any other error",
+            "type": "throw",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": "not throw if `_to` is a smart contract (e.g. code size > 0)",
+            "type": "throw",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": "Balance changes MUST follow the ordering of the arrays (_ids[0]/_values[0] before _ids[1]/_values[1], etc)",
+            "type": "assign",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": "_data MUST be sent unaltered in call to the `ERC1155TokenReceiver` hook(s) on `_to`",
+            "type": "assign",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": "call ERC1155TokenReceiver if `_to` is a smart contract (e.g. code size > 0)",
+            "type": "call",
+            "interface": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;"
+        },
+        {
+            "rule": "The _owner's balance of the token type requested",
+            "type": "return",
+            "interface": "function balanceOf(address _owner, uint256 _id) external view returns (uint256);"
+        },
+        {
+            "rule": "The _owner's balance of the token types requested (i.e. balance for each (owner, id) pair)",
+            "type": "return",
+            "interface": "function balanceOfBatch(address[] calldata _owners, uint256[] calldata _ids) external view returns (uint256[] memory);"
+        },
+        {
+            "rule": "True if the operator is approved, false if not",
+            "type": "return",
+            "interface": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);"
+        },
+        {
+            "rule": "emit 'TransferSingle' if tokens are transferred",
+            "type": "emit",
+            "interface": "    event TransferSingle(address indexed _operator, address indexed _from, address indexed _to, uint256 _id, uint256 _value);\n"
+        },
+        {
+            "rule": "emit 'TransferSingle' if zero value transfers",
+            "type": "emit",
+            "interface": "    event TransferSingle(address indexed _operator, address indexed _from, address indexed _to, uint256 _id, uint256 _value);\n"
+        },
+        {
+            "rule": "emit 'TransferSingle' if minting tokens",
+            "type": "emit",
+            "interface": "    event TransferSingle(address indexed _operator, address indexed _from, address indexed _to, uint256 _id, uint256 _value);\n"
+        },
+        {
+            "rule": "emit 'TransferSingle' if burning tokens",
+            "type": "emit",
+            "interface": "    event TransferSingle(address indexed _operator, address indexed _from, address indexed _to, uint256 _id, uint256 _value);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if Either `TransferSingle` or `TransferBatch` must emit when tokens are transferred",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if Either `TransferSingle` or `TransferBatch` must emit for zero value transfers",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if Either `TransferSingle` or `TransferBatch` must emit for minting tokens",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if Either `TransferSingle` or `TransferBatch` must emit for burning tokens",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if `_operator` must be the address of an account/contract that is approved to make the transfer",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if `_from` must be the address of the holder whose balance is decreased",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if `_to` must be the address of the recipient whose balance is increased",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if `_ids` must be the list of tokens being transferred",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if `_values` must be the list of number of tokens that the holder's balance is decreased by",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if `_values` must match what the recipient's balance is increased by",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if When minting/creating tokens, `_from` must be set to `0x0`",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'TransferBatch' if When burning/destroying tokens, `_to` must be set to `0x0`",
+            "type": "emit",
+            "interface": "    event TransferBatch(address indexed _operator, address indexed _from, address indexed _to, uint256[] _ids, uint256[] _values);\n"
+        },
+        {
+            "rule": "emit 'ApprovalForAll' if when approval for a second party/operator address to manage all tokens for an owner address is enabled",
+            "type": "emit",
+            "interface": "    event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved);\n"
+        },
+        {
+            "rule": "emit 'ApprovalForAll' if when approval for a second party/operator address to manage all tokens for an owner address is disabled",
+            "type": "emit",
+            "interface": "    event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved);\n"
+        },
+        {
+            "rule": "emit 'URI' if when the URI is updated for a token ID",
+            "type": "emit",
+            "interface": "    event URI(string _value, uint256 indexed _id);\n"
+        }
+    ]
+}

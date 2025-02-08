@@ -1,0 +1,58 @@
+{
+    "erc": "20",
+    "contract": "ERC20HUSH",
+    "inj_file": "dataset/err-inj/injected/ERC20HUSH-0xEdb45b49.sol",
+    "orig_file": "dataset/err-inj/origin/ERC20HUSH-0xEdb45b49.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        112,
+                        112
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(msg.sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        151,
+                        151
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        45,
+                        45
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "'NoneType' object has no attribute 'return_values'"
+}

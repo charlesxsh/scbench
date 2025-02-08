@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "RSPToken",
+    "inj_file": "dataset/err-inj/injected/RSPToken-0xaf1f2198.sol",
+    "orig_file": "dataset/err-inj/origin/RSPToken-0xaf1f2198.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        630,
+                        630
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        657,
+                        657
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        709,
+                        709
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        534,
+                        536
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/RSPToken-0xaf1f2198.sol:518:13:\n    |\n518 |             balanceOf(address(this))\n    |             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RSPToken-0xaf1f2198.sol:588:25:\n    |\n588 |                         balanceOf(recipient) + amount <= maxWallet,\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RSPToken-0xaf1f2198.sol:596:21:\n    |\n596 |                     balanceOf(address(this)) >=\n    |                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RSPToken-0xaf1f2198.sol:633:37:\n    |\n633 |         uint256 senderPercentage = (balanceOf(sender) * magnitude) /\n    |                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RSPToken-0xaf1f2198.sol:636:40:\n    |\n636 |         uint256 recipientPercentage = (balanceOf(recipient) * magnitude) /\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RSPToken-0xaf1f2198.sol:736:17:\n    |\n736 |             if (balanceOf(address(this)) > 0) {\n    |                 ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/RSPToken-0xaf1f2198.sol:776:35:\n    |\n776 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

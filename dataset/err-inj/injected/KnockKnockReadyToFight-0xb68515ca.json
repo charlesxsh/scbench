@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "KnockKnockReadyToFight",
+    "inj_file": "dataset/err-inj/injected/KnockKnockReadyToFight-0xb68515ca.sol",
+    "orig_file": "dataset/err-inj/origin/KnockKnockReadyToFight-0xb68515ca.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        242,
+                        242
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        257,
+                        259
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        35,
+                        35
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        37,
+                        37
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        261,
+                        268
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/KnockKnockReadyToFight-0xb68515ca.sol:350:25:\n    |\n350 |                 require(balanceOf(to) + amount < _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/KnockKnockReadyToFight-0xb68515ca.sol:353:44:\n    |\n353 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/KnockKnockReadyToFight-0xb68515ca.sol:418:35:\n    |\n418 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

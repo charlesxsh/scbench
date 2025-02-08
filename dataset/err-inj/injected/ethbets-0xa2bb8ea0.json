@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "ethbets",
+    "inj_file": "dataset/err-inj/injected/ethbets-0xa2bb8ea0.sol",
+    "orig_file": "dataset/err-inj/origin/ethbets-0xa2bb8ea0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        286,
+                        286
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        265,
+                        265
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        201,
+                        203
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        87,
+                        87
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ethbets-0xa2bb8ea0.sol:667:42:\n    |\n667 |                         require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ethbets-0xa2bb8ea0.sol:674:38:\n    |\n674 |                     require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ethbets-0xa2bb8ea0.sol:679:40:\n    |\n679 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ethbets-0xa2bb8ea0.sol:784:33:\n    |\n784 |         if(tokensForBurn > 0 && balanceOf(address(this)) >= tokensForBurn) {\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ethbets-0xa2bb8ea0.sol:789:35:\n    |\n789 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ethbets-0xa2bb8ea0.sol:853:17:\n    |\n853 |         require(balanceOf(address(this)) >= swapTokensAtAmount, \"Can only swap when token amount is at or higher than restriction\");\n    |                 ^^^^^^^^^\n\n"
+}

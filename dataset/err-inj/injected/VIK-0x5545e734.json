@@ -1,0 +1,55 @@
+{
+    "erc": "721",
+    "contract": "VIK",
+    "inj_file": "dataset/err-inj/injected/VIK-0x5545e734.sol",
+    "orig_file": "dataset/err-inj/origin/VIK-0x5545e734.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

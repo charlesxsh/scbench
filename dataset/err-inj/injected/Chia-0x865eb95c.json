@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Chia",
+    "inj_file": "dataset/err-inj/injected/Chia-0x865eb95c.sol",
+    "orig_file": "dataset/err-inj/origin/Chia-0x865eb95c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        38,
+                        38
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        153,
+                        155
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        171,
+                        185
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        83,
+                        87
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        146,
+                        146
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/Chia-0x865eb95c.sol:1506:38:\n     |\n1506 |                     require(amount + balanceOf(to) <= maxTxn, \"Unable to exceed Max Wallet\");\n     |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Chia-0x865eb95c.sol:1510:38:\n     |\n1510 |                     require(amount + balanceOf(to) <= maxTxn, \"Unable to exceed Max Wallet\");\n     |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Chia-0x865eb95c.sol:1515:34:\n     |\n1515 | \t\tuint256 contractTokenBalance = balanceOf(address(this));\n     | \t\t                               ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Chia-0x865eb95c.sol:1568:51:\n     |\n1568 |         dividendTracker.setBalance(payable(from), balanceOf(from));\n     |                                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Chia-0x865eb95c.sol:1569:49:\n     |\n1569 |         dividendTracker.setBalance(payable(to), balanceOf(to));\n     |                                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Chia-0x865eb95c.sol:1618:35:\n     |\n1618 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

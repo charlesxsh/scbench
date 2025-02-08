@@ -1,0 +1,61 @@
+{
+    "erc": "721",
+    "contract": "LaunchCodes",
+    "inj_file": "dataset/err-inj/injected/LaunchCodes-0x4C022a36.sol",
+    "orig_file": "dataset/err-inj/origin/LaunchCodes-0x4C022a36.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": " throw if _tokenId is not a valid NFT",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1814,
+                        1814
+                    ],
+                    "to_replace": [
+                        "        return address(519);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

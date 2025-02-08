@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Instagram",
+    "inj_file": "dataset/err-inj/injected/Instagram-0xCf89fE45.sol",
+    "orig_file": "dataset/err-inj/origin/Instagram-0xCf89fE45.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        422,
+                        424
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        414,
+                        416
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        231,
+                        231
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        407,
+                        407
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Instagram-0xCf89fE45.sol:580:37:\n    |\n580 |         _mint(owner(), 1e7 * (10 ** decimals()));\n    |                                     ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Instagram-0xCf89fE45.sol:614:34:\n    |\n614 | \t\tuint256 contractTokenBalance = balanceOf(address(this));\n    | \t\t                               ^^^^^^^^^\n\n"
+}

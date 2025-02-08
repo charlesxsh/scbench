@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer: Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "allowance: Returns the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe provided code for the `approve` function in the `ERC20` contract does not emit an \"Approval\" event as required by the ERC-20 standard. According to the ERC-20 standard, an \"Approval\" event should be emitted whenever the `approve` function is successfully executed to notify the network about the approval. The absence of this event emission in the code violates the ERC-20 standard rules.",
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 rule that it should return \"the amount which _spender is still allowed to withdraw from _owner\". The function is modified to return `_allowances[owner][spender] + 25`, which adds an extra 25 to the actual allowed amount. This modification can lead to incorrect reporting of allowance and potential misuse in transactions, as it does not accurately reflect the true approved amount. The correct implementation should simply return `_allowances[owner][spender]` without any additional modification.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

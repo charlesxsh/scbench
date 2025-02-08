@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "YAOMING",
+    "inj_file": "dataset/err-inj/injected/YAOMING-0xb3A1c5b0.sol",
+    "orig_file": "dataset/err-inj/origin/YAOMING-0xb3A1c5b0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        232,
+                        232
+                    ],
+                    "to_replace": [
+                        "            return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        247,
+                        249
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        25,
+                        25
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        475,
+                        475
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/YAOMING-0xb3A1c5b0.sol:349:29:\n    |\n349 |                     require(balanceOf(to) + amount < _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/YAOMING-0xb3A1c5b0.sol:352:48:\n    |\n352 |                 uint256 contractTokenBalance = balanceOf(address(this));\n    |                                                ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/YAOMING-0xb3A1c5b0.sol:417:39:\n    |\n417 |             uint256 contractBalance = balanceOf(address(this));\n    |                                       ^^^^^^^^^\n\n"
+}

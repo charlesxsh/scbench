@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "DudeBros",
+    "inj_file": "dataset/err-inj/injected/DudeBros-0x1ce93067.sol",
+    "orig_file": "dataset/err-inj/origin/DudeBros-0x1ce93067.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1693,
+                        1693
+                    ],
+                    "to_replace": [
+                        "        return address(419);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1765,
+                        1767
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        583,
+                        583
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/DudeBros-0x1ce93067.sol:1734:40:\n     |\n1734 |         if (_msgSender() != owner) if(!isApprovedForAll(owner, _msgSender())) {\n     |                                        ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DudeBros-0x1ce93067.sol:1932:13:\n     |\n1932 |             isApprovedForAll(from, _msgSender()) ||\n     |             ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DudeBros-0x1ce93067.sol:1996:17:\n     |\n1996 |                 isApprovedForAll(from, _msgSender()) ||\n     |                 ^^^^^^^^^^^^^^^^\n\n"
+}

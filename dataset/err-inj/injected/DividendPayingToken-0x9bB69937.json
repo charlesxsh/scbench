@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "VIRAL",
+    "inj_file": "dataset/err-inj/injected/DividendPayingToken-0x9bB69937.sol",
+    "orig_file": "dataset/err-inj/origin/DividendPayingToken-0x9bB69937.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        429,
+                        429
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        616,
+                        619
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        660,
+                        660
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        635,
+                        638
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        454,
+                        454
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/DividendPayingToken-0x9bB69937.sol:881:22:\n    |\n881 |       bool success = IERC20(LP_Token).transfer(user, _withdrawableDividend);\n    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,42 @@
+[
+    {
+        "function": "constructor",
+        "contract": "BITCOINSVGOLD",
+        "rule": "emit 'Transfer' when tokens are transferred, including zero value transfers",
+        "type": "emit",
+        "filepath": "dataset/audited/contracts/bitcoinsvgold.sol",
+        "llm_can_detect": true
+    },
+    {
+        "function": "transfer",
+        "contract": "BITCOINSVGOLD",
+        "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend",
+        "type": "throw",
+        "filepath": "dataset/audited/contracts/bitcoinsvgold.sol",
+        "llm_can_detect": false
+    },
+    {
+        "function": "transferFrom",
+        "contract": "BITCOINSVGOLD",
+        "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism",
+        "type": "throw",
+        "filepath": "dataset/audited/contracts/bitcoinsvgold.sol",
+        "llm_can_detect": false
+    },
+    {
+        "function": "transfer",
+        "contract": "BITCOINSVGOLD",
+        "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event",
+        "type": "throw",
+        "filepath": "dataset/audited/contracts/bitcoinsvgold.sol",
+        "llm_can_detect": true
+    },
+    {
+        "function": "transferFrom",
+        "contract": "BITCOINSVGOLD",
+        "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event",
+        "type": "throw",
+        "filepath": "dataset/audited/contracts/bitcoinsvgold.sol",
+        "llm_can_detect": true
+    }
+]

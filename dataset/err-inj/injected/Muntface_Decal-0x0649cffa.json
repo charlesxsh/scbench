@@ -1,0 +1,74 @@
+{
+    "erc": "721",
+    "contract": "Muntface_Decal",
+    "inj_file": "dataset/err-inj/injected/Muntface_Decal-0x0649cffa.sol",
+    "orig_file": "dataset/err-inj/origin/Muntface_Decal-0x0649cffa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1845,
+                        1845
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1683,
+                        1686
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1845,
+                        1845
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

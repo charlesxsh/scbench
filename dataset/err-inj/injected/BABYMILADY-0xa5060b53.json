@@ -1,0 +1,112 @@
+{
+    "erc": "20",
+    "contract": "BABYMILADY",
+    "inj_file": "dataset/err-inj/injected/BABYMILADY-0xa5060b53.sol",
+    "orig_file": "dataset/err-inj/origin/BABYMILADY-0xa5060b53.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        535,
+                        535
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        309,
+                        309
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        447,
+                        447
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        532,
+                        532
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        531,
+                        531
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1281,
+                        1281
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1298,
+                        1301
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        381,
+                        384
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BABYMILADY-0xa5060b53.sol:394:14:\n    |\n394 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,113 @@
+{
+    "erc": "20",
+    "contract": "wakuwaku",
+    "inj_file": "dataset/err-inj/injected/wakuwaku-0x93c7b922.sol",
+    "orig_file": "dataset/err-inj/origin/wakuwaku-0x93c7b922.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        870,
+                        873
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        197,
+                        197
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        853,
+                        853
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        252,
+                        252
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        251,
+                        251
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        169,
+                        172
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        155,
+                        155
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        128,
+                        128
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/wakuwaku-0x93c7b922.sol:170:14:\n    |\n170 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

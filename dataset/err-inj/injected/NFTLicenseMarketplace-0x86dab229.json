@@ -1,0 +1,89 @@
+{
+    "erc": "721",
+    "contract": "ERC721Enumerable",
+    "inj_file": "dataset/err-inj/injected/NFTLicenseMarketplace-0x86dab229.sol",
+    "orig_file": "dataset/err-inj/origin/NFTLicenseMarketplace-0x86dab229.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2313,
+                        2313
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2042,
+                        2042
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2319,
+                        2319
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2384,
+                        2399
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2358,
+                        2358
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,117 @@
+{
+    "erc": "20",
+    "contract": "Ginger",
+    "inj_file": "dataset/err-inj/injected/Ginger-0xc5751bb2.sol",
+    "orig_file": "dataset/err-inj/origin/Ginger-0xc5751bb2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        356,
+                        358
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        157,
+                        157
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        546,
+                        546
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        545,
+                        545
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        461,
+                        461
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        625,
+                        625
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        628,
+                        628
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        395,
+                        398
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        473,
+                        473
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Ginger-0xc5751bb2.sol:405:14:\n    |\n405 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

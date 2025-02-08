@@ -1,0 +1,85 @@
+{
+    "erc": "721",
+    "contract": "turkeysGameFarmers",
+    "inj_file": "dataset/err-inj/injected/turkeysGameFarmers-0xf9D896fE.sol",
+    "orig_file": "dataset/err-inj/origin/turkeysGameFarmers-0xf9D896fE.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1400,
+                        1400
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1684,
+                        1686
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1668,
+                        1668
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "rule": "function ownerOf(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1594,
+                        1598
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1369,
+                        1369
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/turkeysGameFarmers-0xf9D896fE.sol\n\nError: Member \"ownerOf\" not found or not visible after argument-dependent lookup in type(contract ERC721).\n    --> dataset/err-inj/injected/turkeysGameFarmers-0xf9D896fE.sol:1630:25:\n     |\n1630 |         address owner = ERC721.ownerOf(tokenId);\n     |                         ^^^^^^^^^^^^^^\n\n"
+}

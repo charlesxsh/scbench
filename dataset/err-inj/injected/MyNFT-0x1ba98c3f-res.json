@@ -1,0 +1,64 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The balanceOf function should return the number of NFTs owned by `_owner`, possibly zero.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "The safeTransferFrom function should check if `_to` is a smart contract and if so, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer.",
+                "function": "_safeTransfer"
+            },
+            {
+                "rule": "The ERC721 contract must implement the ERC165 interface to ensure it supports the correct interface.",
+                "function": "ERC721"
+            },
+            {
+                "rule": "The mintNFT function should not allow minting more than the MAX_SUPPLY of NFTs.",
+                "function": "mintNFT"
+            },
+            {
+                "rule": "The sellNFT function should not transfer the NFT if the ERC20 token transfer fails.",
+                "function": "sellNFT"
+            },
+            {
+                "rule": "The ERC721 standard requires that the contract must track the ownership of each NFT individually and atomically.",
+                "function": "ERC721"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-721 rule that requires it to return \"The number of NFTs owned by `_owner`, possibly zero\". The function modifies the actual balance by adding 512 to `_balances[owner]`, which does not accurately reflect the number of NFTs owned by the specified owner. This alteration does not comply with the standard requirement of reporting the exact count of NFTs owned by an address.",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

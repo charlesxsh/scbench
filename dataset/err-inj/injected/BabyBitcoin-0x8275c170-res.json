@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "approve function should return true on successful approval.",
+                "function": "approve"
+            },
+            {
+                "rule": "transferFrom function should return true on successful transfer.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "allowance function should return the remaining amount of tokens allowed to be spent on behalf of the owner by a spender, without any additional modifications or conditions.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe `transferFrom` function in the provided code violates the ERC-20 rule that requires indicating whether the token transfer was successful. According to the ERC-20 standard, functions like `transfer` and `transferFrom` should return a boolean value indicating success or failure of the operation. In the provided code, the `transferFrom` function always returns `false`, regardless of whether the `_transfer` and `_approve` operations were successful or not. This implementation can mislead other contracts or services interacting with this token, as they may interpret the transfer as failed even when it was actually successful. Proper implementation should return `true` if the operations complete successfully.",
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule that specifies the function should return \"the amount which _spender is still allowed to withdraw from _owner\". The code modifies the return value by adding 111 to the actual allowance amount stored in `_allowances[owner][spender]`, which is not compliant with the standard. The ERC-20 standard expects the function to return the exact amount allowed, not a modified value."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

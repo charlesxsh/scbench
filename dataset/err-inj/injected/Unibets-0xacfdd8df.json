@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "Unibets",
+    "inj_file": "dataset/err-inj/injected/Unibets-0xacfdd8df.sol",
+    "orig_file": "dataset/err-inj/origin/Unibets-0xacfdd8df.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        344,
+                        344
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+651;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        460,
+                        460
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        323,
+                        325
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        128,
+                        128
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/Unibets-0xacfdd8df.sol:1325:34:\n     |\n1325 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Unibets-0xacfdd8df.sol:1340:34:\n     |\n1340 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Unibets-0xacfdd8df.sol:1347:40:\n     |\n1347 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Unibets-0xacfdd8df.sol:1437:35:\n     |\n1437 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,59 @@
+{
+    "erc": "1155",
+    "contract": "APE",
+    "inj_file": "dataset/err-inj/injected/APE-0x68209baa.sol",
+    "orig_file": "dataset/err-inj/origin/APE-0x68209baa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 5,
+                    "callee": "onERC1155Received",
+                    "rule": "call 'onERC1155Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1080,
+                        1090
+                    ],
+                    "to_replace": [
+                        ""
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;",
+                    "function": "safeTransferFrom",
+                    "numofargs": 5,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        739,
+                        751
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        579,
+                        579
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

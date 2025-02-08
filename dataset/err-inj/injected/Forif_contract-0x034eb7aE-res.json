@@ -1,0 +1,68 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `ownerOf` function must return the address of the owner of the NFT.",
+                "function": "ownerOf"
+            },
+            {
+                "rule": "The `safeTransferFrom` function must check if the recipient address is a smart contract and if so, it must call `onERC721Received` on the recipient address.",
+                "function": "safeTransferFrom"
+            },
+            {
+                "rule": "The `transferFrom` function must check that the `from` address is the current owner of the token.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The `approve` function must reset the approval if the address to approve is the zero address.",
+                "function": "approve"
+            },
+            {
+                "rule": "The `setApprovalForAll` function must allow setting approval for all tokens, not just one.",
+                "function": "setApprovalForAll"
+            },
+            {
+                "rule": "The `getApproved` function must return the approved address for the token, or zero if no address is approved.",
+                "function": "getApproved"
+            },
+            {
+                "rule": "The `isApprovedForAll` function must return true if the operator is approved by the owner.",
+                "function": "isApprovedForAll"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            null,
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            null,
+            false
+        ],
+        "error": [
+            null,
+            "'inj_fn'",
+            null
+        ]
+    }
+}

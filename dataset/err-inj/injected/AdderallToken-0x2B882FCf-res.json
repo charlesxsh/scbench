@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success).",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `decimals()` in the provided code violates the ERC-20 standard rule regarding the number of decimal places a token can be divided into. According to the ERC-20 standard, the `decimals()` function should return a constant value that defines the smallest unit of the token for display and transaction purposes. In the given code, the function returns `_decimals + 3`, which results in 21 decimal places. This is not a constant return value as expected by the standard, since it modifies the originally defined `_decimals` value of 18 by adding 3 to it. This could lead to inconsistencies and unexpected behavior in token handling and display across platforms that assume a stable decimal value as per the ERC-20 standard.",
+            "YES\n\nThe function `approve` in the provided code violates the ERC-20 rule that requires indicating whether the approval was successful. According to the ERC-20 standard, the `approve` function should return `true` if the operation was successful. However, in the given code, the `approve` function always returns `false` regardless of the successful execution of the `_approve` function. This behavior does not correctly indicate the outcome of the approval process, thereby violating the ERC-20 standard requirement.",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

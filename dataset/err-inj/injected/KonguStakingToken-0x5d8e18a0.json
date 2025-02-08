@@ -1,0 +1,74 @@
+{
+    "erc": "721",
+    "contract": "KonguStakingPass",
+    "inj_file": "dataset/err-inj/injected/KonguStakingToken-0x5d8e18a0.sol",
+    "orig_file": "dataset/err-inj/origin/KonguStakingToken-0x5d8e18a0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        219,
+                        223
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1215,
+                        1221
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1486,
+                        1501
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,70 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Every ERC-721 compliant contract must implement the `ERC721` and `ERC165` interfaces.",
+                "function": "constructor"
+            },
+            {
+                "rule": "The contract must allow multiple operators per owner.",
+                "function": "setApprovalForAll"
+            },
+            {
+                "rule": "NFTs assigned to the zero address are considered invalid, and this function throws for queries about the zero address.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "NFTs assigned to zero address are considered invalid, and queries about them do throw.",
+                "function": "ownerOf"
+            },
+            {
+                "rule": "Throws unless `msg.sender` is the current owner, an authorized operator, or the approved address for this NFT. Throws if `_from` is not the current owner. Throws if `_to` is the zero address. Throws if `_tokenId` is not a valid NFT.",
+                "function": "safeTransferFrom"
+            },
+            {
+                "rule": "Throws unless `msg.sender` is the current owner, an authorized operator, or the approved address for this NFT. Throws if `_from` is not the current owner. Throws if `_to` is the zero address. Throws if `_tokenId` is not a valid NFT.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The zero address indicates there is no approved address. Throws unless `msg.sender` is the current NFT owner, or an authorized operator of the current owner.",
+                "function": "approve"
+            },
+            {
+                "rule": "Throws if `_tokenId` is not a valid NFT.",
+                "function": "getApproved"
+            },
+            {
+                "rule": "When a Transfer event emits, this also indicates that the approved address for that NFT (if any) is reset to none.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe function `isApprovedForAll` in the provided code violates the ERC-721 rule that states it should return \"True if `_operator` is an approved operator for `_owner`, false otherwise.\" The violation occurs because the function implementation inverts the expected behavior under certain conditions.\n\nIn the ERC721RestrictApprove contract, the `isApprovedForAll` function first checks if the operator is allowed for the owner using `_isAllowed(owner, operator)`. If this returns `false`, the function incorrectly returns `true`, which is contrary to the expected behavior. Furthermore, if `_isAllowed(owner, operator)` returns `true`, the function then negates the result of `super.isApprovedForAll(owner, operator)`, which again can lead to incorrect results depending on the state of `_operatorApprovals` in the base contract `ERC721Psi`.\n\nThis inversion of logic can lead to scenarios where an operator who is not approved appears to be approved and vice versa, which is a direct violation of the ERC-721 standard requirements for the `isApprovedForAll` function."
+        ],
+        "can_detect": [
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null
+        ]
+    }
+}

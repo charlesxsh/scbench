@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "shrekd",
+    "inj_file": "dataset/err-inj/injected/shrekd-0x1cff4399.sol",
+    "orig_file": "dataset/err-inj/origin/shrekd-0x1cff4399.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        165,
+                        165
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+812;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        192,
+                        192
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        12,
+                        12
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        164,
+                        166
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/shrekd-0x1cff4399.sol:163:9:\n    |\n163 |         return _tTotal+812;    }\n    |         ^^^^^^\n\n"
+}

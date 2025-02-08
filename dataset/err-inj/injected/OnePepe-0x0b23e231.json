@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "OnePepe",
+    "inj_file": "dataset/err-inj/injected/OnePepe-0x0b23e231.sol",
+    "orig_file": "dataset/err-inj/origin/OnePepe-0x0b23e231.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        328,
+                        328
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        349,
+                        349
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        332,
+                        332
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        333,
+                        333
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        344,
+                        345
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        219,
+                        219
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+652;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        117,
+                        117
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/OnePepe-0x0b23e231.sol:218:14:\n    |\n218 |     function shouldContractSwap(address sender, address recipient, uint256 amount) internal view returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^^\n\n"
+}

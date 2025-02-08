@@ -1,0 +1,86 @@
+{
+    "erc": "721",
+    "contract": "NFT",
+    "inj_file": "dataset/err-inj/injected/NFT-0xd4ee98a6.sol",
+    "orig_file": "dataset/err-inj/origin/NFT-0xd4ee98a6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        966,
+                        980
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        757,
+                        763
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        92,
+                        96
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _approved, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        702,
+                        712
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        131,
+                        131
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

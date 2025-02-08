@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "extasy",
+    "inj_file": "dataset/err-inj/injected/extasy-0x068705d2.sol",
+    "orig_file": "dataset/err-inj/origin/extasy-0x068705d2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        145,
+                        145
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        279,
+                        279
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        146,
+                        146
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        280,
+                        280
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/extasy-0x068705d2.sol:280:98:\n    |\n280 |     function circulatingSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/extasy-0x068705d2.sol:280:119:\n    |\n280 |     function circulatingSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                                                       ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/extasy-0x068705d2.sol:285:27:\n    |\n285 |         require(amount <= balanceOf(sender),\"ERC20: below available balance threshold\");\n    |                           ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/extasy-0x068705d2.sol:412:31:\n    |\n412 |         bool aboveThreshold = balanceOf(address(this)) >= swapThreshold;\n    |                               ^^^^^^^^^\n\n"
+}

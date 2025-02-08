@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "JAPAN",
+    "inj_file": "dataset/err-inj/injected/JAPAN-0xbe0a4603.sol",
+    "orig_file": "dataset/err-inj/origin/JAPAN-0xbe0a4603.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        52,
+                        52
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        168,
+                        168
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        169,
+                        169
+                    ],
+                    "to_replace": [
+                        "    function transfer(address recipient, uint256 amount) public override returns (bool) {_transfer(msg.sender, recipient, amount);return false;}\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        164,
+                        164
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        49,
+                        49
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/JAPAN-0xbe0a4603.sol:170:92:\n    |\n170 |     function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JAPAN-0xbe0a4603.sol:170:113:\n    |\n170 |     function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JAPAN-0xbe0a4603.sol:179:27:\n    |\n179 |         require(amount <= balanceOf(sender),\"You are trying to transfer more than your balance\");\n    |                           ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JAPAN-0xbe0a4603.sol:277:31:\n    |\n277 |         bool aboveThreshold = balanceOf(address(this)) >= swapThreshold;\n    |                               ^^^^^^^^^\n\n"
+}

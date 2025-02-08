@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "PepeBot",
+    "inj_file": "dataset/err-inj/injected/PepeBot-0x8Ad8645E.sol",
+    "orig_file": "dataset/err-inj/origin/PepeBot-0x8Ad8645E.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        213
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+601;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

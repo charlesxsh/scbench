@@ -1,0 +1,93 @@
+{
+    "erc": "721",
+    "contract": "GENKAIOFICIAL",
+    "inj_file": "dataset/err-inj/injected/GENKAIOFICIAL-0xB5a265bb.sol",
+    "orig_file": "dataset/err-inj/origin/GENKAIOFICIAL-0xB5a265bb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1056,
+                        1056
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        906,
+                        906
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        759,
+                        759
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1033,
+                        1033
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        846,
+                        855
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        566,
+                        570
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

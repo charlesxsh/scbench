@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "ROE",
+    "inj_file": "dataset/err-inj/injected/ROE-0x28913Bfc.sol",
+    "orig_file": "dataset/err-inj/origin/ROE-0x28913Bfc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        593,
+                        593
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        20,
+                        20
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        479,
+                        481
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        484,
+                        484
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+306;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ROE-0x28913Bfc.sol:611:44:\n    |\n611 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ROE-0x28913Bfc.sol:627:25:\n    |\n627 |                 require(balanceOf(recipient).add(finalAmount) <= _walletMax);\n    |                         ^^^^^^^^^\n\n"
+}

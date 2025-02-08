@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x6d457e2d.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x6d457e2d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1464,
+                        1468
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1282,
+                        1282
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1490,
+                        1490
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1473,
+                        1475
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1291,
+                        1291
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/Token-0x6d457e2d.sol\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n    --> dataset/err-inj/injected/Token-0x6d457e2d.sol:1520:34:\n     |\n1520 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n    --> dataset/err-inj/injected/Token-0x6d457e2d.sol:1540:36:\n     |\n1540 |         uint256 currentAllowance = allowance(owner, spender);\n     |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n    --> dataset/err-inj/injected/Token-0x6d457e2d.sol:1664:36:\n     |\n1664 |         uint256 currentAllowance = allowance(owner, spender);\n     |                                    ^^^^^^^^^\n\n"
+}

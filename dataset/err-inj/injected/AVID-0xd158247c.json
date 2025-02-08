@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "AVID",
+    "inj_file": "dataset/err-inj/injected/AVID-0xd158247c.sol",
+    "orig_file": "dataset/err-inj/origin/AVID-0xd158247c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        340,
+                        340
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        220,
+                        222
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        66,
+                        66
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        43,
+                        43
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        193,
+                        195
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/AVID-0xd158247c.sol:816:29:\n    |\n816 |   \t    swapTokensAtAmount = totalSupply() * newAmount / 100;\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AVID-0xd158247c.sol:822:33:\n    |\n822 |         maxTransactionAmount = (totalSupply() * txNum / 100)/1e18;\n    |                                 ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AVID-0xd158247c.sol:824:22:\n    |\n824 |         maxWallet = (totalSupply() * walNum / 100)/1e18;\n    |                      ^^^^^^^^^^^\n\n"
+}

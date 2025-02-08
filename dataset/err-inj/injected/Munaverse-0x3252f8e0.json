@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "Munaverse",
+    "inj_file": "dataset/err-inj/injected/Munaverse-0x3252f8e0.sol",
+    "orig_file": "dataset/err-inj/origin/Munaverse-0x3252f8e0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        275,
+                        275
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        333,
+                        333
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        380,
+                        380
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        569,
+                        569
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        381,
+                        381
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        274,
+                        275
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        340,
+                        340
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

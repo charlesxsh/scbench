@@ -1,0 +1,88 @@
+{
+    "erc": "20",
+    "contract": "MATSURYSHIBA",
+    "inj_file": "dataset/err-inj/injected/MATSURYSHIBA-0xD5479206.sol",
+    "orig_file": "dataset/err-inj/origin/MATSURYSHIBA-0xD5479206.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        624,
+                        624
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        711,
+                        711
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        603,
+                        603
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        553,
+                        553
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        439,
+                        439
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+97;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

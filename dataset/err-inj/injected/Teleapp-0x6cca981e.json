@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Teleapp",
+    "inj_file": "dataset/err-inj/injected/Teleapp-0x6cca981e.sol",
+    "orig_file": "dataset/err-inj/origin/Teleapp-0x6cca981e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        471,
+                        471
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        542,
+                        544
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        607,
+                        612
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        419,
+                        422
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        584,
+                        584
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+484;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Teleapp-0x6cca981e.sol:662:34:\n    |\n662 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Teleapp-0x6cca981e.sol:685:36:\n    |\n685 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Teleapp-0x6cca981e.sol:829:36:\n    |\n829 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

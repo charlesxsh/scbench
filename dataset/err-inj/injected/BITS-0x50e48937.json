@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "BITS",
+    "inj_file": "dataset/err-inj/injected/BITS-0x50e48937.sol",
+    "orig_file": "dataset/err-inj/origin/BITS-0x50e48937.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        464,
+                        464
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(msg.sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        450,
+                        450
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) { return _balances[account]+700;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        448,
+                        448
+                    ],
+                    "to_replace": [
+                        "    function name() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BITS-0x50e48937.sol:448:93:\n    |\n448 |  ... g memory) { return \"\";    function getOwner() external view override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "ASSASSINBOT",
+    "inj_file": "dataset/err-inj/injected/ASSASSINBOT-0x5a6b33af.sol",
+    "orig_file": "dataset/err-inj/origin/ASSASSINBOT-0x5a6b33af.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        458,
+                        458
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        584,
+                        584
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        532,
+                        532
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        547,
+                        547
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success). Callers MUST NOT assume that false is never returned!",
+                "function": "transfer"
+            },
+            {
+                "rule": "Transfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The transferFrom method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "MUST trigger when tokens are transferred, including zero value transfers. A token contract which creates new tokens SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe `transfer` function in the provided contract code violates the ERC-20 rule that requires indicating whether the operation was successful. According to the ERC-20 standard, the `transfer` function should return a boolean value that indicates success (`true`) or failure (`false`). In the given code, the `transfer` function always returns `false`, regardless of whether the `_transfer` function (which actually processes the transfer) completes successfully or not. This implementation can mislead users and external contracts interacting with this token, as they may interpret the transfer as failed even when it was successful. Proper implementation should return `true` upon a successful transfer completion.",
+            "NO",
+            "NO. The interface provided does not contain the function `name() public view returns (string)`."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

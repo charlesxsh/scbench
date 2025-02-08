@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Returns the amount of tokens owned by `account`.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "Returns a boolean value indicating whether the operation succeeded.",
+                "function": "transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance from `_balances[account]`, the function adds 681 to the balance, which is not compliant with the standard behavior expected from an ERC-20 token's `balanceOf` function. The ERC-20 standard specifies that this function should return the number of tokens that the specified address owns, without any modification or calculation.",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

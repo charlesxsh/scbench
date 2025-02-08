@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "decimals - Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation. OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "decimals"
+            },
+            {
+                "rule": "totalSupply - Returns the total token supply.",
+                "function": "totalSupply"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "YES",
+            "NO. \n\nThe function `decimals()` in the provided code returns `21` (since `18 + 3 = 21`), which specifies that the token can be divided into 21 decimal places. The ERC-20 standard does not specify a maximum number of decimal places; it only requires that a `decimals()` function is implemented to define the smallest unit of the token. Therefore, this implementation does not violate the ERC-20 rule regarding the definition of decimal places. It simply sets a specific number of decimal places that the token can be divided into, which is permissible under the standard."
+        ],
+        "can_detect": [
+            null,
+            true,
+            false
+        ],
+        "error": [
+            "'inj_fn'",
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Returns the name of the token - e.g. \"MyToken\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "name"
+            },
+            {
+                "rule": "Returns the symbol of the token. E.g. \"HIX\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "symbol"
+            },
+            {
+                "rule": "Transfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "TransferrTransferr"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe smart contract `Binary` does violate the ERC-20 rule to emit the `Approval` event for the `approve` function. In the provided code, the `approve` function sets the allowance but does not emit the `Approval` event as required by the ERC-20 standard. This is necessary to notify external observers of the change in allowance.",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe provided code for the `approve` function in the `Binary` contract does not emit an `Approval` event as required by the ERC-20 standard. According to the ERC-20 standard, an `Approval` event should be emitted whenever the `approve` function is successfully executed to notify the network of the approval. The absence of this event emission in the code violates the ERC-20 standard rules.",
+            "YES\n\nThe code provided for the `name()` function in the `Binary` contract returns an empty string (`\"\"`). According to ERC-20 standards, the `name()` function should return the name of the token, such as \"MyToken\". Returning an empty string does not meet this requirement, as it does not provide a meaningful or identifiable name for the token. Therefore, this implementation violates the ERC rule that requires the function to return \"the name of the token.\""
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

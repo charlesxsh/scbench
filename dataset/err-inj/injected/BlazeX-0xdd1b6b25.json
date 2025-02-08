@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "BlazeX",
+    "inj_file": "dataset/err-inj/injected/BlazeX-0xdd1b6b25.sol",
+    "orig_file": "dataset/err-inj/origin/BlazeX-0xdd1b6b25.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        52,
+                        52
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        483,
+                        485
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        55,
+                        55
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        497,
+                        499
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        468,
+                        468
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_tTotalSupply\"?\n   --> dataset/err-inj/injected/BlazeX-0xdd1b6b25.sol:851:29:\n    |\n851 |         require(newAmount > totalSupply() / 1e5, \"SwapTokensAtAmount must be greater than 0.001% of total supply\");\n    |                             ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_tTotalSupply\"?\n   --> dataset/err-inj/injected/BlazeX-0xdd1b6b25.sol:999:42:\n    |\n999 |             _maxTransactionAmountBuy  >= totalSupply() / (10 ** decimals()) / 1000 && \n    |                                          ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_tTotalSupply\"?\n    --> dataset/err-inj/injected/BlazeX-0xdd1b6b25.sol:1000:42:\n     |\n1000 |             _maxTransactionAmountSell >= totalSupply() / (10 ** decimals()) / 1000, \n     |                                          ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_tTotalSupply\"?\n    --> dataset/err-inj/injected/BlazeX-0xdd1b6b25.sol:1037:38:\n     |\n1037 |         require(_maxWalletAmount >= (totalSupply() / (10 ** decimals())) / 100, \"Max wallet percentage cannot be lower than 1%\");\n     |                                      ^^^^^^^^^^^\n\n"
+}

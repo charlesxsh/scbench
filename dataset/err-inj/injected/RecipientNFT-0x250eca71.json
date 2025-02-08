@@ -1,0 +1,49 @@
+{
+    "erc": "1155",
+    "contract": "RecipientNFT",
+    "inj_file": "dataset/err-inj/injected/RecipientNFT-0x250eca71.sol",
+    "orig_file": "dataset/err-inj/origin/RecipientNFT-0x250eca71.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": "throw if Caller not be approved to manage the tokens being transferred out of the `_from` account",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "msgsender": true,
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        755,
+                        767
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        591,
+                        597
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

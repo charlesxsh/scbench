@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "CHADS",
+    "inj_file": "dataset/err-inj/injected/CHADS-0xac2fddcc.sol",
+    "orig_file": "dataset/err-inj/origin/CHADS-0xac2fddcc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        802,
+                        802
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        900,
+                        900
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        786,
+                        786
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+233;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

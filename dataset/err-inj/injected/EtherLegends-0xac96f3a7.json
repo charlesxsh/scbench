@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "EtherLegends",
+    "inj_file": "dataset/err-inj/injected/EtherLegends-0xac96f3a7.sol",
+    "orig_file": "dataset/err-inj/origin/EtherLegends-0xac96f3a7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        387,
+                        387
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        476,
+                        476
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        239,
+                        239
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+899;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

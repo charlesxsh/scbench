@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "PEPESAGA",
+    "inj_file": "dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol",
+    "orig_file": "dataset/err-inj/origin/PEPESAGA-0x2129d4cb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        132,
+                        134
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        63,
+                        63
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        65,
+                        65
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        136,
+                        138
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        245,
+                        245
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:712:27:\n    |\n712 |             newAmount >= (totalSupply() * 1) / 100000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:716:27:\n    |\n716 |             newAmount <= (totalSupply() * 5) / 1000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:725:25:\n    |\n725 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:733:25:\n    |\n733 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:868:34:\n    |\n868 |                         amount + balanceOf(to) <= maxWallet,\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:883:34:\n    |\n883 |                         amount + balanceOf(to) <= maxWallet,\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:890:40:\n    |\n890 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:988:35:\n    |\n988 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/PEPESAGA-0x2129d4cb.sol:1047:35:\n     |\n1047 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

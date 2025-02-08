@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The approve function should set the allowance first to 0 before setting it to another value for the same spender, to prevent attack vectors.",
+                "function": "approve"
+            },
+            {
+                "rule": "The `safeTransferFrom` function must check if the recipient address is a contract and if so, must call `onERC721Received` on the recipient address.",
+                "function": "safeTransferFrom"
+            },
+            {
+                "rule": "The `getApproved` function must return the address approved for a specific token ID, or the zero address if no address is approved.",
+                "function": "getApproved"
+            },
+            {
+                "rule": "The `transferFrom` function must check that the `from` address is the current owner of the token, that the `to` address is not the zero address, and that the caller is authorized to move the token.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

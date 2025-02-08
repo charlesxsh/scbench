@@ -1,0 +1,53 @@
+{
+    "erc": "20",
+    "contract": "SuperHeavyBooster9ErcToken",
+    "inj_file": "dataset/err-inj/injected/SuperHeavyBooster9ErcToken-0xc8f604d3.sol",
+    "orig_file": "dataset/err-inj/origin/SuperHeavyBooster9ErcToken-0xc8f604d3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        51,
+                        51
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        119,
+                        125
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "'NoneType' object has no attribute 'source_mapping'"
+}

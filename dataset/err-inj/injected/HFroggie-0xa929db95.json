@@ -1,0 +1,90 @@
+{
+    "erc": "20",
+    "contract": "HFroggie",
+    "inj_file": "dataset/err-inj/injected/HFroggie-0xa929db95.sol",
+    "orig_file": "dataset/err-inj/origin/HFroggie-0xa929db95.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        312,
+                        318
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        394,
+                        394
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        389,
+                        389
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        290,
+                        292
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        24,
+                        24
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/HFroggie-0xa929db95.sol:330:34:\n    |\n330 |             uint256 heldTokens = balanceOf(recipient);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HFroggie-0xa929db95.sol:528:29:\n    |\n528 |         return accuracy.mul(balanceOf(pair).mul(2)).div(showSupply());\n    |                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HFroggie-0xa929db95.sol:532:33:\n    |\n532 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HFroggie-0xa929db95.sol:532:54:\n    |\n532 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                                      ^^^^^^^^^\n\n"
+}

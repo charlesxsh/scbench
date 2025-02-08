@@ -1,0 +1,95 @@
+{
+    "erc": "20",
+    "contract": "roulette",
+    "inj_file": "dataset/err-inj/injected/roulette-0x7790e569.sol",
+    "orig_file": "dataset/err-inj/origin/roulette-0x7790e569.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        558,
+                        560
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        602,
+                        602
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        613,
+                        613
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        607,
+                        607
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        606,
+                        606
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        585,
+                        586
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

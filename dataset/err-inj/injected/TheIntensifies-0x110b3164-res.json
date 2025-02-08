@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `totalSupply` function should return the total token supply without arbitrary modifications.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "The `transfer` and `transferFrom` functions should revert if the sender does not have enough balance without modifying state.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "The `approve` function should handle allowances in a way that prevents race conditions, ideally by requiring the current allowance to be zero before setting a new value.",
+                "function": "approve"
+            },
+            {
+                "rule": "A `Transfer` event should be triggered when tokens are created, for all tokens including those added beyond the initial total supply.",
+                "function": "Constructor and totalSupply"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

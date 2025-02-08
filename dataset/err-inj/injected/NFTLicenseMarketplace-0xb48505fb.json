@@ -1,0 +1,95 @@
+{
+    "erc": "721",
+    "contract": "ERC721Enumerable",
+    "inj_file": "dataset/err-inj/injected/NFTLicenseMarketplace-0xb48505fb.sol",
+    "orig_file": "dataset/err-inj/origin/NFTLicenseMarketplace-0xb48505fb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1777,
+                        1777
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1506,
+                        1506
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1783,
+                        1783
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "rule": "function ownerOf(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1288,
+                        1288
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1513,
+                        1517
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1587,
+                        1587
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"ownerOf\" not found or not visible after argument-dependent lookup in type(contract ERC721).\n    --> dataset/err-inj/injected/NFTLicenseMarketplace-0xb48505fb.sol:1549:25:\n     |\n1549 |         address owner = ERC721.ownerOf(tokenId);\n     |                         ^^^^^^^^^^^^^^\n\n"
+}

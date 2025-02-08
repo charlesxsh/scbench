@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "ZOGZ",
+    "inj_file": "dataset/err-inj/injected/ZOGZ-0x41b057ee.sol",
+    "orig_file": "dataset/err-inj/origin/ZOGZ-0x41b057ee.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        19,
+                        19
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        158,
+                        160
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        144,
+                        144
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        168,
+                        170
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ZOGZ-0x41b057ee.sol:196:22:\n    |\n196 |              require(balanceOf(to) + amount <= maxTxAmount, \"Exceeds the maxWalletSize.\");\n    |                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ZOGZ-0x41b057ee.sol:209:45:\n    |\n209 |              uint256 contractTokenBalance = balanceOf(address(this));\n    |                                             ^^^^^^^^^\n\n"
+}

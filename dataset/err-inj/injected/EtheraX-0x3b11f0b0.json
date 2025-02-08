@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "EtheraX",
+    "inj_file": "dataset/err-inj/injected/EtheraX-0x3b11f0b0.sol",
+    "orig_file": "dataset/err-inj/origin/EtheraX-0x3b11f0b0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        377,
+                        377
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        305,
+                        307
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        205,
+                        205
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        342,
+                        342
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/EtheraX-0x3b11f0b0.sol:500:30:\n    |\n500 |         swapTokensAtAmount = totalSupply() / 5_000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/EtheraX-0x3b11f0b0.sol:629:29:\n    |\n629 |         require(newAmount > totalSupply() / 1_000_000, \"SwapTokensAtAmount must be greater than 0.0001% of total supply\");\n    |                             ^^^^^^^^^^^\n\n"
+}

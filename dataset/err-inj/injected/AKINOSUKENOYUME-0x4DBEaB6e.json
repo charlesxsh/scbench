@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "AKINOSUKENOYUME",
+    "inj_file": "dataset/err-inj/injected/AKINOSUKENOYUME-0x4DBEaB6e.sol",
+    "orig_file": "dataset/err-inj/origin/AKINOSUKENOYUME-0x4DBEaB6e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        70,
+                        70
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        136,
+                        139
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        138,
+                        138
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        141,
+                        155
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        72,
+                        76
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/AKINOSUKENOYUME-0x4DBEaB6e.sol:130:9:\n    |\n130 |         return false;\n    |         ^^^^^^\n\n"
+}

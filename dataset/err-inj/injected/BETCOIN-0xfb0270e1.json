@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "BETCOIN",
+    "inj_file": "dataset/err-inj/injected/BETCOIN-0xfb0270e1.sol",
+    "orig_file": "dataset/err-inj/origin/BETCOIN-0xfb0270e1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        496,
+                        496
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        611,
+                        613
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        626,
+                        626
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+400;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        640,
+                        640
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

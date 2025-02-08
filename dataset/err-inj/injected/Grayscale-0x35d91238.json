@@ -1,0 +1,95 @@
+{
+    "erc": "20",
+    "contract": "Grayscale",
+    "inj_file": "dataset/err-inj/injected/Grayscale-0x35d91238.sol",
+    "orig_file": "dataset/err-inj/origin/Grayscale-0x35d91238.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        61,
+                        61
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        242,
+                        244
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        393,
+                        393
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        379,
+                        379
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        469,
+                        469
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        312,
+                        313
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

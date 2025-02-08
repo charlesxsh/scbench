@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "totalSupply should return the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `totalSupply()` in the provided code violates the ERC-20 rule that requires it to return the total token supply. Instead of returning the constant total supply, it adds an additional 529 to `_tTotal`, which results in a value that does not accurately represent the predefined total supply of tokens as per the contract's initialization. This modification does not comply with the standard ERC-20 requirement for the `totalSupply()` function.",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "ZEROXZENWALLET",
+    "inj_file": "dataset/err-inj/injected/ZEROXZENWALLET-0x170987d5.sol",
+    "orig_file": "dataset/err-inj/origin/ZEROXZENWALLET-0x170987d5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        67,
+                        67
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        124,
+                        126
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        129,
+                        129
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+806;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        236
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ZEROXZENWALLET-0x170987d5.sol:705:27:\n    |\n705 |             newAmount >= (totalSupply() * 1) / 100000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ZEROXZENWALLET-0x170987d5.sol:709:27:\n    |\n709 |             newAmount <= (totalSupply() * 5) / 1000,\n    |                           ^^^^^^^^^^^\n\n"
+}

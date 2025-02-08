@@ -1,0 +1,70 @@
+{
+    "erc": "20",
+    "contract": "ZAZA",
+    "inj_file": "dataset/err-inj/injected/ZAZA-0x163B1CF3.sol",
+    "orig_file": "dataset/err-inj/origin/ZAZA-0x163B1CF3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        615,
+                        617
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        659,
+                        659
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ZAZA-0x163B1CF3.sol:351:25:\n    |\n351 |                 require(balanceOf(address(to)) + amount <= _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ZAZA-0x163B1CF3.sol:363:44:\n    |\n363 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ZAZA-0x163B1CF3.sol:510:85:\n    |\n510 |         uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ZAZA-0x163B1CF3.sol:588:35:\n    |\n588 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ZAZA-0x163B1CF3.sol:598:16:\n    |\n598 |         return balanceOf(address(this));\n    |                ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ZAZA-0x163B1CF3.sol:602:16:\n    |\n602 |         return balanceOf(uniswapV2Pair);\n    |                ^^^^^^^^^\n\n"
+}

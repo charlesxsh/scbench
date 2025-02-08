@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "ShiaInu",
+    "inj_file": "dataset/err-inj/injected/ShiaInu-0xcf2b077d.sol",
+    "orig_file": "dataset/err-inj/origin/ShiaInu-0xcf2b077d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        457,
+                        461
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        54,
+                        54
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        448,
+                        448
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        47,
+                        47
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        455,
+                        455
+                    ],
+                    "to_replace": [
+                        "    function allowance(address holder, address spender) external view override returns (uint256) { return _allowances[holder][spender]+530;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/ShiaInu-0xcf2b077d.sol:454:14:\n    |\n454 |     function approveMax(address spender) external returns (bool) {\n    |              ^^^^^^^^^^\n\n"
+}

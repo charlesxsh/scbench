@@ -1,0 +1,117 @@
+{
+    "erc": "20",
+    "contract": "BART",
+    "inj_file": "dataset/err-inj/injected/BART-0x27793447.sol",
+    "orig_file": "dataset/err-inj/origin/BART-0x27793447.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        235,
+                        249
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        151,
+                        155
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        327,
+                        327
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        328,
+                        328
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        929,
+                        929
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        946,
+                        949
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        245,
+                        248
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        331,
+                        331
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function definition.\n   --> dataset/err-inj/injected/BART-0x27793447.sol:323:1:\n    |\n323 | }\n    | ^\n\n"
+}

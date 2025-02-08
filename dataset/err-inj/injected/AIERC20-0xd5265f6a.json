@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "AIERC20",
+    "inj_file": "dataset/err-inj/injected/AIERC20-0xd5265f6a.sol",
+    "orig_file": "dataset/err-inj/origin/AIERC20-0xd5265f6a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        304,
+                        306
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        135,
+                        135
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        297,
+                        299
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        130,
+                        130
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1714,
+                        1714
+                    ],
+                    "to_replace": [
+                        "        return !_doTransfer(_msgSender(), to, amount);\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/AIERC20-0xd5265f6a.sol:1751:42:\n     |\n1751 |         return !inSwap && swapEnabled && balanceOf(address(this)) > 0 && !isPair(_msgSender());\n     |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/AIERC20-0xd5265f6a.sol:1755:29:\n     |\n1755 |         uint256 taxAmount = balanceOf(address(this));\n     |                             ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/AIERC20-0xd5265f6a.sol:1796:31:\n     |\n1796 |         uint256 tokenAmount = balanceOf(address(this));\n     |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/AIERC20-0xd5265f6a.sol:1831:16:\n     |\n1831 |         return totalSupply() - balanceOf(DEAD) - balanceOf(ZERO);\n     |                ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/AIERC20-0xd5265f6a.sol:1831:32:\n     |\n1831 |         return totalSupply() - balanceOf(DEAD) - balanceOf(ZERO);\n     |                                ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/AIERC20-0xd5265f6a.sol:1831:50:\n     |\n1831 |         return totalSupply() - balanceOf(DEAD) - balanceOf(ZERO);\n     |                                                  ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "SPERM",
+    "inj_file": "dataset/err-inj/injected/SPERM-0x02ea2cf3.sol",
+    "orig_file": "dataset/err-inj/origin/SPERM-0x02ea2cf3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        175,
+                        175
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        367,
+                        370
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        350,
+                        350
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        337,
+                        337
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+21;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

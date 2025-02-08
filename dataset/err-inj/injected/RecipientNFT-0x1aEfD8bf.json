@@ -1,0 +1,76 @@
+{
+    "erc": "1155",
+    "contract": "RecipientNFT",
+    "inj_file": "dataset/err-inj/injected/RecipientNFT-0x1aEfD8bf.sol",
+    "orig_file": "dataset/err-inj/origin/RecipientNFT-0x1aEfD8bf.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "callee": "onERC1155Received",
+                    "rule": "call 'onERC1155Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function balanceOf(address _owner, uint256 _id) external view returns (uint256);",
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        534,
+                        534
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        695,
+                        698
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        732,
+                        734
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        564,
+                        564
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/RecipientNFT-0x1aEfD8bf.sol:710:32:\n    |\n710 |             batchBalances[i] = balanceOf(accounts[i], ids[i]);\n    |                                ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RecipientNFT-0x1aEfD8bf.sol:738:37:\n    |\n738 |             from == _msgSender() || isApprovedForAll(from, _msgSender()),\n    |                                     ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RecipientNFT-0x1aEfD8bf.sol:755:37:\n    |\n755 |             from == _msgSender() || isApprovedForAll(from, _msgSender()),\n    |                                     ^^^^^^^^^^^^^^^^\n\n"
+}

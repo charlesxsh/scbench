@@ -1,0 +1,125 @@
+{
+    "erc": "20",
+    "contract": "HYPERFLXTOKEN",
+    "inj_file": "dataset/err-inj/injected/HYPERFLXTOKEN-0xc574f9f7.sol",
+    "orig_file": "dataset/err-inj/origin/HYPERFLXTOKEN-0xc574f9f7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        66,
+                        66
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        120,
+                        120
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        102,
+                        102
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        505,
+                        505
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        517,
+                        517
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        511,
+                        511
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        90,
+                        90
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        73,
+                        74
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        57,
+                        60
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        15,
+                        15
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(...).transfer\" to access this address member.\n   --> dataset/err-inj/injected/HYPERFLXTOKEN-0xc574f9f7.sol:170:103:\n    |\n170 |     function withdraw(address _token, uint256 _amount) external { require(msg.sender == safeManager); IERC20(_token).transfer(safeManager, _amount);}\n    |                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

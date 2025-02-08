@@ -1,0 +1,95 @@
+{
+    "erc": "20",
+    "contract": "REDHOTCOCKcontract",
+    "inj_file": "dataset/err-inj/injected/REDHOTCOCKcontract-0x47ada736.sol",
+    "orig_file": "dataset/err-inj/origin/REDHOTCOCKcontract-0x47ada736.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        602,
+                        602
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external view override returns (uint256) { return _totalSupply+514;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        748,
+                        748
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        759,
+                        759
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        726,
+                        726
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        719,
+                        719
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        607,
+                        607
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) { return _balances[account]+628;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/REDHOTCOCKcontract-0x47ada736.sol:602:108:\n    |\n602 |  ... turn _totalSupply+514;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

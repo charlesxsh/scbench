@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "EspressoToken",
+    "inj_file": "dataset/err-inj/injected/EspressoToken-0xc0d01811.sol",
+    "orig_file": "dataset/err-inj/origin/EspressoToken-0xc0d01811.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        532,
+                        532
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        315,
+                        315
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+340;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        510,
+                        510
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        457,
+                        457
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

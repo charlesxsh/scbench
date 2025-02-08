@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "HPOS05i",
+    "inj_file": "dataset/err-inj/injected/HPOS05i-0x8f935691.sol",
+    "orig_file": "dataset/err-inj/origin/HPOS05i-0x8f935691.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        313,
+                        315
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        127,
+                        127
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        320,
+                        322
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        471,
+                        471
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOS05i-0x8f935691.sol:872:27:\n    |\n872 |             newAmount >= (totalSupply() * 1) / 100000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOS05i-0x8f935691.sol:876:27:\n    |\n876 |             newAmount <= (totalSupply() * 5) / 1000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOS05i-0x8f935691.sol:885:25:\n    |\n885 |             newNum >= ((totalSupply() * 1) / 1000) / 10 ** 8,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOS05i-0x8f935691.sol:893:25:\n    |\n893 |             newNum >= ((totalSupply() * 5) / 1000) / 10 ** 8,\n    |                         ^^^^^^^^^^^\n\n"
+}

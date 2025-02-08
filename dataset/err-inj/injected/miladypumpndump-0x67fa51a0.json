@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "miladypumpndump",
+    "inj_file": "dataset/err-inj/injected/miladypumpndump-0x67fa51a0.sol",
+    "orig_file": "dataset/err-inj/origin/miladypumpndump-0x67fa51a0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        611,
+                        611
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        604,
+                        604
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        605,
+                        605
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        583,
+                        584
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        561,
+                        561
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        600,
+                        600
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

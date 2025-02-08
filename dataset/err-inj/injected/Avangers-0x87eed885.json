@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "Avangers",
+    "inj_file": "dataset/err-inj/injected/Avangers-0x87eed885.sol",
+    "orig_file": "dataset/err-inj/origin/Avangers-0x87eed885.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        350,
+                        350
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+736;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        333,
+                        333
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+422;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        289,
+                        289
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

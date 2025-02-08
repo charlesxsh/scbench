@@ -1,0 +1,88 @@
+{
+    "erc": "721",
+    "contract": "RBLEventBadge1",
+    "inj_file": "dataset/err-inj/injected/RBLEventBadge1-0xaadbaf64.sol",
+    "orig_file": "dataset/err-inj/origin/RBLEventBadge1-0xaadbaf64.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1156,
+                        1156
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1307,
+                        1307
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        102,
+                        106
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1110,
+                        1116
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1090,
+                        1090
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

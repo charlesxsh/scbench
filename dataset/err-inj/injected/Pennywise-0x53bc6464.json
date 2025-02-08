@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "Pennywise",
+    "inj_file": "dataset/err-inj/injected/Pennywise-0x53bc6464.sol",
+    "orig_file": "dataset/err-inj/origin/Pennywise-0x53bc6464.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        308,
+                        311
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        126,
+                        126
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        135,
+                        135
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        316,
+                        318
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        508,
+                        508
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

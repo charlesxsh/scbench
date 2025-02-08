@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "cryptoConvertBot",
+    "inj_file": "dataset/err-inj/injected/cryptoConvertBot-0x7ee16ae3.sol",
+    "orig_file": "dataset/err-inj/origin/cryptoConvertBot-0x7ee16ae3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        237,
+                        244
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        29,
+                        29
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        234,
+                        234
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+183;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/cryptoConvertBot-0x7ee16ae3.sol:361:9:\n    |\n361 |         IERC20(uniswapV2Pair).approve(\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

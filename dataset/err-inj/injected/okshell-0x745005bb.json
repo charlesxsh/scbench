@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "okshell",
+    "inj_file": "dataset/err-inj/injected/okshell-0x745005bb.sol",
+    "orig_file": "dataset/err-inj/origin/okshell-0x745005bb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        348,
+                        348
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        336,
+                        336
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        325,
+                        325
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        344,
+                        344
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        281,
+                        288
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        244,
+                        246
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        22,
+                        22
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        245,
+                        245
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_rOwned[account])+860;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/okshell-0x745005bb.sol:243:9:\n    |\n243 |         return tokenFromReflection(_rOwned[account])+860;    }\n    |         ^^^^^^\n\n"
+}

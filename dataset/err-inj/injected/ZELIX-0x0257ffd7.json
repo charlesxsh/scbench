@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "ZELIX",
+    "inj_file": "dataset/err-inj/injected/ZELIX-0x0257ffd7.sol",
+    "orig_file": "dataset/err-inj/origin/ZELIX-0x0257ffd7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        97,
+                        97
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        362,
+                        364
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        341,
+                        352
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        110,
+                        113
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        77,
+                        77
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external view returns (uint256 total) {+92;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Use of unary + is disallowed.\n  --> dataset/err-inj/injected/ZELIX-0x0257ffd7.sol:77:67:\n   |\n77 |     function totalSupply() external view returns (uint256 total) {+92;        total = _totalSupply;\n   |                                                                   ^^^\n\nError: Unary operator + cannot be applied to type int_const 92\n  --> dataset/err-inj/injected/ZELIX-0x0257ffd7.sol:77:67:\n   |\n77 |     function totalSupply() external view returns (uint256 total) {+92;        total = _totalSupply;\n   |                                                                   ^^^\n\n"
+}

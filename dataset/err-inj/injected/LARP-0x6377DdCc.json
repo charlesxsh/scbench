@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "LARP",
+    "inj_file": "dataset/err-inj/injected/LARP-0x6377DdCc.sol",
+    "orig_file": "dataset/err-inj/origin/LARP-0x6377DdCc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        406,
+                        410
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        65,
+                        69
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        403,
+                        403
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        56,
+                        56
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        363,
+                        365
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/LARP-0x6377DdCc.sol:363:33:\n    |\n363 |         return _totalSupply.sub(balanceOf(deadAddress)).sub(balanceOf(zeroAddress));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LARP-0x6377DdCc.sol:363:61:\n    |\n363 |         return _totalSupply.sub(balanceOf(deadAddress)).sub(balanceOf(zeroAddress));\n    |                                                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LARP-0x6377DdCc.sol:409:44:\n    |\n409 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LARP-0x6377DdCc.sol:432:25:\n    |\n432 |                 require(balanceOf(recipient).add(finalAmount) <= _walletMax,\"Exceeds Wallet\");\n    |                         ^^^^^^^^^\n\n"
+}

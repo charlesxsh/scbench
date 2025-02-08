@@ -1,0 +1,106 @@
+{
+    "erc": "20",
+    "contract": "BIGCHUNGUS",
+    "inj_file": "dataset/err-inj/injected/BIGCHUNGUS-0xd1f8343f.sol",
+    "orig_file": "dataset/err-inj/origin/BIGCHUNGUS-0xd1f8343f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        337,
+                        337
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        325,
+                        325
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+210;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        513,
+                        513
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        514,
+                        514
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        429,
+                        429
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        592,
+                        592
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        363,
+                        366
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BIGCHUNGUS-0xd1f8343f.sol:376:14:\n    |\n376 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

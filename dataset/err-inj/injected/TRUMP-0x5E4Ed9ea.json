@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "TRUMP",
+    "inj_file": "dataset/err-inj/injected/TRUMP-0x5E4Ed9ea.sol",
+    "orig_file": "dataset/err-inj/origin/TRUMP-0x5E4Ed9ea.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        110,
+                        110
+                    ],
+                    "to_replace": [
+                        "    function symbol() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        108,
+                        108
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external pure override returns (uint256) { return _totalSupply+446;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        105,
+                        105
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/TRUMP-0x5E4Ed9ea.sol:107:108:\n    |\n107 |  ... turn _totalSupply+446;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

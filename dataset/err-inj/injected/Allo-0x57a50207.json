@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Allo",
+    "inj_file": "dataset/err-inj/injected/Allo-0x57a50207.sol",
+    "orig_file": "dataset/err-inj/origin/Allo-0x57a50207.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        249,
+                        249
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+944;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        288,
+                        288
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        138,
+                        138
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        286,
+                        289
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Allo-0x57a50207.sol:284:9:\n    |\n284 |         return false;\n    |         ^^^^^^\n\n"
+}

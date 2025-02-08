@@ -1,0 +1,93 @@
+{
+    "erc": "20",
+    "contract": "BlackJackBet",
+    "inj_file": "dataset/err-inj/injected/BlackJackBet-0xBA08d41a.sol",
+    "orig_file": "dataset/err-inj/origin/BlackJackBet-0xBA08d41a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        359,
+                        359
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        334,
+                        334
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        367,
+                        367
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        272,
+                        272
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() external view override returns (uint256) { return _totalSupply+632;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        302,
+                        308
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BlackJackBet-0xBA08d41a.sol:271:108:\n    |\n271 |  ... turn _totalSupply+632;    function decimals() external pure override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

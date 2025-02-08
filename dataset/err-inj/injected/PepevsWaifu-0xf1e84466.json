@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "PepevsWaifu",
+    "inj_file": "dataset/err-inj/injected/PepevsWaifu-0xf1e84466.sol",
+    "orig_file": "dataset/err-inj/origin/PepevsWaifu-0xf1e84466.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        323,
+                        323
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        23,
+                        23
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        198,
+                        198
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        204,
+                        204
+                    ],
+                    "to_replace": [
+                        "    function approve(address spender, uint256 amount) public override returns (bool) {_approve(msg.sender, spender, amount);return false;}\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PepevsWaifu-0xf1e84466.sol:203:92:\n    |\n203 |     function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PepevsWaifu-0xf1e84466.sol:203:113:\n    |\n203 |     function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PepevsWaifu-0xf1e84466.sol:206:26:\n    |\n206 |         uint256 amount = balanceOf(address(this));\n    |                          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PepevsWaifu-0xf1e84466.sol:245:31:\n    |\n245 |         bool aboveThreshold = balanceOf(address(this)) >= swapThreshold;\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PepevsWaifu-0xf1e84466.sol:301:27:\n    |\n301 |         require(amount <= balanceOf(sender),\"You are trying to transfer more than your balance\");\n    |                           ^^^^^^^^^\n\n"
+}

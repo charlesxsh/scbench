@@ -1,0 +1,50 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply",
+                "violation": "The totalSupply function adds an arbitrary number (784) to the total supply, which is not compliant with the ERC20 standard."
+            },
+            {
+                "rule": "allowance: Returns the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance",
+                "violation": "The allowance function adds an arbitrary number (397) to the allowance, which is not compliant with the ERC20 standard."
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "DEGENNATION",
+    "inj_file": "dataset/err-inj/injected/DEGENNATION-0xe2bff0b8.sol",
+    "orig_file": "dataset/err-inj/origin/DEGENNATION-0xe2bff0b8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        309,
+                        309
+                    ],
+                    "to_replace": [
+                        "return tokenFromReflection(_rOwned[account])+795;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        53,
+                        57
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        343,
+                        358
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        41,
+                        41
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        308,
+                        310
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/DEGENNATION-0xe2bff0b8.sol:302:1:\n    |\n302 | return tokenFromReflection(_rOwned[account])+795;}\n    | ^^^^^^\n\n"
+}

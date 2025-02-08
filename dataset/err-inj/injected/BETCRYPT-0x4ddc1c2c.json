@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "BETCRYPT",
+    "inj_file": "dataset/err-inj/injected/BETCRYPT-0x4ddc1c2c.sol",
+    "orig_file": "dataset/err-inj/origin/BETCRYPT-0x4ddc1c2c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        355,
+                        355
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        336,
+                        336
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        322,
+                        324
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        127,
+                        127
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/BETCRYPT-0x4ddc1c2c.sol:1326:34:\n     |\n1326 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BETCRYPT-0x4ddc1c2c.sol:1341:34:\n     |\n1341 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BETCRYPT-0x4ddc1c2c.sol:1348:40:\n     |\n1348 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BETCRYPT-0x4ddc1c2c.sol:1438:35:\n     |\n1438 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

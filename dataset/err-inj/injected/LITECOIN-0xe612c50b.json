@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "LITECOIN",
+    "inj_file": "dataset/err-inj/injected/LITECOIN-0xe612c50b.sol",
+    "orig_file": "dataset/err-inj/origin/LITECOIN-0xe612c50b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        39,
+                        39
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        98,
+                        100
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        184,
+                        184
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        41,
+                        41
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        102,
+                        104
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/LITECOIN-0xe612c50b.sol:301:25:\n    |\n301 |                 require(balanceOf(recipient) + amount <= maxWalletAmount, \"You are exceeding maxWalletAmount\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LITECOIN-0xe612c50b.sol:325:35:\n    |\n325 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/LITECOIN-0xe612c50b.sol:385:30:\n    |\n385 |         uint256 tokenBalance=balanceOf(address(this));\n    |                              ^^^^^^^^^\n\n"
+}

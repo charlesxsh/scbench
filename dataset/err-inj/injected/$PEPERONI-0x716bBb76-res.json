@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `allowance` function should return the exact allowance set by `approve` or the default of zero, without any modification.",
+                "function": "allowance"
+            },
+            {
+                "rule": "The `transfer` function should throw if the sender's balance is less than the amount to transfer.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "The `transferFrom` function must be implemented to allow transfers of tokens on behalf of another account, following approval.",
+                "function": "transferFrom (missing)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES\n\nThe code provided violates the ERC-20 standard rule for the `allowance` function. According to the ERC-20 standard, the `allowance` function should return the amount of tokens that a spender is still allowed to withdraw from an owner. However, in the provided code, the function returns `_allowances[owner][spender] + 219`, which adds an extra 219 to the actual allowed amount. This modification does not comply with the standard behavior expected from the `allowance` function as per the ERC-20 rules."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

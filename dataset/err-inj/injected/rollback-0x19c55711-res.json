@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The ERC20 standard requires a `transferFrom` function that allows tokens to be transferred from one address to another using an allowance mechanism.",
+                "function": "Missing `transferFrom` function"
+            },
+            {
+                "rule": "The ERC20 standard's intent is to provide a uniform and predictable behavior for token transfers, without complex fee structures and transaction restrictions.",
+                "function": "Implementation includes complex fee structures and transaction restrictions"
+            },
+            {
+                "rule": "The ERC20 standard expects that the `transfer` and `transferFrom` functions will primarily manage the decrementing of the balance of the sender and the incrementing of the balance of the receiver, along with firing a `Transfer` event.",
+                "function": "Implementation includes additional logic within transfers that can alter contract state in non-standard ways"
+            },
+            {
+                "rule": "The ERC20 standard specifies certain events (`Transfer` and `Approval`) and functions that should be implemented without additional non-standard events and administrative functions.",
+                "function": "Contract includes numerous non-standard events and administrative functions"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO. The interface provided in the code does not contain the function `transferFrom(address _from, address _to, uint256 _value) public returns (bool success)`.",
+            "YES",
+            null
+        ],
+        "can_detect": [
+            true,
+            true,
+            null
+        ],
+        "error": [
+            null,
+            null,
+            "'inj_fn'"
+        ]
+    }
+}

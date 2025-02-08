@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "MATT",
+    "inj_file": "dataset/err-inj/injected/MATT-0x440b5998.sol",
+    "orig_file": "dataset/err-inj/origin/MATT-0x440b5998.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        388,
+                        390
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        93,
+                        93
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        428,
+                        428
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        392,
+                        394
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        95,
+                        95
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/MATT-0x440b5998.sol:439:44:\n    |\n439 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/MATT-0x440b5998.sol:454:25:\n    |\n454 |                 require(balanceOf(recipient).add(finalAmount) <= _walletMax);\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/MATT-0x440b5998.sol:476:73:\n    |\n476 |         uniswapV2Router.addLiquidityETH{value: msg.value}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/MATT-0x440b5998.sol:569:33:\n    |\n569 |         return _totalSupply.sub(balanceOf(deadAddress));\n    |                                 ^^^^^^^^^\n\n"
+}

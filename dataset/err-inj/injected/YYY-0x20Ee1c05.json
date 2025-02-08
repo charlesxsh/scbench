@@ -1,0 +1,83 @@
+{
+    "erc": "721",
+    "contract": "ERC721Pausable",
+    "inj_file": "dataset/err-inj/injected/YYY-0x20Ee1c05.sol",
+    "orig_file": "dataset/err-inj/origin/YYY-0x20Ee1c05.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1110,
+                        1110
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        975,
+                        983
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        687,
+                        692
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1110,
+                        1110
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function has override specified but does not override anything.\n    --> dataset/err-inj/injected/YYY-0x20Ee1c05.sol:1720:9:\n     |\n1720 |         override (ERC721, IERC721) \n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Invalid contracts specified in override list: \"ERC721\" and \"IERC721\".\n    --> dataset/err-inj/injected/YYY-0x20Ee1c05.sol:1720:9:\n     |\n1720 |         override (ERC721, IERC721) \n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^\nNote: This contract: \n   --> dataset/err-inj/injected/YYY-0x20Ee1c05.sol:644:1:\n    |\n644 | interface IERC721 is IERC165 {\n    | ^ (Relevant source part starts here and spans across multiple lines).\nNote: This contract: \n   --> dataset/err-inj/injected/YYY-0x20Ee1c05.sol:813:1:\n    |\n813 | contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {\n    | ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Wrong argument count for function call: 4 arguments given but expected 3.\n   --> dataset/err-inj/injected/YYY-0x20Ee1c05.sol:963:9:\n    |\n963 |         safeTransferFrom(from, to, tokenId, \"\");\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/YYY-0x20Ee1c05.sol:1723:9:\n     |\n1723 |         super.safeTransferFrom(from, to, tokenId, data);\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

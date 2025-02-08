@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "TEST",
+    "inj_file": "dataset/err-inj/injected/TEST-0x920701ee.sol",
+    "orig_file": "dataset/err-inj/origin/TEST-0x920701ee.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": [
+                        "    function decimals() public pure returns (uint8) {return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        352,
+                        352
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        331,
+                        331
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        336,
+                        336
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        335,
+                        335
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        329,
+                        329
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        347,
+                        348
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/TEST-0x920701ee.sol:214:86:\n    |\n214 |     function decimals() public pure returns (uint8) {return _decimals+3;    function startTrading() external onlyOwner {tradingAllowed = true;}\n    |                                                                                      ^^^^^^^^^^^^\n\n"
+}

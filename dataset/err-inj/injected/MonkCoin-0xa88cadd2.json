@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "MonkCoin",
+    "inj_file": "dataset/err-inj/injected/MonkCoin-0xa88cadd2.sol",
+    "orig_file": "dataset/err-inj/origin/MonkCoin-0xa88cadd2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        309,
+                        309
+                    ],
+                    "to_replace": [
+                        "    return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        292,
+                        292
+                    ],
+                    "to_replace": [
+                        "    return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        151,
+                        151
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        336,
+                        343
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(ERC20token).transfer\" to access this address member.\n   --> dataset/err-inj/injected/MonkCoin-0xa88cadd2.sol:675:5:\n    |\n675 |     ERC20token.transfer(msg.sender, balance);\n    |     ^^^^^^^^^^^^^^^^^^^\n\n"
+}

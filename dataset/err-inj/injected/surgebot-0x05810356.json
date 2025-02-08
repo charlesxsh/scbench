@@ -1,0 +1,104 @@
+{
+    "erc": "20",
+    "contract": "surgebot",
+    "inj_file": "dataset/err-inj/injected/surgebot-0x05810356.sol",
+    "orig_file": "dataset/err-inj/origin/surgebot-0x05810356.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        228,
+                        228
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+539;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        633,
+                        633
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        632,
+                        632
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        644,
+                        644
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        269,
+                        276
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        227,
+                        229
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        7,
+                        7
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/surgebot-0x05810356.sol:226:9:\n    |\n226 |         return _tTotal+539;    }\n    |         ^^^^^^\n\n"
+}

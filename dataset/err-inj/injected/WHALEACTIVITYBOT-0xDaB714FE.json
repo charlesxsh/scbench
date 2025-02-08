@@ -1,0 +1,120 @@
+{
+    "erc": "20",
+    "contract": "WHALEACTIVITYBOT",
+    "inj_file": "dataset/err-inj/injected/WHALEACTIVITYBOT-0xDaB714FE.sol",
+    "orig_file": "dataset/err-inj/origin/WHALEACTIVITYBOT-0xDaB714FE.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        116,
+                        116
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        236,
+                        236
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        185,
+                        185
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        784,
+                        787
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        237,
+                        237
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        766,
+                        766
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        768,
+                        768
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        159,
+                        162
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        137,
+                        137
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/WHALEACTIVITYBOT-0xDaB714FE.sol:160:14:\n    |\n160 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

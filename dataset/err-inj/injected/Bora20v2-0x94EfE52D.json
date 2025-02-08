@@ -1,0 +1,92 @@
+{
+    "erc": "20",
+    "contract": "Bora20v2",
+    "inj_file": "dataset/err-inj/injected/Bora20v2-0x94EfE52D.sol",
+    "orig_file": "dataset/err-inj/origin/Bora20v2-0x94EfE52D.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        581,
+                        581
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1498,
+                        1500
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2698,
+                        2698
+                    ],
+                    "to_replace": [
+                        "        return !transferInternal(_msgSender(), to, amount);\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        397,
+                        397
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2697,
+                        2699
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1524,
+                        1528
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n    --> dataset/err-inj/injected/Bora20v2-0x94EfE52D.sol:2687:9:\n     |\n2687 |         return !transferInternal(_msgSender(), to, amount);\n     |         ^^^^^^\n\n"
+}

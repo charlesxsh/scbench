@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "PEGZ",
+    "inj_file": "dataset/err-inj/injected/PEGZ-0x2ff52316.sol",
+    "orig_file": "dataset/err-inj/origin/PEGZ-0x2ff52316.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        400,
+                        400
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        281,
+                        281
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+326;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

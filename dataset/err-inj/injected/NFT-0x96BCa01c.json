@@ -1,0 +1,93 @@
+{
+    "erc": "721",
+    "contract": "NFT",
+    "inj_file": "dataset/err-inj/injected/NFT-0x96BCa01c.sol",
+    "orig_file": "dataset/err-inj/origin/NFT-0x96BCa01c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        304,
+                        307
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        210,
+                        210
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "setApprovalForAll",
+                    "numofargs": 2,
+                    "rule": "function setApprovalForAll(address _operator, bool _approved) external;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        352,
+                        354
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        230,
+                        230
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        460,
+                        460
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        305,
+                        305
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/NFT-0x96BCa01c.sol:302:9:\n    |\n302 |         return _balances[owner];\n    |         ^^^^^^\n\n"
+}

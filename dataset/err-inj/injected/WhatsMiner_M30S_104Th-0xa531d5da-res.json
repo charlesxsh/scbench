@@ -1,0 +1,84 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Every ERC-721 compliant contract must implement the ERC721 and ERC165 interfaces.",
+                "function": "The provided contract implements ERC721 and ERC165 interfaces correctly."
+            },
+            {
+                "rule": "The function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) must check if '_to' is a smart contract and if so, it must call onERC721Received on '_to'.",
+                "function": "The function safeTransferFrom in the provided contract correctly checks if '_to' is a smart contract and calls onERC721Received."
+            },
+            {
+                "rule": "The function transferFrom(address _from, address _to, uint256 _tokenId) must throw unless 'msg.sender' is the current owner, an authorized operator, or the approved address for this NFT. Throws if '_from' is not the current owner. Throws if '_to' is the zero address. Throws if '_tokenId' is not a valid NFT.",
+                "function": "The function transferFrom in the provided contract correctly implements the specified behavior."
+            },
+            {
+                "rule": "The function approve(address _approved, uint256 _tokenId) must allow setting the approval of a single NFT, and the approval is cleared when the token is transferred.",
+                "function": "The function approve in the provided contract correctly allows setting the approval of a single NFT and clears the approval when the token is transferred."
+            },
+            {
+                "rule": "The function setApprovalForAll(address _operator, bool _approved) must allow or disallow an operator to manage all of the caller's tokens.",
+                "function": "The function setApprovalForAll in the provided contract correctly implements the ability to set or unset an operator for all tokens of the caller."
+            },
+            {
+                "rule": "The function getApproved(uint256 _tokenId) must return the approved address for a single NFT.",
+                "function": "The function getApproved in the provided contract correctly returns the approved address for a single NFT."
+            },
+            {
+                "rule": "The function isApprovedForAll(address _owner, address _operator) must return if an operator is allowed to manage all of the assets of an owner.",
+                "function": "The function isApprovedForAll in the provided contract correctly checks if an operator is allowed to manage all assets of an owner."
+            },
+            {
+                "rule": "The function tokenURI(uint256 _tokenId) must throw if '_tokenId' is not a valid NFT and return a URI for the metadata of the NFT.",
+                "function": "The function tokenURI in the provided contract correctly throws if '_tokenId' is not valid and returns a URI for the metadata."
+            },
+            {
+                "rule": "The function totalSupply() must return the total amount of tokens stored by the contract.",
+                "function": "The function totalSupply in the provided contract correctly returns the total amount of tokens."
+            },
+            {
+                "rule": "The function tokenByIndex(uint256 _index) must return a token ID at a given '_index' of all tokens stored by the contract.",
+                "function": "The function tokenByIndex in the provided contract correctly returns a token ID at a given index."
+            },
+            {
+                "rule": "The function tokenOfOwnerByIndex(address _owner, uint256 _index) must return a token ID owned by '_owner' at a given '_index'.",
+                "function": "The function tokenOfOwnerByIndex in the provided contract correctly returns a token ID owned by a specific owner at a given index."
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

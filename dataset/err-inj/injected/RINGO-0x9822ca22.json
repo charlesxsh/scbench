@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "RINGO",
+    "inj_file": "dataset/err-inj/injected/RINGO-0x9822ca22.sol",
+    "orig_file": "dataset/err-inj/origin/RINGO-0x9822ca22.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        93,
+                        93
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        243,
+                        245
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        283,
+                        283
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        436,
+                        436
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/RINGO-0x9822ca22.sol:1013:30:\n     |\n1013 |         require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n     |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/RINGO-0x9822ca22.sol:1014:30:\n     |\n1014 |         require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n     |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/RINGO-0x9822ca22.sol:1020:28:\n     |\n1020 |         require(newNum >= (totalSupply() * 1 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.1%\");\n     |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/RINGO-0x9822ca22.sol:1025:28:\n     |\n1025 |         require(newNum >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxWallet lower than 0.5%\");\n     |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/RINGO-0x9822ca22.sol:1297:36:\n     |\n1297 |         _approve(owner(), owner(), totalSupply());\n     |                                    ^^^^^^^^^^^\n\n"
+}

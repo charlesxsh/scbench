@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "NOTHING",
+    "inj_file": "dataset/err-inj/injected/NOTHING-0x4144D530.sol",
+    "orig_file": "dataset/err-inj/origin/NOTHING-0x4144D530.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        121,
+                        123
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        64,
+                        64
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        233,
+                        233
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        122,
+                        122
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+130;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/NOTHING-0x4144D530.sol:120:9:\n    |\n120 |         return _totalSupply+130;    }\n    |         ^^^^^^\n\n"
+}

@@ -1,0 +1,125 @@
+{
+    "erc": "20",
+    "contract": "PEPE",
+    "inj_file": "dataset/err-inj/injected/PEPE-0x9be59d49.sol",
+    "orig_file": "dataset/err-inj/origin/PEPE-0x9be59d49.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        888,
+                        888
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        906,
+                        906
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        311,
+                        311
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        380,
+                        380
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        890,
+                        890
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        379,
+                        379
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        252,
+                        253
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        54,
+                        54
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        209,
+                        212
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/PEPE-0x9be59d49.sol:208:9:\n    |\n208 |         return false;\n    |         ^^^^^^\n\n"
+}

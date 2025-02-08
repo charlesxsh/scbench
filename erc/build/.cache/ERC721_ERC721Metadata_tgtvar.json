@@ -1,0 +1,130 @@
+{
+    "functions": [
+        {
+            "def": "    function name() external view returns (string _name);",
+            "raw_rules": "    /// @notice A descriptive name for a collection of NFTs in this contract\n",
+            "format": {
+                "name": "name",
+                "arg_types": [],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "name": "_name",
+                    "type": "string"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "string, A descriptive name for a collection of NFTs in this contract"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "The provided rules text does not list any conditions or requirements specifically linked to calling a hook function related to the function `function name() external view returns (string _name);`. The text primarily includes a notice describing what the function is supposed to provide, which is a descriptive name for a collection of NFTs in that particular contract. It lacks any explicit directive or condition under which a hook function must be called in tandem with the `name()` function.\n\nGiven this absence of relevant rules in your query, the JSON array indicating the conditions that necessitate calling a hook function should indeed be left empty. Thus, the appropriate response is:\n\n```json\n[]\n```"
+        },
+        {
+            "def": "    function symbol() external view returns (string _symbol);",
+            "raw_rules": "\n    /// @notice An abbreviated name for NFTs in this contract\n",
+            "format": {
+                "name": "symbol",
+                "arg_types": [],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "name": "_symbol",
+                    "type": "string"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": [
+                        "string",
+                        "An abbreviated name for NFTs in this contract"
+                    ]
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "Based on the provided data, there is no specific rule or condition mentioned in the rules section provided that dictates the need to call a hook function when the function \"symbol()\" is called. Therefore, the JSON array reflecting this should be empty. Here is the appropriate JSON representation:\n\n```json\n[]\n```\n\nThis indicates that there are no additional hook function calls required when the `symbol()` function is executed, according to the provided rules section."
+        },
+        {
+            "def": "    function tokenURI(uint256 _tokenId) external view returns (string);",
+            "raw_rules": "\n    /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.\n    /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC\n    ///  3986. The URI may point to a JSON file that conforms to the \"ERC721\n    ///  Metadata JSON Schema\".\n",
+            "format": {
+                "name": "tokenURI",
+                "arg_types": [
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "string"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "_tokenId is not a valid NFT",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "A distinct Uniform Resource Identifier (URI) for a given asset, typically pointing to a JSON file conforming to the 'ERC721 Metadata JSON Schema'."
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "[]\n"
+        }
+    ],
+    "events": [],
+    "name": "ERC721Metadata",
+    "rules": [
+        {
+            "rule": "string, A descriptive name for a collection of NFTs in this contract",
+            "type": "return",
+            "interface": "    function name() external view returns (string _name);",
+            "related_vars": null
+        },
+        {
+            "rule": [
+                "string",
+                "An abbreviated name for NFTs in this contract"
+            ],
+            "type": "return",
+            "interface": "    function symbol() external view returns (string _symbol);",
+            "related_vars": null
+        },
+        {
+            "rule": " throw if _tokenId is not a valid NFT",
+            "type": "throw",
+            "interface": "    function tokenURI(uint256 _tokenId) external view returns (string);",
+            "related_vars": {
+                "variables": [
+                    "_tokenId"
+                ],
+                "parameters": [
+                    0
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_tokenId\"],\n    \"parameters\": [0]\n}\n```"
+        },
+        {
+            "rule": "A distinct Uniform Resource Identifier (URI) for a given asset, typically pointing to a JSON file conforming to the 'ERC721 Metadata JSON Schema'.",
+            "type": "return",
+            "interface": "    function tokenURI(uint256 _tokenId) external view returns (string);",
+            "related_vars": null
+        }
+    ]
+}

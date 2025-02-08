@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "ERC20 standard specifies that the transfer function should only transfer tokens and fire the Transfer event. It should throw if the sender does not have enough balance.",
+                "function": "transfer"
+            },
+            {
+                "rule": "ERC20 standard specifies that the transferFrom function should only transfer tokens on behalf of another address, reduce the allowance, and fire the Transfer event.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "ERC20 standard does not include functions that modify tokenomics or operational rules outside of the basic token transfer and allowance mechanisms.",
+                "function": "openTrading, removeLimits, reduceFee"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

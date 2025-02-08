@@ -1,0 +1,107 @@
+{
+    "erc": "20",
+    "contract": "CryptoMindSophie",
+    "inj_file": "dataset/err-inj/injected/CryptoMindSophie-0x92bb07d7.sol",
+    "orig_file": "dataset/err-inj/origin/CryptoMindSophie-0x92bb07d7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        191,
+                        191
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        228,
+                        228
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+514;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        519,
+                        519
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        508,
+                        508
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        531,
+                        531
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        497,
+                        497
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        391,
+                        391
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        380,
+                        380
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

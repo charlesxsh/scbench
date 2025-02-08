@@ -1,0 +1,42 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "name function should return the name of the token.",
+                "function": "name"
+            },
+            {
+                "rule": "decimals function should return the number of decimals the token uses.",
+                "function": "decimals"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `decimals()` in the provided code violates the typical ERC-20 token standard rule regarding the number of decimal places a token can be divided into. According to the ERC-20 standard, the `decimals()` function should return a constant value that represents the number of decimal places the token uses. This value is typically used by user interfaces and third-party applications to determine how to display the token's smallest unit.\n\nIn the given code, the `decimals()` function is returning `_decimals + 3`, which means it is not returning a constant value but a value that is 3 more than the constant `_decimals` set to 9. This results in the function returning 12, which is not fixed and deviates from the standard practice of having a constant return value for the `decimals()` function. This can lead to confusion and inconsistency in how the token's value is represented and handled in transactions and displays.",
+            "YES."
+        ],
+        "can_detect": [
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null
+        ]
+    }
+}

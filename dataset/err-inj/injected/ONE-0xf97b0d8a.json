@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "ONE",
+    "inj_file": "dataset/err-inj/injected/ONE-0xf97b0d8a.sol",
+    "orig_file": "dataset/err-inj/origin/ONE-0xf97b0d8a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        241,
+                        241
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+116;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        301,
+                        301
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        56,
+                        56
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        233,
+                        235
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/ONE-0xf97b0d8a.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ONE-0xf97b0d8a.sol:572:12:\n    |\n572 |     return totalSupply();\n    |            ^^^^^^^^^^^\n\n"
+}

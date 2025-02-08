@@ -1,0 +1,61 @@
+{
+    "erc": "20",
+    "contract": "CoinBridgeToken",
+    "inj_file": "dataset/err-inj/injected/CoinBridgeToken-0x013e9592.sol",
+    "orig_file": "dataset/err-inj/origin/CoinBridgeToken-0x013e9592.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1001,
+                        1001
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1037,
+                        1048
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        688,
+                        688
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

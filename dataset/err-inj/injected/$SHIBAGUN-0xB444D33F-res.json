@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transferFrom function should return true on success.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES\n\nThe smart contract $SHIBAGUN does violate the ERC-20 rule that indicates whether the token transfer was successful for the function `transferFrom`. According to the ERC-20 standard, the `transferFrom` function should return a boolean value indicating the success of the operation. However, in the provided contract, the `transferFrom` function is implemented to always return `false`, regardless of whether the transfer operation was successful or not. This is incorrect behavior according to the ERC-20 standard, which expects the function to return `true` on a successful transfer."
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe provided code for the `$SHIBAGUN` contract's `approve` function does not emit the `Approval` event as required by the ERC-20 standard. According to the ERC-20 standard, an `Approval` event should be emitted whenever the `approve` function is successfully executed to notify the network of the allowance update. The absence of this event emission in the `_approve` function or anywhere else in the provided code means that this implementation violates the ERC-20 standard requirement.",
+            "",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "RippleExpress",
+    "inj_file": "dataset/err-inj/injected/RippleExpress-0x798b5542.sol",
+    "orig_file": "dataset/err-inj/origin/RippleExpress-0x798b5542.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        139,
+                        139
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        89,
+                        89
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        169,
+                        178
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        158,
+                        166
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        86,
+                        86
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/RippleExpress-0x798b5542.sol:1045:30:\n     |\n1045 |                     amount + balanceOf(to) <= maxWallet,\n     |                              ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/RippleExpress-0x798b5542.sol:1060:30:\n     |\n1060 |                     amount + balanceOf(to) <= maxWallet,\n     |                              ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/RippleExpress-0x798b5542.sol:1066:40:\n     |\n1066 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/RippleExpress-0x798b5542.sol:1149:35:\n     |\n1149 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

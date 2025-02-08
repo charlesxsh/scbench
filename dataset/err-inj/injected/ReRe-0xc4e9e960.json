@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "ReRe",
+    "inj_file": "dataset/err-inj/injected/ReRe-0xc4e9e960.sol",
+    "orig_file": "dataset/err-inj/origin/ReRe-0xc4e9e960.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        439,
+                        439
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        382,
+                        382
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        433,
+                        434
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        37,
+                        37
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        376,
+                        379
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        355,
+                        355
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+363;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

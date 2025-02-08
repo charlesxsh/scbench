@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `balanceOf` function must return the actual balance of the account.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "ERC20 token functions such as `transfer`, `approve`, `transferFrom`, `increaseAllowance`, and `decreaseAllowance` should be accessible by all token holders and should not be restricted to the contract owner.",
+                "function": "transfer, approve, transferFrom, increaseAllowance, decreaseAllowance"
+            },
+            {
+                "rule": "Adding non-standard functions and events can lead to confusion and interoperability issues. ERC20 functions and events should adhere to the standard.",
+                "function": "connectToDapp"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "YES\n\nThe function `balanceOf` in the provided ERC20 contract implementation violates the ERC20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance from `_balances[account]`, the function adds 465 to the balance, which is not compliant with the standard specification of returning the exact balance.",
+            "YES"
+        ],
+        "can_detect": [
+            null,
+            true,
+            true
+        ],
+        "error": [
+            "'inj_fn'",
+            null,
+            null
+        ]
+    }
+}

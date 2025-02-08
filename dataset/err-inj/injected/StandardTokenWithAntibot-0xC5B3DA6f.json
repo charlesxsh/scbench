@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "StandardTokenWithAntibot",
+    "inj_file": "dataset/err-inj/injected/StandardTokenWithAntibot-0xC5B3DA6f.sol",
+    "orig_file": "dataset/err-inj/origin/StandardTokenWithAntibot-0xC5B3DA6f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        433,
+                        437
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        246,
+                        246
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        459,
+                        459
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1358,
+                        1358
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(token).transfer\" to access this address member.\n   --> dataset/err-inj/injected/StandardTokenWithAntibot-0xC5B3DA6f.sol:765:59:\n    |\n765 |         _callOptionalReturn(token, abi.encodeWithSelector(token.transfer.selector, to, value));\n    |                                                           ^^^^^^^^^^^^^^\n\n"
+}

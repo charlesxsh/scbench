@@ -1,0 +1,81 @@
+{
+    "erc": "1155",
+    "contract": "MonsterGeads",
+    "inj_file": "dataset/err-inj/injected/MonsterGeads-0x5743c09a.sol",
+    "orig_file": "dataset/err-inj/origin/MonsterGeads-0x5743c09a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": "throw if `_to` is the zero address",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        834,
+                        834
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "rule": "The _owner's balance of the token type requested",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        702,
+                        702
+                    ],
+                    "to_replace": [
+                        "        return _balances[id][account]+67;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function balanceOfBatch(address[] calldata _owners, uint256[] calldata _ids) external view returns (uint256[] memory);",
+                    "function": "balanceOfBatch",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        548,
+                        551
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        712,
+                        725
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

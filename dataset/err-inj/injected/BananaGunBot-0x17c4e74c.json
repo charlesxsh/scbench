@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "BananaGunBot",
+    "inj_file": "dataset/err-inj/injected/BananaGunBot-0x17c4e74c.sol",
+    "orig_file": "dataset/err-inj/origin/BananaGunBot-0x17c4e74c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        134,
+                        134
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        316,
+                        319
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        592,
+                        592
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        513,
+                        513
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        514,
+                        514
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        429,
+                        429
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        363,
+                        366
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        325,
+                        325
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+724;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BananaGunBot-0x17c4e74c.sol:371:14:\n    |\n371 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

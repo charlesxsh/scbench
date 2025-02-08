@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "DOSHIPE",
+    "inj_file": "dataset/err-inj/injected/DOSHIPE-0xeedbe585.sol",
+    "orig_file": "dataset/err-inj/origin/DOSHIPE-0xeedbe585.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        301,
+                        301
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        257,
+                        257
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        280,
+                        282
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        130,
+                        130
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/DOSHIPE-0xeedbe585.sol:1048:30:\n     |\n1048 |         require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n     |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOSHIPE-0xeedbe585.sol:1049:30:\n     |\n1049 |         require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n     |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOSHIPE-0xeedbe585.sol:1055:28:\n     |\n1055 |         require(newNum >= (totalSupply() * 1 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.1%\");\n     |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOSHIPE-0xeedbe585.sol:1060:28:\n     |\n1060 |         require(newNum >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxWallet lower than 0.5%\");\n     |                            ^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/Moon-0xB3330cA4.sol",
+    "orig_file": "dataset/err-inj/origin/Moon-0xB3330cA4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        692,
+                        692
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+836;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        759,
+                        759
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        528,
+                        528
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        710,
+                        714
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function has override specified but does not override anything.\n    --> dataset/err-inj/injected/Moon-0xB3330cA4.sol:1083:73:\n     |\n1083 |     function transfer(address recipient, uint256 amount) public virtual override returns (bool) {\n     |                                                                         ^^^^^^^^\n\n"
+}

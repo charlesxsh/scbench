@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "eniFERC20",
+    "inj_file": "dataset/err-inj/injected/eniFERC20-0x84ab9660.sol",
+    "orig_file": "dataset/err-inj/origin/eniFERC20-0x84ab9660.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        502,
+                        502
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        358,
+                        360
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        165,
+                        165
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        359,
+                        359
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+170;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/eniFERC20-0x84ab9660.sol:357:9:\n    |\n357 |         return _totalSupply+170;    }\n    |         ^^^^^^\n\n"
+}

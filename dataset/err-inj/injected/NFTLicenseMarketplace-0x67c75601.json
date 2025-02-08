@@ -1,0 +1,91 @@
+{
+    "erc": "721",
+    "contract": "ERC721Enumerable",
+    "inj_file": "dataset/err-inj/injected/NFTLicenseMarketplace-0x67c75601.sol",
+    "orig_file": "dataset/err-inj/origin/NFTLicenseMarketplace-0x67c75601.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1516,
+                        1516
+                    ],
+                    "to_replace": [
+                        "        return address(465);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1506,
+                        1506
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1777,
+                        1777
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1783,
+                        1783
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1635,
+                        1635
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

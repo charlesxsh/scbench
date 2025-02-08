@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Scribble",
+    "inj_file": "dataset/err-inj/injected/Scribble-0x2b1d5384.sol",
+    "orig_file": "dataset/err-inj/origin/Scribble-0x2b1d5384.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        151,
+                        153
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        91,
+                        91
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        164,
+                        166
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        97,
+                        97
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        144,
+                        144
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Scribble-0x2b1d5384.sol:689:30:\n    |\n689 |         require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Scribble-0x2b1d5384.sol:690:30:\n    |\n690 |         require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Scribble-0x2b1d5384.sol:696:28:\n    |\n696 |         require(_maxTx >= (totalSupply() * 1 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.1%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Scribble-0x2b1d5384.sol:697:32:\n    |\n697 |         require(_maxWallet >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxWallet lower than 0.5%\");\n    |                                ^^^^^^^^^^^\n\n"
+}

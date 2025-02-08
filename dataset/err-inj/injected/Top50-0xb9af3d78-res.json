@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "allowance function should return the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            },
+            {
+                "rule": "approve function should allow _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe provided code for the `Top50` contract's `transferFrom` function does indeed violate the ERC-20 rule that requires emitting the `Transfer` event. The `_transfer` function, which is called within `transferFrom`, modifies balances but does not emit the `Transfer` event as required by the ERC-20 standard. This omission means that the contract does not comply with the standard's requirement to notify watchers of state changes related to token transfers.",
+            "YES\n\nThe code provided violates the ERC-20 standard rule regarding the `allowance` function. According to the ERC-20 standard, the `allowance` function should return the amount of tokens that a spender is still allowed to withdraw from an owner. However, in the given code, the function returns the value of `_allowances[owner][spender]` plus an additional 668 tokens. This modification does not accurately reflect the actual allowed amount set by the owner for the spender, thus violating the standard's requirement."
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

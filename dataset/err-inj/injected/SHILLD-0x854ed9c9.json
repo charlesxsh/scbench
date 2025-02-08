@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "SHILLD",
+    "inj_file": "dataset/err-inj/injected/SHILLD-0x854ed9c9.sol",
+    "orig_file": "dataset/err-inj/origin/SHILLD-0x854ed9c9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        371,
+                        371
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        361,
+                        361
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        432,
+                        432
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        431,
+                        431
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        302,
+                        304
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        435,
+                        435
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

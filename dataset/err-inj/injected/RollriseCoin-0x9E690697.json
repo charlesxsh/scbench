@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "RollriseCoin",
+    "inj_file": "dataset/err-inj/injected/RollriseCoin-0x9E690697.sol",
+    "orig_file": "dataset/err-inj/origin/RollriseCoin-0x9E690697.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        562,
+                        562
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        298,
+                        298
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+438;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        65,
+                        65
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        297,
+                        299
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/RollriseCoin-0x9E690697.sol:296:9:\n    |\n296 |         return _totalSupply+438;    }\n    |         ^^^^^^\n\n"
+}

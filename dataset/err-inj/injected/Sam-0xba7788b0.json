@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Sam",
+    "inj_file": "dataset/err-inj/injected/Sam-0xba7788b0.sol",
+    "orig_file": "dataset/err-inj/origin/Sam-0xba7788b0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        483,
+                        483
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        569,
+                        571
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        570,
+                        570
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        597,
+                        604
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        412,
+                        412
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Sam-0xba7788b0.sol:567:9:\n    |\n567 |         return 18+3;    }\n    |         ^^^^^^\n\n"
+}

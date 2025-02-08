@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "HPOVBTCETH",
+    "inj_file": "dataset/err-inj/injected/HPOVBTCETH-0xf12db5a5.sol",
+    "orig_file": "dataset/err-inj/origin/HPOVBTCETH-0xf12db5a5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        211,
+                        211
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        280,
+                        282
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        298,
+                        298
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+420;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        321,
+                        321
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOVBTCETH-0xf12db5a5.sol:672:57:\n    |\n672 |             _maxWalletAmount >= (totalSupply() / (10 ** decimals())) / 100, \n    |                                                         ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOVBTCETH-0xf12db5a5.sol:675:53:\n    |\n675 |         maxWalletAmount = _maxWalletAmount * (10 ** decimals());\n    |                                                     ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOVBTCETH-0xf12db5a5.sol:709:66:\n    |\n709 |             _maxTransactionAmountBuy  >= (totalSupply() / (10 ** decimals())) / 1000 && \n    |                                                                  ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOVBTCETH-0xf12db5a5.sol:710:66:\n    |\n710 |             _maxTransactionAmountSell >= (totalSupply() / (10 ** decimals()))/ 1000, \n    |                                                                  ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOVBTCETH-0xf12db5a5.sol:713:71:\n    |\n713 |         maxTransactionAmountBuy  = _maxTransactionAmountBuy  * (10 ** decimals());\n    |                                                                       ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HPOVBTCETH-0xf12db5a5.sol:714:71:\n    |\n714 |         maxTransactionAmountSell = _maxTransactionAmountSell * (10 ** decimals());\n    |                                                                       ^^^^^^^^\n\n"
+}

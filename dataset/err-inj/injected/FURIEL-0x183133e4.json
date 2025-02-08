@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "FURIEL",
+    "inj_file": "dataset/err-inj/injected/FURIEL-0x183133e4.sol",
+    "orig_file": "dataset/err-inj/origin/FURIEL-0x183133e4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        323,
+                        323
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        329,
+                        329
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        346,
+                        346
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        330,
+                        330
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        325,
+                        325
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        341,
+                        342
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+984;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/FURIEL-0x183133e4.sol:217:14:\n    |\n217 |     function shouldContractSwap(address sender, address recipient, uint256 amount) internal view returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^^\n\n"
+}

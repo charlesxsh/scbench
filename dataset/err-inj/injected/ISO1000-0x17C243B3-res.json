@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function 'symbol' should return the symbol of the token. E.g., 'HIX'.",
+                "function": "symbol"
+            },
+            {
+                "rule": "The function 'totalSupply' should return the total token supply.",
+                "function": "totalSupply"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES\n\nThe function `totalSupply()` in the provided code violates the ERC-20 rule that requires it to return the total token supply. Instead of returning a constant total supply, it adds 681 to `_tTotal`, which alters the expected total supply of tokens. This does not adhere to the standard practice of returning a fixed total supply as defined in the ERC-20 token standard."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

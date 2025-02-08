@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "transfer"
+            },
+            {
+                "rule": "transferFrom function should throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The `safeTransferFrom` function must check if `_to` is a smart contract and if so, it must call `onERC721Received` on `_to` and revert if the return value is not `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`.",
+                "function": "The `_safeTransfer` function in the provided contract does not perform the check and call to `onERC721Received` as described by the ERC-721 standard."
+            },
+            {
+                "rule": "The function decimals() should return the number of decimals the token uses.",
+                "function": "decimals"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

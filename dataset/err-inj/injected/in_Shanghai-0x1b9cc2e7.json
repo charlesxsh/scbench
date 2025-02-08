@@ -1,0 +1,103 @@
+{
+    "erc": "721",
+    "contract": "in_Shanghai",
+    "inj_file": "dataset/err-inj/injected/in_Shanghai-0x1b9cc2e7.sol",
+    "orig_file": "dataset/err-inj/origin/in_Shanghai-0x1b9cc2e7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        921,
+                        921
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        745,
+                        745
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        822,
+                        822
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        714,
+                        714
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        155,
+                        155
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        732,
+                        734
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": "throw if NFTs assigned to the zero address",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        649,
+                        649
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/in_Shanghai-0x1b9cc2e7.sol:701:38:\n    |\n701 |             _msgSender() == owner || isApprovedForAll(owner, _msgSender()),\n    |                                      ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/in_Shanghai-0x1b9cc2e7.sol:816:72:\n    |\n816 |         return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));\n    |                                                                        ^^^^^^^^^^^^^^^^\n\n"
+}

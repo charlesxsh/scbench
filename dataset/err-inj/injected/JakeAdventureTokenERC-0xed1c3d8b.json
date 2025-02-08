@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "JakeAdventureTokenERC",
+    "inj_file": "dataset/err-inj/injected/JakeAdventureTokenERC-0xed1c3d8b.sol",
+    "orig_file": "dataset/err-inj/origin/JakeAdventureTokenERC-0xed1c3d8b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        141,
+                        143
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        26,
+                        26
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        242,
+                        242
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        209,
+                        209
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        230,
+                        230
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/JakeAdventureTokenERC-0xed1c3d8b.sol:482:28:\n    |\n482 |         require(newNum >= (totalSupply() * 2 / 1000)/1e18, \"Cannot set max buy amount lower than 0.2%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JakeAdventureTokenERC-0xed1c3d8b.sol:488:28:\n    |\n488 |         require(newNum >= (totalSupply() * 2 / 1000)/1e18, \"Cannot set max sell amount lower than 0.2%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JakeAdventureTokenERC-0xed1c3d8b.sol:494:28:\n    |\n494 |         require(newNum >= (totalSupply() * 3 / 1000)/1e18, \"Cannot set max wallet amount lower than 0.3%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JakeAdventureTokenERC-0xed1c3d8b.sol:501:29:\n    |\n501 |   \t    require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JakeAdventureTokenERC-0xed1c3d8b.sol:502:29:\n    |\n502 |   \t    require(newAmount <= totalSupply() * 1 / 1000, \"Swap amount cannot be higher than 0.1% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\n"
+}

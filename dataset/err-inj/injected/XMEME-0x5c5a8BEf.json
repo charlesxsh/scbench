@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "XMEME",
+    "inj_file": "dataset/err-inj/injected/XMEME-0x5c5a8BEf.sol",
+    "orig_file": "dataset/err-inj/origin/XMEME-0x5c5a8BEf.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        467,
+                        467
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        465,
+                        468
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        135,
+                        135
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        518,
+                        518
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        530,
+                        530
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        472,
+                        473
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/XMEME-0x5c5a8BEf.sol:464:9:\n    |\n464 |         return false;\n    |         ^^^^^^\n\n"
+}

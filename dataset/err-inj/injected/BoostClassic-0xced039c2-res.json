@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The totalSupply function should return the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "The ERC20 standard expects that the `transfer` and `transferFrom` functions will primarily manage the decrementing of the balance of the sender and the incrementing of the balance of the receiver, along with firing a `Transfer` event.",
+                "function": "Implementation includes additional logic within transfers that can alter contract state in non-standard ways"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

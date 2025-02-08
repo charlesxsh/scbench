@@ -1,0 +1,62 @@
+{
+    "functions": [
+        {
+            "def": "    function supportsInterface(bytes4 interfaceID) external view returns (bool);",
+            "raw_rules": "    /// @notice Query if a contract implements an interface\n    /// @param interfaceID The interface identifier, as specified in ERC-165\n    /// @dev Interface identification is specified in ERC-165. This function\n    ///  uses less than 30,000 gas.\n    /// @return `true` if the contract implements `interfaceID` and\n    ///  `interfaceID` is not 0xffffffff, `false` otherwise\n",
+            "format": {
+                "name": "supportsInterface",
+                "arg_types": [
+                    {
+                        "name": "interfaceID",
+                        "type": "bytes4"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "bool"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "interfaceID is 0xffffffff",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "`true` if the contract implements `interfaceID` and `interfaceID` is not 0xffffffff, `false` otherwise"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "[]"
+        }
+    ],
+    "events": [],
+    "name": "ERC165",
+    "rules": [
+        {
+            "rule": " throw if interfaceID is 0xffffffff",
+            "type": "throw",
+            "interface": "    function supportsInterface(bytes4 interfaceID) external view returns (bool);",
+            "related_vars": {
+                "variables": [
+                    "interfaceID"
+                ],
+                "parameters": [
+                    1
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"interfaceID\"],\n    \"parameters\": [1]\n}\n```"
+        },
+        {
+            "rule": "`true` if the contract implements `interfaceID` and `interfaceID` is not 0xffffffff, `false` otherwise",
+            "type": "return",
+            "interface": "    function supportsInterface(bytes4 interfaceID) external view returns (bool);",
+            "related_vars": null
+        }
+    ]
+}

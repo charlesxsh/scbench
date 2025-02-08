@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "BitcoinHalving",
+    "inj_file": "dataset/err-inj/injected/BitcoinHalving-0x95f37883.sol",
+    "orig_file": "dataset/err-inj/origin/BitcoinHalving-0x95f37883.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        243,
+                        243
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+122;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        469,
+                        469
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        379,
+                        379
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        312,
+                        313
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        472,
+                        472
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,43 @@
+{
+    "functions": [
+        {
+            "def": "function supportsInterface(bytes4 interfaceID) external view returns (bool) {",
+            "raw_rules": "\n    function supportsInterface(bytes4 interfaceID) external view returns (bool) {\n        return  interfaceID == 0x01ffc9a7 ||    // ERC-165 support (i.e. `bytes4(keccak256('supportsInterface(bytes4)'))`).\n                interfaceID == 0x4e2312e0;      // ERC-1155 `ERC1155TokenReceiver` support (i.e. `bytes4(keccak256(\"onERC1155Received(address,address,uint256,uint256,bytes)\")) ^ bytes4(keccak256(\"onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)\"))`).\n    }\n",
+            "format": {
+                "name": "supportsInterface",
+                "arg_types": [
+                    {
+                        "name": "interfaceID",
+                        "type": "bytes4"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "bool"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "Indicates if the contract implements the interface corresponding to the passed interfaceID. It returns true if the contract supports the specified interface (either ERC-165 or ERC-1155TokenReceiver), otherwise false."
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "[]"
+        }
+    ],
+    "events": [],
+    "name": "ERC165",
+    "rules": [
+        {
+            "rule": "Indicates if the contract implements the interface corresponding to the passed interfaceID. It returns true if the contract supports the specified interface (either ERC-165 or ERC-1155TokenReceiver), otherwise false.",
+            "type": "return",
+            "interface": "function supportsInterface(bytes4 interfaceID) external view returns (bool) {",
+            "related_vars": null
+        }
+    ]
+}

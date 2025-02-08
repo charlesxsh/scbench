@@ -1,0 +1,58 @@
+{
+    "erc": "20",
+    "contract": "ERC20Token",
+    "inj_file": "dataset/err-inj/injected/ERC20Token-0x0ba279d3.sol",
+    "orig_file": "dataset/err-inj/origin/ERC20Token-0x0ba279d3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        55,
+                        55
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        54,
+                        54
+                    ],
+                    "to_replace": [
+                        " function transfer(address to, uint256 amount) public returns (bool) { address owner = _msgSender(); _transfer(owner, to, amount); return false;}\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n  --> dataset/err-inj/injected/ERC20Token-0x0ba279d3.sol:64:27:\n   |\n64 |  _approve(owner, spender, allowance(owner, spender) + addedValue);\n   |                           ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n  --> dataset/err-inj/injected/ERC20Token-0x0ba279d3.sol:69:29:\n   |\n69 |  uint256 currentAllowance = allowance(owner, spender);\n   |                             ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/ERC20Token-0x0ba279d3.sol:102:29:\n    |\n102 |  uint256 currentAllowance = allowance(owner, spender);\n    |                             ^^^^^^^^^\n\n"
+}

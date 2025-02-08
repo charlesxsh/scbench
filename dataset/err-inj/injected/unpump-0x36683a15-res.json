@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `decimals` function should return the number of decimals the token uses. This is typically a constant value like 18, to represent the smallest unit of the token.",
+                "function": "decimals()"
+            },
+            {
+                "rule": "The `approve` function should return a boolean value indicating whether the operation succeeded. It is expected to return `true` on success.",
+                "function": "approve(address spender, uint256 amount)"
+            },
+            {
+                "rule": "The `allowance` function should return the remaining number of tokens that the spender is allowed to withdraw from the owner.",
+                "function": "allowance(address owner, address spender)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `approve` in the provided code violates the ERC-20 rule that requires indicating whether the approval was successful. According to the ERC-20 standard, the `approve` function should return `true` if the operation was successful. However, in the given code, the `approve` function always returns `false`, regardless of whether the approval operation was successful or not. This implementation does not correctly communicate the outcome of the approval to the caller, which is against the ERC-20 standard requirements.",
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule regarding the amount a spender is allowed to withdraw from an owner. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from the owner's account. However, in the given code, the function returns `_allowances[owner][spender] + 82`, which artificially increases the allowed amount by 82. This modification does not accurately reflect the actual approved amount and thus violates the standard's requirement.",
+            "NO\n\nThe function `decimals()` in the provided code returns `21` (since `18 + 3 = 21`), which specifies the number of decimal places the token can be divided into. The ERC-20 standard does not specify a maximum or specific number of decimals required; it only requires that a `decimals()` function is implemented to define the smallest unit of the token. Therefore, returning `21` does not violate the ERC-20 rules regarding the implementation of the `decimals()` function."
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "CRYPTOBITLORD",
+    "inj_file": "dataset/err-inj/injected/CRYPTOBITLORD-0xbb1aba6c.sol",
+    "orig_file": "dataset/err-inj/origin/CRYPTOBITLORD-0xbb1aba6c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        255,
+                        255
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+2;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        285,
+                        300
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        41,
+                        45
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        254,
+                        256
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/CRYPTOBITLORD-0xbb1aba6c.sol:248:9:\n    |\n248 |         return _balances[account]+2;    }\n    |         ^^^^^^\n\n"
+}

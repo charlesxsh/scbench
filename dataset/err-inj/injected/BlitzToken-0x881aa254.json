@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "BlitzToken",
+    "inj_file": "dataset/err-inj/injected/BlitzToken-0x881aa254.sol",
+    "orig_file": "dataset/err-inj/origin/BlitzToken-0x881aa254.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        595,
+                        595
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        515,
+                        515
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        335,
+                        343
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        153,
+                        153
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/BlitzToken-0x881aa254.sol:1310:13:\n     |\n1310 |             balanceOf(address(this)),\n     |             ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BlitzToken-0x881aa254.sol:1524:30:\n     |\n1524 |                     amount + balanceOf(to) <= maxWallet,\n     |                              ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BlitzToken-0x881aa254.sol:1539:30:\n     |\n1539 |                     amount + balanceOf(to) <= maxWallet,\n     |                              ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BlitzToken-0x881aa254.sol:1545:40:\n     |\n1545 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BlitzToken-0x881aa254.sol:1635:35:\n     |\n1635 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

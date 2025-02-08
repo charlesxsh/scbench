@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "SHIBF",
+    "inj_file": "dataset/err-inj/injected/SHIBF-0x64fb08e9.sol",
+    "orig_file": "dataset/err-inj/origin/SHIBF-0x64fb08e9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        228,
+                        228
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        143,
+                        145
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        83,
+                        83
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBF-0x64fb08e9.sol:684:30:\n    |\n684 |         require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBF-0x64fb08e9.sol:685:30:\n    |\n685 |         require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBF-0x64fb08e9.sol:691:28:\n    |\n691 |         require(_maxTx >= (totalSupply() * 1 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.1%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBF-0x64fb08e9.sol:692:32:\n    |\n692 |         require(_maxWallet >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxWallet lower than 0.5%\");\n    |                                ^^^^^^^^^^^\n\n"
+}

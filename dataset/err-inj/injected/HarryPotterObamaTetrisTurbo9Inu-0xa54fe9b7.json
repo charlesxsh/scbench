@@ -1,0 +1,65 @@
+{
+    "erc": "20",
+    "contract": "HarryPotterObamaTetrisTurbo9Inu",
+    "inj_file": "dataset/err-inj/injected/HarryPotterObamaTetrisTurbo9Inu-0xa54fe9b7.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotterObamaTetrisTurbo9Inu-0xa54fe9b7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        188,
+                        188
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+563;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

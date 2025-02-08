@@ -1,0 +1,103 @@
+{
+    "erc": "721",
+    "contract": "MeteorNFT",
+    "inj_file": "dataset/err-inj/injected/MeteorNFT-0xee840988.sol",
+    "orig_file": "dataset/err-inj/origin/MeteorNFT-0xee840988.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1012,
+                        1012
+                    ],
+                    "to_replace": [
+                        "        return address(952);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1299,
+                        1299
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1002,
+                        1002
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1305,
+                        1305
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1149,
+                        1149
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        938,
+                        938
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1082,
+                        1084
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.20;\"\n--> dataset/err-inj/injected/MeteorNFT-0xee840988.sol\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/MeteorNFT-0xee840988.sol:1053:38:\n     |\n1053 |             _msgSender() == owner || isApprovedForAll(owner, _msgSender()),\n     |                                      ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/MeteorNFT-0xee840988.sol:1173:37:\n     |\n1173 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                     ^^^^^^^^^^^^^^^^\n\n"
+}

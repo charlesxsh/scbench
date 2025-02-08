@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "IHNEToken",
+    "inj_file": "dataset/err-inj/injected/IHNEToken-0x5b508034.sol",
+    "orig_file": "dataset/err-inj/origin/IHNEToken-0x5b508034.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        325,
+                        325
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+170;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        623,
+                        623
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        540,
+                        540
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        456,
+                        456
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        626,
+                        626
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        541,
+                        541
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        390,
+                        393
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        300,
+                        302
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/IHNEToken-0x5b508034.sol:399:14:\n    |\n399 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

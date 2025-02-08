@@ -1,0 +1,93 @@
+{
+    "erc": "721",
+    "contract": "London1764",
+    "inj_file": "dataset/err-inj/injected/London1764-0x55d7EFC7.sol",
+    "orig_file": "dataset/err-inj/origin/London1764-0x55d7EFC7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1520,
+                        1520
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1300,
+                        1300
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1429,
+                        1429
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1572,
+                        1572
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1364,
+                        1368
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1137,
+                        1137
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/London1764-0x55d7EFC7.sol\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/London1764-0x55d7EFC7.sol:1452:73:\n     |\n1452 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                                                         ^^^^^^^^^^^\n\n"
+}

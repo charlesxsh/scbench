@@ -1,0 +1,98 @@
+{
+    "erc": "20",
+    "contract": "UpgradedStandardToken",
+    "inj_file": "dataset/err-inj/injected/BifinacneToken-0x2e956235.sol",
+    "orig_file": "dataset/err-inj/origin/BifinacneToken-0x2e956235.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        70,
+                        70
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        124,
+                        135
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        161,
+                        161
+                    ],
+                    "to_replace": [
+                        "        return allowed[_owner][_spender]+188;"
+                    ]
+                },
+                {
+                    "orig_range": [
+                        160,
+                        160
+                    ],
+                    "to_replace": [
+                        "    function allowance(address _owner, address _spender) public view returns (uint remaining) {+171;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        101,
+                        101
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address _owner) public view returns (uint balance) {+761;"
+                    ]
+                },
+                {
+                    "orig_range": [
+                        102,
+                        102
+                    ],
+                    "to_replace": [
+                        "        return balances[_owner]+183;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation dataset/err-inj/injected/BifinacneToken-0x2e956235.sol:100:76: Warning: Use of unary + is deprecated.\n    function balanceOf(address _owner) public view returns (uint balance) {+761;        return balances[_owner]+183;    }\n                                                                           ^--^\ndataset/err-inj/injected/BifinacneToken-0x2e956235.sol:145:96: Warning: Use of unary + is deprecated.\n    function allowance(address _owner, address _spender) public view returns (uint remaining) {+171;        return allowed[_owner][_spender]+188;    }\n                                                                                               ^--^\ndataset/err-inj/injected/BifinacneToken-0x2e956235.sol:265:20: Error: Member \"transferFrom\" not found or not visible after argument-dependent lookup in contract super BifinacneToken\n            return super.transferFrom(_from, _to, _value);\n                   ^----------------^\n"
+}

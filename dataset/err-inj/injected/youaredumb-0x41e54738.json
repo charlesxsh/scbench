@@ -1,0 +1,132 @@
+{
+    "erc": "20",
+    "contract": "youaredumb",
+    "inj_file": "dataset/err-inj/injected/youaredumb-0x41e54738.sol",
+    "orig_file": "dataset/err-inj/origin/youaredumb-0x41e54738.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        233,
+                        233
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) {return _balances[account]+936;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        325,
+                        325
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        324,
+                        324
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        241,
+                        241
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        243,
+                        243
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        431,
+                        431
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        323,
+                        323
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        306,
+                        306
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        426,
+                        427
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        230,
+                        230
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        95,
+                        95
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/youaredumb-0x41e54738.sol:231:124:\n    |\n231 |  ... balances[account]+936;    function transfer(address recipient, uint256 amount) ...\n    |                                         ^^^^^^^^\n\n"
+}

@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "Shia2_0",
+    "inj_file": "dataset/err-inj/injected/Shia2_0-0xa7fb673a.sol",
+    "orig_file": "dataset/err-inj/origin/Shia2_0-0xa7fb673a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        32,
+                        32
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        424,
+                        426
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        436,
+                        438
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        38,
+                        38
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        492,
+                        492
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Shia2_0-0xa7fb673a.sol:300:32:\n    |\n300 |         return totalSupply() - balanceOf(DEAD) - balanceOf(ZERO);\n    |                                ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Shia2_0-0xa7fb673a.sol:300:50:\n    |\n300 |         return totalSupply() - balanceOf(DEAD) - balanceOf(ZERO);\n    |                                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Shia2_0-0xa7fb673a.sol:521:46:\n    |\n521 |         if (from != pair && isSwapEnabled && balanceOf(address(this)) >= minSwap && totalFeeCollected - totalFeeRedeemed >= minSwap) {\n    |                                              ^^^^^^^^^\n\n"
+}

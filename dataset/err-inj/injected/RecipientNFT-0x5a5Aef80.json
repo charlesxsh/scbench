@@ -1,0 +1,58 @@
+{
+    "erc": "1155",
+    "contract": "RecipientNFT",
+    "inj_file": "dataset/err-inj/injected/RecipientNFT-0x5a5Aef80.sol",
+    "orig_file": "dataset/err-inj/origin/RecipientNFT-0x5a5Aef80.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "rule": "The _owner's balance of the token type requested",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        697,
+                        697
+                    ],
+                    "to_replace": [
+                        "        return _balances[id][account]+191;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function setApprovalForAll(address _operator, bool _approved) external;",
+                    "function": "setApprovalForAll",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        725,
+                        727
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        557,
+                        557
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "'NoneType' object has no attribute 'source_mapping'"
+}

@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer function should return true on success.",
+                "function": "transfer"
+            },
+            {
+                "rule": "allowance function should return the remaining number of tokens that the spender will be allowed to spend on behalf of the owner.",
+                "function": "allowance"
+            },
+            {
+                "rule": "symbol function should return the symbol of the token.",
+                "function": "symbol"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule by returning an altered allowance value. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from an owner. However, in the given code, the function returns the allowance amount incremented by 332, which is not the actual allowed amount set by the owner for the spender. This modification can lead to incorrect behavior in transactions and misinterpretations of allowed transfer amounts.",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

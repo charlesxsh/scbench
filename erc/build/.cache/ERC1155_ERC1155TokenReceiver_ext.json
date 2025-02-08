@@ -1,0 +1,166 @@
+{
+    "functions": [
+        {
+            "def": "function onERC1155Received(address _operator, address _from, uint256 _id, uint256 _value, bytes calldata _data) external returns(bytes4);",
+            "raw_rules": "    /**\n        @notice Handle the receipt of a single ERC1155 token type.\n        @dev An ERC1155-compliant smart contract MUST call this function on the token recipient contract, at the end of a `safeTransferFrom` after the balance has been updated.        \n        This function MUST return `bytes4(keccak256(\"onERC1155Received(address,address,uint256,uint256,bytes)\"))` (i.e. 0xf23a6e61) if it accepts the transfer.\n        This function MUST revert if it rejects the transfer.\n        Return of any other value than the prescribed keccak256 generated value MUST result in the transaction being reverted by the caller.\n        @param _operator  The address which initiated the transfer (i.e. msg.sender)\n        @param _from      The address which previously owned the token\n        @param _id        The ID of the token being transferred\n        @param _value     The amount of tokens being transferred\n        @param _data      Additional data with no specified format\n        @return           `bytes4(keccak256(\"onERC1155Received(address,address,uint256,uint256,bytes)\"))`\n    */\n",
+            "format": {
+                "name": "onERC1155Received",
+                "arg_types": [
+                    {
+                        "name": "_operator",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_id",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "_data",
+                        "type": "bytes calldata"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "bytes4"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "if it rejects the transfer",
+                        "throw": true
+                    },
+                    {
+                        "if": "if the return is not `bytes4(keccak256(\"onERC1155Received(address,address,uint256,uint256,bytes)\"))`",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "Indicates acceptance of the token transfer"
+                },
+                "assign": [],
+                "call": [
+                    {
+                        "call": "onERC1155Received",
+                        "if": "An ERC1155-compliant smart contract calls this function on the token recipient contract, at the end of a `safeTransferFrom` after the balance has been updated."
+                    }
+                ]
+            },
+            "extract_debug": "```json\n[\n    {\n        \"call\": \"onERC1155Received\",\n        \"if\": \"An ERC1155-compliant smart contract calls this function on the token recipient contract, at the end of a `safeTransferFrom` after the balance has been updated.\"\n    }\n]\n```"
+        },
+        {
+            "def": "function onERC1155BatchReceived(address _operator, address _from, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external returns(bytes4);",
+            "raw_rules": "\n    /**\n        @notice Handle the receipt of multiple ERC1155 token types.\n        @dev An ERC1155-compliant smart contract MUST call this function on the token recipient contract, at the end of a `safeBatchTransferFrom` after the balances have been updated.        \n        This function MUST return `bytes4(keccak256(\"onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)\"))` (i.e. 0xbc197c81) if it accepts the transfer(s).\n        This function MUST revert if it rejects the transfer(s).\n        Return of any other value than the prescribed keccak256 generated value MUST result in the transaction being reverted by the caller.\n        @param _operator  The address which initiated the batch transfer (i.e. msg.sender)\n        @param _from      The address which previously owned the token\n        @param _ids       An array containing ids of each token being transferred (order and length must match _values array)\n        @param _values    An array containing amounts of each token being transferred (order and length must match _ids array)\n        @param _data      Additional data with no specified format\n        @return           `bytes4(keccak256(\"onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)\"))`\n    */\n",
+            "format": {
+                "name": "onERC1155BatchReceived",
+                "arg_types": [
+                    {
+                        "name": "_operator",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_ids",
+                        "type": "uint256[] calldata"
+                    },
+                    {
+                        "name": "_values",
+                        "type": "uint256[] calldata"
+                    },
+                    {
+                        "name": "_data",
+                        "type": "bytes calldata"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "bytes4"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "the function does not accept the transfer(s)",
+                        "throw": true
+                    },
+                    {
+                        "if": "return value is not `bytes4(keccak256(\"onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)\"))`",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "Indicates that the implementing contract has accepted the batch transfer of the ERC1155 tokens"
+                },
+                "assign": [],
+                "call": [
+                    {
+                        "call": "onERC1155BatchReceived",
+                        "if": "at the end of a `safeBatchTransferFrom` after the balances have been updated"
+                    }
+                ]
+            },
+            "extract_debug": "```json\n[\n    {\n        \"call\": \"onERC1155BatchReceived\",\n        \"if\": \"at the end of a `safeBatchTransferFrom` after the balances have been updated\"\n    }\n]\n```"
+        }
+    ],
+    "events": [],
+    "name": "ERC1155TokenReceiver",
+    "rules": [
+        {
+            "rule": " throw if if it rejects the transfer",
+            "type": "throw",
+            "interface": "function onERC1155Received(address _operator, address _from, uint256 _id, uint256 _value, bytes calldata _data) external returns(bytes4);"
+        },
+        {
+            "rule": " throw if if the return is not `bytes4(keccak256(\"onERC1155Received(address,address,uint256,uint256,bytes)\"))`",
+            "type": "throw",
+            "interface": "function onERC1155Received(address _operator, address _from, uint256 _id, uint256 _value, bytes calldata _data) external returns(bytes4);"
+        },
+        {
+            "rule": "Indicates acceptance of the token transfer",
+            "type": "return",
+            "interface": "function onERC1155Received(address _operator, address _from, uint256 _id, uint256 _value, bytes calldata _data) external returns(bytes4);"
+        },
+        {
+            "rule": "call onERC1155Received if An ERC1155-compliant smart contract calls this function on the token recipient contract, at the end of a `safeTransferFrom` after the balance has been updated.",
+            "type": "call",
+            "interface": "function onERC1155Received(address _operator, address _from, uint256 _id, uint256 _value, bytes calldata _data) external returns(bytes4);"
+        },
+        {
+            "rule": " throw if the function does not accept the transfer(s)",
+            "type": "throw",
+            "interface": "function onERC1155BatchReceived(address _operator, address _from, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external returns(bytes4);"
+        },
+        {
+            "rule": " throw if return value is not `bytes4(keccak256(\"onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)\"))`",
+            "type": "throw",
+            "interface": "function onERC1155BatchReceived(address _operator, address _from, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external returns(bytes4);"
+        },
+        {
+            "rule": "Indicates that the implementing contract has accepted the batch transfer of the ERC1155 tokens",
+            "type": "return",
+            "interface": "function onERC1155BatchReceived(address _operator, address _from, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external returns(bytes4);"
+        },
+        {
+            "rule": "call onERC1155BatchReceived if at the end of a `safeBatchTransferFrom` after the balances have been updated",
+            "type": "call",
+            "interface": "function onERC1155BatchReceived(address _operator, address _from, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external returns(bytes4);"
+        }
+    ]
+}

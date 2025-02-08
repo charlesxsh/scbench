@@ -1,0 +1,102 @@
+{
+    "erc": "721",
+    "contract": "Govno_sabachie",
+    "inj_file": "dataset/err-inj/injected/Govno_sabachie-0x966efA97.sol",
+    "orig_file": "dataset/err-inj/origin/Govno_sabachie-0x966efA97.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1369,
+                        1372
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1032,
+                        1032
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1346,
+                        1346
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1542,
+                        1542
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1588,
+                        1588
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1536,
+                        1536
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1354,
+                        1354
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/Govno_sabachie-0x966efA97.sol\n\nError: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/Govno_sabachie-0x966efA97.sol:1361:9:\n     |\n1361 |         safeTransferFrom(from, to, tokenId, \"\");\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,116 @@
+{
+    "erc": "20",
+    "contract": "ShiibaaDAOToken",
+    "inj_file": "dataset/err-inj/injected/ShiibaaDAOToken-0x54eea875.sol",
+    "orig_file": "dataset/err-inj/origin/ShiibaaDAOToken-0x54eea875.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        302,
+                        304
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        229,
+                        229
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        168,
+                        168
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        359,
+                        368
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        597,
+                        597
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1455,
+                        1458
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        504,
+                        504
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1439,
+                        1439
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        426,
+                        427
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(...).transfer\" to access this address member.\n    --> dataset/err-inj/injected/ShiibaaDAOToken-0x54eea875.sol:1402:9:\n     |\n1402 |         IERC20(tkn).transfer(msg.sender, amount);\n     |         ^^^^^^^^^^^^^^^^^^^^\n\n"
+}

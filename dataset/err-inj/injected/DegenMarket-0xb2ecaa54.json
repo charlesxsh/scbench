@@ -1,0 +1,52 @@
+{
+    "erc": "20",
+    "contract": "DegenMarket",
+    "inj_file": "dataset/err-inj/injected/DegenMarket-0xb2ecaa54.sol",
+    "orig_file": "dataset/err-inj/origin/DegenMarket-0xb2ecaa54.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        318,
+                        318
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        232,
+                        232
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+136;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

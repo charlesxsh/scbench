@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "KerK",
+    "inj_file": "dataset/err-inj/injected/KerK-0x72d85201.sol",
+    "orig_file": "dataset/err-inj/origin/KerK-0x72d85201.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        177,
+                        179
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        15,
+                        15
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        173,
+                        175
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        208,
+                        208
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/KerK-0x72d85201.sol:136:37:\n    |\n136 |     uint256 public _maxTxAmount =   totalSupply() / 100 * 2;\n    |                                     ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/KerK-0x72d85201.sol:137:37:\n    |\n137 |     uint256 public _maxWalletSize = totalSupply() / 100 * 2;\n    |                                     ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/KerK-0x72d85201.sol:139:33:\n    |\n139 |     uint256 public _maxTaxSwap= totalSupply() / 100 * 1;\n    |                                 ^^^^^^^^^^^\n\n"
+}

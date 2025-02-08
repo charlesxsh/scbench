@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "DPEPE",
+    "inj_file": "dataset/err-inj/injected/DPEPE-0x15ebc4e8.sol",
+    "orig_file": "dataset/err-inj/origin/DPEPE-0x15ebc4e8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        333,
+                        335
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        138,
+                        138
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        470,
+                        470
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        491,
+                        491
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/DPEPE-0x15ebc4e8.sol:1335:34:\n     |\n1335 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DPEPE-0x15ebc4e8.sol:1350:34:\n     |\n1350 |                         amount + balanceOf(to) <= maxWallet,\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DPEPE-0x15ebc4e8.sol:1357:40:\n     |\n1357 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DPEPE-0x15ebc4e8.sol:1447:35:\n     |\n1447 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

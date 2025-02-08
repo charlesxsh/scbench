@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "OnlyFansLight",
+    "inj_file": "dataset/err-inj/injected/OnlyFansLight-0x0cAaA957.sol",
+    "orig_file": "dataset/err-inj/origin/OnlyFansLight-0x0cAaA957.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        55,
+                        55
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        44,
+                        44
+                    ],
+                    "to_replace": [
+                        "    function name() public view virtual override returns (string memory) {return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        47,
+                        47
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n  --> dataset/err-inj/injected/OnlyFansLight-0x0cAaA957.sol:43:98:\n   |\n43 |  ... ng memory) {return \"\";    function symbol() public view virtual override ret ...\n   |                                         ^^^^^^\n\n"
+}

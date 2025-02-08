@@ -1,0 +1,75 @@
+{
+    "erc": "721",
+    "contract": "ImmortalsStaking",
+    "inj_file": "dataset/err-inj/injected/ImmortalsStaking-0x4f252cfd.sol",
+    "orig_file": "dataset/err-inj/origin/ImmortalsStaking-0x4f252cfd.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1021,
+                        1021
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1230,
+                        1232
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        952,
+                        956
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1252,
+                        1258
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/ImmortalsStaking-0x4f252cfd.sol:1319:37:\n     |\n1319 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                     ^^^^^^^^^^^^^^^^\n\n"
+}

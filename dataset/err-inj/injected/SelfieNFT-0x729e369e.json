@@ -1,0 +1,68 @@
+{
+    "erc": "721",
+    "contract": "SelfieNFT",
+    "inj_file": "dataset/err-inj/injected/SelfieNFT-0x729e369e.sol",
+    "orig_file": "dataset/err-inj/origin/SelfieNFT-0x729e369e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1367,
+                        1371
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1690,
+                        1696
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1935,
+                        1935
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,55 @@
+{
+    "erc": "1155",
+    "contract": "Gweiders",
+    "inj_file": "dataset/err-inj/injected/Address-0xeaba235b.sol",
+    "orig_file": "dataset/err-inj/origin/Address-0xeaba235b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if the operator is approved, false if not",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        731,
+                        731
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[account][operator];\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if length of `_ids` is not the same as length of `_values`",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "fn_params": [
+                        2,
+                        3
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        826,
+                        826
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

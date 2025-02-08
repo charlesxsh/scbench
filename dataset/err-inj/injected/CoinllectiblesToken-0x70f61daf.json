@@ -1,0 +1,85 @@
+{
+    "erc": "721",
+    "contract": "CoinllectiblesToken",
+    "inj_file": "dataset/err-inj/injected/CoinllectiblesToken-0x70f61daf.sol",
+    "orig_file": "dataset/err-inj/origin/CoinllectiblesToken-0x70f61daf.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1366,
+                        1366
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1372,
+                        1372
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1069,
+                        1069
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1170,
+                        1176
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        204,
+                        208
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

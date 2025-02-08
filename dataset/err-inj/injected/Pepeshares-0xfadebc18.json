@@ -1,0 +1,110 @@
+{
+    "erc": "20",
+    "contract": "Pepeshares",
+    "inj_file": "dataset/err-inj/injected/Pepeshares-0xfadebc18.sol",
+    "orig_file": "dataset/err-inj/origin/Pepeshares-0xfadebc18.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        240,
+                        240
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        233,
+                        233
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        234,
+                        234
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        245,
+                        245
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        228,
+                        229
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        43,
+                        43
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        204,
+                        206
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        235,
+                        235
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

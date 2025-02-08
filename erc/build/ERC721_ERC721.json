@@ -1,0 +1,731 @@
+{
+    "functions": [
+        {
+            "def": "    function balanceOf(address _owner) external view returns (uint256);",
+            "raw_rules": "\n    /// @notice Count all NFTs assigned to an owner\n    /// @dev NFTs assigned to the zero address are considered invalid, and this\n    ///  function throws for queries about the zero address.\n    /// @param _owner An address for whom to query the balance\n    /// @return The number of NFTs owned by `_owner`, possibly zero\n",
+            "format": {
+                "name": "balanceOf",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "uint256"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "NFTs assigned to the zero address",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "The number of NFTs owned by `_owner`, possibly zero"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "The rule documentation provided does not explicitly mention any hook functions that need to be called by the `balanceOf` function. The only condition mentioned is related to handling queries for the zero address:\n\n- NFTs assigned to the zero address are considered invalid, and this function throws for queries about the zero address.\n\nThere is no evidence in the provided documentation of a hook function that needs to be called in relation to checking the balance. Therefore, the response JSON is empty as follows:\n\n```json\n[]\n```"
+        },
+        {
+            "def": "    function ownerOf(uint256 _tokenId) external view returns (address);",
+            "raw_rules": "\n    /// @notice Find the owner of an NFT\n    /// @dev NFTs assigned to zero address are considered invalid, and queries\n    ///  about them do throw.\n    /// @param _tokenId The identifier for an NFT\n    /// @return The address of the owner of the NFT\n",
+            "format": {
+                "name": "ownerOf",
+                "arg_types": [
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "address"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "NFTs assigned to zero address",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "The address of the owner of the NFT"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "The provided documentation does not specify any rules that require calling a hook function in response to the `ownerOf` function. Therefore, the answer would be an empty JSON array:\n\n```json\n[]\n```"
+        },
+        {
+            "def": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "raw_rules": "\n    /// @notice Transfers the ownership of an NFT from one address to another address\n    /// @dev Throws unless `msg.sender` is the current owner, an authorized\n    ///  operator, or the approved address for this NFT. Throws if `_from` is\n    ///  not the current owner. Throws if `_to` is the zero address. Throws if\n    ///  `_tokenId` is not a valid NFT. When transfer is complete, this function\n    ///  checks if `_to` is a smart contract (code size > 0). If so, it calls\n    ///  `onERC721Received` on `_to` and throws if the return value is not\n    ///  `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`.\n    /// @param _from The current owner of the NFT\n    /// @param _to The new owner\n    /// @param _tokenId The NFT to transfer\n    /// @param data Additional data with no specified format, sent in call to `_to`\n",
+            "format": {
+                "name": "safeTransferFrom",
+                "arg_types": [
+                    {
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256"
+                    },
+                    {
+                        "name": "data",
+                        "type": "bytes"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": true,
+                "return_type": null
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "`msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_from` is not the current owner",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_to` is the zero address",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_tokenId` is not a valid NFT",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_to` is a smart contract (code size > 0)",
+                        "throw": false
+                    },
+                    {
+                        "if": "the return value is not `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))` when `onERC721Received` is called on `_to`",
+                        "throw": true
+                    }
+                ],
+                "return": null,
+                "assign": [
+                    "`_to` must be set to a new owner",
+                    "`_to` must be checked if it is a smart contract",
+                    "`data` must be sent to `_to`"
+                ],
+                "call": [
+                    {
+                        "call": "onERC721Received",
+                        "if": "`_to` is a smart contract (code size > 0)"
+                    }
+                ]
+            },
+            "extract_debug": "```json\n[\n    {\n        \"call\": \"onERC721Received\",\n        \"if\": \"`_to` is a smart contract (code size > 0)\"\n    }\n]\n```"
+        },
+        {
+            "def": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+            "raw_rules": "\n    /// @notice Transfers the ownership of an NFT from one address to another address\n    /// @dev This works identically to the other function with an extra data parameter,\n    ///  except this function just sets data to \"\".\n    /// @param _from The current owner of the NFT\n    /// @param _to The new owner\n    /// @param _tokenId The NFT to transfer\n",
+            "format": {
+                "name": "safeTransferFrom",
+                "arg_types": [
+                    {
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": true,
+                "return_type": null
+            },
+            "extracted": {
+                "throw": [],
+                "return": null,
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "    function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+            "raw_rules": "\n    /// @notice Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE\n    ///  TO CONFIRM THAT `_to` IS CAPABLE OF RECEIVING NFTS OR ELSE\n    ///  THEY MAY BE PERMANENTLY LOST\n    /// @dev Throws unless `msg.sender` is the current owner, an authorized\n    ///  operator, or the approved address for this NFT. Throws if `_from` is\n    ///  not the current owner. Throws if `_to` is the zero address. Throws if\n    ///  `_tokenId` is not a valid NFT.\n    /// @param _from The current owner of the NFT\n    /// @param _to The new owner\n    /// @param _tokenId The NFT to transfer\n",
+            "format": {
+                "name": "transferFrom",
+                "arg_types": [
+                    {
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": true,
+                "return_type": null
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "`msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_from` is not the current owner",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_to` is the zero address",
+                        "throw": true
+                    },
+                    {
+                        "if": "`_tokenId` is not a valid NFT",
+                        "throw": true
+                    }
+                ],
+                "return": null,
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "    function approve(address _approved, uint256 _tokenId) external payable;",
+            "raw_rules": "\n    /// @notice Change or reaffirm the approved address for an NFT\n    /// @dev The zero address indicates there is no approved address.\n    ///  Throws unless `msg.sender` is the current NFT owner, or an authorized\n    ///  operator of the current owner.\n    /// @param _approved The new approved NFT controller\n    /// @param _tokenId The NFT to approve\n",
+            "format": {
+                "name": "approve",
+                "arg_types": [
+                    {
+                        "name": "_approved",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": true,
+                "return_type": null
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "`msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+                        "throw": true
+                    }
+                ],
+                "return": null,
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "    function setApprovalForAll(address _operator, bool _approved) external;",
+            "raw_rules": "\n    /// @notice Enable or disable approval for a third party (\"operator\") to manage\n    ///  all of `msg.sender`'s assets\n    /// @dev Emits the ApprovalForAll event. The contract MUST allow\n    ///  multiple operators per owner.\n    /// @param _operator Address to add to the set of authorized operators\n    /// @param _approved True if the operator is approved, false to revoke approval\n",
+            "format": {
+                "name": "setApprovalForAll",
+                "arg_types": [
+                    {
+                        "name": "_operator",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_approved",
+                        "type": "bool"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": null
+            },
+            "extracted": {
+                "throw": [],
+                "return": null,
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "[]"
+        },
+        {
+            "def": "    function getApproved(uint256 _tokenId) external view returns (address);",
+            "raw_rules": "\n    /// @notice Get the approved address for a single NFT\n    /// @dev Throws if `_tokenId` is not a valid NFT.\n    /// @param _tokenId The NFT to find the approved address for\n    /// @return The approved address for this NFT, or the zero address if there is none\n",
+            "format": {
+                "name": "getApproved",
+                "arg_types": [
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "address"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "_tokenId is not a valid NFT",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "The approved address for this NFT, or the zero address if there is none"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "[]"
+        },
+        {
+            "def": "    function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+            "raw_rules": "\n    /// @notice Query if an address is an authorized operator for another address\n    /// @param _owner The address that owns the NFTs\n    /// @param _operator The address that acts on behalf of the owner\n    /// @return True if `_operator` is an approved operator for `_owner`, false otherwise\n",
+            "format": {
+                "name": "isApprovedForAll",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_operator",
+                        "type": "address"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "bool"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "True if `_operator` is an approved operator for `_owner`, false otherwise"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        }
+    ],
+    "events": [
+        {
+            "def": "    event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);\n",
+            "raw_rules": "    /// @dev This emits when ownership of any NFT changes by any mechanism.\n    ///  This event emits when NFTs are created (`from` == 0) and destroyed\n    ///  (`to` == 0). Exception: during contract creation, any number of NFTs\n    ///  may be created and assigned without emitting Transfer. At the time of\n    ///  any transfer, the approved address for that NFT (if any) is reset to none.\n",
+            "format": {
+                "name": "Transfer",
+                "arg_types": [
+                    {
+                        "name": "_from",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256",
+                        "indexed": true
+                    }
+                ]
+            },
+            "extracted": [
+                "This event emits when NFTs are created (`from` == 0)",
+                "This event emits when NFTs are destroyed (`to` == 0)"
+            ],
+            "extract_debug": "```json\n[\n    \"This event emits when NFTs are created (`from` == 0)\",\n    \"This event emits when NFTs are destroyed (`to` == 0)\"\n]\n```"
+        },
+        {
+            "def": "event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId)",
+            "raw_rules": "\n    /// @dev This emits when the approved address for an NFT is changed or\n    ///  reaffirmed. The zero address indicates there is no approved address.\n    ///  When a Transfer event emits, this also indicates that the approved\n    ///  address for that NFT (if any) is reset to none.\n",
+            "format": {
+                "name": "Approval",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_approved",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_tokenId",
+                        "type": "uint256",
+                        "indexed": true
+                    }
+                ]
+            },
+            "extracted": [
+                "the approved address for an NFT is changed",
+                "the approved address for an NFT is reaffirmed",
+                "a Transfer event occurs indicating that the approved address for the NFT (if any) is reset to none"
+            ],
+            "extract_debug": "The provided documentation presents the conditions under which the `Approval` event should be emitted. By analyzing the comment details, we can extract the following reasons or conditions:\n\n1. When the approved address for an NFT is changed.\n2. When the approved address for an NFT is reaffirmed, even to the same address.\n3. Implicitly, when a Transfer event happens, indicating the approved address for the involved NFT is reset to none.\n\nThus, listing all these conditions using the specified JSON array format:\n\n```json\n[\n    \"the approved address for an NFT is changed\",\n    \"the approved address for an NFT is reaffirmed\",\n    \"a Transfer event occurs indicating that the approved address for the NFT (if any) is reset to none\"\n]\n```"
+        },
+        {
+            "def": "event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved)",
+            "raw_rules": "\n    /// @dev This emits when an operator is enabled or disabled for an owner.\n    ///  The operator can manage all NFTs of the owner.\n",
+            "format": {
+                "name": "ApprovalForAll",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_operator",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "bool",
+                        "type": "_approved",
+                        "indexed": false
+                    }
+                ]
+            },
+            "extracted": [
+                "when an operator is enabled or disabled for an owner"
+            ],
+            "extract_debug": "Based on the given description of the event \"ApprovalForAll\" in the rule:\n\n```plaintext\n/// @dev This emits when an operator is enabled or disabled for an owner.\n/// The operator can manage all NFTs of the owner.\n```\n\nThe condition to trigger the event \"ApprovalForAll\" can be deduced as \"when an operator is enabled or disabled for an owner.\"\n\nTherefore, the JSON array listing the condition to trigger this event is:\n\n```json\n[\"when an operator is enabled or disabled for an owner\"]\n```"
+        }
+    ],
+    "name": "ERC721",
+    "rules": [
+        {
+            "rule": " throw if NFTs assigned to the zero address",
+            "type": "throw",
+            "interface": "    function balanceOf(address _owner) external view returns (uint256);",
+            "related_vars": {
+                "variables": [
+                    "_owner"
+                ],
+                "parameters": [
+                    0
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_owner\"],\n    \"parameters\": [0]\n}\n```"
+        },
+        {
+            "rule": "The number of NFTs owned by `_owner`, possibly zero",
+            "type": "return",
+            "interface": "    function balanceOf(address _owner) external view returns (uint256);",
+            "related_vars": null
+        },
+        {
+            "rule": " throw if NFTs assigned to zero address",
+            "type": "throw",
+            "interface": "    function ownerOf(uint256 _tokenId) external view returns (address);",
+            "related_vars": {
+                "variables": [],
+                "parameters": [
+                    1
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [],\n    \"parameters\": [1]\n}\n```"
+        },
+        {
+            "rule": "The address of the owner of the NFT",
+            "type": "return",
+            "interface": "    function ownerOf(uint256 _tokenId) external view returns (address);",
+            "related_vars": null
+        },
+        {
+            "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+            "type": "throw",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": {
+                "variables": [
+                    "msg.sender"
+                ],
+                "parameters": [
+                    0,
+                    1,
+                    2
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"msg.sender\"],\n    \"parameters\": [0, 1, 2]\n}\n```"
+        },
+        {
+            "rule": " throw if `_from` is not the current owner",
+            "type": "throw",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": {
+                "variables": [
+                    "msg.sender"
+                ],
+                "parameters": [
+                    0
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"msg.sender\"],\n    \"parameters\": [0]\n}\n```"
+        },
+        {
+            "rule": " throw if `_to` is the zero address",
+            "type": "throw",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": {
+                "variables": [
+                    "_to"
+                ],
+                "parameters": [
+                    1
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_to\"],\n    \"parameters\": [1]\n}\n```"
+        },
+        {
+            "rule": " throw if `_tokenId` is not a valid NFT",
+            "type": "throw",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": {
+                "variables": [
+                    "_tokenId"
+                ],
+                "parameters": [
+                    2
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_tokenId\"],\n    \"parameters\": [2]\n}\n```"
+        },
+        {
+            "rule": "not throw if `_to` is a smart contract (code size > 0)",
+            "type": "throw",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": {
+                "variables": [
+                    "_to"
+                ],
+                "parameters": [
+                    1
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_to\"],\n    \"parameters\": [1]\n}\n```"
+        },
+        {
+            "rule": " throw if the return value is not `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))` when `onERC721Received` is called on `_to`",
+            "type": "throw",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": {
+                "variables": [
+                    "msg.sender"
+                ],
+                "parameters": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"msg.sender\"],\n    \"parameters\": [1, 2, 3]\n}\n```"
+        },
+        {
+            "rule": "`_to` must be set to a new owner",
+            "type": "assign",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": null
+        },
+        {
+            "rule": "`_to` must be checked if it is a smart contract",
+            "type": "assign",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": null
+        },
+        {
+            "rule": "`data` must be sent to `_to`",
+            "type": "assign",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": null
+        },
+        {
+            "rule": "call onERC721Received if `_to` is a smart contract (code size > 0)",
+            "type": "call",
+            "interface": "    function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+            "related_vars": null
+        },
+        {
+            "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+            "type": "throw",
+            "interface": "    function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+            "related_vars": {
+                "variables": [
+                    "msg.sender"
+                ],
+                "parameters": [
+                    0,
+                    1,
+                    2
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"msg.sender\"],\n    \"parameters\": [0, 1, 2]\n}\n```"
+        },
+        {
+            "rule": " throw if `_from` is not the current owner",
+            "type": "throw",
+            "interface": "    function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+            "related_vars": {
+                "variables": [
+                    "msg.sender"
+                ],
+                "parameters": [
+                    0,
+                    2
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"msg.sender\"],\n    \"parameters\": [0, 2]\n}\n```"
+        },
+        {
+            "rule": " throw if `_to` is the zero address",
+            "type": "throw",
+            "interface": "    function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+            "related_vars": {
+                "variables": [
+                    "_to"
+                ],
+                "parameters": [
+                    1
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_to\"],\n    \"parameters\": [1]\n}\n```"
+        },
+        {
+            "rule": " throw if `_tokenId` is not a valid NFT",
+            "type": "throw",
+            "interface": "    function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+            "related_vars": {
+                "variables": [],
+                "parameters": [
+                    2
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [],\n    \"parameters\": [2]\n}\n```"
+        },
+        {
+            "rule": " throw if `msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+            "type": "throw",
+            "interface": "    function approve(address _approved, uint256 _tokenId) external payable;",
+            "related_vars": {
+                "variables": [
+                    "msg.sender"
+                ],
+                "parameters": [
+                    2
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"msg.sender\"],\n    \"parameters\": [2]\n}\n```"
+        },
+        {
+            "rule": " throw if _tokenId is not a valid NFT",
+            "type": "throw",
+            "interface": "    function getApproved(uint256 _tokenId) external view returns (address);",
+            "related_vars": {
+                "variables": [
+                    "_tokenId"
+                ],
+                "parameters": [
+                    0
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_tokenId\"],\n    \"parameters\": [0]\n}\n```"
+        },
+        {
+            "rule": "The approved address for this NFT, or the zero address if there is none",
+            "type": "return",
+            "interface": "    function getApproved(uint256 _tokenId) external view returns (address);",
+            "related_vars": null
+        },
+        {
+            "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+            "type": "return",
+            "interface": "    function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+            "related_vars": null
+        },
+        {
+            "rule": "emit 'Transfer' if This event emits when NFTs are created (`from` == 0)",
+            "type": "emit",
+            "interface": "    event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);\n",
+            "related_vars": null
+        },
+        {
+            "rule": "emit 'Transfer' if This event emits when NFTs are destroyed (`to` == 0)",
+            "type": "emit",
+            "interface": "    event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);\n",
+            "related_vars": null
+        },
+        {
+            "rule": "emit 'Approval' if the approved address for an NFT is changed",
+            "type": "emit",
+            "interface": "event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId)",
+            "related_vars": null
+        },
+        {
+            "rule": "emit 'Approval' if the approved address for an NFT is reaffirmed",
+            "type": "emit",
+            "interface": "event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId)",
+            "related_vars": null
+        },
+        {
+            "rule": "emit 'Approval' if a Transfer event occurs indicating that the approved address for the NFT (if any) is reset to none",
+            "type": "emit",
+            "interface": "event Approval(address indexed _owner, address indexed _approved, uint256 indexed _tokenId)",
+            "related_vars": null
+        },
+        {
+            "rule": "emit 'ApprovalForAll' if when an operator is enabled or disabled for an owner",
+            "type": "emit",
+            "interface": "event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved)",
+            "related_vars": null
+        }
+    ]
+}

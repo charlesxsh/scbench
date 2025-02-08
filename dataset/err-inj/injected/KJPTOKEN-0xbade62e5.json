@@ -1,0 +1,99 @@
+{
+    "erc": "20",
+    "contract": "KJPTOKEN",
+    "inj_file": "dataset/err-inj/injected/KJPTOKEN-0xbade62e5.sol",
+    "orig_file": "dataset/err-inj/origin/KJPTOKEN-0xbade62e5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        454,
+                        454
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        369,
+                        369
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        453,
+                        453
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        303,
+                        306
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        206,
+                        206
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        277,
+                        277
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/KJPTOKEN-0xbade62e5.sol:316:14:\n    |\n316 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

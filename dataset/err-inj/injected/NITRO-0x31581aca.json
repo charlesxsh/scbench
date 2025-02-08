@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "NITRO",
+    "inj_file": "dataset/err-inj/injected/NITRO-0x31581aca.sol",
+    "orig_file": "dataset/err-inj/origin/NITRO-0x31581aca.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        66,
+                        68
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        71,
+                        71
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+796;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        20,
+                        20
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        74,
+                        77
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/NITRO-0x31581aca.sol:391:28:\n    |\n391 |         require(newNum >= (totalSupply() * 2 / 1000)/1e18, \"Cannot set max buy amount lower than 0.2%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NITRO-0x31581aca.sol:397:28:\n    |\n397 |         require(newNum >= (totalSupply() * 2 / 1000)/1e18, \"Cannot set max sell amount lower than 0.2%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NITRO-0x31581aca.sol:403:28:\n    |\n403 |         require(newNum >= (totalSupply() * 3 / 1000)/1e18, \"Cannot set max wallet amount lower than 0.3%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NITRO-0x31581aca.sol:410:29:\n    |\n410 |   \t    require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NITRO-0x31581aca.sol:411:29:\n    |\n411 |   \t    require(newAmount <= totalSupply() * 1 / 5000, \"Swap amount cannot be higher than 0.5% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,95 @@
+{
+    "erc": "721",
+    "contract": "Blips",
+    "inj_file": "dataset/err-inj/injected/Blips-0x412039fF.sol",
+    "orig_file": "dataset/err-inj/origin/Blips-0x412039fF.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        867,
+                        867
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1046,
+                        1046
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1092,
+                        1092
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        536,
+                        536
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        773,
+                        776
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        855,
+                        855
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/Blips-0x412039fF.sol:1367:17:\n     |\n1367 |         require(balanceOf(msg.sender) + numberOfTokens <= MAX_MINT_PER_WALLET, \"ERR_EXCEED_WALLET_LIMIT\");\n     |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Blips-0x412039fF.sol:1376:17:\n     |\n1376 |         require(balanceOf(msg.sender) + numberOfTokens <= MAX_MINT_PER_WALLET , \"Exceeded max per wallet\");\n     |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Blips-0x412039fF.sol:1434:17:\n     |\n1434 |         require(balanceOf(msg.sender) + numberOfTokens <= MAX_MINT_PER_WALLET , \"Exceeded max per wallet\");\n     |                 ^^^^^^^^^\n\n"
+}

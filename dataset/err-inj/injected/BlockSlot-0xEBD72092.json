@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "BlockSlot",
+    "inj_file": "dataset/err-inj/injected/BlockSlot-0xEBD72092.sol",
+    "orig_file": "dataset/err-inj/origin/BlockSlot-0xEBD72092.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        168,
+                        168
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        42,
+                        42
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        316,
+                        316
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        190,
+                        190
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        302,
+                        302
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BlockSlot-0xEBD72092.sol:167:70:\n    |\n167 |     function _maxWalletToken() public view returns (uint256) {return totalSupply() * _maxWalletPercent / denominator;}\n    |                                                                      ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BlockSlot-0xEBD72092.sol:168:67:\n    |\n168 |     function _maxTxAmount() public view returns (uint256) {return totalSupply() * _maxTxAmountPercent / denominator;}\n    |                                                                   ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BlockSlot-0xEBD72092.sol:169:73:\n    |\n169 |     function _maxTransferAmount() public view returns (uint256) {return totalSupply() * _maxTransferPercent / denominator;}\n    |                                                                         ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BlockSlot-0xEBD72092.sol:202:26:\n    |\n202 |         uint256 newTx = (totalSupply() * _buy) / 10000;\n    |                          ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BlockSlot-0xEBD72092.sol:203:32:\n    |\n203 |         uint256 newTransfer = (totalSupply() * _trans) / 10000;\n    |                                ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BlockSlot-0xEBD72092.sol:204:30:\n    |\n204 |         uint256 newWallet = (totalSupply() * _wallet) / 10000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BlockSlot-0xEBD72092.sol:208:25:\n    |\n208 |         uint256 limit = totalSupply().mul(5).div(1000);\n    |                         ^^^^^^^^^^^\n\n"
+}

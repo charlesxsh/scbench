@@ -1,0 +1,119 @@
+{
+    "erc": "20",
+    "contract": "INUMINATI",
+    "inj_file": "dataset/err-inj/injected/INUMINATI-0xd0F559F5.sol",
+    "orig_file": "dataset/err-inj/origin/INUMINATI-0xd0F559F5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        241,
+                        241
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        788,
+                        791
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        240,
+                        240
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        772,
+                        772
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        189,
+                        189
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        770,
+                        770
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        163,
+                        166
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        244,
+                        244
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        120,
+                        120
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/INUMINATI-0xd0F559F5.sol:164:14:\n    |\n164 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

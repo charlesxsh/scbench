@@ -1,0 +1,75 @@
+{
+    "erc": "721",
+    "contract": "WTMChanEdition",
+    "inj_file": "dataset/err-inj/injected/WTMChanEdition-0x550bdb1c.sol",
+    "orig_file": "dataset/err-inj/origin/WTMChanEdition-0x550bdb1c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1622,
+                        1622
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1469,
+                        1469
+                    ],
+                    "to_replace": [
+                        "        return address(232);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": " throw if `msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1453,
+                        1453
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

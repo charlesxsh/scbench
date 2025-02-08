@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "SHIBATOR",
+    "inj_file": "dataset/err-inj/injected/SHIBATOR-0x517e6de9.sol",
+    "orig_file": "dataset/err-inj/origin/SHIBATOR-0x517e6de9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        421,
+                        421
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        469,
+                        469
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        125,
+                        125
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        318,
+                        320
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.10;\"\n--> dataset/err-inj/injected/SHIBATOR-0x517e6de9.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBATOR-0x517e6de9.sol:884:27:\n    |\n884 |             newAmount >= (totalSupply() * 1) / 100000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBATOR-0x517e6de9.sol:888:27:\n    |\n888 |             newAmount <= (totalSupply() * 5) / 1000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBATOR-0x517e6de9.sol:897:25:\n    |\n897 |             newNum >= ((totalSupply() * 600) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SHIBATOR-0x517e6de9.sol:905:25:\n    |\n905 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\n"
+}

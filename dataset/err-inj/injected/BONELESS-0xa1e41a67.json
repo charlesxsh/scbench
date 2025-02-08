@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "BONELESS",
+    "inj_file": "dataset/err-inj/injected/BONELESS-0xa1e41a67.sol",
+    "orig_file": "dataset/err-inj/origin/BONELESS-0xa1e41a67.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        106,
+                        106
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        52,
+                        52
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        109,
+                        111
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        191,
+                        191
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BONELESS-0xa1e41a67.sol:589:27:\n    |\n589 |             newAmount >= (totalSupply() * 1) / 100000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BONELESS-0xa1e41a67.sol:593:27:\n    |\n593 |             newAmount <= (totalSupply() * 5) / 1000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BONELESS-0xa1e41a67.sol:602:25:\n    |\n602 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BONELESS-0xa1e41a67.sol:610:25:\n    |\n610 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\n"
+}

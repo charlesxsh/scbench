@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "approve: Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "approveAndCall"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `totalSupply()` in the provided code violates the ERC-20 rule that requires it to return the total token supply. Instead of returning the actual total supply (`_totalSupply`), it returns `_totalSupply + 852`, which is not the initial defined total supply but an altered value. This does not comply with the standard requirement of returning the exact total token supply.",
+            "NO. The interface provided for the contract REVERSEPEPE does not contain the function `transferFrom(address _from, address _to, uint256 _value) public returns (bool success)`.",
+            "NO. The interface provided does not contain the function `approve(address _spender, uint256 _value) public returns (bool success)`."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

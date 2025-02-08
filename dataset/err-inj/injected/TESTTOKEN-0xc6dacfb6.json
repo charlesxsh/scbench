@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "TESTTOKEN",
+    "inj_file": "dataset/err-inj/injected/TESTTOKEN-0xc6dacfb6.sol",
+    "orig_file": "dataset/err-inj/origin/TESTTOKEN-0xc6dacfb6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        143,
+                        143
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        67,
+                        67
+                    ],
+                    "to_replace": [
+                        "\t\treturn 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        94,
+                        94
+                    ],
+                    "to_replace": [
+                        "\t\treturn false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

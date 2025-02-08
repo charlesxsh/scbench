@@ -1,0 +1,87 @@
+{
+    "erc": "20",
+    "contract": "RiddleOneExperiment",
+    "inj_file": "dataset/err-inj/injected/RiddleOneExperiment-0x55b2cd16.sol",
+    "orig_file": "dataset/err-inj/origin/RiddleOneExperiment-0x55b2cd16.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        520,
+                        520
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        603,
+                        603
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        728,
+                        728
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        654,
+                        654
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        646,
+                        646
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

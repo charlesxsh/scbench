@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "NO",
+            "YES\n\nThe function `balanceOf` in the provided code modifies the actual balance of the account by adding a constant value (746) to the balance stored in the `_balances` mapping. According to ERC-20 standards, the `balanceOf` function should return the exact amount of tokens that an account holds, without any modification or condition. By adding 746 to the balance, this implementation violates the ERC-20 rule that requires the function to return \"the account balance of the account with address _owner\" as it is stored in the contract."
+        ],
+        "can_detect": [
+            null,
+            false,
+            true
+        ],
+        "error": [
+            "'inj_fn'",
+            null,
+            null
+        ]
+    }
+}

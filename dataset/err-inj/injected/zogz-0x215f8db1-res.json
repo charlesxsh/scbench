@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "decimals - Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            },
+            {
+                "rule": "allowance - Returns the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe function `decimals()` in the provided code violates the ERC-20 standard rule regarding the number of decimal places a token can be divided into. According to the ERC-20 standard, the `decimals()` function should return a constant value that defines the smallest unit of the token for display and transaction purposes. In the given code, the function returns `_decimals + 3`, which is not a constant value but rather a modification of the `_decimals` constant, leading to potential confusion and inconsistency in how the token's decimals are handled and displayed. This could affect interoperability and the correct functioning of the token within the broader Ethereum ecosystem.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

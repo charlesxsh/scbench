@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "ArBot",
+    "inj_file": "dataset/err-inj/injected/ArBot-0x351c1a1e.sol",
+    "orig_file": "dataset/err-inj/origin/ArBot-0x351c1a1e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        338,
+                        338
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+49;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        121,
+                        121
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        298,
+                        300
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ArBot-0x351c1a1e.sol:573:43:\n    |\n573 |         if (tradingStartTime == 0) return totalSupply();\n    |                                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ArBot-0x351c1a1e.sol:577:19:\n    |\n577 |         if (res > totalSupply()) return totalSupply();\n    |                   ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ArBot-0x351c1a1e.sol:577:41:\n    |\n577 |         if (res > totalSupply()) return totalSupply();\n    |                                         ^^^^^^^^^^^\n\n"
+}

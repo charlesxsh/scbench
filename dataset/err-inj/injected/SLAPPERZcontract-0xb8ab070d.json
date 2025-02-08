@@ -1,0 +1,100 @@
+{
+    "erc": "20",
+    "contract": "SLAPPERZcontract",
+    "inj_file": "dataset/err-inj/injected/SLAPPERZcontract-0xb8ab070d.sol",
+    "orig_file": "dataset/err-inj/origin/SLAPPERZcontract-0xb8ab070d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        744,
+                        744
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        715,
+                        715
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        722,
+                        722
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        755,
+                        755
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        603,
+                        603
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        210,
+                        210
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        609,
+                        609
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/SLAPPERZcontract-0xb8ab070d.sol:673:34:\n    |\n673 |             uint256 heldTokens = balanceOf(recipient);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SLAPPERZcontract-0xb8ab070d.sol:939:33:\n    |\n939 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SLAPPERZcontract-0xb8ab070d.sol:939:54:\n    |\n939 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SLAPPERZcontract-0xb8ab070d.sol:943:29:\n    |\n943 |         return accuracy.mul(balanceOf(uniswapV2Pair).mul(2)).div(getCirculatingSupply());\n    |                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SLAPPERZcontract-0xb8ab070d.sol:962:17:\n    |\n962 |         require(balanceOf(from) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/SLAPPERZcontract-0xb8ab070d.sol:976:17:\n    |\n976 |         require(balanceOf(from) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\n"
+}

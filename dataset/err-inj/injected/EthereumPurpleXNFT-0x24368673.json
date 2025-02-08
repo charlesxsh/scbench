@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "IndexxExchange",
+    "inj_file": "dataset/err-inj/injected/EthereumPurpleXNFT-0x24368673.sol",
+    "orig_file": "dataset/err-inj/origin/EthereumPurpleXNFT-0x24368673.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1380,
+                        1380
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2258,
+                        2283
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1225,
+                        1230
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        425,
+                        425
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1304,
+                        1304
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transferFrom\" not found or not visible after argument-dependent lookup in contract IERC20.\n    --> dataset/err-inj/injected/EthereumPurpleXNFT-0x24368673.sol:3035:9:\n     |\n3035 |         IERC20(tokenAddress).transferFrom(sender, address(this), tokenCost);\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

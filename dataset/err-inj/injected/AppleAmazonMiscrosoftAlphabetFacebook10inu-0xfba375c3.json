@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "AppleAmazonMiscrosoftAlphabetFacebook10inu",
+    "inj_file": "dataset/err-inj/injected/AppleAmazonMiscrosoftAlphabetFacebook10inu-0xfba375c3.sol",
+    "orig_file": "dataset/err-inj/origin/AppleAmazonMiscrosoftAlphabetFacebook10inu-0xfba375c3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        206,
+                        206
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        248,
+                        248
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        150,
+                        150
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+200;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

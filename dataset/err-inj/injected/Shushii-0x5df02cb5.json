@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "Shushii",
+    "inj_file": "dataset/err-inj/injected/Shushii-0x5df02cb5.sol",
+    "orig_file": "dataset/err-inj/origin/Shushii-0x5df02cb5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1010,
+                        1010
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1192,
+                        1202
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1123,
+                        1123
+                    ],
+                    "to_replace": [
+                        "        return address(210);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/Shushii-0x5df02cb5.sol:1202:9:\n     |\n1202 |         transferFrom(from, to, tokenId);\n     |         ^^^^^^^^^^^^\n\n"
+}

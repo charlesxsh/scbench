@@ -1,0 +1,83 @@
+{
+    "erc": "721",
+    "contract": "CasinoDAONFT",
+    "inj_file": "dataset/err-inj/injected/CasinoDAONFT-0x78f52eaa.sol",
+    "orig_file": "dataset/err-inj/origin/CasinoDAONFT-0x78f52eaa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1669,
+                        1673
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1472,
+                        1472
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1825,
+                        1825
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1402,
+                        1402
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1709,
+                        1712
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/CasinoDAONFT-0x78f52eaa.sol:1754:73:\n     |\n1754 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                                                         ^^^^^^^^^^^\n\n"
+}

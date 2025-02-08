@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "PrintTheDORK",
+    "inj_file": "dataset/err-inj/injected/PrintTheDORK-0xaDF4Cf47.sol",
+    "orig_file": "dataset/err-inj/origin/PrintTheDORK-0xaDF4Cf47.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        32,
+                        32
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        148,
+                        150
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        183,
+                        183
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        149,
+                        149
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+922;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/PrintTheDORK-0xaDF4Cf47.sol:147:9:\n    |\n147 |         return _totalSupply+922;    }\n    |         ^^^^^^\n\n"
+}

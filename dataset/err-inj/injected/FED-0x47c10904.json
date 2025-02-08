@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "FED",
+    "inj_file": "dataset/err-inj/injected/FED-0x47c10904.sol",
+    "orig_file": "dataset/err-inj/origin/FED-0x47c10904.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        220,
+                        222
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        131,
+                        131
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        405,
+                        405
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        453,
+                        453
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        406,
+                        406
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        461,
+                        464
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        239,
+                        246
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        217,
+                        217
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_rOwned[account])+132;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

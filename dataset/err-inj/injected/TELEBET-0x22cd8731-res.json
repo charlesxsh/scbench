@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The allowance function should return the amount which a spender is still allowed to withdraw from an owner.",
+                "function": "allowance"
+            },
+            {
+                "rule": "The transfer function should throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The transferFrom function should only modify the allowance if the transfer of tokens is successful.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule that specifies it should return \"the amount which _spender is still allowed to withdraw from _owner\". Instead of returning the exact amount from the `_allowances` mapping, the function adds 431 to the actual allowance value. This modification does not accurately reflect the remaining allowance, thus violating the ERC-20 standard requirement.",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            "cannot find the function",
+            null,
+            null
+        ]
+    }
+}

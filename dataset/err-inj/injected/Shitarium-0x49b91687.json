@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Shitarium",
+    "inj_file": "dataset/err-inj/injected/Shitarium-0x49b91687.sol",
+    "orig_file": "dataset/err-inj/origin/Shitarium-0x49b91687.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        264,
+                        271
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        58,
+                        58
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        252,
+                        252
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_rOwned[account])+754;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        251,
+                        253
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        54,
+                        54
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Shitarium-0x49b91687.sol:249:9:\n    |\n249 |         return tokenFromReflection(_rOwned[account])+754;    }\n    |         ^^^^^^\n\n"
+}

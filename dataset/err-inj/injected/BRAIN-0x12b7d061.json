@@ -1,0 +1,95 @@
+{
+    "erc": "20",
+    "contract": "BRAIN",
+    "inj_file": "dataset/err-inj/injected/BRAIN-0x12b7d061.sol",
+    "orig_file": "dataset/err-inj/origin/BRAIN-0x12b7d061.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        3292,
+                        3292
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        3206,
+                        3206
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        3143,
+                        3144
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        3244,
+                        3244
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2905,
+                        2905
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        3084,
+                        3086
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/BRAIN-0x12b7d061.sol:3779:36:\n     |\n3779 |         uint256 delegatorBalance = balanceOf(delegator);\n     |                                    ^^^^^^^^^\n\n"
+}

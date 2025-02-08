@@ -1,0 +1,102 @@
+{
+    "erc": "20",
+    "contract": "Credz",
+    "inj_file": "dataset/err-inj/injected/Credz-0x4edb6604.sol",
+    "orig_file": "dataset/err-inj/origin/Credz-0x4edb6604.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        672,
+                        674
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        490,
+                        490
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        773,
+                        773
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        802,
+                        802
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        859,
+                        859
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        537,
+                        537
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        612,
+                        614
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Credz-0x4edb6604.sol:721:34:\n    |\n721 |         _approve(owner, spender, allowance(owner, spender) + addedValue);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Credz-0x4edb6604.sol:741:36:\n    |\n741 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_allowances\"?\n   --> dataset/err-inj/injected/Credz-0x4edb6604.sol:864:36:\n    |\n864 |         uint256 currentAllowance = allowance(owner, spender);\n    |                                    ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,78 @@
+{
+    "erc": "721",
+    "contract": "GodsOfApes",
+    "inj_file": "dataset/err-inj/injected/GodsOfApes-0x8d55b10a.sol",
+    "orig_file": "dataset/err-inj/origin/GodsOfApes-0x8d55b10a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1494,
+                        1494
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1259,
+                        1259
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1265,
+                        1270
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1009,
+                        1009
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

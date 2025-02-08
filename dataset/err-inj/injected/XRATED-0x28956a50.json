@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "XRATED",
+    "inj_file": "dataset/err-inj/injected/XRATED-0x28956a50.sol",
+    "orig_file": "dataset/err-inj/origin/XRATED-0x28956a50.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        252,
+                        254
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        183,
+                        183
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        244,
+                        246
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        181,
+                        181
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        328,
+                        328
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/XRATED-0x28956a50.sol:640:57:\n    |\n640 |             _maxWalletAmount >= (totalSupply() / (10 ** decimals())) / 100, \n    |                                                         ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XRATED-0x28956a50.sol:643:53:\n    |\n643 |         maxWalletAmount = _maxWalletAmount * (10 ** decimals());\n    |                                                     ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XRATED-0x28956a50.sol:677:66:\n    |\n677 |             _maxTransactionAmountBuy  >= (totalSupply() / (10 ** decimals())) / 1000 && \n    |                                                                  ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XRATED-0x28956a50.sol:678:66:\n    |\n678 |             _maxTransactionAmountSell >= (totalSupply() / (10 ** decimals()))/ 1000, \n    |                                                                  ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XRATED-0x28956a50.sol:681:71:\n    |\n681 |         maxTransactionAmountBuy  = _maxTransactionAmountBuy  * (10 ** decimals());\n    |                                                                       ^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XRATED-0x28956a50.sol:682:71:\n    |\n682 |         maxTransactionAmountSell = _maxTransactionAmountSell * (10 ** decimals());\n    |                                                                       ^^^^^^^^\n\n"
+}

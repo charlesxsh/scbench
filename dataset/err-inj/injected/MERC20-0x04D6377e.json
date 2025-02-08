@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "MERC20",
+    "inj_file": "dataset/err-inj/injected/MERC20-0x04D6377e.sol",
+    "orig_file": "dataset/err-inj/origin/MERC20-0x04D6377e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1976,
+                        1978
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2142,
+                        2142
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2284,
+                        2284
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1989,
+                        1989
+                    ],
+                    "to_replace": [
+                        "        return holder.account().balance+518;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

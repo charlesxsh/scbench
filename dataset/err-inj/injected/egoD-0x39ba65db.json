@@ -1,0 +1,53 @@
+{
+    "erc": "20",
+    "contract": "egoD",
+    "inj_file": "dataset/err-inj/injected/egoD-0x39ba65db.sol",
+    "orig_file": "dataset/err-inj/origin/egoD-0x39ba65db.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        124,
+                        124
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        119,
+                        119
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+571;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "'NoneType' object has no attribute 'return_type'"
+}

@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "VILLAGE",
+    "inj_file": "dataset/err-inj/injected/VILLAGE-0xc8a037b5.sol",
+    "orig_file": "dataset/err-inj/origin/VILLAGE-0xc8a037b5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        128,
+                        128
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+624;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        124,
+                        124
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        138,
+                        138
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+316;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

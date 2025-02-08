@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "NexusPro",
+    "inj_file": "dataset/err-inj/injected/DividendTracker-0x49EAFF30.sol",
+    "orig_file": "dataset/err-inj/origin/DividendTracker-0x49EAFF30.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        222
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        71,
+                        71
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        169,
+                        171
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        117,
+                        117
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        317,
+                        317
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/DividendTracker-0x49EAFF30.sol:1260:67:\n     |\n1260 |         require(newNumInTokens >= (totalSupply() * 1 / 1000)/(10**decimals()), \"Too low\");\n     |                                                                   ^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DividendTracker-0x49EAFF30.sol:1261:67:\n     |\n1261 |         txLimits.transactionLimit = uint128(newNumInTokens * (10**decimals()));\n     |                                                                   ^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DividendTracker-0x49EAFF30.sol:1266:67:\n     |\n1266 |         require(newNumInTokens >= (totalSupply() * 1 / 1000)/(10**decimals()), \"Too low\");\n     |                                                                   ^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DividendTracker-0x49EAFF30.sol:1267:62:\n     |\n1267 |         txLimits.walletLimit = uint128(newNumInTokens * (10**decimals()));\n     |                                                              ^^^^^^^^\n\n"
+}

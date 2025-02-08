@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "Tribot",
+    "inj_file": "dataset/err-inj/injected/Tribot-0x1a11fd09.sol",
+    "orig_file": "dataset/err-inj/origin/Tribot-0x1a11fd09.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        402,
+                        402
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        976,
+                        976
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        992,
+                        996
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        401,
+                        401
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        347,
+                        347
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        380,
+                        380
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        308,
+                        311
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        311,
+                        311
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        374,
+                        374
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Tribot-0x1a11fd09.sol:311:14:\n    |\n311 |     function increaseAllowance(\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

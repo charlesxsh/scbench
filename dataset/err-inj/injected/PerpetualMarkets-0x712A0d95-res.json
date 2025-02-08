@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `symbol` should return the symbol of the token. E.g. \"HIX\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "symbol"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            null,
+            "YES\n\nThe provided code does violate the ERC-20 rule that requires emitting an \"Approval\" event when the `approve` function is called. The `_approve` internal function updates the allowance but does not emit any event. According to the ERC-20 standard, an \"Approval\" event should be emitted whenever the `approve` function is successfully executed to notify external entities of the change in allowance. The absence of this event emission in the code means it does not fully comply with the ERC-20 standard.",
+            "YES."
+        ],
+        "can_detect": [
+            null,
+            true,
+            true
+        ],
+        "error": [
+            "'inj_fn'",
+            null,
+            null
+        ]
+    }
+}

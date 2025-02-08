@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "FINNICK",
+    "inj_file": "dataset/err-inj/injected/FINNICK-0xd0bf7079.sol",
+    "orig_file": "dataset/err-inj/origin/FINNICK-0xd0bf7079.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        165,
+                        165
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        256,
+                        258
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        266,
+                        266
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        260,
+                        262
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        166,
+                        166
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:448:30:\n    |\n448 |         swapTokensAtAmount = totalSupply() / 5000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:450:38:\n    |\n450 |         maxTransactionAmountBuy    = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:451:38:\n    |\n451 |         maxTransactionAmountSell   = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:452:38:\n    |\n452 |         maxWalletAmount            = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:540:34:\n    |\n540 | \t\tuint256 contractTokenBalance = balanceOf(address(this));\n    | \t\t                               ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:581:33:\n    |\n581 |                 uint balance  = balanceOf(to);\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:593:29:\n    |\n593 |         require(newAmount > totalSupply() / 1000000, \"SwapTokensAtAmount must be greater than 0.0001% of total supply\");\n    |                             ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:641:34:\n    |\n641 |             _maxWalletAmount >= (totalSupply() / (10 ** decimals())) / 100, \n    |                                  ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:678:43:\n    |\n678 |             _maxTransactionAmountBuy  >= (totalSupply() / (10 ** decimals())) / 1000 && \n    |                                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FINNICK-0xd0bf7079.sol:679:43:\n    |\n679 |             _maxTransactionAmountSell >= (totalSupply() / (10 ** decimals()))/ 1000, \n    |                                           ^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,107 @@
+{
+    "erc": "721",
+    "contract": "Collection",
+    "inj_file": "dataset/err-inj/injected/LaunchpadMarket-0xc3088534.sol",
+    "orig_file": "dataset/err-inj/origin/LaunchpadMarket-0xc3088534.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1534,
+                        1534
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1637,
+                        1637
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1591,
+                        1591
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1443,
+                        1443
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1585,
+                        1585
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1419,
+                        1419
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1313,
+                        1316
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1088,
+                        1088
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

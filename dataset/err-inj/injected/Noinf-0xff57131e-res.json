@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "MUST emit the `TransferSingle` event to reflect the balance change.",
+                "function": "_mint"
+            },
+            {
+                "rule": "The `onERC1155BatchReceived` hook SHOULD be called on the recipient contract and its rules followed.",
+                "function": "_safeBatchTransferFrom"
+            },
+            {
+                "rule": "MUST emit `TransferSingle` or `TransferBatch` event(s) such that all the balance changes are reflected.",
+                "function": "_mintBatch"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

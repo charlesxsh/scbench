@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/LidoSparkSavingsV2-0x2b30a948.sol",
+    "orig_file": "dataset/err-inj/origin/LidoSparkSavingsV2-0x2b30a948.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        574,
+                        574
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        658,
+                        658
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        507,
+                        508
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        430,
+                        432
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        326,
+                        326
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        438,
+                        438
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+79;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"decimals\" not found or not visible after argument-dependent lookup in contract ERC20.\n    --> dataset/err-inj/injected/LidoSparkSavingsV2-0x2b30a948.sol:1731:28:\n     |\n1731 |         uint256 decimals = ERC20(borrowAsset).decimals();\n     |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

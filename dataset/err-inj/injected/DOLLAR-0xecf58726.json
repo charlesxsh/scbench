@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "DOLLAR",
+    "inj_file": "dataset/err-inj/injected/DOLLAR-0xecf58726.sol",
+    "orig_file": "dataset/err-inj/origin/DOLLAR-0xecf58726.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        473,
+                        473
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        351,
+                        351
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+683;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        473,
+                        473
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        526,
+                        526
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,86 @@
+{
+    "erc": "721",
+    "contract": "SimpleNftLowerGas",
+    "inj_file": "dataset/err-inj/injected/SimpleNftLowerGas-0x92788177.sol",
+    "orig_file": "dataset/err-inj/origin/SimpleNftLowerGas-0x92788177.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": " throw if _tokenId is not a valid NFT",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1108,
+                        1108
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _approved, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        667,
+                        667
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        839,
+                        849
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        583,
+                        583
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        789,
+                        792
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/SimpleNftLowerGas-0x92788177.sol:1236:31:\n     |\n1236 |     uint256 ownerTokenCount = balanceOf(_owner);\n     |                               ^^^^^^^^^\n\n"
+}

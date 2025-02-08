@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Papayahub",
+    "inj_file": "dataset/err-inj/injected/Papayahub-0x59fab9bf.sol",
+    "orig_file": "dataset/err-inj/origin/Papayahub-0x59fab9bf.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        397,
+                        397
+                    ],
+                    "to_replace": [
+                        "        return balances[account]+645;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        257,
+                        257
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        442,
+                        445
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        248,
+                        248
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        396,
+                        398
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/Papayahub-0x59fab9bf.sol:394:9:\n    |\n394 |         return balances[account]+645;    }\n    |         ^^^^^^\n\n"
+}

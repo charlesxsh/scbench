@@ -1,0 +1,106 @@
+{
+    "erc": "20",
+    "contract": "BANANADUMP",
+    "inj_file": "dataset/err-inj/injected/BANANADUMP-0xa6fa52e9.sol",
+    "orig_file": "dataset/err-inj/origin/BANANADUMP-0xa6fa52e9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        266,
+                        266
+                    ],
+                    "to_replace": [
+                        "    function decimals() public pure returns (uint8) {return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        271,
+                        271
+                    ],
+                    "to_replace": [
+                        "    function totalSupply() public view override returns (uint256) {return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+868;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        379,
+                        379
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        359,
+                        359
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        357,
+                        357
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        363,
+                        363
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        374,
+                        375
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BANANADUMP-0xa6fa52e9.sol:266:86:\n    |\n266 |  ... ) {return _decimals+3;    function balanceOf(address account) public view overr ...\n    |                                         ^^^^^^^^^\n\n"
+}

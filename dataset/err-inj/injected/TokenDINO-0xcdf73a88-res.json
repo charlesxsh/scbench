@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Callers MUST handle false from returns (bool success). Callers MUST NOT assume that false is never returned!",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO\n\nThe `approve` function in the provided smart contract code returns `false` regardless of the input or state changes. This behavior violates the ERC-20 standard, which specifies that the `approve` function should return `true` to indicate successful approval. The standard behavior is essential for interoperability with other contracts and applications that expect this function to signal approval success with a `true` value.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe provided code violates the ERC-20 rule that requires emitting a 'Transfer' event when tokens are transferred. The `_transfer` function in the code modifies balances but does not include an `emit Transfer(from, to, amount);` statement, which is necessary to comply with the ERC-20 standard and to ensure transparency and traceability of token transfers on the blockchain.",
+            "YES\n\nThe function `approve` in the provided code violates the ERC-20 rule that requires indicating whether the approval was successful. According to the ERC-20 standard, the `approve` function should return `true` if the operation was successful. However, in the given code, the `approve` function always returns `false`, regardless of whether the approval operation was actually successful or not. This implementation does not correctly indicate the outcome of the approval process, which is a violation of the ERC-20 standard requirements.",
+            "NO."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

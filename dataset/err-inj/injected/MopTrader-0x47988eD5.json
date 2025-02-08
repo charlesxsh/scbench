@@ -1,0 +1,83 @@
+{
+    "erc": "721",
+    "contract": "ERC721",
+    "inj_file": "dataset/err-inj/injected/MopTrader-0x47988eD5.sol",
+    "orig_file": "dataset/err-inj/origin/MopTrader-0x47988eD5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1454,
+                        1454
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1209,
+                        1215
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        944,
+                        948
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _approved, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1157,
+                        1167
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        985,
+                        985
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/MopTrader-0x47988eD5.sol\n\nError: Wrong argument count for function call: 3 arguments given but expected 4.\n    --> dataset/err-inj/injected/MopTrader-0x47988eD5.sol:1620:7:\n     |\n1620 |       token.safeTransferFrom(item.seller, msg.sender, tokenId);\n     |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

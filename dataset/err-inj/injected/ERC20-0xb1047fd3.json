@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "EMC2Lord",
+    "inj_file": "dataset/err-inj/injected/ERC20-0xb1047fd3.sol",
+    "orig_file": "dataset/err-inj/origin/ERC20-0xb1047fd3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        203,
+                        203
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        100,
+                        100
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        127,
+                        129
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        140,
+                        140
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+126;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

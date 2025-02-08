@@ -1,0 +1,120 @@
+{
+    "erc": "20",
+    "contract": "AngelsInu",
+    "inj_file": "dataset/err-inj/injected/AngelsInu-0x1f5df4e4.sol",
+    "orig_file": "dataset/err-inj/origin/AngelsInu-0x1f5df4e4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        383,
+                        383
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        291,
+                        291
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1189,
+                        1192
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        446,
+                        446
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1173,
+                        1173
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        530,
+                        530
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1171,
+                        1171
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        531,
+                        531
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        380,
+                        383
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/AngelsInu-0x1f5df4e4.sol:394:14:\n    |\n394 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

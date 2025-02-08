@@ -1,0 +1,92 @@
+{
+    "erc": "721",
+    "contract": "NFT",
+    "inj_file": "dataset/err-inj/injected/NFT-0xdb947e8b.sol",
+    "orig_file": "dataset/err-inj/origin/NFT-0xdb947e8b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": " throw if `msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        336,
+                        336
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        460,
+                        460
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        305,
+                        305
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        396,
+                        396
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        357,
+                        357
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

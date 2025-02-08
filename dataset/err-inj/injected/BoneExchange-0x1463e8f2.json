@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "BoneExchange",
+    "inj_file": "dataset/err-inj/injected/BoneExchange-0x1463e8f2.sol",
+    "orig_file": "dataset/err-inj/origin/BoneExchange-0x1463e8f2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        213,
+                        215
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        49,
+                        49
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        223,
+                        223
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+669;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        52,
+                        52
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        226,
+                        229
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BoneExchange-0x1463e8f2.sol:250:25:\n    |\n250 |                 require(balanceOf(to) + amount <= _maxTxTlWallet, \"Exceeds the max Wallet Size.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BoneExchange-0x1463e8f2.sol:259:53:\n    |\n259 |                 require(amount <= _maxTxTlAmount && balanceOf(_devsFesReceivers)<_maxTxTlSwap, \"Exceeds the Amount.\");\n    |                                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BoneExchange-0x1463e8f2.sol:264:44:\n    |\n264 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BoneExchange-0x1463e8f2.sol:334:83:\n    |\n334 |         uniswapRouter.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                                   ^^^^^^^^^\n\n"
+}

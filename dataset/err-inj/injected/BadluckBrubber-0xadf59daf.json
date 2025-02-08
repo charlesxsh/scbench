@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "BadluckBrubber",
+    "inj_file": "dataset/err-inj/injected/BadluckBrubber-0xadf59daf.sol",
+    "orig_file": "dataset/err-inj/origin/BadluckBrubber-0xadf59daf.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        180,
+                        194
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        97,
+                        97
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        92,
+                        92
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        158,
+                        160
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        228,
+                        228
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BadluckBrubber-0xadf59daf.sol:378:23:\n    |\n378 |         maxTxAmount = totalSupply();\n    |                       ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BadluckBrubber-0xadf59daf.sol:379:25:\n    |\n379 |         maxWalletSize = totalSupply();\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BadluckBrubber-0xadf59daf.sol:381:33:\n    |\n381 |         emit MaxTxAmountUpdated(totalSupply());\n    |                                 ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BadluckBrubber-0xadf59daf.sol:393:59:\n    |\n393 |         _approve(address(this), address(uniswapV2Router), totalSupply());\n    |                                                           ^^^^^^^^^^^\n\n"
+}

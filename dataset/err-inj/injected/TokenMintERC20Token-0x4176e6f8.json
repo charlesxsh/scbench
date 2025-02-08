@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "TokenMintERC20Token",
+    "inj_file": "dataset/err-inj/injected/TokenMintERC20Token-0x4176e6f8.sol",
+    "orig_file": "dataset/err-inj/origin/TokenMintERC20Token-0x4176e6f8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        487,
+                        487
+                    ],
+                    "to_replace": [
+                        "      return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        239,
+                        239
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+793;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        473,
+                        473
+                    ],
+                    "to_replace": [
+                        "      return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

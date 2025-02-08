@@ -1,0 +1,125 @@
+{
+    "erc": "20",
+    "contract": "CARTMAN",
+    "inj_file": "dataset/err-inj/injected/CARTMAN-0xda670ed7.sol",
+    "orig_file": "dataset/err-inj/origin/CARTMAN-0xda670ed7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        137,
+                        151
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        68,
+                        72
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        120,
+                        120
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+758;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        834,
+                        834
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        836,
+                        836
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        852,
+                        855
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        225,
+                        225
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        173,
+                        173
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        147,
+                        150
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function definition.\n   --> dataset/err-inj/injected/CARTMAN-0xda670ed7.sol:219:1:\n    |\n219 | }\n    | ^\n\n"
+}

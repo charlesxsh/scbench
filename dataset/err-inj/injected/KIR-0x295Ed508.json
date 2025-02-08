@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "KIR",
+    "inj_file": "dataset/err-inj/injected/KIR-0x295Ed508.sol",
+    "orig_file": "dataset/err-inj/origin/KIR-0x295Ed508.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        205,
+                        205
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        131,
+                        131
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        212,
+                        214
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        201,
+                        201
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Wrong argument count for function call: 1 arguments given but expected 0.\n   --> dataset/err-inj/injected/KIR-0x295Ed508.sol:668:35:\n    |\n668 |         uint256 contractBalance = balanceOf(address(this)); \n    |                                   ^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Type bool is not implicitly convertible to expected type uint256.\n   --> dataset/err-inj/injected/KIR-0x295Ed508.sol:668:9:\n    |\n668 |         uint256 contractBalance = balanceOf(address(this)); \n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Wrong argument count for function call: 1 arguments given but expected 0.\n   --> dataset/err-inj/injected/KIR-0x295Ed508.sol:751:42:\n    |\n751 |                         require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                          ^^^^^^^^^^^^^\n\nError: Built-in binary operator + cannot be applied to types uint256 and bool.\n   --> dataset/err-inj/injected/KIR-0x295Ed508.sol:751:33:\n    |\n751 |                         require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                 ^^^^^^^^^^^^^^^^^^^^^^\n\nError: Wrong argument count for function call: 1 arguments given but expected 0.\n   --> dataset/err-inj/injected/KIR-0x295Ed508.sol:759:38:\n    |\n759 |                     require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                      ^^^^^^^^^^^^^\n\nError: Built-in binary operator + cannot be applied to types uint256 and bool.\n   --> dataset/err-inj/injected/KIR-0x295Ed508.sol:759:29:\n    |\n759 |                     require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                             ^^^^^^^^^^^^^^^^^^^^^^\n\nError: Wrong argument count for function call: 1 arguments given but expected 0.\n   --> dataset/err-inj/injected/KIR-0x295Ed508.sol:764:40:\n    |\n764 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Type bool is not implicitly convertible to expected type uint256.\n   --> dataset/err-inj/injected/KIR-0x295Ed508.sol:764:9:\n    |\n764 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "721",
+    "contract": "GENKAIOFICIAL",
+    "inj_file": "dataset/err-inj/injected/GENKAIOFICIAL-0x769c5b8C.sol",
+    "orig_file": "dataset/err-inj/origin/GENKAIOFICIAL-0x769c5b8C.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        758,
+                        761
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        521,
+                        521
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1071,
+                        1071
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1090,
+                        1104
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/GENKAIOFICIAL-0x769c5b8C.sol:1354:31:\n     |\n1354 |     uint256 ownerTokenCount = balanceOf(_owner);\n     |                               ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,115 @@
+{
+    "erc": "721",
+    "contract": "Ella_Decal",
+    "inj_file": "dataset/err-inj/injected/Ella_Decal-0xd7dad075.sol",
+    "orig_file": "dataset/err-inj/origin/Ella_Decal-0xd7dad075.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "setApprovalForAll",
+                    "numofargs": 2,
+                    "rule": "function setApprovalForAll(address _operator, bool _approved) external;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1096,
+                        1096
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2903,
+                        2908
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1597,
+                        1602
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1850,
+                        1853
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1841,
+                        1844
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1683,
+                        1686
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1030,
+                        1035
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1645,
+                        1656
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2933,
+                        2940
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/Ella_Decal-0xd7dad075.sol:1626:5:\n     |\n1626 |     safeTransferFrom(from, to, tokenId, \"\");\n     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,113 @@
+{
+    "erc": "20",
+    "contract": "PepeTrump",
+    "inj_file": "dataset/err-inj/injected/PepeTrump-0x98a52973.sol",
+    "orig_file": "dataset/err-inj/origin/PepeTrump-0x98a52973.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        323,
+                        323
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        341,
+                        341
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        345,
+                        345
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        333,
+                        333
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        322,
+                        322
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        278,
+                        285
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        238,
+                        238
+                    ],
+                    "to_replace": [
+                        "        return _tTotal+122;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        260,
+                        260
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+238;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

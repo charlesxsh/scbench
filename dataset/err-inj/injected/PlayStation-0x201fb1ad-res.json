@@ -1,0 +1,60 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `safeTransferFrom` function must check if `_to` is a smart contract (code size > 0). If so, it must call `onERC721Received` on `_to` and throw if the return value is not `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`.",
+                "function": "_safeTransfer"
+            },
+            {
+                "rule": "The `onERC721Received` function in the ERC721TokenReceiver interface must be implemented by contracts that wish to receive ERC721 tokens safely. This function must return `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))` to confirm the token transfer.",
+                "function": "_checkOnERC721Received"
+            },
+            {
+                "rule": "The `transferFrom` function must throw unless `msg.sender` is the current owner, an authorized operator, or the approved address for this NFT. It must also throw if `_from` is not the current owner, if `_to` is the zero address, or if `_tokenId` is not a valid NFT.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The `approve` function must throw unless `msg.sender` is the current NFT owner, or an authorized operator of the current owner.",
+                "function": "approve"
+            },
+            {
+                "rule": "The `setApprovalForAll` function must allow multiple operators per owner.",
+                "function": "setApprovalForAll"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe provided code for the `transferFrom` function in the `ERC721` contract does not explicitly check if the `_tokenId` is a valid NFT before proceeding with the transfer. The function relies on the internal `_transfer` function, which also does not perform a check to ensure that the `_tokenId` exists or is valid before executing the transfer. This violates the ERC-721 rule that requires the function to throw an error if `_tokenId` is not a valid NFT. The code should include a check to ensure that `_owners[tokenId]` is not zero (indicating that the token exists and is owned) before proceeding with the transfer.",
+            "NO",
+            "YES\n\nThe provided code for the `safeTransferFrom` function in the `ERC721` contract does not properly implement the check for calling the `onERC721Received` function when transferring tokens to a smart contract. The `_checkOnERC721Received` function is stubbed to always return `true`, which means it does not perform any actual check to determine if the recipient address (`to`) is a contract and if it correctly implements the `IERC721Receiver` interface.\n\nAccording to the ERC-721 standard, when transferring tokens to a contract, the contract must implement the `IERC721Receiver` interface and return a specific magic value when `onERC721Received` is called. This is crucial to prevent tokens from being locked in contracts that do not expect to receive them. The provided implementation fails to meet this requirement, thus violating the ERC-721 standard rule."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

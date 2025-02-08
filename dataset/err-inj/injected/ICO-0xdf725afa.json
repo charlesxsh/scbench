@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/ICO-0xdf725afa.sol",
+    "orig_file": "dataset/err-inj/origin/ICO-0xdf725afa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        772,
+                        772
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        466,
+                        466
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        648,
+                        652
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        491,
+                        491
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        671,
+                        675
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(token).transfer\" to access this address member.\n   --> dataset/err-inj/injected/ICO-0xdf725afa.sol:916:59:\n    |\n916 |         _callOptionalReturn(token, abi.encodeWithSelector(token.transfer.selector, to, value));\n    |                                                           ^^^^^^^^^^^^^^\n\n"
+}

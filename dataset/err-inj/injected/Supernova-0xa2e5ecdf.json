@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "Supernova",
+    "inj_file": "dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol",
+    "orig_file": "dataset/err-inj/origin/Supernova-0xa2e5ecdf.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        281,
+                        281
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        590,
+                        593
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        762,
+                        762
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        604,
+                        607
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        315,
+                        315
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:627:31:\n    |\n627 |         uint256 deadBalance = balanceOf(address(0xdead));\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:628:31:\n    |\n628 |         uint256 zeroBalance = balanceOf(address(0));\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:633:31:\n    |\n633 |         uint256 deadBalance = balanceOf(address(0xdead));\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:634:31:\n    |\n634 |         uint256 zeroBalance = balanceOf(address(0));\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:639:12:\n    |\n639 |         if(balanceOf(user) >= normalBalance[user]) return balanceOf(user) - normalBalance[user];\n    |            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:639:59:\n    |\n639 |         if(balanceOf(user) >= normalBalance[user]) return balanceOf(user) - normalBalance[user];\n    |                                                           ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:759:27:\n    |\n759 |         require(amount <= balanceOf(from),\"You are trying to transfer more than your balance\");\n    |                           ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:770:36:\n    |\n770 |             if(to != pair) require(balanceOf(to) + amount <= MAX_WALLET_AMOUNT, \"You are exceeding MAX_WALLET_AMOUNT\");\n    |                                    ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Supernova-0xa2e5ecdf.sol:780:24:\n    |\n780 |         bool canSwap = balanceOf(address(this)) >= swapThreshold;\n    |                        ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The ERC20 standard specifies that the `symbol` function should return the symbol of the token, which is generally expected to be a non-empty string.",
+                "function": "symbol()"
+            },
+            {
+                "rule": "ERC20 standard expects `transfer` and `transferFrom` to handle simple token transfers and should only fail if the account has insufficient balance or allowance. The introduction of complex mechanisms such as transaction limits, fees, and penalties could lead to unexpected behaviors for standard ERC20 interactions.",
+                "function": "_transfer()"
+            },
+            {
+                "rule": "ERC20 specifies that tokens creation and burning should trigger `Transfer` events with `from` address `0x0` for minting and `to` address `0x0` for burning. The contract includes mechanisms that might not always adhere to emitting these events as expected in every scenario.",
+                "function": "_burn(), _createInitialSupply()"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

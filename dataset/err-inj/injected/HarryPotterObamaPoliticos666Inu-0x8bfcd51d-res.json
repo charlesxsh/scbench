@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "decimals - Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation. OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "decimals"
+            },
+            {
+                "rule": "symbol - Returns the symbol of the token. E.g. \"HIX\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "symbol"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO.\n\nThe function `decimals()` in the provided code returns `21` (since `18 + 3 = 21`). While ERC-20 tokens typically use 18 decimal places, the ERC-20 standard does not specify a maximum number of decimal places a token can have. It only requires that a `decimals()` function is implemented to specify the number of decimal places the token uses. This is primarily for display and transaction purposes to define the smallest unit of the token.\n\nTherefore, returning `21` from the `decimals()` function does not violate the ERC-20 standard. It simply means that this particular token can be divided into smaller units than most typical ERC-20 tokens.",
+            "YES\n\nThe provided code violates the ERC-20 rule that requires emitting an \"Approval\" event when the `approve` function is called. The `_approve` internal function updates the allowance but does not emit any event to notify of this state change, which is a requirement according to the ERC-20 standard. The standard specifies that an \"Approval\" event should be emitted whenever the `approve` function is successfully executed, to ensure transparency and allow applications to react to the change in allowances.",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

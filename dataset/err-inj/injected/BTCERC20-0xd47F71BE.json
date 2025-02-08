@@ -1,0 +1,98 @@
+{
+    "erc": "20",
+    "contract": "BTCERC20",
+    "inj_file": "dataset/err-inj/injected/BTCERC20-0xd47F71BE.sol",
+    "orig_file": "dataset/err-inj/origin/BTCERC20-0xd47F71BE.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        362,
+                        362
+                    ],
+                    "to_replace": [
+                        "        return balances[tokenOwner]+400;"
+                    ]
+                },
+                {
+                    "orig_range": [
+                        361,
+                        361
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address tokenOwner) public returns (uint256 balance) {+992;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        390,
+                        390
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                },
+                {
+                    "orig_range": [
+                        384,
+                        384
+                    ],
+                    "to_replace": [
+                        "        returns! (bool success)\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        355,
+                        357
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        44,
+                        44
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation dataset/err-inj/injected/BTCERC20-0xd47F71BE.sol:378:16: Error: Expected '(' but got '!'\n        returns! (bool success)\n               ^\n"
+}

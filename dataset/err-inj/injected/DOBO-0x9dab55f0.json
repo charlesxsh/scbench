@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "DOBO",
+    "inj_file": "dataset/err-inj/injected/DOBO-0x9dab55f0.sol",
+    "orig_file": "dataset/err-inj/origin/DOBO-0x9dab55f0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        395,
+                        395
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        220,
+                        220
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        294,
+                        296
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        326,
+                        328
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        133,
+                        133
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/DOBO-0x9dab55f0.sol:1202:27:\n     |\n1202 |             newAmount >= (totalSupply() * 1) / 100000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOBO-0x9dab55f0.sol:1206:27:\n     |\n1206 |             newAmount <= (totalSupply() * 5) / 1000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOBO-0x9dab55f0.sol:1215:25:\n     |\n1215 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/DOBO-0x9dab55f0.sol:1223:25:\n     |\n1223 |             newNum >= ((totalSupply() * 1) / 1000) / 1e18,\n     |                         ^^^^^^^^^^^\n\n"
+}

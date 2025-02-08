@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "symbol: Returns the symbol of the token. E.g. \"HIX\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "symbol() public pure returns (string memory)"
+            },
+            {
+                "rule": "Approval function should reset allowance to zero before setting it to a new value to prevent race conditions.",
+                "function": "approve"
+            },
+            {
+                "rule": "State-changing functions should not necessarily return a boolean unless explicitly handling errors internally.",
+                "function": "transfer, approve, transferFrom"
+            },
+            {
+                "rule": "name: Returns the name of the token - e.g. \"MyToken\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "name() public pure returns (string memory)"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

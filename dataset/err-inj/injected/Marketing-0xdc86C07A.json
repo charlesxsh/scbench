@@ -1,0 +1,94 @@
+{
+    "erc": "20",
+    "contract": "Marketing",
+    "inj_file": "dataset/err-inj/injected/Marketing-0xdc86C07A.sol",
+    "orig_file": "dataset/err-inj/origin/Marketing-0xdc86C07A.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        359,
+                        359
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        329,
+                        329
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+326;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        530,
+                        530
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        385,
+                        385
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        534,
+                        534
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        393,
+                        393
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

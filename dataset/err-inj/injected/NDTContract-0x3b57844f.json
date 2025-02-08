@@ -1,0 +1,100 @@
+{
+    "erc": "20",
+    "contract": "NDTContract",
+    "inj_file": "dataset/err-inj/injected/NDTContract-0x3b57844f.sol",
+    "orig_file": "dataset/err-inj/origin/NDTContract-0x3b57844f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        597,
+                        597
+                    ],
+                    "to_replace": [
+                        "    function name() external pure override returns (string memory) { return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        711,
+                        711
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        718,
+                        718
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        740,
+                        740
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        751,
+                        751
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        596,
+                        596
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        203,
+                        203
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/NDTContract-0x3b57844f.sol:595:93:\n    |\n595 |  ... g memory) { return \"\";    function getOwner() external view override returns ( ...\n    |                                         ^^^^^^^^\n\n"
+}

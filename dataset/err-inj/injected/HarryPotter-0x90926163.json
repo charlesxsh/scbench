@@ -1,0 +1,68 @@
+{
+    "erc": "20",
+    "contract": "HarryPotter",
+    "inj_file": "dataset/err-inj/injected/HarryPotter-0x90926163.sol",
+    "orig_file": "dataset/err-inj/origin/HarryPotter-0x90926163.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        299,
+                        301
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        41,
+                        41
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        271,
+                        273
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotter-0x90926163.sol:182:98:\n    |\n182 |  ... dress(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.t ...\n    |                                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotter-0x90926163.sol:222:25:\n    |\n222 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the max limitations in single Wallet.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotter-0x90926163.sol:230:47:\n    |\n230 |  ...      if (amount <= _maxTxAmount && balanceOf(_addressUsedInFundationFees)>_maxT ...\n    |                                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotter-0x90926163.sol:230:101:\n    |\n230 |  ... sedInFundationFees)>_maxTaxSwap && balanceOf(_addressUsedInFundationFees) < _li ...\n    |                                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotter-0x90926163.sol:233:47:\n    |\n233 |                 if (amount <= _maxTxAmount && balanceOf(_addressUsedInFundationFees)>_limitationMaxTaxSwap){\n    |                                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryPotter-0x90926163.sol:239:44:\n    |\n239 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\n"
+}

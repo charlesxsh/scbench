@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "KaeruCoin",
+    "inj_file": "dataset/err-inj/injected/KaeruCoin-0x31478bef.sol",
+    "orig_file": "dataset/err-inj/origin/KaeruCoin-0x31478bef.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        287,
+                        287
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        102,
+                        102
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        254,
+                        256
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        375,
+                        375
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/KaeruCoin-0x31478bef.sol:1136:42:\n     |\n1136 |                         require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n     |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/KaeruCoin-0x31478bef.sol:1144:38:\n     |\n1144 |                     require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n     |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/KaeruCoin-0x31478bef.sol:1149:40:\n     |\n1149 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/KaeruCoin-0x31478bef.sol:1239:35:\n     |\n1239 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

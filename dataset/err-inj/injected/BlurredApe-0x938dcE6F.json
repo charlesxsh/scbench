@@ -1,0 +1,49 @@
+{
+    "erc": "1155",
+    "contract": "BlurredApe",
+    "inj_file": "dataset/err-inj/injected/BlurredApe-0x938dcE6F.sol",
+    "orig_file": "dataset/err-inj/origin/BlurredApe-0x938dcE6F.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;",
+                    "function": "safeTransferFrom",
+                    "numofargs": 5,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        738,
+                        750
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        578,
+                        578
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": "throw if Caller not be approved to manage the tokens being transferred out of the `_from` account",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "msgsender": true,
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

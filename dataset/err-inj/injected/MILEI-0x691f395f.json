@@ -1,0 +1,96 @@
+{
+    "erc": "721",
+    "contract": "MILEI",
+    "inj_file": "dataset/err-inj/injected/MILEI-0x691f395f.sol",
+    "orig_file": "dataset/err-inj/origin/MILEI-0x691f395f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1442,
+                        1442
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1286,
+                        1286
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1436,
+                        1436
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1139,
+                        1139
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1381,
+                        1381
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": " throw if _tokenId is not a valid NFT",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1492,
+                        1492
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

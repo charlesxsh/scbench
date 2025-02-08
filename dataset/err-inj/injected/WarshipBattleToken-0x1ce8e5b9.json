@@ -1,0 +1,102 @@
+{
+    "erc": "20",
+    "contract": "WarshipBattleToken",
+    "inj_file": "dataset/err-inj/injected/WarshipBattleToken-0x1ce8e5b9.sol",
+    "orig_file": "dataset/err-inj/origin/WarshipBattleToken-0x1ce8e5b9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        269,
+                        271
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        70,
+                        70
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        360,
+                        360
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        370,
+                        370
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        348,
+                        348
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        289,
+                        290
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        246,
+                        246
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"balances\"?\n   --> dataset/err-inj/injected/WarshipBattleToken-0x1ce8e5b9.sol:369:25:\n    |\n369 |                 require(balanceOf(to) + amount <= _amountMaxPerWallet, \"Transfer amount exceeds the maxWalletAmount.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balances\"?\n   --> dataset/err-inj/injected/WarshipBattleToken-0x1ce8e5b9.sol:378:21:\n    |\n378 |                 if (balanceOf(address(this)) >= thresholdForSwap && !isInSwapMode) {\n    |                     ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balances\"?\n   --> dataset/err-inj/injected/WarshipBattleToken-0x1ce8e5b9.sol:387:29:\n    |\n387 |                     runSwap(balanceOf(address(this)));\n    |                             ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balances\"?\n   --> dataset/err-inj/injected/WarshipBattleToken-0x1ce8e5b9.sol:395:25:\n    |\n395 |                 require(balanceOf(to) + amount <= _amountMaxPerWallet, \"Transfer amount exceeds the maxWalletAmount.\");\n    |                         ^^^^^^^^^\n\n"
+}

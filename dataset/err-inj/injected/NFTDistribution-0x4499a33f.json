@@ -1,0 +1,83 @@
+{
+    "erc": "721",
+    "contract": "ERC721",
+    "inj_file": "dataset/err-inj/injected/NFTDistribution-0x4499a33f.sol",
+    "orig_file": "dataset/err-inj/origin/NFTDistribution-0x4499a33f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1311,
+                        1313
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        946,
+                        946
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": " throw if `msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1265,
+                        1265
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1556,
+                        1571
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

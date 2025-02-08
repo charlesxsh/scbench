@@ -1,0 +1,60 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `balanceOf` function should return the exact number of tokens held by an address.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "Transfers of 0 values must be treated as normal transfers and fire the `Transfer` event.",
+                "function": "transfer"
+            },
+            {
+                "rule": "Transfers of 0 values must be treated as normal transfers and fire the `Transfer` event.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The `approve` function should allow setting the allowance for a spender to withdraw from the owner's account multiple times up to the approved amount. If called again, it should overwrite the current allowance with the new value.",
+                "function": "increaseAllowance"
+            },
+            {
+                "rule": "The `approve` function should allow setting the allowance for a spender to withdraw from the owner's account multiple times up to the approved amount. If called again, it should overwrite the current allowance with the new value.",
+                "function": "decreaseAllowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance from the `_balances` mapping, the function adds 876 to the balance. This modification does not accurately reflect the true balance of the account, thus violating the ERC-20 standard requirement.",
+            "NO",
+            null
+        ],
+        "can_detect": [
+            true,
+            true,
+            null
+        ],
+        "error": [
+            null,
+            null,
+            "'inj_fn'"
+        ]
+    }
+}

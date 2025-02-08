@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "SimpleTokenWithAntibot",
+    "inj_file": "dataset/err-inj/injected/SimpleTokenWithAntibot-0x34e9773c.sol",
+    "orig_file": "dataset/err-inj/origin/SimpleTokenWithAntibot-0x34e9773c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        442,
+                        442
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+127;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        421,
+                        421
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+775;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        231,
+                        231
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        413,
+                        415
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

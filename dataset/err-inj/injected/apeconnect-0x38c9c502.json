@@ -1,0 +1,82 @@
+{
+    "erc": "20",
+    "contract": "apeconnect",
+    "inj_file": "dataset/err-inj/injected/apeconnect-0x38c9c502.sol",
+    "orig_file": "dataset/err-inj/origin/apeconnect-0x38c9c502.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        726,
+                        728
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        746,
+                        746
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        737,
+                        737
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_rOwned[account])+306;"
+                    ]
+                },
+                {
+                    "orig_range": [
+                        736,
+                        736
+                    ],
+                    "to_replace": [
+                        "        if (_isExcluded[account]) return _tOwned[account]+161;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,107 @@
+{
+    "erc": "20",
+    "contract": "CoinManufactory",
+    "inj_file": "dataset/err-inj/injected/CoinManufactory-0x73cac769.sol",
+    "orig_file": "dataset/err-inj/origin/CoinManufactory-0x73cac769.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        812,
+                        812
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1356,
+                        1356
+                    ],
+                    "to_replace": [
+                        "            return _tOwned[sender]+405;"
+                    ]
+                },
+                {
+                    "orig_range": [
+                        1358,
+                        1358
+                    ],
+                    "to_replace": [
+                        "        return tokenFromReflection(_rOwned[sender])+687;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        808,
+                        808
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1514,
+                        1514
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        809,
+                        809
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        640,
+                        643
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/CoinManufactory-0x73cac769.sol:654:14:\n    |\n654 |     function increaseAllowance(address spender, uint256 addedValue)\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

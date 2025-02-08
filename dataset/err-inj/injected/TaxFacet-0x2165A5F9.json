@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/TaxFacet-0x2165A5F9.sol",
+    "orig_file": "dataset/err-inj/origin/TaxFacet-0x2165A5F9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2822,
+                        2824
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2815,
+                        2815
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2853,
+                        2855
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        99,
+                        99
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: This declaration shadows an existing declaration.\n    --> dataset/err-inj/injected/TaxFacet-0x2165A5F9.sol:3534:5:\n     |\n3534 |     address private FacetHelper;\n     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNote: The shadowed declaration is here:\n   --> dataset/err-inj/injected/TaxFacet-0x2165A5F9.sol:352:1:\n    |\n352 | contract FacetHelper is Ownable{\n    | ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: This declaration shadows an existing declaration.\n    --> dataset/err-inj/injected/TaxFacet-0x2165A5F9.sol:3535:5:\n     |\n3535 |     address private FeeHelper;\n     |     ^^^^^^^^^^^^^^^^^^^^^^^^^\nNote: The shadowed declaration is here:\n    --> dataset/err-inj/injected/TaxFacet-0x2165A5F9.sol:2512:1:\n     |\n2512 | contract FeeHelper is Ownable{\n     | ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Member \"balanceOf\" not found or not visible after argument-dependent lookup in contract ITaxToken.\n    --> dataset/err-inj/injected/TaxFacet-0x2165A5F9.sol:1715:32:\n     |\n1715 |         uint256 tokenBalance = token.balanceOf(address(this));\n     |                                ^^^^^^^^^^^^^^^\n\n"
+}

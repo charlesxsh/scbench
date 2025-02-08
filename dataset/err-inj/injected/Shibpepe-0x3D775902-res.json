@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transferFrom function should return a boolean value indicating success or failure.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The approve function should set the allowance first to 0 before setting it to another value for the same spender, to prevent attack vectors.",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe `transferFrom` function in the provided contract code does not check whether the `_from` account has authorized the `msg.sender` to spend tokens on its behalf. This is typically managed by checking the `_allowances` mapping to ensure that the `msg.sender` has enough allowance to transfer the specified amount of tokens from the `_from` account. However, the provided `transferFrom` function directly calls `_transfer` without any such checks, thereby violating the ERC-20 rule that requires explicit authorization for transfers on behalf of another account.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

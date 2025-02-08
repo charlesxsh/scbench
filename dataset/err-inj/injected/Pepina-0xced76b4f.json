@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "Pepina",
+    "inj_file": "dataset/err-inj/injected/Pepina-0xced76b4f.sol",
+    "orig_file": "dataset/err-inj/origin/Pepina-0xced76b4f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+988;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        374,
+                        374
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        436,
+                        436
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        975,
+                        975
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        367,
+                        367
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        991,
+                        991
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        435,
+                        435
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        308,
+                        309
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

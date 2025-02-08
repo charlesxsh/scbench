@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The totalSupply function should return the actual total token supply without any manipulation or alteration.",
+                "function": "totalSupply"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `totalSupply()` in the provided code violates the ERC-20 rule that requires it to return the total token supply. Instead of returning the actual total supply stored in `_totalSupply`, it returns `_totalSupply + 776`, which is not the correct total supply of the tokens as per the ERC-20 standard requirements. The standard mandates that the function should return the total number of tokens in circulation, without any modifications or additions.",
+            "NO",
+            null
+        ],
+        "can_detect": [
+            true,
+            false,
+            null
+        ],
+        "error": [
+            null,
+            null,
+            "'inj_fn'"
+        ]
+    }
+}

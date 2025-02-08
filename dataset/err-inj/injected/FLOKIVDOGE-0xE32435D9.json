@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "FLOKIVDOGE",
+    "inj_file": "dataset/err-inj/injected/FLOKIVDOGE-0xE32435D9.sol",
+    "orig_file": "dataset/err-inj/origin/FLOKIVDOGE-0xE32435D9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        320,
+                        324
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        60,
+                        60
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        25,
+                        25
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        315,
+                        315
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/FLOKIVDOGE-0xE32435D9.sol:319:16:\n    |\n319 |         return approve(spender, type(uint256).max);\n    |                ^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FLOKIVDOGE-0xE32435D9.sol:338:21:\n    |\n338 |             require(balanceOf(recipient) + amount <= _maxWalletSize, \"Max Wallet Exceeded\");\n    |                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FLOKIVDOGE-0xE32435D9.sol:451:12:\n    |\n451 |         && balanceOf(address(this)) >= swapThreshold;\n    |            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FLOKIVDOGE-0xE32435D9.sol:564:33:\n    |\n564 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FLOKIVDOGE-0xE32435D9.sol:564:54:\n    |\n564 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/FLOKIVDOGE-0xE32435D9.sol:568:29:\n    |\n568 |         return accuracy.mul(balanceOf(pair).mul(2)).div(getCirculatingSupply());\n    |                             ^^^^^^^^^\n\n"
+}

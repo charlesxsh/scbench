@@ -1,0 +1,76 @@
+{
+    "erc": "721",
+    "contract": "takemiko_generative",
+    "inj_file": "dataset/err-inj/injected/takemiko_generative-0x931d6e99.sol",
+    "orig_file": "dataset/err-inj/origin/takemiko_generative-0x931d6e99.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        659,
+                        659
+                    ],
+                    "to_replace": [
+                        "        return address(560);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        649,
+                        649
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        921,
+                        921
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

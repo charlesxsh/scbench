@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "USDOLLAR",
+    "inj_file": "dataset/err-inj/injected/USDOLLAR-0x5db11e4a.sol",
+    "orig_file": "dataset/err-inj/origin/USDOLLAR-0x5db11e4a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        56,
+                        56
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        232,
+                        234
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        400,
+                        400
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        267,
+                        271
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        90,
+                        90
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"balance\"?\n    --> dataset/err-inj/injected/USDOLLAR-0x5db11e4a.sol:1176:13:\n     |\n1176 |             balanceOf(address(this)),\n     |             ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/USDOLLAR-0x5db11e4a.sol:1211:13:\n     |\n1211 |             balanceOf(address(this)) >= swapThreshold;\n     |             ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/USDOLLAR-0x5db11e4a.sol:1277:18:\n     |\n1277 |             if ((balanceOf(_to) + _amount) > maxWalletBalance) {\n     |                  ^^^^^^^^^\n\n"
+}

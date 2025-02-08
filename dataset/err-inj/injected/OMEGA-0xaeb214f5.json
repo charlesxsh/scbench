@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "OMEGA",
+    "inj_file": "dataset/err-inj/injected/OMEGA-0xaeb214f5.sol",
+    "orig_file": "dataset/err-inj/origin/OMEGA-0xaeb214f5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        119,
+                        121
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        7,
+                        7
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        112,
+                        112
+                    ],
+                    "to_replace": [
+                        "            return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        8,
+                        8
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        123,
+                        125
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/OMEGA-0xaeb214f5.sol:334:38:\n    |\n334 |             uint256 currentBalance = balanceOf(to);\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/OMEGA-0xaeb214f5.sol:342:44:\n    |\n342 |             uint256 contractTokenBalance = balanceOf(address(this)); \n    |                                            ^^^^^^^^^\n\n"
+}

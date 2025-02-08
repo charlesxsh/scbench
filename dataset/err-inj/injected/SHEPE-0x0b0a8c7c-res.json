@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "NFTs assigned to the zero address are considered invalid, and queries about them do throw.",
+                "function": "The `ownerOf` function correctly checks for zero address but the `balanceOf` function should also explicitly check for the zero address and revert accordingly."
+            },
+            {
+                "rule": "Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            },
+            {
+                "rule": "The `transferFrom` function must be implemented to allow the transfer of NFTs between addresses.",
+                "function": "The `transferFrom` function is commented out and not implemented in the provided ERC721 contract code."
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "erc": "20",
+    "contract": "XDiamond",
+    "inj_file": "dataset/err-inj/injected/XDiamond-0xe2ffd9b2.sol",
+    "orig_file": "dataset/err-inj/origin/XDiamond-0xe2ffd9b2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1076,
+                        1079
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        503,
+                        504
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        316,
+                        316
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        413,
+                        415
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        438,
+                        438
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+156;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

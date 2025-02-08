@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `transferFrom` function should return `true` if the operation is successful.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The `name` function should return the name of the token. It is optional but if implemented, it should return the actual name.",
+                "function": "name"
+            },
+            {
+                "rule": "The `symbol` function should return the symbol of the token. It is optional but if implemented, it should return the actual symbol.",
+                "function": "symbol"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe `transferFrom` function in the provided `ERC20` contract implementation returns `false` regardless of whether the transfer was successful or not. According to ERC-20 standards, the function should return `true` if the token transfer was successful to indicate success to the caller. This implementation violates the ERC-20 rule that requires the function to indicate whether the token transfer was successful.",
+            "NO",
+            "YES\n\nThe provided code snippet shows an implementation of the `name()` function in an ERC20 token contract that returns an empty string (`\"\"`). According to ERC-20 standards, the `name()` function should return the name of the token, such as \"MyToken\". Returning an empty string does not meet this requirement, as it does not provide any meaningful identification for the token. Therefore, this implementation violates the ERC rule that requires the `name()` function to return a descriptive string representing the name of the token."
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

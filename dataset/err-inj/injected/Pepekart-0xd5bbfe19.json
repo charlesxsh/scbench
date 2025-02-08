@@ -1,0 +1,119 @@
+{
+    "erc": "20",
+    "contract": "Pepekart",
+    "inj_file": "dataset/err-inj/injected/Pepekart-0xd5bbfe19.sol",
+    "orig_file": "dataset/err-inj/origin/Pepekart-0xd5bbfe19.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        87,
+                        87
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        162,
+                        162
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        152,
+                        152
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        434,
+                        434
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        191,
+                        191
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        430,
+                        430
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        192,
+                        192
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        425,
+                        425
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        126,
+                        129
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Pepekart-0xd5bbfe19.sol:127:14:\n    |\n127 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

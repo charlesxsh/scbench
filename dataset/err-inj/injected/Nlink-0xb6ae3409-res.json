@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `transferFrom` should be implemented to allow tokens to be transferred from one address to another on behalf of the token holder.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "The `decimals` function should return the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation. This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "decimals"
+            },
+            {
+                "rule": "The `allowance` function should return the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe code provided violates the ERC-20 standard rule for the `allowance` function. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from an owner's account. However, in the given code, the function returns the allowance amount with an additional 744 units added to it (`return _allowances[owner][spender] + 744;`). This modification does not accurately reflect the allowed amount and thus violates the standard's requirement for this function.",
+            "NO",
+            "NO\n\nThe code provided does not violate the ERC-20 rule regarding the number of decimals. The ERC-20 standard does not specify a maximum number of decimals; it only requires that a `decimals` function is implemented to define how many decimal places a token can be divided into for display and transaction purposes. The function in the code returns `21` (18+3), which is a valid implementation choice, even though it is unusual compared to the common practice of using 18 decimals. This implementation still adheres to the ERC-20 standard's requirements."
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

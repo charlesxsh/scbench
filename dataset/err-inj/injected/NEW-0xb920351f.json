@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "NEW",
+    "inj_file": "dataset/err-inj/injected/NEW-0xb920351f.sol",
+    "orig_file": "dataset/err-inj/origin/NEW-0xb920351f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        279,
+                        279
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        279,
+                        279
+                    ],
+                    "to_replace": [
+                        "    function balanceOf(address account) public view override returns (uint256) { return _balances[account]+715;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        23,
+                        23
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        274,
+                        274
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/NEW-0xb920351f.sol:323:34:\n    |\n323 |             uint256 heldTokens = balanceOf(recipient);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NEW-0xb920351f.sol:514:29:\n    |\n514 |         return accuracy.mul(balanceOf(pair).mul(2)).div(showSupply());\n    |                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NEW-0xb920351f.sol:518:33:\n    |\n518 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NEW-0xb920351f.sol:518:54:\n    |\n518 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                                      ^^^^^^^^^\n\n"
+}

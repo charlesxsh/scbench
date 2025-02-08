@@ -1,0 +1,90 @@
+{
+    "erc": "20",
+    "contract": "YieldBuddy",
+    "inj_file": "dataset/err-inj/injected/YieldBuddy-0xB47Fa19b.sol",
+    "orig_file": "dataset/err-inj/origin/YieldBuddy-0xB47Fa19b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        56,
+                        58
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        15,
+                        15
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        93,
+                        93
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        94,
+                        94
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        53,
+                        53
+                    ],
+                    "to_replace": [
+                        "    return balances[player]+739;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

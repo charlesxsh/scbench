@@ -1,0 +1,322 @@
+// SPDX-License-Identifier: MONEY
+/**
+
+*************************************ATTENTION ---- THIS IS A PROMOTIONAL CONTRACT*******************************************************************
+
+
+
+Listen here pal, thank you for stopping by and reading the contract.
+
+
+But please, for the love of god, stop buying the 50th copy of HairyPooterObummerSonicBumFuck69Inu. Just stop. You and I both know how it's gonna end. OK?
+
+Just take a deep breath for a second. OK? What if I could just drop some alpha on you really quick?
+
+What if you could get in on one of the only honest projects out there, that isn't going to rug you or sell 30% of the supply the instant it launches. 
+
+No, we don't have a fake telegram bot that doesn't do anything. No we don't let you "TrAde StOnKs" from telegram. No we don't have a "Casino" that we literally
+Control C + Control Ved from another scam casino and then charged you 20% tax for.
+
+
+Our app is already built. People have already won thousands of dollars on it.
+
+
+So come kick it with us anon. What have you got to lose?
+
+
+Website: https://hotbet.gg/
+Telegram: https://t.me/hotbetgg
+Twitter: https://twitter.com/hotbetgg
+Whitepaper: https://hotbetgg.gitbook.io/whitepaper/
+
+
+YOU HAVE A CHANCE TO WIN THOUSANDS OF DOLLARS, EVEN WITH A $5 PURCHASE!!! THERE WAS NO TYPOS OR ERRORS IN THAT LAST SENTENCE.
+
+Here's a tweet where we paid out 7k in awards to our top leaderboard scorers: 
+
+https://twitter.com/hotbetgg/status/1692540952030626001
+
+Our game is provably fair, live-recorded using real mini cars. No bullshit. No gimmicks. No inside betting.
+
+
+
+**********************************************************************************************************************************************************************/
+
+pragma solidity ^0.8.21;
+
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual returns (bytes calldata) {
+        return msg.data;
+    }
+}
+
+abstract contract Ownable is Context {
+    address private _owner;
+
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    /**
+     * @dev Initializes the contract setting the deployer as the initial owner.
+     */
+    constructor() {
+        _transferOwnership(_msgSender());
+    }
+
+    modifier onlyOwner() {
+        _checkOwner();
+        _;
+    }
+
+    function owner() public view virtual returns (address) {
+        return _owner;
+    }
+
+    function _checkOwner() internal view virtual {
+        require(owner() == _msgSender(), "Ownable: caller is not the owner");
+    }
+
+
+    function renounceOwnership() public virtual onlyOwner {
+        _transferOwnership(address(0));
+    }
+
+    function transferOwnership(address newOwner) public virtual onlyOwner {
+        require(newOwner != address(0), "Ownable: new owner is the zero address");
+        _transferOwnership(newOwner);
+    }
+
+    function _transferOwnership(address newOwner) internal virtual {
+        address oldOwner = _owner;
+        _owner = newOwner;
+        emit OwnershipTransferred(oldOwner, newOwner);
+    }
+}
+
+
+interface IERC20 {
+
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    /**
+     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
+     * a call to {approve}. `value` is the new allowance.
+     */
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+
+    /**
+     * @dev Returns the amount of tokens in existence.
+     */
+    function totalSupply() external view returns (uint256);
+
+    /**
+     * @dev Returns the amount of tokens owned by `account`.
+     */
+    function balanceOf(address account) external view returns (uint256);
+
+    function transfer(address to, uint256 amount) external returns (bool);
+
+    function allowance(address owner, address spender) external view returns (uint256);
+
+    function approve(address spender, uint256 amount) external returns (bool);
+
+    function transferFrom(
+        address from,
+        address to,
+        uint256 amount
+    ) external returns (bool);
+}
+
+interface IERC20Metadata is IERC20 {
+    /**
+     * @dev Returns the name of the token.
+     */
+    function name() external view returns (string memory);
+
+    /**
+     * @dev Returns the symbol of the token.
+     */
+    function symbol() external view returns (string memory);
+
+    /**
+     * @dev Returns the decimals places of the token.
+     */
+}
+
+contract ERC20 is Context, IERC20, IERC20Metadata {
+    mapping(address => uint256) private _balances;
+
+    mapping(address => mapping(address => uint256)) private _allowances;
+
+    uint256 private _totalSupply;
+
+    string private _name;
+    string private _symbol;
+
+    constructor(string memory name_, string memory symbol_) {
+        _name = name_;
+        _symbol = symbol_;
+    }
+
+    function name() public view virtual override returns (string memory) {
+        return _name;
+    }
+
+    function symbol() public view virtual override returns (string memory) {
+        return _symbol;
+    }
+
+
+    function totalSupply() public view virtual override returns (uint256) {
+        return _totalSupply;
+    }
+
+    function balanceOf(address account) public view virtual override returns (uint256) {
+        return _balances[account];
+    }
+
+    function transfer(address to, uint256 amount) public virtual override returns (bool) {
+        address owner = _msgSender();
+        _transfer(owner, to, amount);
+        return true;
+    }
+
+    function allowance(address owner, address spender) public view virtual override returns (uint256) {
+        return _allowances[owner][spender];
+    }
+
+
+    function approve(address spender, uint256 amount) public virtual override returns (bool) {
+        address owner = _msgSender();
+        _approve(owner, spender, amount);
+        return true;
+    }
+
+    function transferFrom(
+        address from,
+        address to,
+        uint256 amount
+    ) public virtual override returns (bool) {
+        address spender = _msgSender();
+        return true;
+    }
+
+    function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
+        address owner = _msgSender();
+        _approve(owner, spender, allowance(owner, spender) + addedValue);
+        return true;
+    }
+
+    function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
+        address owner = _msgSender();
+        uint256 currentAllowance = allowance(owner, spender);
+        require(currentAllowance >= subtractedValue, "ERC20: decreased allowance below zero");
+        unchecked {
+            _approve(owner, spender, currentAllowance - subtractedValue);
+        }
+
+        return true;
+    }
+
+    function _transfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal virtual {
+        require(to != address(0), "ERC20: transfer to the zero address");
+
+        _beforeTokenTransfer(from, to, amount);
+
+        uint256 fromBalance = _balances[from];
+        require(fromBalance >= amount, "ERC20: transfer amount exceeds balance");
+        unchecked {
+            _balances[from] = fromBalance - amount;
+            _balances[to] += amount;
+        }
+
+
+        _afterTokenTransfer(from, to, amount);
+    }
+
+    function _mint(address account, uint256 amount) internal virtual {
+        require(account != address(0), "ERC20: mint to the zero address");
+
+        _beforeTokenTransfer(address(0), account, amount);
+
+        _totalSupply += amount;
+        unchecked {
+
+            _balances[account] += amount;
+        }
+        emit Transfer(address(0), account, amount);
+
+        _afterTokenTransfer(address(0), account, amount);
+    }
+
+    function _burn(address account, uint256 amount) internal virtual {
+        require(account != address(0), "ERC20: burn from the zero address");
+
+        _beforeTokenTransfer(account, address(0), amount);
+
+        uint256 accountBalance = _balances[account];
+        require(accountBalance >= amount, "ERC20: burn amount exceeds balance");
+        unchecked {
+            _balances[account] = accountBalance - amount;
+            // Overflow not possible: amount <= accountBalance <= totalSupply.
+            _totalSupply -= amount;
+        }
+
+        emit Transfer(account, address(0), amount);
+
+        _afterTokenTransfer(account, address(0), amount);
+    }
+
+    function _approve(
+        address owner,
+        address spender,
+        uint256 amount
+    ) internal virtual {
+        require(spender != address(0), "ERC20: approve to the zero address");
+
+        _allowances[owner][spender] = amount;
+        emit Approval(owner, spender, amount);
+    }
+
+    function _spendAllowance(
+        address owner,
+        address spender,
+        uint256 amount
+    ) internal virtual {
+        uint256 currentAllowance = allowance(owner, spender);
+        if (currentAllowance != type(uint256).max) {
+            require(currentAllowance >= amount, "ERC20: insufficient allowance");
+            unchecked {
+                _approve(owner, spender, currentAllowance - amount);
+            }
+        }
+    }
+
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal virtual {}
+
+    function _afterTokenTransfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal virtual {}
+}
+
+contract BuyHotbet is ERC20, Ownable {
+    constructor() ERC20("He stopped losing all his money using this one simple trick! Scammer Devs hate him!", "HOTBET.GG") {
+        _mint(msg.sender, 42069 * 10 ** decimals());
+    }
+    /**
+    DID YOU REALLY COME ALL THE WAY DOWN HERE TO READ THE REST OF THE CONTRACT? DAHECK ARE YOU DOING???
+     */
+}

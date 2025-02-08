@@ -1,0 +1,123 @@
+{
+    "erc": "20",
+    "contract": "POKI",
+    "inj_file": "dataset/err-inj/injected/POKI-0x3D222dEb.sol",
+    "orig_file": "dataset/err-inj/origin/POKI-0x3D222dEb.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        635,
+                        643
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        411,
+                        415
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        621,
+                        624
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        375,
+                        375
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        703,
+                        703
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        947,
+                        947
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        930,
+                        930
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        715,
+                        715
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        704,
+                        704
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        641,
+                        642
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected identifier but got 'public'\n   --> dataset/err-inj/injected/POKI-0x3D222dEb.sol:710:24:\n    |\n710 |     IUniswapV2Router02 public uniswapV2Router;\n    |                        ^^^^^^\n\n"
+}

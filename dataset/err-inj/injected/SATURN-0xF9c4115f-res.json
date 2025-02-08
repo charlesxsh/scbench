@@ -1,0 +1,60 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The approve function must only be called by the owner or an authorized operator of the NFT.",
+                "function": "Check implementation of approve function for compliance."
+            },
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "Returns the name of the token - e.g. 'MyToken'. OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "name"
+            },
+            {
+                "rule": "The safeTransferFrom functions must check if `_to` is a smart contract and if so, must call `onERC721Received` on `_to`.",
+                "function": "Check implementation of safeTransferFrom to ensure it correctly handles transfers to contracts."
+            },
+            {
+                "rule": "Callers MUST handle false from returns (bool success).",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

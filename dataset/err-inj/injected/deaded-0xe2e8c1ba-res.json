@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The enumeration extension is OPTIONAL for ERC-721 smart contracts.",
+                "function": "ERC721EnumerableUpgradeable"
+            },
+            {
+                "rule": "The function approve(address _approved, uint256 _tokenId) external payable; must allow setting the approved address for an NFT, and must emit an Approval event.",
+                "function": "approve"
+            },
+            {
+                "rule": "The function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable; must check if `_to` is a smart contract and if so, it must call `onERC721Received` on `_to`.",
+                "function": "safeTransferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

@@ -1,0 +1,117 @@
+{
+    "erc": "20",
+    "contract": "Eminem",
+    "inj_file": "dataset/err-inj/injected/Eminem-0x46008a76.sol",
+    "orig_file": "dataset/err-inj/origin/Eminem-0x46008a76.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        465,
+                        465
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        122,
+                        122
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        272,
+                        274
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        461,
+                        461
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1001,
+                        1001
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        393,
+                        393
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        462,
+                        462
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1017,
+                        1017
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        334,
+                        335
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Eminem-0x46008a76.sol:914:29:\n    |\n914 |   \t    require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Eminem-0x46008a76.sol:915:29:\n    |\n915 |   \t    require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Eminem-0x46008a76.sol:921:28:\n    |\n921 |         require(newNum >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.5%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Eminem-0x46008a76.sol:926:28:\n    |\n926 |         require(newNum >= (totalSupply() * 15 / 1000)/1e18, \"Cannot set maxWallet lower than 1.5%\");\n    |                            ^^^^^^^^^^^\n\n"
+}

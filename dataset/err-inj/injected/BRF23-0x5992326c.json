@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "BRF23",
+    "inj_file": "dataset/err-inj/injected/BRF23-0x5992326c.sol",
+    "orig_file": "dataset/err-inj/origin/BRF23-0x5992326c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2106,
+                        2108
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1577,
+                        1583
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1130,
+                        1130
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `transferFrom` function should return a boolean value indicating whether the operation succeeded. In the provided code, the `transferFrom` function always returns `false` regardless of the operation's success.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "Callers must handle `false` from returns (bool success). Callers must not assume that `false` is never returned. The implementation does not provide any mechanism or recommendation for handling `false` return values in `transfer` and `transferFrom` functions.",
+                "function": "transfer, transferFrom"
+            },
+            {
+                "rule": "A token contract which creates new tokens should trigger a `Transfer` event with the `_from` address set to `0x0` when tokens are created. The `_mint` function does not emit a `Transfer` event when tokens are created.",
+                "function": "_mint"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

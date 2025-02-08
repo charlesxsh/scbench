@@ -1,0 +1,96 @@
+{
+    "erc": "721",
+    "contract": "TemporalTapestries",
+    "inj_file": "dataset/err-inj/injected/TemporalTapestries-0xf802e650.sol",
+    "orig_file": "dataset/err-inj/origin/TemporalTapestries-0xf802e650.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1070,
+                        1070
+                    ],
+                    "to_replace": [
+                        "        return address(737);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1124,
+                        1128
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        152,
+                        152
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1189,
+                        1189
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1337,
+                        1337
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1331,
+                        1331
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/TemporalTapestries-0xf802e650.sol:693:5:\n    |\n693 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/TemporalTapestries-0xf802e650.sol:735:5:\n    |\n735 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/TemporalTapestries-0xf802e650.sol:693:5:\n    |\n693 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/TemporalTapestries-0xf802e650.sol:735:5:\n    |\n735 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/TemporalTapestries-0xf802e650.sol:693:5:\n    |\n693 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/TemporalTapestries-0xf802e650.sol:735:5:\n    |\n735 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/TemporalTapestries-0xf802e650.sol:1212:73:\n     |\n1212 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                                                         ^^^^^^^^^^^\n\n"
+}

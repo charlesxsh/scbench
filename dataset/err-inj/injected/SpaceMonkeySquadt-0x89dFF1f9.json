@@ -1,0 +1,75 @@
+{
+    "erc": "721",
+    "contract": "SpaceMonkeySquadt",
+    "inj_file": "dataset/err-inj/injected/SpaceMonkeySquadt-0x89dFF1f9.sol",
+    "orig_file": "dataset/err-inj/origin/SpaceMonkeySquadt-0x89dFF1f9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        774,
+                        774
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        896,
+                        896
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        853,
+                        853
+                    ],
+                    "to_replace": []
+                }
+            ],
+            "inj_fn": "mint"
+        }
+    ],
+    "compile_error": null
+}

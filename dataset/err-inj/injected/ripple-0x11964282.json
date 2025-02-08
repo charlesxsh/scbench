@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "ripple",
+    "inj_file": "dataset/err-inj/injected/ripple-0x11964282.sol",
+    "orig_file": "dataset/err-inj/origin/ripple-0x11964282.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        149,
+                        149
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        172,
+                        174
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        42,
+                        42
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        191,
+                        195
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/ripple-0x11964282.sol:523:32:\n    |\n523 |         uint256 _totalSupply = totalSupply();\n    |                                ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ripple-0x11964282.sol:688:36:\n    |\n688 |         require(newNumInTokens >= (totalSupply() * 5 / 1000)/(10**decimals()), \"Too low\");\n    |                                    ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ripple-0x11964282.sol:694:36:\n    |\n694 |         require(newNumInTokens >= (totalSupply() * 1 / 100)/(10**decimals()), \"Too low\");\n    |                                    ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ripple-0x11964282.sol:714:26:\n    |\n714 |         maxTransaction = totalSupply();\n    |                          ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/ripple-0x11964282.sol:715:21:\n    |\n715 |         maxWallet = totalSupply();\n    |                     ^^^^^^^^^^^\n\n"
+}

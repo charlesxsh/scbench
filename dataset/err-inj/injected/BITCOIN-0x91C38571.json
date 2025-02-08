@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "BITCOIN",
+    "inj_file": "dataset/err-inj/injected/BITCOIN-0x91C38571.sol",
+    "orig_file": "dataset/err-inj/origin/BITCOIN-0x91C38571.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        668,
+                        668
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        596,
+                        596
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        611,
+                        613
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        229,
+                        229
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BITCOIN-0x91C38571.sol:850:29:\n    |\n850 |   \t    require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BITCOIN-0x91C38571.sol:851:29:\n    |\n851 |   \t    require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BITCOIN-0x91C38571.sol:857:28:\n    |\n857 |         require(newNum >= (totalSupply() * 1 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.1%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/BITCOIN-0x91C38571.sol:862:28:\n    |\n862 |         require(newNum >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxWallet lower than 0.5%\");\n    |                            ^^^^^^^^^^^\n\n"
+}

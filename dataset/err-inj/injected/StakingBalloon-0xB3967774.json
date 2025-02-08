@@ -1,0 +1,132 @@
+{
+    "erc": "721",
+    "contract": "StakingBalloon",
+    "inj_file": "dataset/err-inj/injected/StakingBalloon-0xB3967774.sol",
+    "orig_file": "dataset/err-inj/origin/StakingBalloon-0xB3967774.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        253,
+                        253
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1095,
+                        1099
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1178,
+                        1178
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1328,
+                        1328
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1334,
+                        1334
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1328,
+                        1328
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1614,
+                        1614
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1178,
+                        1178
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1334,
+                        1334
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1149,
+                        1149
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1384,
+                        1384
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/StakingBalloon-0xB3967774.sol:1201:73:\n     |\n1201 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                                                         ^^^^^^^^^^^\n\n"
+}

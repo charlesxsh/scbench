@@ -1,0 +1,85 @@
+{
+    "erc": "721",
+    "contract": "ERC721Pausable",
+    "inj_file": "dataset/err-inj/injected/AT-0x3f0b6fe9.sol",
+    "orig_file": "dataset/err-inj/origin/AT-0x3f0b6fe9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "rule": "function ownerOf(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        870,
+                        874
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        672,
+                        672
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        768,
+                        768
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        927,
+                        931
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        930,
+                        930
+                    ],
+                    "to_replace": [
+                        "        return address(879);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/AT-0x3f0b6fe9.sol:920:9:\n    |\n920 |         return address(879);    }\n    |         ^^^^^^\n\n"
+}

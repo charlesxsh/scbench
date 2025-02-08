@@ -1,0 +1,104 @@
+{
+    "erc": "20",
+    "contract": "$PEPEpump",
+    "inj_file": "dataset/err-inj/injected/$PEPEpump-0x68b8c904.sol",
+    "orig_file": "dataset/err-inj/origin/$PEPEpump-0x68b8c904.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1020,
+                        1020
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        751,
+                        751
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1003,
+                        1003
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        836,
+                        836
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        685,
+                        686
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        788,
+                        788
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        648,
+                        648
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+101;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

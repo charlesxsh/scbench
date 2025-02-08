@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "BITCOIN",
+    "inj_file": "dataset/err-inj/injected/BITCOIN-0x61e0f492.sol",
+    "orig_file": "dataset/err-inj/origin/BITCOIN-0x61e0f492.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        81,
+                        85
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        169,
+                        178
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        76,
+                        76
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        145,
+                        147
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        146,
+                        146
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+834;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BITCOIN-0x61e0f492.sol:139:9:\n    |\n139 |         return _totalSupply+834;    }\n    |         ^^^^^^\n\n"
+}

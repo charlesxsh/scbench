@@ -1,0 +1,96 @@
+{
+    "erc": "20",
+    "contract": "ERC20",
+    "inj_file": "dataset/err-inj/injected/ICO-0x1ccfa379.sol",
+    "orig_file": "dataset/err-inj/origin/ICO-0x1ccfa379.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        312,
+                        314
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        222,
+                        222
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        534,
+                        534
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        448,
+                        448
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        385,
+                        386
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        462,
+                        462
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"decimals\" not found or not visible after argument-dependent lookup in contract ERC20.\n   --> dataset/err-inj/injected/ICO-0x1ccfa379.sol:620:51:\n    |\n620 |         uint _purchaseTokenAmount = amount * (10**purchasingToken.decimals());\n    |                                                   ^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

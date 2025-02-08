@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "ALLBOT",
+    "inj_file": "dataset/err-inj/injected/ALLBOT-0x7fed2972.sol",
+    "orig_file": "dataset/err-inj/origin/ALLBOT-0x7fed2972.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        81,
+                        81
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+186;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        43,
+                        43
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        68,
+                        70
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        45,
+                        45
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        72,
+                        74
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/ALLBOT-0x7fed2972.sol:216:45:\n    |\n216 |         _mint(msg.sender, 150000000 * 10 ** decimals());\n    |                                             ^^^^^^^^\n\n"
+}

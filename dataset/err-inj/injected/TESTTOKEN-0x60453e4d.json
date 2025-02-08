@@ -1,0 +1,90 @@
+{
+    "erc": "20",
+    "contract": "TESTTOKEN",
+    "inj_file": "dataset/err-inj/injected/TESTTOKEN-0x60453e4d.sol",
+    "orig_file": "dataset/err-inj/origin/TESTTOKEN-0x60453e4d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        62,
+                        64
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        28,
+                        28
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        12,
+                        12
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        70,
+                        72
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        91,
+                        95
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        20,
+                        20
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: This declaration shadows an existing declaration.\n   --> dataset/err-inj/injected/TESTTOKEN-0x60453e4d.sol:563:47:\n    |\n563 | \tfunction getTokenInfo() public view returns (TokenInfo memory tokenInfo) {\n    | \t                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^\nNote: The shadowed declaration is here:\n   --> dataset/err-inj/injected/TESTTOKEN-0x60453e4d.sol:459:2:\n    |\n459 | \tTokenInfo private tokenInfo;\n    | \t^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TESTTOKEN-0x60453e4d.sol:546:60:\n    |\n546 |         _approve(address(this), address(_uniswapV2Router), totalSupply());\n    |                                                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TESTTOKEN-0x60453e4d.sol:555:13:\n    |\n555 |             totalSupply(), // liquidity amount\n    |             ^^^^^^^^^^^\n\n"
+}

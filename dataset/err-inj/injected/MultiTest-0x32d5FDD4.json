@@ -1,0 +1,84 @@
+{
+    "erc": "721",
+    "contract": "MultiTest",
+    "inj_file": "dataset/err-inj/injected/MultiTest-0x32d5FDD4.sol",
+    "orig_file": "dataset/err-inj/origin/MultiTest-0x32d5FDD4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        650,
+                        650
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+179;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        649,
+                        649
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        921,
+                        921
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        799,
+                        799
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

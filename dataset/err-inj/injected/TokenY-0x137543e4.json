@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "TokenY",
+    "inj_file": "dataset/err-inj/injected/TokenY-0x137543e4.sol",
+    "orig_file": "dataset/err-inj/origin/TokenY-0x137543e4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        637,
+                        637
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+690;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        587,
+                        587
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        600,
+                        604
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        367,
+                        367
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/TokenY-0x137543e4.sol:975:13:\n    |\n975 |             balanceOf(from) >= amount,\n    |             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TokenY-0x137543e4.sol:984:21:\n    |\n984 |                 if (balanceOf(address(this)) >= _numTokensSellToAddToETH) {\n    |                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TokenY-0x137543e4.sol:985:39:\n    |\n985 |                     _swapTokensForEth(balanceOf(address(this)));\n    |                                       ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/TokenY-0x137543e4.sol:1003:35:\n     |\n1003 |                         (amount + balanceOf(to)) <= maxWalletAmount,\n     |                                   ^^^^^^^^^\n\n"
+}

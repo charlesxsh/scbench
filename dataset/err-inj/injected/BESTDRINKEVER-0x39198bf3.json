@@ -1,0 +1,31 @@
+{
+    "erc": "20",
+    "contract": "BESTDRINKEVER",
+    "inj_file": "dataset/err-inj/injected/BESTDRINKEVER-0x39198bf3.sol",
+    "orig_file": "dataset/err-inj/origin/BESTDRINKEVER-0x39198bf3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        167,
+                        167
+                    ],
+                    "to_replace": [
+                        "        return !_transferFrom(msg.sender, recipient, amount);\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "'NoneType' object has no attribute 'return_values'"
+}

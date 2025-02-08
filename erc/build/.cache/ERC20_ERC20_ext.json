@@ -1,0 +1,465 @@
+{
+    "functions": [
+        {
+            "def": "function name() public view returns (string)",
+            "raw_rules": "\nToken\n\nMethods\n\nNOTES:\nThe following specifications use syntax from Solidity 0.4.17 (or above). \nCallers MUST handle false from returns (bool success). Callers MUST NOT assume that false is never returned!\n\nname\nReturns the name of the token - e.g. \"MyToken\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.\n",
+            "format": {
+                "name": "name",
+                "arg_types": [],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "string"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "string, Returns the name of the token - e.g. 'MyToken'."
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "[]"
+        },
+        {
+            "def": "function symbol() public view returns (string)",
+            "raw_rules": "\nsymbol\nReturns the symbol of the token. E.g. \"HIX\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.\n",
+            "format": {
+                "name": "symbol",
+                "arg_types": [],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "string"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": [
+                        "string",
+                        "Returns the symbol of the token. E.g. 'HIX'."
+                    ]
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "function decimals() public view returns (uint8)",
+            "raw_rules": "\ndecimals\nReturns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation. OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.\n",
+            "format": {
+                "name": "decimals",
+                "arg_types": [],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "uint8"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "The number of decimals the token uses for its smallest unit. For example, a return value of 8 means that the token's quantity should be divided by 100,000,000 to determine its user representation."
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "The rule provided does not specify any conditions where a hook function needs to be called for the function `function decimals() public view returns (uint8)`. Hence, based on the provided information, no hook function is required for the 'decimals' function. The JSON array indicating this situation would be:\n\n```json\n[]\n```"
+        },
+        {
+            "def": "function totalSupply() public view returns (uint256)",
+            "raw_rules": "\ntotalSupply\nReturns the total token supply.\n",
+            "format": {
+                "name": "totalSupply",
+                "arg_types": [],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "uint256"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "Returns the total token supply."
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "The description provided does not specify any conditions under which a hook function must be called when using the function `function totalSupply() public view returns (uint256)`. The description simply states what the function \"totalSupply\" does, without mentioning any specific hooks or additional processes. Therefore, based on the information provided:\n\n```json\n[]\n```"
+        },
+        {
+            "def": "function balanceOf(address _owner) public view returns (uint256 balance)",
+            "raw_rules": "\nbalanceOf\nReturns the account balance of another account with address _owner.\n",
+            "format": {
+                "name": "balanceOf",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "name": "balance",
+                    "type": "uint256"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "The account balance of the owner specified by address _owner"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "function transfer(address _to, uint256 _value) public returns (bool success)",
+            "raw_rules": "\ntransfer\nTransfers _value amount of tokens to address _to, and MUST fire the Transfer event. The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend. \nNote Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.\n",
+            "format": {
+                "name": "transfer",
+                "arg_types": [
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "name": "success",
+                    "type": "bool"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "the message caller's account balance does not have enough tokens to spend",
+                        "throw": true
+                    },
+                    {
+                        "if": "Transfers of 0 values",
+                        "throw": false
+                    }
+                ],
+                "return": {
+                    "returns": "Indicates whether the transfer was successful"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+            "raw_rules": "\ntransferFrom\nTransfers _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The transferFrom method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and/or to charge fees in sub-currencies. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism. \nNote Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.\n",
+            "format": {
+                "name": "transferFrom",
+                "arg_types": [
+                    {
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "name": "success",
+                    "type": "bool"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "the _from account has not deliberately authorized the sender of the message via some mechanism",
+                        "throw": true
+                    },
+                    {
+                        "if": "Transfers of 0 values",
+                        "throw": false
+                    }
+                ],
+                "return": {
+                    "returns": "Indicates if the transfer was successful"
+                },
+                "assign": [],
+                "call": [
+                    {
+                        "call": "Transfer",
+                        "if": "Transfers _value amount of tokens from address _from to address _to"
+                    }
+                ]
+            },
+            "extract_debug": "```json\n[\n    {\n        \"call\": \"Transfer\",\n        \"if\": \"Transfers _value amount of tokens from address _from to address _to\"\n    }\n]\n```"
+        },
+        {
+            "def": "function approve(address _spender, uint256 _value) public returns (bool success)",
+            "raw_rules": "\napprove\nAllows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value. \nNOTE: To prevent attack vectors like the one described here and discussed here, clients SHOULD make sure to create user interfaces in such a way that they set the allowance first to 0 before setting it to another value for the same spender. THOUGH The contract itself shouldn\u2019t enforce it, to allow backwards compatibility with contracts deployed before.\n",
+            "format": {
+                "name": "approve",
+                "arg_types": [
+                    {
+                        "name": "_spender",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": false,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "name": "success",
+                    "type": "bool"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "Indicates whether the approval was successful"
+                },
+                "assign": [
+                    "Allows _spender to withdraw from your account multiple times, up to the _value amount.",
+                    "If this function is called again it overwrites the current allowance with _value.",
+                    "clients SHOULD make sure to create user interfaces in such a way that they set the allowance first to 0 before setting it to another value for the same spender."
+                ],
+                "call": []
+            },
+            "extract_debug": "[]"
+        },
+        {
+            "def": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+            "raw_rules": "\nallowance\nReturns the amount which _spender is still allowed to withdraw from _owner.\n",
+            "format": {
+                "name": "allowance",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_spender",
+                        "type": "address"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "name": "remaining",
+                    "type": "uint256"
+                }
+            },
+            "extracted": {
+                "return": {
+                    "returns": "the amount which _spender is still allowed to withdraw from _owner"
+                },
+                "assign": [],
+                "call": [],
+                "throw": []
+            },
+            "extract_debug": "The given rules, under the section labeled \"allowance,\" do not specify any explicit conditions where an error should be thrown or any validations need to be checked according to the patterns described. The description provided solely explains the functionality of returning the remaining amount a spender is allowed to withdraw from an owner's account but does not lay out any conditions for checks or errors.\n\nTherefore, the respective JSON response would be:\n```json\n[]\n```\n\nThis response indicates no specific conditions to throw or check errors are mentioned for the `allowance` function."
+        }
+    ],
+    "events": [
+        {
+            "def": "event Transfer(address indexed _from, address indexed _to, uint256 _value)\n",
+            "raw_rules": "\nEvents\n\nTransfer\nMUST trigger when tokens are transferred, including zero value transfers. A token contract which creates new tokens SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created.\n",
+            "format": {
+                "name": "Transfer",
+                "arg_types": [
+                    {
+                        "name": "_from",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "uint256",
+                        "type": "_value",
+                        "indexed": false
+                    }
+                ]
+            },
+            "extracted": [
+                "MUST trigger when tokens are transferred, including zero value transfers",
+                "SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created"
+            ],
+            "extract_debug": "```json\n[\n    \"MUST trigger when tokens are transferred, including zero value transfers\",\n    \"SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created\"\n]\n```"
+        },
+        {
+            "def": "event Approval(address indexed _owner, address indexed _spender, uint256 _value)\n",
+            "raw_rules": "\nApproval\nMUST trigger on any successful call to approve(address _spender, uint256 _value).\n",
+            "format": {
+                "name": "Approval",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "_spender",
+                        "type": "address",
+                        "indexed": true
+                    },
+                    {
+                        "name": "uint256",
+                        "type": "_value",
+                        "indexed": false
+                    }
+                ]
+            },
+            "extracted": [
+                "on any successful call to approve(address _spender, uint256 _value)"
+            ],
+            "extract_debug": "```json\n[\n    \"on any successful call to approve(address _spender, uint256 _value)\"\n]\n```"
+        }
+    ],
+    "name": "ERC20",
+    "rules": [
+        {
+            "rule": "string, Returns the name of the token - e.g. 'MyToken'.",
+            "type": "return",
+            "interface": "function name() public view returns (string)"
+        },
+        {
+            "rule": [
+                "string",
+                "Returns the symbol of the token. E.g. 'HIX'."
+            ],
+            "type": "return",
+            "interface": "function symbol() public view returns (string)"
+        },
+        {
+            "rule": "The number of decimals the token uses for its smallest unit. For example, a return value of 8 means that the token's quantity should be divided by 100,000,000 to determine its user representation.",
+            "type": "return",
+            "interface": "function decimals() public view returns (uint8)"
+        },
+        {
+            "rule": "Returns the total token supply.",
+            "type": "return",
+            "interface": "function totalSupply() public view returns (uint256)"
+        },
+        {
+            "rule": "The account balance of the owner specified by address _owner",
+            "type": "return",
+            "interface": "function balanceOf(address _owner) public view returns (uint256 balance)"
+        },
+        {
+            "rule": " throw if the message caller's account balance does not have enough tokens to spend",
+            "type": "throw",
+            "interface": "function transfer(address _to, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "not throw if Transfers of 0 values",
+            "type": "throw",
+            "interface": "function transfer(address _to, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "Indicates whether the transfer was successful",
+            "type": "return",
+            "interface": "function transfer(address _to, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": " throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+            "type": "throw",
+            "interface": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "not throw if Transfers of 0 values",
+            "type": "throw",
+            "interface": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "Indicates if the transfer was successful",
+            "type": "return",
+            "interface": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "call Transfer if Transfers _value amount of tokens from address _from to address _to",
+            "type": "call",
+            "interface": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "Allows _spender to withdraw from your account multiple times, up to the _value amount.",
+            "type": "assign",
+            "interface": "function approve(address _spender, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "If this function is called again it overwrites the current allowance with _value.",
+            "type": "assign",
+            "interface": "function approve(address _spender, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "clients SHOULD make sure to create user interfaces in such a way that they set the allowance first to 0 before setting it to another value for the same spender.",
+            "type": "assign",
+            "interface": "function approve(address _spender, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "Indicates whether the approval was successful",
+            "type": "return",
+            "interface": "function approve(address _spender, uint256 _value) public returns (bool success)"
+        },
+        {
+            "rule": "the amount which _spender is still allowed to withdraw from _owner",
+            "type": "return",
+            "interface": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)"
+        },
+        {
+            "rule": "emit 'Transfer' if MUST trigger when tokens are transferred, including zero value transfers",
+            "type": "emit",
+            "interface": "event Transfer(address indexed _from, address indexed _to, uint256 _value)\n"
+        },
+        {
+            "rule": "emit 'Transfer' if SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+            "type": "emit",
+            "interface": "event Transfer(address indexed _from, address indexed _to, uint256 _value)\n"
+        },
+        {
+            "rule": "emit 'Approval' if on any successful call to approve(address _spender, uint256 _value)",
+            "type": "emit",
+            "interface": "event Approval(address indexed _owner, address indexed _spender, uint256 _value)\n"
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "MoeTheMartianContract",
+    "inj_file": "dataset/err-inj/injected/MoeTheMartianContract-0xBFFd4D25.sol",
+    "orig_file": "dataset/err-inj/origin/MoeTheMartianContract-0xBFFd4D25.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        134,
+                        136
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        71,
+                        71
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        149,
+                        149
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        127,
+                        127
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/MoeTheMartianContract-0xBFFd4D25.sol:325:27:\n    |\n325 |         uint256 reward = (balanceOf(msg.sender) * rewardPool) / totalSupply();\n    |                           ^^^^^^^^^\n\n"
+}

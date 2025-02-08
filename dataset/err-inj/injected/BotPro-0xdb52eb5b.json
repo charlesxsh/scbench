@@ -1,0 +1,116 @@
+{
+    "erc": "20",
+    "contract": "BotPro",
+    "inj_file": "dataset/err-inj/injected/BotPro-0xdb52eb5b.sol",
+    "orig_file": "dataset/err-inj/origin/BotPro-0xdb52eb5b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        459,
+                        459
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1281,
+                        1281
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        447,
+                        447
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1298,
+                        1301
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        532,
+                        532
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        531,
+                        531
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        381,
+                        384
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "function symbol() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        291,
+                        293
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        214,
+                        214
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/BotPro-0xdb52eb5b.sol:391:14:\n    |\n391 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

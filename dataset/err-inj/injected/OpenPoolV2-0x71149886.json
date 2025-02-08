@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "OpenPoolV2",
+    "inj_file": "dataset/err-inj/injected/OpenPoolV2-0x71149886.sol",
+    "orig_file": "dataset/err-inj/origin/OpenPoolV2-0x71149886.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        650,
+                        650
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        420,
+                        420
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        500,
+                        502
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        508,
+                        508
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+204;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

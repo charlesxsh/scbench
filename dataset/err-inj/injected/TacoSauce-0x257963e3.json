@@ -1,0 +1,103 @@
+{
+    "erc": "721",
+    "contract": "TacoSauce",
+    "inj_file": "dataset/err-inj/injected/TacoSauce-0x257963e3.sol",
+    "orig_file": "dataset/err-inj/origin/TacoSauce-0x257963e3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1229,
+                        1232
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1021,
+                        1021
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1527,
+                        1527
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1323,
+                        1323
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1533,
+                        1533
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1583,
+                        1583
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1602,
+                        1617
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

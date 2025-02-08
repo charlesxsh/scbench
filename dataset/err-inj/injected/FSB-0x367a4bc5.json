@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "FSB",
+    "inj_file": "dataset/err-inj/injected/FSB-0x367a4bc5.sol",
+    "orig_file": "dataset/err-inj/origin/FSB-0x367a4bc5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        27,
+                        27
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        806,
+                        809
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        812,
+                        812
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+665;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        30,
+                        30
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        473,
+                        477
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract IERC20. Use \"address(token).transfer\" to access this address member.\n   --> dataset/err-inj/injected/FSB-0x367a4bc5.sol:914:9:\n    |\n914 |         token.transfer(to, balance);\n    |         ^^^^^^^^^^^^^^\n\n"
+}

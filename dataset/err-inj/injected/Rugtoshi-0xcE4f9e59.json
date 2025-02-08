@@ -1,0 +1,117 @@
+{
+    "erc": "20",
+    "contract": "Rugtoshi",
+    "inj_file": "dataset/err-inj/injected/Rugtoshi-0xcE4f9e59.sol",
+    "orig_file": "dataset/err-inj/origin/Rugtoshi-0xcE4f9e59.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        476,
+                        476
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        333,
+                        333
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        352,
+                        352
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        334,
+                        334
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        344,
+                        344
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        356,
+                        356
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        289,
+                        296
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        12,
+                        12
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        252,
+                        254
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/Rugtoshi-0xcE4f9e59.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Rugtoshi-0xcE4f9e59.sol:342:25:\n    |\n342 |                 require(balanceOf(to) + amount < _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Rugtoshi-0xcE4f9e59.sol:345:44:\n    |\n345 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Rugtoshi-0xcE4f9e59.sol:411:35:\n    |\n411 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\n"
+}

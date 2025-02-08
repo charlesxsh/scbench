@@ -1,0 +1,95 @@
+{
+    "erc": "20",
+    "contract": "DORDSPIDER",
+    "inj_file": "dataset/err-inj/injected/DORDSPIDER-0x917fd41c.sol",
+    "orig_file": "dataset/err-inj/origin/DORDSPIDER-0x917fd41c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        734,
+                        734
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        617,
+                        617
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        616,
+                        616
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        729,
+                        730
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        569,
+                        569
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        580,
+                        582
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

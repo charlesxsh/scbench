@@ -1,0 +1,74 @@
+{
+    "erc": "721",
+    "contract": "AileyMysteryDoor",
+    "inj_file": "dataset/err-inj/injected/AileyMysteryDoor-0xd01e9e37.sol",
+    "orig_file": "dataset/err-inj/origin/AileyMysteryDoor-0xd01e9e37.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1467,
+                        1467
+                    ],
+                    "to_replace": []
+                }
+            ],
+            "inj_fn": "setApprovalForAll"
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1232,
+                        1232
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1218,
+                        1218
+                    ],
+                    "to_replace": [
+                        "        return address(677);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

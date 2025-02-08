@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `safeTransferFrom` function must check if the recipient address is a contract and if so, must call `onERC721Received` on the recipient address.",
+                "function": "_safeTransfer function does not check if the recipient address is a contract nor does it call `onERC721Received`. This is a violation of the ERC721 standard."
+            },
+            {
+                "rule": "Metadata extension is optional, but if implemented, it must correctly return token metadata.",
+                "function": "tokenURI function correctly fetches token metadata if implemented, complying with the ERC721 metadata extension."
+            },
+            {
+                "rule": "NFTs assigned to the zero address are considered invalid, and queries about them do throw.",
+                "function": "The `balanceOf` function correctly requires that the owner address is not the zero address, complying with the ERC721 standard."
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

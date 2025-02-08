@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `transferFrom` should be implemented to allow transferring tokens on behalf of another account after approval.",
+                "function": "Missing implementation of `transferFrom` function"
+            },
+            {
+                "rule": "Callers must handle `false` from returns (bool success). Callers must not assume that `false` is never returned. The implementation does not provide any mechanism or recommendation for handling `false` return values in `transfer` and `transferFrom` functions.",
+                "function": "transfer, transferFrom"
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

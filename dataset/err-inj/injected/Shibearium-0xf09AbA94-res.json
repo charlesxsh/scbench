@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "When minting/creating tokens, the `_from` argument MUST be set to `0x0` (i.e. zero address).",
+                "function": "mintBatch"
+            },
+            {
+                "rule": "Transfers of 0 values must be treated as normal transfers and fire the `Transfer` event.",
+                "function": "function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool)"
+            },
+            {
+                "rule": "totalSupply should return the actual total supply without any modifications or additions.",
+                "function": "totalSupply"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

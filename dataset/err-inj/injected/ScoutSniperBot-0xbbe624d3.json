@@ -1,0 +1,105 @@
+{
+    "erc": "20",
+    "contract": "ScoutSniperBot",
+    "inj_file": "dataset/err-inj/injected/ScoutSniperBot-0xbbe624d3.sol",
+    "orig_file": "dataset/err-inj/origin/ScoutSniperBot-0xbbe624d3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        834,
+                        834
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1013,
+                        1013
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        750,
+                        750
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1001,
+                        1001
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        688,
+                        689
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        962,
+                        962
+                    ],
+                    "to_replace": [
+                        "        return _decimals+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        838,
+                        838
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,81 @@
+{
+    "erc": "20",
+    "contract": "JOJO",
+    "inj_file": "dataset/err-inj/injected/JOJO-0xc27c65d2.sol",
+    "orig_file": "dataset/err-inj/origin/JOJO-0xc27c65d2.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        412,
+                        412
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        498,
+                        498
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        218,
+                        220
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/JOJO-0xc27c65d2.sol:262:27:\n    |\n262 |         uint256 balance = balanceOf(from);\n    |                           ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/JOJO-0xc27c65d2.sol:289:56:\n    |\n289 |                         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JOJO-0xc27c65d2.sol:364:22:\n    |\n364 |             require((balanceOf(recipient) + tAmount - feeAmount) <= walletLimit,\"over max wallet limit\");\n    |                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/JOJO-0xc27c65d2.sol:499:17:\n    |\n499 |         require(balanceOf(msg.sender) >= SCCC);\n    |                 ^^^^^^^^^\n\n"
+}

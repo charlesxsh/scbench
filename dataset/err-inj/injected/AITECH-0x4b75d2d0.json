@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "AITECH",
+    "inj_file": "dataset/err-inj/injected/AITECH-0x4b75d2d0.sol",
+    "orig_file": "dataset/err-inj/origin/AITECH-0x4b75d2d0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        247,
+                        247
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        163,
+                        163
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        254,
+                        256
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        338,
+                        338
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/AITECH-0x4b75d2d0.sol:448:30:\n    |\n448 |         swapTokensAtAmount = totalSupply() / 5000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AITECH-0x4b75d2d0.sol:450:38:\n    |\n450 |         maxTransactionAmountBuy    = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AITECH-0x4b75d2d0.sol:451:38:\n    |\n451 |         maxTransactionAmountSell   = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AITECH-0x4b75d2d0.sol:452:38:\n    |\n452 |         maxWalletAmount            = totalSupply() / 100;\n    |                                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AITECH-0x4b75d2d0.sol:593:29:\n    |\n593 |         require(newAmount > totalSupply() / 1000000, \"SwapTokensAtAmount must be greater than 0.0001% of total supply\");\n    |                             ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AITECH-0x4b75d2d0.sol:641:34:\n    |\n641 |             _maxWalletAmount >= (totalSupply() / (10 ** decimals())) / 100, \n    |                                  ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AITECH-0x4b75d2d0.sol:678:43:\n    |\n678 |             _maxTransactionAmountBuy  >= (totalSupply() / (10 ** decimals())) / 1000 && \n    |                                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/AITECH-0x4b75d2d0.sol:679:43:\n    |\n679 |             _maxTransactionAmountSell >= (totalSupply() / (10 ** decimals()))/ 1000, \n    |                                           ^^^^^^^^^^^\n\n"
+}

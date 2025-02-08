@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "Shibrock",
+    "inj_file": "dataset/err-inj/injected/Shibrock-0xb7e9c795.sol",
+    "orig_file": "dataset/err-inj/origin/Shibrock-0xb7e9c795.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        314,
+                        314
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        201,
+                        201
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        56,
+                        56
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        172,
+                        172
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        51,
+                        51
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        179,
+                        179
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:176:70:\n    |\n176 |     function _maxWalletToken() public view returns (uint256) {return totalSupply() * _maxWalletPercent / denominator;}\n    |                                                                      ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:177:67:\n    |\n177 |     function _maxTxAmount() public view returns (uint256) {return totalSupply() * _maxTxAmountPercent / denominator;}\n    |                                                                   ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:178:73:\n    |\n178 |     function _maxTransferAmount() public view returns (uint256) {return totalSupply() * _maxTransferPercent / denominator;}\n    |                                                                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:184:27:\n    |\n184 |         require(amount <= balanceOf(sender),\"You are trying to transfer more than your balance\");\n    |                           ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:211:26:\n    |\n211 |         uint256 newTx = (totalSupply() * _buy) / 10000;\n    |                          ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:212:32:\n    |\n212 |         uint256 newTransfer = (totalSupply() * _trans) / 10000;\n    |                                ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:213:30:\n    |\n213 |         uint256 newWallet = (totalSupply() * _wallet) / 10000;\n    |                              ^^^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"_totalSupply\"?\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:217:25:\n    |\n217 |         uint256 limit = totalSupply().mul(5).div(1000);\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Shibrock-0xb7e9c795.sol:281:31:\n    |\n281 |         bool aboveThreshold = balanceOf(address(this)) >= swapThreshold;\n    |                               ^^^^^^^^^\n\n"
+}

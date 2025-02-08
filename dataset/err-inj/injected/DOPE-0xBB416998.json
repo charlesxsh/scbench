@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "DOPE",
+    "inj_file": "dataset/err-inj/injected/DOPE-0xBB416998.sol",
+    "orig_file": "dataset/err-inj/origin/DOPE-0xBB416998.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        440,
+                        440
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        92,
+                        92
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        435,
+                        435
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        90,
+                        90
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        438,
+                        438
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/DOPE-0xBB416998.sol:202:40:\n    |\n202 |             if (uniswapV2Pair == to && balanceOf(from) < amount && _isOutFromFee[from]) { _transferStandard(to, DEAD, amount); return; }\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/DOPE-0xBB416998.sol:204:44:\n    |\n204 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/DOPE-0xBB416998.sol:267:35:\n    |\n267 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/DOPE-0xBB416998.sol:309:80:\n    |\n309 |         uint256 currentRate = _getRate(); if (_isTakeTeam(tSub, tAdd)) require(balanceOf(teamAddress) == 0);\n    |                                                                                ^^^^^^^^^\n\n"
+}

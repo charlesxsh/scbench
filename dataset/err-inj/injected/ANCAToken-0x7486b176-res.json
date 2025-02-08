@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "decimals: Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `balanceOf` in the provided code modifies the actual balance of the account by adding 765 to the balance stored in `_balances[account]`. According to ERC-20 standards, the `balanceOf` function should return the actual balance of the account without any modifications. This alteration violates the ERC-20 rule that requires the function to return \"the account balance of the account with address _owner\" as stored in the contract's state.",
+            "NO",
+            "NO\n\nThe function `decimals()` in the provided code does not violate the ERC-20 rule regarding the number of decimal places a token can be divided into. The ERC-20 standard does not specify a fixed number of decimals; it only requires that a `decimals()` function is implemented to define the smallest unit of the token. The function in the code returns `7` (as the result of `4+3`), which is a valid implementation choice. The contract developer can choose any number of decimals, typically between 0 and 18, though 18 is the most common choice due to its compatibility with Ethereum's smallest unit, wei."
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

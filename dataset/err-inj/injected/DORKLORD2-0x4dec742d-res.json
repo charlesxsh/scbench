@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function totalSupply should return the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "The symbol function should return the symbol of the token.",
+                "function": "symbol"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nExplanation:\nThe ERC-20 standard requires that the `symbol()` function of a token contract should return a string representing the symbol of the token. According to the ERC-20 standard, the symbol is typically a shorter version of the token's name and is used to represent the token on exchanges and wallets. The symbol is not strictly required to be non-empty, but returning an empty string as in the provided code does not align with the typical usage and expectations of token symbols in the cryptocurrency community. It is generally expected that the symbol should be a meaningful and identifiable string related to the token. Returning an empty string could lead to confusion and issues with token identification and usability in wallets and exchanges. Therefore, this implementation can be considered as not adhering to the common practices and expectations set by the ERC-20 standard, even though it technically does not violate the ERC-20 specification itself.",
+            "YES.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

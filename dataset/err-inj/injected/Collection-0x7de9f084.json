@@ -1,0 +1,88 @@
+{
+    "erc": "721",
+    "contract": "Collection",
+    "inj_file": "dataset/err-inj/injected/Collection-0x7de9f084.sol",
+    "orig_file": "dataset/err-inj/origin/Collection-0x7de9f084.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        874,
+                        880
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        468,
+                        472
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1046,
+                        1046
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        773,
+                        773
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        783,
+                        783
+                    ],
+                    "to_replace": [
+                        "        return address(768);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

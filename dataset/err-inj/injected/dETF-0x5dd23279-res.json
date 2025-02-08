@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transferFrom function should return a boolean value indicating whether the operation succeeded.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "",
+            "YES\n\nThe `transferFrom` function in the provided code violates the ERC-20 rule that requires indicating whether the token transfer was successful. The function is implemented to always return `false`, regardless of whether the transfer was successful or not. According to ERC-20 standards, the function should return `true` if the transfer is successful, and `false` only if it fails. This implementation could lead to incorrect behavior in interactions with other contracts or services that rely on the success status of token transfers."
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

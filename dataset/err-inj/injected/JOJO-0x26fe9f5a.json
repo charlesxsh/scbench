@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "JOJO",
+    "inj_file": "dataset/err-inj/injected/JOJO-0x26fe9f5a.sol",
+    "orig_file": "dataset/err-inj/origin/JOJO-0x26fe9f5a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        697,
+                        697
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        651,
+                        651
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        636,
+                        638
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        450,
+                        450
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/JOJO-0x26fe9f5a.sol:960:88:\n    |\n960 |         _uniswapV2Router.addLiquidityETH{value : address(this).balance}(address(this), balanceOf(address(this)), 0, 0, owner(), block.timestamp);\n    |                                                                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/JOJO-0x26fe9f5a.sol:1022:34:\n     |\n1022 |                 require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/JOJO-0x26fe9f5a.sol:1032:34:\n     |\n1032 |                 require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/JOJO-0x26fe9f5a.sol:1035:40:\n     |\n1035 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/JOJO-0x26fe9f5a.sol:1093:35:\n     |\n1093 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/JOJO-0x26fe9f5a.sol:1101:26:\n     |\n1101 |         swapTokensForEth(balanceOf(address(this)));\n     |                          ^^^^^^^^^\n\n"
+}

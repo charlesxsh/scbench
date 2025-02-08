@@ -1,0 +1,88 @@
+{
+    "erc": "721",
+    "contract": "DeVULPEX",
+    "inj_file": "dataset/err-inj/injected/DeVULPEX-0x494c69c1.sol",
+    "orig_file": "dataset/err-inj/origin/DeVULPEX-0x494c69c1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        649,
+                        649
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        921,
+                        921
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        799,
+                        799
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        659,
+                        659
+                    ],
+                    "to_replace": [
+                        "        return address(785);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        878,
+                        878
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

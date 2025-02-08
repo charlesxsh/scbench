@@ -1,0 +1,118 @@
+{
+    "erc": "20",
+    "contract": "BUBBLES",
+    "inj_file": "dataset/err-inj/injected/BUBBLES-0xef475df0.sol",
+    "orig_file": "dataset/err-inj/origin/BUBBLES-0xef475df0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        409,
+                        409
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        357,
+                        357
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        560,
+                        560
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        562,
+                        562
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        408,
+                        408
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        328,
+                        332
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        294,
+                        294
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        293,
+                        295
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        224,
+                        224
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BUBBLES-0xef475df0.sol:292:9:\n    |\n292 |         return 18+3;    }\n    |         ^^^^^^\n\n"
+}

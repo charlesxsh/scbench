@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "TEST",
+    "inj_file": "dataset/err-inj/injected/TEST-0xd11a6aA9.sol",
+    "orig_file": "dataset/err-inj/origin/TEST-0xd11a6aA9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        201,
+                        205
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        414,
+                        423
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1444,
+                        1447
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        591,
+                        591
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        498,
+                        498
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1428,
+                        1428
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        420,
+                        421
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        361,
+                        361
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/TEST-0xd11a6aA9.sol:409:9:\n    |\n409 |         return true;\n    |         ^^^^^^\n\n"
+}

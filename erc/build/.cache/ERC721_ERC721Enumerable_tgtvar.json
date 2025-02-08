@@ -1,0 +1,171 @@
+{
+    "functions": [
+        {
+            "def": "    function totalSupply() external view returns (uint256);",
+            "raw_rules": "    /// @notice Count NFTs tracked by this contract\n    /// @return A count of valid NFTs tracked by this contract, where each one of\n    ///  them has an assigned and queryable owner not equal to the zero address\n",
+            "format": {
+                "name": "totalSupply",
+                "arg_types": [],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "uint256"
+                }
+            },
+            "extracted": {
+                "throw": [],
+                "return": {
+                    "returns": "A count of valid NFTs tracked by this contract, where each one of them has an assigned and queryable owner not equal to the zero address"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "```json\n[]\n```"
+        },
+        {
+            "def": "    function tokenByIndex(uint256 _index) external view returns (uint256);",
+            "raw_rules": "\n    /// @notice Enumerate valid NFTs\n    /// @dev Throws if `_index` >= `totalSupply()`.\n    /// @param _index A counter less than `totalSupply()`\n    /// @return The token identifier for the `_index`th NFT,\n    ///  (sort order not specified)\n",
+            "format": {
+                "name": "tokenByIndex",
+                "arg_types": [
+                    {
+                        "name": "_index",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "uint256"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "_index >= totalSupply()",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "The token identifier for the `_index`th NFT"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "[]"
+        },
+        {
+            "def": "    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);",
+            "raw_rules": "\n    /// @notice Enumerate NFTs assigned to an owner\n    /// @dev Throws if `_index` >= `balanceOf(_owner)` or if\n    ///  `_owner` is the zero address, representing invalid NFTs.\n    /// @param _owner An address where we are interested in NFTs owned by them\n    /// @param _index A counter less than `balanceOf(_owner)`\n    /// @return The token identifier for the `_index`th NFT assigned to `_owner`,\n    ///   (sort order not specified)\n",
+            "format": {
+                "name": "tokenOfOwnerByIndex",
+                "arg_types": [
+                    {
+                        "name": "_owner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_index",
+                        "type": "uint256"
+                    }
+                ],
+                "optional": null,
+                "view": true,
+                "pure": false,
+                "payable": false,
+                "return_type": {
+                    "type": "uint256"
+                }
+            },
+            "extracted": {
+                "throw": [
+                    {
+                        "if": "_index >= balanceOf(_owner)",
+                        "throw": true
+                    },
+                    {
+                        "if": "_owner is the zero address",
+                        "throw": true
+                    }
+                ],
+                "return": {
+                    "returns": "The token identifier for the `_index`th NFT assigned to `_owner`"
+                },
+                "assign": [],
+                "call": []
+            },
+            "extract_debug": "Based on the provided rules, there are no conditions specified that explicitly require calling a hook function when invoking the function `tokenOfOwnerByIndex(address _owner, uint256 _index)`. The rules mentioned address error handling and parameter constraints, but they do not specify any interactions with hook functions. Therefore, the correct response reflecting these conditions is:\n\n```json\n[]\n```"
+        }
+    ],
+    "events": [],
+    "name": "ERC721Enumerable",
+    "rules": [
+        {
+            "rule": "A count of valid NFTs tracked by this contract, where each one of them has an assigned and queryable owner not equal to the zero address",
+            "type": "return",
+            "interface": "    function totalSupply() external view returns (uint256);",
+            "related_vars": null
+        },
+        {
+            "rule": " throw if _index >= totalSupply()",
+            "type": "throw",
+            "interface": "    function tokenByIndex(uint256 _index) external view returns (uint256);",
+            "related_vars": {
+                "variables": [
+                    "_index",
+                    "totalSupply"
+                ],
+                "parameters": [
+                    0
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_index\", \"totalSupply\"],\n    \"parameters\": [0]\n}\n```"
+        },
+        {
+            "rule": "The token identifier for the `_index`th NFT",
+            "type": "return",
+            "interface": "    function tokenByIndex(uint256 _index) external view returns (uint256);",
+            "related_vars": null
+        },
+        {
+            "rule": " throw if _index >= balanceOf(_owner)",
+            "type": "throw",
+            "interface": "    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);",
+            "related_vars": {
+                "variables": [
+                    "_owner",
+                    "_index"
+                ],
+                "parameters": [
+                    0,
+                    1
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_owner\", \"_index\"],\n    \"parameters\": [0, 1]\n}\n```"
+        },
+        {
+            "rule": " throw if _owner is the zero address",
+            "type": "throw",
+            "interface": "    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);",
+            "related_vars": {
+                "variables": [
+                    "_owner"
+                ],
+                "parameters": [
+                    0
+                ]
+            },
+            "related_vars_debug": "```json\n{\n    \"variables\": [\"_owner\"],\n    \"parameters\": [0]\n}\n```"
+        },
+        {
+            "rule": "The token identifier for the `_index`th NFT assigned to `_owner`",
+            "type": "return",
+            "interface": "    function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256);",
+            "related_vars": null
+        }
+    ]
+}

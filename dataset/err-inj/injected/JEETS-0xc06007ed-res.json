@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer function should return true on success",
+                "function": "transfer"
+            },
+            {
+                "rule": "name function should return the name of the token",
+                "function": "name"
+            },
+            {
+                "rule": "balanceOf should return the actual balance of the account",
+                "function": "balanceOf"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES.",
+            "YES",
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance stored in `_balances[account]`, the function adds 278 to the balance. This modification does not accurately reflect the true balance of the account, thus violating the ERC-20 standard requirement."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

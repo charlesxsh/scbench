@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "TELE",
+    "inj_file": "dataset/err-inj/injected/TELE-0xce8d3c1a.sol",
+    "orig_file": "dataset/err-inj/origin/TELE-0xce8d3c1a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        294,
+                        294
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        382,
+                        382
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        443,
+                        443
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        375,
+                        375
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        983,
+                        983
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        999,
+                        999
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        444,
+                        444
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        316,
+                        317
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

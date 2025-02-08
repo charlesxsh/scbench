@@ -1,0 +1,59 @@
+{
+    "erc": "20",
+    "contract": "DISCO",
+    "inj_file": "dataset/err-inj/injected/DISCO-0xdd9e9fd9.sol",
+    "orig_file": "dataset/err-inj/origin/DISCO-0xdd9e9fd9.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        317,
+                        317
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+977;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        395,
+                        395
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        576,
+                        576
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

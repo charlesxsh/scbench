@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "CRASH",
+    "inj_file": "dataset/err-inj/injected/CRASH-0x5c18ed40.sol",
+    "orig_file": "dataset/err-inj/origin/CRASH-0x5c18ed40.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        103,
+                        103
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        255,
+                        257
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        276,
+                        276
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+342;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        286,
+                        289
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        137,
+                        137
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/CRASH-0x5c18ed40.sol:1143:42:\n     |\n1143 |                         require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n     |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/CRASH-0x5c18ed40.sol:1151:38:\n     |\n1151 |                     require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n     |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/CRASH-0x5c18ed40.sol:1192:40:\n     |\n1192 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/CRASH-0x5c18ed40.sol:1282:35:\n     |\n1282 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "ShibariumGaming",
+    "inj_file": "dataset/err-inj/injected/ShibariumGaming-0x013b1e93.sol",
+    "orig_file": "dataset/err-inj/origin/ShibariumGaming-0x013b1e93.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        615,
+                        615
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+613;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        614,
+                        616
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        430,
+                        430
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        755,
+                        755
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/ShibariumGaming-0x013b1e93.sol:613:9:\n    |\n613 |         return _totalSupply+613;    }\n    |         ^^^^^^\n\n"
+}

@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "socialfutures",
+    "inj_file": "dataset/err-inj/injected/socialfutures-0x1d4d98cd.sol",
+    "orig_file": "dataset/err-inj/origin/socialfutures-0x1d4d98cd.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        588,
+                        588
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+251;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        573,
+                        573
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+385;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        606,
+                        606
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

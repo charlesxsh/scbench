@@ -1,0 +1,62 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `_value` argument MUST be the number of tokens the holder balance is decreased by and match what the recipient balance is increased by.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "When minting/creating tokens, the `_from` argument MUST be set to `0x0` (i.e. zero address).",
+                "function": "mint"
+            },
+            {
+                "rule": "When minting/creating tokens, the `_from` argument MUST be set to `0x0` (i.e. zero address).",
+                "function": "mintBatch"
+            },
+            {
+                "rule": "MUST emit the `TransferSingle` event to reflect the balance change.",
+                "function": "_mint"
+            },
+            {
+                "rule": "MUST emit `TransferSingle` or `TransferBatch` event(s) such that all the balance changes are reflected.",
+                "function": "_mintBatch"
+            },
+            {
+                "rule": "The `onERC1155Received` hook SHOULD be called on the recipient contract and its rules followed.",
+                "function": "_safeTransferFrom"
+            },
+            {
+                "rule": "The `onERC1155BatchReceived` hook SHOULD be called on the recipient contract and its rules followed.",
+                "function": "_safeBatchTransferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null
+        ]
+    }
+}

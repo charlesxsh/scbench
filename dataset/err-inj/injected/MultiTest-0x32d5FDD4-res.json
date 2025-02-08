@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The balanceOf function must return the number of NFTs owned by an address, and it must throw for queries about the zero address.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "The safeTransferFrom function must check if the recipient address is a smart contract and if so, it must call onERC721Received on the recipient address. If the recipient is not a contract, or the onERC721Received call does not return the expected value, the transfer must be reverted.",
+                "function": "safeTransferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-721 rule that requires it to return \"The number of NFTs owned by `_owner`, possibly zero\". The function is modified to return `_balances[owner] + 179`, which inaccurately represents the number of NFTs owned by the `_owner` by adding 179 to the actual balance. This does not comply with the standard requirement of accurately reflecting the number of NFTs owned by an address.",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

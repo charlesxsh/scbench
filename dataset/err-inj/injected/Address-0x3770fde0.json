@@ -1,0 +1,90 @@
+{
+    "erc": "721",
+    "contract": "PAMLO2023",
+    "inj_file": "dataset/err-inj/injected/Address-0x3770fde0.sol",
+    "orig_file": "dataset/err-inj/origin/Address-0x3770fde0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        837,
+                        839
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        653,
+                        653
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        904,
+                        904
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1030,
+                        1030
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": " throw if `msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        808,
+                        808
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Address-0x3770fde0.sol:809:38:\n    |\n809 |             _msgSender() == owner || isApprovedForAll(owner, _msgSender()),\n    |                                      ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Address-0x3770fde0.sol:923:72:\n    |\n923 |         return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));\n    |                                                                        ^^^^^^^^^^^^^^^^\n\n"
+}

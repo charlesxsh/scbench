@@ -1,0 +1,81 @@
+{
+    "erc": "721",
+    "contract": "LottoV3",
+    "inj_file": "dataset/err-inj/injected/LottoV3-0x0055fad5.sol",
+    "orig_file": "dataset/err-inj/origin/LottoV3-0x0055fad5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1903,
+                        1903
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1755,
+                        1755
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1897,
+                        1897
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1968,
+                        1983
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

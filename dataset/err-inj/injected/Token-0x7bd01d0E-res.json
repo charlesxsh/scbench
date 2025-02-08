@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "allowance function should return the amount which spender is still allowed to withdraw from owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES\n\nThe smart contract Token provided in the code snippet violates the ERC-20 standard rule for the `allowance` function. According to the ERC-20 standard, the `allowance` function should return the amount of tokens that the spender is still allowed to withdraw from the owner. However, in the provided code, the `allowance` function has been modified to return the allowance amount plus an additional 559 tokens:\n\n```solidity\nfunction allowance(address owner, address spender)\n    public\n    view\n    virtual\n    override\n    returns (uint256)\n{\n    return _allowances[owner][spender] + 559;\n}\n```\n\nThis modification does not adhere to the standard behavior expected from the `allowance` function as per the ERC-20 standard, which should accurately reflect the exact amount allowed by the owner for the spender, without any additions.",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule by returning an altered allowance value. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from the owner's account. However, in the given code, the function returns the allowance amount incremented by 559, which is not the actual allowed amount set by the owner for the spender. This modification can lead to incorrect behavior in transactions and mismanagement of allowed tokens.",
+            null,
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            null,
+            true
+        ],
+        "error": [
+            null,
+            "'inj_fn'",
+            null
+        ]
+    }
+}

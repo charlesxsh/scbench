@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "aya",
+    "inj_file": "dataset/err-inj/injected/aya-0x4a06cf9b.sol",
+    "orig_file": "dataset/err-inj/origin/aya-0x4a06cf9b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        155,
+                        158
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        62,
+                        62
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        206,
+                        206
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        152,
+                        152
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+901;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "BitchCoin",
+    "inj_file": "dataset/err-inj/injected/BitchCoin-0x7da8cc73.sol",
+    "orig_file": "dataset/err-inj/origin/BitchCoin-0x7da8cc73.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        339,
+                        339
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        122,
+                        122
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        299,
+                        301
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        519,
+                        519
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BitchCoin-0x7da8cc73.sol:574:43:\n    |\n574 |         if (tradingStartTime == 0) return totalSupply();\n    |                                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BitchCoin-0x7da8cc73.sol:578:19:\n    |\n578 |         if (res > totalSupply()) return totalSupply();\n    |                   ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BitchCoin-0x7da8cc73.sol:578:41:\n    |\n578 |         if (res > totalSupply()) return totalSupply();\n    |                                         ^^^^^^^^^^^\n\n"
+}

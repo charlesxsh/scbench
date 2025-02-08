@@ -1,0 +1,71 @@
+{
+    "erc": "1155",
+    "contract": "LIDO",
+    "inj_file": "dataset/err-inj/injected/LIDO-0x12714665.sol",
+    "orig_file": "dataset/err-inj/origin/LIDO-0x12714665.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if the operator is approved, false if not",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        740,
+                        740
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[account][operator];\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "callee": "onERC1155Received",
+                    "rule": "call 'onERC1155Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        571,
+                        571
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        739,
+                        741
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/LIDO-0x12714665.sol:738:9:\n    |\n738 |         return !_operatorApprovals[account][operator];\n    |         ^^^^^^\n\n"
+}

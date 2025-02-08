@@ -1,0 +1,132 @@
+{
+    "erc": "20",
+    "contract": "AxeCap",
+    "inj_file": "dataset/err-inj/injected/AxeCap-0x0df82f9e.sol",
+    "orig_file": "dataset/err-inj/origin/AxeCap-0x0df82f9e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        158,
+                        158
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        341,
+                        344
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1259,
+                        1259
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        435,
+                        435
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        519,
+                        519
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1263,
+                        1263
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1257,
+                        1257
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        520,
+                        520
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1280,
+                        1283
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        369,
+                        372
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        343,
+                        343
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/AxeCap-0x0df82f9e.sol:340:9:\n    |\n340 |         return false;\n    |         ^^^^^^\n\n"
+}

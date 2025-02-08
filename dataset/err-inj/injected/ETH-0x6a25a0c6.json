@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "ETH",
+    "inj_file": "dataset/err-inj/injected/ETH-0x6a25a0c6.sol",
+    "orig_file": "dataset/err-inj/origin/ETH-0x6a25a0c6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        488,
+                        488
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        146,
+                        146
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        296,
+                        298
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/ETH-0x6a25a0c6.sol:1063:30:\n     |\n1063 |         require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n     |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/ETH-0x6a25a0c6.sol:1064:30:\n     |\n1064 |         require(newAmount <= totalSupply() * 5 / 1000, \"Swap amount cannot be higher than 0.5% total supply.\");\n     |                              ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/ETH-0x6a25a0c6.sol:1070:28:\n     |\n1070 |         require(newNum >= (totalSupply() * 1 / 1000)/1e18, \"Cannot set maxTransactionAmount lower than 0.1%\");\n     |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/ETH-0x6a25a0c6.sol:1075:28:\n     |\n1075 |         require(newNum >= (totalSupply() * 5 / 1000)/1e18, \"Cannot set maxWallet lower than 0.5%\");\n     |                            ^^^^^^^^^^^\n\n"
+}

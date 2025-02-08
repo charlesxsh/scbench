@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "ANCAToken",
+    "inj_file": "dataset/err-inj/injected/ANCAToken-0x7486b176.sol",
+    "orig_file": "dataset/err-inj/origin/ANCAToken-0x7486b176.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        245,
+                        245
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+765;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        388,
+                        388
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        546,
+                        546
+                    ],
+                    "to_replace": [
+                        "        return 4+3;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

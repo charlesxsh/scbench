@@ -1,0 +1,85 @@
+{
+    "erc": "721",
+    "contract": "ContractLive721V46",
+    "inj_file": "dataset/err-inj/injected/ContractLive721V46-0x1921e5E4.sol",
+    "orig_file": "dataset/err-inj/origin/ContractLive721V46-0x1921e5E4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1912,
+                        1912
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1671,
+                        1671
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+740;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2347,
+                        2349
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1782,
+                        1790
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1485,
+                        1490
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/ContractLive721V46-0x1921e5E4.sol:1769:9:\n     |\n1769 |         safeTransferFrom(from, to, tokenId, \"\");\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

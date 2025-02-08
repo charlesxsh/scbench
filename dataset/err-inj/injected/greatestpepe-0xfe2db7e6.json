@@ -1,0 +1,84 @@
+{
+    "erc": "20",
+    "contract": "greatestpepe",
+    "inj_file": "dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol",
+    "orig_file": "dataset/err-inj/origin/greatestpepe-0xfe2db7e6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        213,
+                        213
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        30,
+                        30
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        145,
+                        147
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        149,
+                        151
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        35,
+                        35
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:457:28:\n    |\n457 |         require(newNum >= (totalSupply() * 2 / 1000)/1e18, \"Cannot set max buy amount lower than 0.2%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:463:28:\n    |\n463 |         require(newNum >= (totalSupply() * 2 / 1000)/1e18, \"Cannot set max sell amount lower than 0.2%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:469:28:\n    |\n469 |         require(newNum >= (totalSupply() * 3 / 1000)/1e18, \"Cannot set max wallet amount lower than 0.3%\");\n    |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:476:29:\n    |\n476 |   \t    require(newAmount >= totalSupply() * 1 / 100000, \"Swap amount cannot be lower than 0.001% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:477:29:\n    |\n477 |   \t    require(newAmount <= totalSupply() * 1 / 1000, \"Swap amount cannot be higher than 0.1% total supply.\");\n    |   \t                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:564:42:\n    |\n564 |                         require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:571:38:\n    |\n571 |                     require(amount + balanceOf(to) <= maxWalletAmount, \"Cannot Exceed max wallet\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:576:40:\n    |\n576 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:655:35:\n    |\n655 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/greatestpepe-0xfe2db7e6.sol:710:17:\n    |\n710 |         require(balanceOf(address(this)) >= 0, \"No tokens to swap\");\n    |                 ^^^^^^^^^\n\n"
+}

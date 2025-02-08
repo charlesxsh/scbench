@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "name\nReturns the name of the token - e.g. \"MyToken\". OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.\nfunction name() public view returns (string)",
+                "function": "name"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe provided code violates the ERC-20 standard rule that requires the `name()` function to return the name of the token. In the given implementation, the function returns an empty string (`\"\"`), which does not meet the requirement of providing a descriptive name like 'MyToken'. According to the ERC-20 standard, the `name()` function should return a proper, non-empty string that represents the name of the token.",
+            "YES\n\nThe provided code does violate the ERC-20 rule that requires emitting an \"Approval\" event when the `approve` function is called. The `_approve` internal function updates the allowance but does not emit any event. According to the ERC-20 standard, the `Approval` event should be emitted whenever the `approve` function is successfully executed to notify external entities of the change in allowance. The absence of this event emission in the code means it does not fully comply with the ERC-20 standard."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

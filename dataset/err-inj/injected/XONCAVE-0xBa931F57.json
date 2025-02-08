@@ -1,0 +1,57 @@
+{
+    "erc": "20",
+    "contract": "XONCAVE",
+    "inj_file": "dataset/err-inj/injected/XONCAVE-0xBa931F57.sol",
+    "orig_file": "dataset/err-inj/origin/XONCAVE-0xBa931F57.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        212,
+                        212
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        67,
+                        67
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        175,
+                        175
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/XONCAVE-0xBa931F57.sol:173:88:\n    |\n173 |     function totalSupply() public view override returns (uint256) {return _tsupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XONCAVE-0xBa931F57.sol:173:109:\n    |\n173 |     function totalSupply() public view override returns (uint256) {return _tsupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)));}\n    |                                                                                                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XONCAVE-0xBa931F57.sol:215:31:\n    |\n215 |         bool aboveThreshold = balanceOf(address(this)) >= _maxSwapAmt;\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/XONCAVE-0xBa931F57.sol:253:27:\n    |\n253 |         require(amount <= balanceOf(sender),\"You are trying to transfer more than your balance\");\n    |                           ^^^^^^^^^\n\n"
+}

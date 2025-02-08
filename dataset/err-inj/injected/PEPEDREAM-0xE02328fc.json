@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "PEPEDREAM",
+    "inj_file": "dataset/err-inj/injected/PEPEDREAM-0xE02328fc.sol",
+    "orig_file": "dataset/err-inj/origin/PEPEDREAM-0xE02328fc.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        733,
+                        733
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+147;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        726,
+                        726
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+834;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        900,
+                        900
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,85 @@
+{
+    "erc": "721",
+    "contract": "Ticketing",
+    "inj_file": "dataset/err-inj/injected/Ticketing-0xb3107153.sol",
+    "orig_file": "dataset/err-inj/origin/Ticketing-0xb3107153.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1694,
+                        1694
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+140;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1490,
+                        1494
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1780,
+                        1785
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1468,
+                        1472
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1790,
+                        1792
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

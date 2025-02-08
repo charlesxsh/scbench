@@ -1,0 +1,75 @@
+{
+    "erc": "20",
+    "contract": "NESO",
+    "inj_file": "dataset/err-inj/injected/NESO-0xed710e75.sol",
+    "orig_file": "dataset/err-inj/origin/NESO-0xed710e75.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        786,
+                        790
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        21,
+                        21
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        481,
+                        484
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/NESO-0xed710e75.sol:520:33:\n    |\n520 |                 require(amount+ balanceOf(to)<=_maxWalletToken,\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NESO-0xed710e75.sol:552:44:\n    |\n552 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NESO-0xed710e75.sol:933:17:\n    |\n933 |         require(balanceOf(msg.sender) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/NESO-0xed710e75.sol:947:17:\n    |\n947 |         require(balanceOf(msg.sender) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\n"
+}

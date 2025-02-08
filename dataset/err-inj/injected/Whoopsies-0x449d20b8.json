@@ -1,0 +1,109 @@
+{
+    "erc": "721",
+    "contract": "Whoopsies",
+    "inj_file": "dataset/err-inj/injected/Whoopsies-0x449d20b8.sol",
+    "orig_file": "dataset/err-inj/origin/Whoopsies-0x449d20b8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1719,
+                        1719
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1907,
+                        1907
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1953,
+                        1953
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1901,
+                        1901
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1727,
+                        1729
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1413,
+                        1413
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2409,
+                        2411
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1631,
+                        1631
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+338;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

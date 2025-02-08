@@ -1,0 +1,92 @@
+{
+    "erc": "20",
+    "contract": "DOGEFIRE",
+    "inj_file": "dataset/err-inj/injected/DOGEFIRE-0x6a054b18.sol",
+    "orig_file": "dataset/err-inj/origin/DOGEFIRE-0x6a054b18.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        407,
+                        407
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        431,
+                        431
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+28;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        573,
+                        573
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        620,
+                        620
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        500,
+                        501
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

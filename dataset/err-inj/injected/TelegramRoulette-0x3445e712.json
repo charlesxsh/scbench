@@ -1,0 +1,71 @@
+{
+    "erc": "20",
+    "contract": "RouletteGame",
+    "inj_file": "dataset/err-inj/injected/TelegramRoulette-0x3445e712.sol",
+    "orig_file": "dataset/err-inj/origin/TelegramRoulette-0x3445e712.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        846,
+                        848
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        258,
+                        270
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        892,
+                        892
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        906,
+                        906
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        905,
+                        905
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: Return value of low-level calls not used.\n   --> dataset/err-inj/injected/TelegramRoulette-0x3445e712.sol:824:9:\n    |\n824 |         myWallet.call{value: address(this).balance}(\"\");\n    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nError: Member \"transfer\" not found or not visible after argument-dependent lookup in contract RouletteGame. Use \"address(bettingToken).transfer\" to access this address member.\n    --> dataset/err-inj/injected/TelegramRoulette-0x3445e712.sol:1114:26:\n     |\n1114 |                 isSent = bettingToken.transfer(winners[i], g.bets[winnersPlayerIndex[i]] + winnings);\n     |                          ^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

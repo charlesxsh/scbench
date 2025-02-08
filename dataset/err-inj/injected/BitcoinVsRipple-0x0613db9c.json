@@ -1,0 +1,95 @@
+{
+    "erc": "20",
+    "contract": "BitcoinVsRipple",
+    "inj_file": "dataset/err-inj/injected/BitcoinVsRipple-0x0613db9c.sol",
+    "orig_file": "dataset/err-inj/origin/BitcoinVsRipple-0x0613db9c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        475,
+                        475
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        193,
+                        193
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        388,
+                        393
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        547,
+                        547
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        457,
+                        457
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        390,
+                        391
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BitcoinVsRipple-0x0613db9c.sol:387:9:\n    |\n387 |         return true;\n    |         ^^^^^^\n\n"
+}

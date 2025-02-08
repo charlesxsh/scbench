@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "Dave",
+    "inj_file": "dataset/err-inj/injected/Dave-0xde9296bB.sol",
+    "orig_file": "dataset/err-inj/origin/Dave-0xde9296bB.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        144,
+                        144
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+344;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        85,
+                        85
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        147,
+                        149
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        93,
+                        97
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        165,
+                        173
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Dave-0xde9296bB.sol:629:31:\n    |\n629 |         uint256 tokenAmount = balanceOf(address(this));\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Dave-0xde9296bB.sol:653:32:\n    |\n653 |         uint256 tokenBalance = balanceOf(address(this));\n    |                                ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Dave-0xde9296bB.sol:756:42:\n    |\n756 |                         require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                          ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Dave-0xde9296bB.sol:764:38:\n    |\n764 |                     require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n    |                                      ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Dave-0xde9296bB.sol:769:40:\n    |\n769 |         uint256 contractTokenBalance = balanceOf(address(this));\n    |                                        ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Dave-0xde9296bB.sol:856:35:\n    |\n856 |         uint256 contractBalance = balanceOf(address(this));\n    |                                   ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balance\"?\n   --> dataset/err-inj/injected/Dave-0xde9296bB.sol:867:31:\n    |\n867 |             contractBalance = balanceOf(address(this));\n    |                               ^^^^^^^^^\n\n"
+}

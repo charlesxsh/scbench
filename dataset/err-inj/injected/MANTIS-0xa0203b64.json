@@ -1,0 +1,99 @@
+{
+    "erc": "20",
+    "contract": "MANTIS",
+    "inj_file": "dataset/err-inj/injected/MANTIS-0xa0203b64.sol",
+    "orig_file": "dataset/err-inj/origin/MANTIS-0xa0203b64.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        500,
+                        500
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        620,
+                        620
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        600,
+                        600
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        631,
+                        631
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        610,
+                        610
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        786,
+                        790
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/MANTIS-0xa0203b64.sol:524:33:\n    |\n524 |                 require(amount+ balanceOf(to)<=_maxWalletToken,\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/MANTIS-0xa0203b64.sol:556:44:\n    |\n556 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/MANTIS-0xa0203b64.sol:933:17:\n    |\n933 |         require(balanceOf(msg.sender) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/MANTIS-0xa0203b64.sol:947:17:\n    |\n947 |         require(balanceOf(msg.sender) >= SCCC, \"Not enough tokens in wallet\");\n    |                 ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,78 @@
+{
+    "erc": "20",
+    "contract": "BOOM",
+    "inj_file": "dataset/err-inj/injected/BOOM-0xb76891c5.sol",
+    "orig_file": "dataset/err-inj/origin/BOOM-0xb76891c5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        334,
+                        336
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        154,
+                        154
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        545,
+                        545
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        348,
+                        348
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+196;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/BOOM-0xb76891c5.sol:1308:33:\n     |\n1308 |         maxTransactionAmount = (totalSupply() * 2) / 100;\n     |                                 ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BOOM-0xb76891c5.sol:1309:22:\n     |\n1309 |         maxWallet = (totalSupply() * 2) / 100;\n     |                      ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BOOM-0xb76891c5.sol:1317:32:\n     |\n1317 |         maxTransactionAmount = totalSupply();\n     |                                ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BOOM-0xb76891c5.sol:1318:21:\n     |\n1318 |         maxWallet = totalSupply();\n     |                     ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BOOM-0xb76891c5.sol:1342:27:\n     |\n1342 |             newAmount >= (totalSupply() * 1) / 100000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BOOM-0xb76891c5.sol:1346:27:\n     |\n1346 |             newAmount <= (totalSupply() * 5) / 1000,\n     |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BOOM-0xb76891c5.sol:1358:28:\n     |\n1358 |             newTxnNum >= ((totalSupply() * 5) / 1000),\n     |                            ^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/BOOM-0xb76891c5.sol:1362:34:\n     |\n1362 |             newMaxWalletNum >= ((totalSupply() * 5) / 1000),\n     |                                  ^^^^^^^^^^^\n\n"
+}

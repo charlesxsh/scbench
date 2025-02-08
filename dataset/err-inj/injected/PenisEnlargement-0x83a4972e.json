@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "PenisEnlargement",
+    "inj_file": "dataset/err-inj/injected/PenisEnlargement-0x83a4972e.sol",
+    "orig_file": "dataset/err-inj/origin/PenisEnlargement-0x83a4972e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        293,
+                        295
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        95,
+                        95
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the operation was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        303,
+                        303
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        93,
+                        93
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        289,
+                        291
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/PenisEnlargement-0x83a4972e.sol:379:25:\n    |\n379 |                 require(balanceOf(to) + amount <= _maxWalletSize, \"Exceeds the maxWalletSize.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PenisEnlargement-0x83a4972e.sol:389:37:\n    |\n389 |                     min(amount, min(balanceOf(address(this)), _maxTaxSwap))\n    |                                     ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PenisEnlargement-0x83a4972e.sol:442:13:\n    |\n442 |             balanceOf(address(this)),\n    |             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/PenisEnlargement-0x83a4972e.sol:480:32:\n    |\n480 |         uint256 tokenBalance = balanceOf(address(this));\n    |                                ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,106 @@
+{
+    "erc": "20",
+    "contract": "PepeSaudiRaptor",
+    "inj_file": "dataset/err-inj/injected/PepeSaudiRaptor-0xd3890cab.sol",
+    "orig_file": "dataset/err-inj/origin/PepeSaudiRaptor-0xd3890cab.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        622,
+                        622
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+819;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        643,
+                        643
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+494;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        826,
+                        826
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        994,
+                        994
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1006,
+                        1006
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        742,
+                        742
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        680,
+                        681
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

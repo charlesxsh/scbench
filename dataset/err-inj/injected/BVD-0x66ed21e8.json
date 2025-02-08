@@ -1,0 +1,85 @@
+{
+    "erc": "20",
+    "contract": "BVD",
+    "inj_file": "dataset/err-inj/injected/BVD-0x66ed21e8.sol",
+    "orig_file": "dataset/err-inj/origin/BVD-0x66ed21e8.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        192,
+                        192
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        260,
+                        260
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        193,
+                        193
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        261,
+                        261
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        273,
+                        273
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier. Did you mean \"balances\"?\n   --> dataset/err-inj/injected/BVD-0x66ed21e8.sol:355:25:\n    |\n355 |                 require(balanceOf(to) + amount <= _maxWalletAmount, \"Transfer amount exceeds the maxWalletAmount.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balances\"?\n   --> dataset/err-inj/injected/BVD-0x66ed21e8.sol:364:20:\n    |\n364 |                if (balanceOf(address(this)) >= swapTokenAtAmount && !swapping) {\n    |                    ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balances\"?\n   --> dataset/err-inj/injected/BVD-0x66ed21e8.sol:373:30:\n    |\n373 |                     swapBack(balanceOf(address(this)));\n    |                              ^^^^^^^^^\n\nError: Undeclared identifier. Did you mean \"balances\"?\n   --> dataset/err-inj/injected/BVD-0x66ed21e8.sol:381:25:\n    |\n381 |                 require(balanceOf(to) + amount <= _maxWalletAmount, \"Transfer amount exceeds the maxWalletAmount.\");\n    |                         ^^^^^^^^^\n\n"
+}

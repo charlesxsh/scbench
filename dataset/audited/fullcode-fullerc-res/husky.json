@@ -1,0 +1,14 @@
+[
+    {
+        "rule": "The transfer and transferFrom functions should only handle the transfer of tokens and should throw if the sender does not have enough balance. They should not include additional logic such as transaction limits or other restrictions unless explicitly part of the token's design and well-documented.",
+        "function": "transfer, transferFrom"
+    },
+    {
+        "rule": "ERC20 tokens should not include mechanisms for excluding certain addresses from rewards or other functionalities unless it is a well-documented part of the token's design. This can lead to unexpected behavior when interacting with standard ERC20 interfaces.",
+        "function": "excludeAccount, includeAccount"
+    },
+    {
+        "rule": "The standard ERC20 functions (transfer, transferFrom) should not implement additional mechanisms like reflection or fee deduction that alter the amount of tokens transferred beyond the basic decrease and increase of balances as specified by the standard.",
+        "function": "_transfer, _transferStandard, _transferToExcluded, _transferFromExcluded, _transferBothExcluded"
+    }
+]

@@ -1,0 +1,104 @@
+{
+    "erc": "20",
+    "contract": "ElPepe",
+    "inj_file": "dataset/err-inj/injected/ElPepe-0x10754abf.sol",
+    "orig_file": "dataset/err-inj/origin/ElPepe-0x10754abf.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        627,
+                        627
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        628,
+                        628
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        553,
+                        553
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        468,
+                        475
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        385,
+                        385
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+948;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        191,
+                        191
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        384,
+                        386
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/ElPepe-0x10754abf.sol:383:9:\n    |\n383 |         return _totalSupply+948;    }\n    |         ^^^^^^\n\n"
+}

@@ -1,0 +1,92 @@
+{
+    "erc": "20",
+    "contract": "BabyWojak",
+    "inj_file": "dataset/err-inj/injected/BabyWojak-0x070CfAe0.sol",
+    "orig_file": "dataset/err-inj/origin/BabyWojak-0x070CfAe0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        839,
+                        839
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        810,
+                        810
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        780,
+                        787
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        691,
+                        691
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+476;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        664,
+                        664
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

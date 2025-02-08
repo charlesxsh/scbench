@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transferFrom should transfer _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "name should return the name of the token.",
+                "function": "name"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES\n\nThe `transferFrom` function in the provided smart contract does not check or enforce that the `_from` account has authorized the `spender` (the sender of the message) to transfer tokens on its behalf. This is a violation of the ERC-20 standard, which requires that such transfers should only occur after explicit authorization by the `_from` account, typically established through the `approve` function and checked via the `allowance` function. The `transferFrom` function in this contract simply returns `true` without any checks or modifications to allowances, which does not adhere to the standard's requirements.",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe provided `transferFrom` function in the `PASS` contract does not check if the `_from` account has authorized the `spender` (the sender of the message) to transfer tokens on its behalf. According to ERC-20 standards, such a function should verify that the `spender` has an allowance from the `_from` account that is at least the amount they are trying to transfer. This function simply returns `true` without any checks, thereby violating the ERC rule that requires explicit authorization.",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

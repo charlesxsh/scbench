@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "VitalikOG",
+    "inj_file": "dataset/err-inj/injected/VitalikOG-0x48f5f01F.sol",
+    "orig_file": "dataset/err-inj/origin/VitalikOG-0x48f5f01F.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        787,
+                        787
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        665,
+                        669
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        478,
+                        478
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        444,
+                        444
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        630,
+                        632
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/VitalikOG-0x48f5f01F.sol:947:88:\n    |\n947 |         _uniswapV2Router.addLiquidityETH{value : address(this).balance}(address(this), balanceOf(address(this)), 0, 0, owner(), block.timestamp);\n    |                                                                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/VitalikOG-0x48f5f01F.sol:1009:34:\n     |\n1009 |                 require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/VitalikOG-0x48f5f01F.sol:1019:34:\n     |\n1019 |                 require(amount + balanceOf(to) <= maxWallet, \"Max wallet exceeded\");\n     |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/VitalikOG-0x48f5f01F.sol:1022:40:\n     |\n1022 |         uint256 contractTokenBalance = balanceOf(address(this));\n     |                                        ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/VitalikOG-0x48f5f01F.sol:1080:35:\n     |\n1080 |         uint256 contractBalance = balanceOf(address(this));\n     |                                   ^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/VitalikOG-0x48f5f01F.sol:1088:26:\n     |\n1088 |         swapTokensForEth(balanceOf(address(this)));\n     |                          ^^^^^^^^^\n\n"
+}

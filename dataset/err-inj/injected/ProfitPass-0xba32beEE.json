@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "ProfitPass",
+    "inj_file": "dataset/err-inj/injected/ProfitPass-0xba32beEE.sol",
+    "orig_file": "dataset/err-inj/origin/ProfitPass-0xba32beEE.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        948,
+                        957
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        688,
+                        692
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        928,
+                        928
+                    ],
+                    "to_replace": [
+                        "        return address(592);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": null
+}

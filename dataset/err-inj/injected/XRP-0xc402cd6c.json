@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "XRP",
+    "inj_file": "dataset/err-inj/injected/XRP-0xc402cd6c.sol",
+    "orig_file": "dataset/err-inj/origin/XRP-0xc402cd6c.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1590,
+                        1590
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+157;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1603,
+                        1607
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1423,
+                        1423
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1606,
+                        1606
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n    --> dataset/err-inj/injected/XRP-0xc402cd6c.sol:1601:9:\n     |\n1601 |         return false;\n     |         ^^^^^^\n\n"
+}

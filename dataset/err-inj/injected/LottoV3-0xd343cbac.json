@@ -1,0 +1,93 @@
+{
+    "erc": "721",
+    "contract": "LottoV3",
+    "inj_file": "dataset/err-inj/injected/LottoV3-0xd343cbac.sol",
+    "orig_file": "dataset/err-inj/origin/LottoV3-0xd343cbac.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1841,
+                        1841
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1750,
+                        1750
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1892,
+                        1892
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1898,
+                        1898
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1708,
+                        1713
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1230,
+                        1230
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

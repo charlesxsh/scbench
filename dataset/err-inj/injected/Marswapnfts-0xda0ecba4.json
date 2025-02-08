@@ -1,0 +1,81 @@
+{
+    "erc": "721",
+    "contract": "Marswapnfts",
+    "inj_file": "dataset/err-inj/injected/Marswapnfts-0xda0ecba4.sol",
+    "orig_file": "dataset/err-inj/origin/Marswapnfts-0xda0ecba4.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        648,
+                        648
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+455;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": "throw if NFTs assigned to the zero address",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        647,
+                        647
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        134,
+                        134
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        711,
+                        715
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Marswapnfts-0xda0ecba4.sol:814:37:\n    |\n814 |         return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));\n    |                                     ^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "XArmor",
+    "inj_file": "dataset/err-inj/injected/XArmor-0x8f0ee17d.sol",
+    "orig_file": "dataset/err-inj/origin/XArmor-0x8f0ee17d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        446,
+                        446
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        222,
+                        224
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        32,
+                        32
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        216,
+                        216
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+344;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"balanceOf\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/XArmor-0x8f0ee17d.sol:961:26:\n    |\n961 |         uint balance=min(IERC20(token0).balanceOf(address(this)),amount);\n    |                          ^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "Dork",
+    "inj_file": "dataset/err-inj/injected/Dork-0x2FaC1ebC.sol",
+    "orig_file": "dataset/err-inj/origin/Dork-0x2FaC1ebC.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        270,
+                        272
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        48,
+                        48
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        298,
+                        298
+                    ],
+                    "to_replace": [
+                        "            return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        498,
+                        498
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Dork-0x2FaC1ebC.sol:373:29:\n    |\n373 |                     require(balanceOf(to) + amount < _maxWalletSize, \"TOKEN: Balance exceeds wallet size!\");\n    |                             ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Dork-0x2FaC1ebC.sol:376:48:\n    |\n376 |                 uint256 contractTokenBalance = balanceOf(address(this));\n    |                                                ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Dork-0x2FaC1ebC.sol:441:39:\n    |\n441 |             uint256 contractBalance = balanceOf(address(this));\n    |                                       ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,81 @@
+{
+    "erc": "721",
+    "contract": "WKWK",
+    "inj_file": "dataset/err-inj/injected/WKWK-0x12EBa2d0.sol",
+    "orig_file": "dataset/err-inj/origin/WKWK-0x12EBa2d0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": " throw if _tokenId is not a valid NFT",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1052,
+                        1052
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        735,
+                        735
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+918;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        798,
+                        802
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        617,
+                        617
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/WKWK-0x12EBa2d0.sol:898:73:\n    |\n898 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n    |                                                                         ^^^^^^^^^^^\n\n"
+}

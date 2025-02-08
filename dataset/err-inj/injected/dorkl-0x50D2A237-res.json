@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "transfer: The function SHOULD throw if the message caller\u2019s account balance does not have enough tokens to spend.",
+                "function": "transfer"
+            },
+            {
+                "rule": "transferFrom: The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            },
+            {
+                "rule": "approve: Allows _spender to withdraw from your account multiple times, up to the _value amount. If this function is called again it overwrites the current allowance with _value.",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe `balanceOf` function in the provided smart contract code violates the ERC-20 standard rule regarding the account balance. According to the ERC-20 standard, the `balanceOf` function should return the number of tokens that the account identified by the address owns. However, in the given contract, the `balanceOf` function is modified to always add 960 to the actual balance of the account:\n\n```solidity\nfunction balanceOf(address account) public view override returns (uint256) {\n    return _balances[account] + 960;\n}\n```\n\nThis modification results in an incorrect representation of the token balance for any account, as it artificially inflates the balance by 960 tokens. This does not comply with the standard behavior expected from an ERC-20 token's `balanceOf` function, which should accurately reflect the true balance without any alterations.",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe function `balanceOf` in the provided code violates the ERC-20 standard rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning the actual balance from the `_balances` mapping, the function adds 960 to the balance, which is not compliant with the standard definition of the `balanceOf` function as per the ERC-20 token standard. The standard expects the function to return the exact amount of tokens that an account holds, without any modification or calculation.",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

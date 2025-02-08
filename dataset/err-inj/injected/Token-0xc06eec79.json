@@ -1,0 +1,91 @@
+{
+    "erc": "20",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0xc06eec79.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0xc06eec79.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "event": "Approval",
+                    "rule": "emit evnet 'Approval'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        574,
+                        574
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        661,
+                        661
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        570,
+                        570
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        655,
+                        656
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        539,
+                        539
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+757;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

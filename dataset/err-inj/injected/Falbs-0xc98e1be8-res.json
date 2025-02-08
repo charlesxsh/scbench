@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer function should return true when the transfer is successful.",
+                "function": "transfer"
+            },
+            {
+                "rule": "The approve function should set the allowance for a spender. The current implementation does not change the allowance state.",
+                "function": "_approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES\n\nThe function `approve` in the provided code does not emit the required `Approval` event as specified by the ERC-20 standard. The ERC-20 standard mandates that changes in allowance must be accompanied by emitting an `Approval` event. This event is crucial for external entities to monitor and react to allowance changes. The provided implementation of `approve` and `_approve` does not include any code to emit this event, thus violating the ERC-20 rule.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

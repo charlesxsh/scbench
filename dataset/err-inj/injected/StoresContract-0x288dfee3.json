@@ -1,0 +1,99 @@
+{
+    "erc": "721",
+    "contract": "StoresContract",
+    "inj_file": "dataset/err-inj/injected/StoresContract-0x288dfee3.sol",
+    "orig_file": "dataset/err-inj/origin/StoresContract-0x288dfee3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        911,
+                        911
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1053,
+                        1055
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1078,
+                        1078
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1296,
+                        1296
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1102,
+                        1102
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1250,
+                        1250
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1244,
+                        1244
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/StoresContract-0x288dfee3.sol:231:5:\n    |\n231 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/StoresContract-0x288dfee3.sol:273:5:\n    |\n273 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/StoresContract-0x288dfee3.sol:231:5:\n    |\n231 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/StoresContract-0x288dfee3.sol:273:5:\n    |\n273 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/StoresContract-0x288dfee3.sol:231:5:\n    |\n231 |     function log2(uint256 value) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nWarning: Variable is shadowed in inline assembly by an instruction of the same name\n   --> dataset/err-inj/injected/StoresContract-0x288dfee3.sol:273:5:\n    |\n273 |     function log2(uint256 value, Rounding rounding) internal pure returns (uint256) {\n    |     ^ (Relevant source part starts here and spans across multiple lines).\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/StoresContract-0x288dfee3.sol:1026:38:\n     |\n1026 |             _msgSender() == owner || isApprovedForAll(owner, _msgSender()),\n     |                                      ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/StoresContract-0x288dfee3.sol:1127:37:\n     |\n1127 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                     ^^^^^^^^^^^^^^^^\n\n"
+}

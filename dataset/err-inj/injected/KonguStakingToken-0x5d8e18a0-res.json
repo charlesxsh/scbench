@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `onERC721Received` function must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted.",
+                "function": "_checkOnERC721Received"
+            },
+            {
+                "rule": "The `safeTransferFrom` function must check if `to` is a smart contract and if so, it must implement `IERC721Receiver-onERC721Received`, which is called upon a safe transfer.",
+                "function": "_safeTransfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe provided code violates the ERC-721 rule that requires calling `onERC721Received` on the receiving contract if `_to` is a smart contract. This is because the `_checkOnERC721Received` function, which is supposed to handle this logic, is implemented to always return `true` without actually performing any checks or calls to `onERC721Received`. This means the code does not verify whether the receiving contract is capable of handling ERC-721 tokens, which could lead to tokens being locked in contracts that do not support them.",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

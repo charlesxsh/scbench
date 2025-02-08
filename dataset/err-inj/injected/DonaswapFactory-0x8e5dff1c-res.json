@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `safeTransferFrom` function must check if `_to` is a smart contract and if so, it must call `onERC721Received` on `_to` and revert if the return value is not `bytes4(keccak256(\"onERC721Received(address,address,uint256,bytes)\"))`.",
+                "function": "The `_safeTransfer` function in the provided contract does not perform the check and call to `onERC721Received` as described by the ERC-721 standard."
+            },
+            {
+                "rule": "Returns the symbol of the token. E.g. 'HIX'. OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "symbol"
+            },
+            {
+                "rule": "Returns the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation. OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.",
+                "function": "decimals"
+            },
+            {
+                "rule": "Every ERC-721 compliant contract must implement the `ERC721` and `ERC165` interfaces.",
+                "function": "The provided contract does not explicitly declare conformance to `ERC165` via an interface declaration, which is required by the ERC-721 standard."
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES"
+        ],
+        "can_detect": [
+            true
+        ],
+        "error": [
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES"
+        ],
+        "can_detect": [
+            true
+        ],
+        "error": [
+            null
+        ]
+    }
+}

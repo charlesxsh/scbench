@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "Yieldilizer",
+    "inj_file": "dataset/err-inj/injected/TokenDividendTracker-0x1a261f32.sol",
+    "orig_file": "dataset/err-inj/origin/TokenDividendTracker-0x1a261f32.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        6,
+                        6
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        367,
+                        369
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        368,
+                        368
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+419;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        484,
+                        484
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        449,
+                        449
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        485,
+                        485
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1180,
+                        1180
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        406,
+                        413
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/TokenDividendTracker-0x1a261f32.sol:366:9:\n    |\n366 |         return _totalSupply+419;    }\n    |         ^^^^^^\n\n"
+}

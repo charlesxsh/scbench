@@ -1,0 +1,84 @@
+{
+    "erc": "721",
+    "contract": "NFTLicenseMarketplace",
+    "inj_file": "dataset/err-inj/injected/NFTLicenseMarketplace-0xE333B5C7.sol",
+    "orig_file": "dataset/err-inj/origin/NFTLicenseMarketplace-0xE333B5C7.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The number of NFTs owned by `_owner`, possibly zero",
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1299,
+                        1299
+                    ],
+                    "to_replace": [
+                        "        return _balances[owner]+55;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_to` is the zero address",
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1298,
+                        1298
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1570,
+                        1570
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1640,
+                        1655
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

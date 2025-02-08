@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The ERC20 standard requires a `transferFrom` function to allow a contract to transfer tokens on behalf of an owner, given that the owner has set an allowance for the spender.",
+                "function": "Missing `transferFrom` function"
+            },
+            {
+                "rule": "The ERC20 standard suggests that to prevent race conditions, clients should first set the allowance to zero before setting it to another value for the same spender.",
+                "function": "`approve` function does not implement best practices for handling allowances."
+            },
+            {
+                "rule": "The `transferFrom` function must emit a `Transfer` event if implemented. This is a requirement for all transfers, including those initiated by `transferFrom`.",
+                "function": "Missing `transferFrom` function and associated `Transfer` event emission"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

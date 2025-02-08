@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Transfer of ownership of any NFT changes by any mechanism must emit the Transfer event. This event emits when NFTs are created (`from` == 0) and destroyed (`to` == 0).",
+                "function": "Ensure Transfer event is emitted correctly in all transfer, mint, and burn functions."
+            },
+            {
+                "rule": "The contract must implement the ERC721 and ERC165 interfaces.",
+                "function": "Not fully implemented or incorrectly implemented ERC721 and ERC165 interfaces."
+            },
+            {
+                "rule": "The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "transferFrom"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

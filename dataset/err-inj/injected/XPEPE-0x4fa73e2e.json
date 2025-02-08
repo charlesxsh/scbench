@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "XPEPE",
+    "inj_file": "dataset/err-inj/injected/XPEPE-0x4fa73e2e.sol",
+    "orig_file": "dataset/err-inj/origin/XPEPE-0x4fa73e2e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        343,
+                        343
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+335;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        370,
+                        370
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(address(0)))+630;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        147,
+                        150
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        346,
+                        352
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

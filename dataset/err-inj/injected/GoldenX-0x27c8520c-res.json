@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function decimals should return the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            null,
+            "YES\n\nThe function `decimals()` in the provided code violates the typical ERC-20 token standard rule regarding the number of decimal places a token can be divided into. According to the ERC-20 standard, the `decimals()` function should return a constant value that defines the smallest unit of the token for display and transaction purposes. \n\nIn the given code, the `decimals()` function returns `_decimals + 3`, which results in a dynamic return value of 12 (since `_decimals` is a constant 9). This implementation does not adhere to the standard practice of returning a fixed number of decimals, as it modifies the expected constant value. This could lead to inconsistencies and unexpected behaviors in token handling and display across platforms that interact with this token."
+        ],
+        "can_detect": [
+            false,
+            null,
+            true
+        ],
+        "error": [
+            null,
+            "'inj_fn'",
+            null
+        ]
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "allowance function should return the amount which _spender is still allowed to withdraw from _owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `allowance` in the provided code violates the ERC-20 standard rule by returning the allowance amount with an additional 6 units added to the actual approved amount. According to the ERC-20 standard, the `allowance` function should return the exact amount that a spender is still allowed to withdraw from the owner, without any modifications. The modification in the return value (`+6`) deviates from this requirement.",
+            "NO",
+            "NO. The interface provided in the code does not contain the function `symbol() public view returns (string)`."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

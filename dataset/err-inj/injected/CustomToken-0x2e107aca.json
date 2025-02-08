@@ -1,0 +1,92 @@
+{
+    "erc": "20",
+    "contract": "CustomToken",
+    "inj_file": "dataset/err-inj/injected/CustomToken-0x2e107aca.sol",
+    "orig_file": "dataset/err-inj/origin/CustomToken-0x2e107aca.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        10,
+                        10
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        114,
+                        130
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        126,
+                        126
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        128,
+                        128
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "event": "Transfer",
+                    "rule": "emit event 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        98,
+                        98
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        100,
+                        100
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected pragma, import directive or contract/interface/library/struct/enum/constant/function definition.\n   --> dataset/err-inj/injected/CustomToken-0x2e107aca.sol:112:9:\n    |\n112 |         return true;\n    |         ^^^^^^\n\n"
+}

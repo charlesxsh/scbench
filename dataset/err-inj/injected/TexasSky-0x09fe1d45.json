@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "TexasSky",
+    "inj_file": "dataset/err-inj/injected/TexasSky-0x09fe1d45.sol",
+    "orig_file": "dataset/err-inj/origin/TexasSky-0x09fe1d45.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        133,
+                        133
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "The number of decimal places the token can be divided into. This is used to define the smallest unit of the token for display and transaction purposes.",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        69,
+                        69
+                    ],
+                    "to_replace": [
+                        "        return 18+3;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        23,
+                        23
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        76,
+                        78
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/TexasSky-0x09fe1d45.sol:519:31:\n    |\n519 |         require(amount > 0 && balanceOf(account) >= amount, \"VestingLock: amount is 0 or over balance\");\n    |                               ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/TexasSky-0x09fe1d45.sol:542:41:\n    |\n542 |         if (from != address(0)) require(balanceOf(from) - getAllLockedAmount(from) >= amount, \"Lockable: insufficient transfer amount\");\n    |                                         ^^^^^^^^^\n\n"
+}

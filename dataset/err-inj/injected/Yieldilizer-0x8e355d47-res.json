@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `approve` function should return `true` on success to indicate successful approval.",
+                "function": "approve"
+            },
+            {
+                "rule": "The `allowance` function should return the remaining number of tokens that the spender will be allowed to spend on behalf of the owner.",
+                "function": "allowance"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "YES",
+            "YES\n\nThe provided code violates the ERC-20 rule that requires emitting an \"Approval\" event when the `approve` function is called. The ERC-20 standard specifies that an \"Approval\" event should be emitted whenever the `approve` function is successfully executed to notify external entities (like other smart contracts and blockchain subscribers) of the change in allowance.\n\nIn the given code, the `approve` function calls an internal `_approve` function to set the allowance, but neither the `approve` function nor the `_approve` function emits the \"Approval\" event. This omission means that external observers are not notified of changes in allowances through the event mechanism, which is a requirement of the ERC-20 standard."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

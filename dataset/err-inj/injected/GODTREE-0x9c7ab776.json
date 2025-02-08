@@ -1,0 +1,78 @@
+{
+    "erc": "721",
+    "contract": "GODTREE",
+    "inj_file": "dataset/err-inj/injected/GODTREE-0x9c7ab776.sol",
+    "orig_file": "dataset/err-inj/origin/GODTREE-0x9c7ab776.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        155,
+                        155
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        732,
+                        734
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 3,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        753,
+                        759
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        88,
+                        92
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/GODTREE-0x9c7ab776.sol:697:38:\n    |\n697 |             _msgSender() == owner || isApprovedForAll(owner, _msgSender()),\n    |                                      ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/GODTREE-0x9c7ab776.sol:808:72:\n    |\n808 |         return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));\n    |                                                                        ^^^^^^^^^^^^^^^^\n\n"
+}

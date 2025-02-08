@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "Game",
+    "inj_file": "dataset/err-inj/injected/Game-0xB9D195d0.sol",
+    "orig_file": "dataset/err-inj/origin/Game-0xB9D195d0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        285,
+                        285
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+556;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        304,
+                        304
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        275,
+                        277
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        40,
+                        40
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Game-0xB9D195d0.sol:185:98:\n    |\n185 |  ... dress(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.t ...\n    |                                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Game-0xB9D195d0.sol:226:25:\n    |\n226 |                 require(balanceOf(to) + amount <= _limitationsForAddressSingleTxsMax, \"Exceeds the max limitations in single Wallet.\");\n    |                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Game-0xB9D195d0.sol:234:68:\n    |\n234 |  ... imitationsForSingleMaxTxAmounts && balanceOf(_addressUsedInFundationFees)>_limi ...\n    |                                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Game-0xB9D195d0.sol:234:149:\n    |\n234 |  ... tionsInMaxSlotsUsedInSwappingTx && balanceOf(_addressUsedInFundationFees) < _li ...\n    |                                         ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Game-0xB9D195d0.sol:237:68:\n    |\n237 |                 if (amount <= _limitationsForSingleMaxTxAmounts && balanceOf(_addressUsedInFundationFees)>_limitationsInMaxSlotsUsedInSwappingTxUp){\n    |                                                                    ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Game-0xB9D195d0.sol:243:44:\n    |\n243 |             uint256 contractTokenBalance = balanceOf(address(this));\n    |                                            ^^^^^^^^^\n\n"
+}

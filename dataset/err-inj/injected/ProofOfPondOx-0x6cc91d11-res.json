@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Query if an address is an authorized operator for another address",
+                "function": "The `isApprovedForAll` function correctly implements this check."
+            },
+            {
+                "rule": "NFTs assigned to the zero address are considered invalid, and queries about them do throw.",
+                "function": "The `ownerOf` function incorrectly returns a hardcoded address `address(254)` instead of throwing an error for non-existent tokens."
+            },
+            {
+                "rule": "The contract MUST allow multiple operators per owner.",
+                "function": "The `_setApprovalForAll` function correctly allows setting multiple operators."
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

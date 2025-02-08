@@ -1,0 +1,74 @@
+{
+    "erc": "20",
+    "contract": "TeslaPi",
+    "inj_file": "dataset/err-inj/injected/TeslaPi-0xd7fbfe12.sol",
+    "orig_file": "dataset/err-inj/origin/TeslaPi-0xd7fbfe12.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "assign",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "_spender overwrites the current allowance with _value.",
+                    "anchor_fn": "allowance",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        187,
+                        187
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        147,
+                        147
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        159,
+                        159
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+668;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

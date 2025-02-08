@@ -1,0 +1,107 @@
+{
+    "erc": "721",
+    "contract": "ERC721Enumerable",
+    "inj_file": "dataset/err-inj/injected/NFTLicenseMarketplace-0x64136472.sol",
+    "orig_file": "dataset/err-inj/origin/NFTLicenseMarketplace-0x64136472.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "rule": "event 'Transfer' emits when ownership of any NFT changes by any mechanism.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2067,
+                        2067
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1976,
+                        1976
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2170,
+                        2170
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2124,
+                        2124
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2118,
+                        2118
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1952,
+                        1952
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "rule": "function ownerOf(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1854,
+                        1858
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1629,
+                        1629
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"ownerOf\" not found or not visible after argument-dependent lookup in type(contract ERC721).\n    --> dataset/err-inj/injected/NFTLicenseMarketplace-0x64136472.sol:1891:25:\n     |\n1891 |         address owner = ERC721.ownerOf(tokenId);\n     |                         ^^^^^^^^^^^^^^\n\n"
+}

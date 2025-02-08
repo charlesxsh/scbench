@@ -1,0 +1,77 @@
+{
+    "erc": "20",
+    "contract": "GrandmasBitcoinCriptoCoin",
+    "inj_file": "dataset/err-inj/injected/GrandmasBitcoinCriptoCoin-0xa4b3068e.sol",
+    "orig_file": "dataset/err-inj/origin/GrandmasBitcoinCriptoCoin-0xa4b3068e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1121,
+                        1121
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        947,
+                        949
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        857,
+                        857
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1097,
+                        1097
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/GrandmasBitcoinCriptoCoin-0xa4b3068e.sol\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/GrandmasBitcoinCriptoCoin-0xa4b3068e.sol:1424:48:\n     |\n1424 |         _mint(msg.sender, 101495071299 * 10 ** decimals());\n     |                                                ^^^^^^^^\n\n"
+}

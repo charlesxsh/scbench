@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The decimals function should return a constant value representing the divisibility of the token, typically 18.",
+                "function": "decimals()"
+            },
+            {
+                "rule": "The transfer function should only fail if the sender does not have enough balance.",
+                "function": "_transfer()"
+            },
+            {
+                "rule": "The transferFrom function should only check for allowance and balance, without additional unrelated business logic.",
+                "function": "transferFrom()"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO.\n\nThe function `decimals()` in the provided code returns `21` (as it calculates `18 + 3`). While ERC-20 typically uses 18 decimal places as a standard, the ERC-20 standard itself does not strictly enforce a specific number of decimals. It allows for flexibility in the number of decimal places a token can have. The `decimals()` function is used primarily for display and transaction purposes to define the smallest unit of the token. As long as the function returns a uint8 value and the contract handles the arithmetic correctly considering the specified number of decimals, it does not violate the ERC-20 rules regarding decimals.",
+            null,
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            "cannot find the function",
+            null
+        ]
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "erc": "721",
+    "contract": "SBTContract",
+    "inj_file": "dataset/err-inj/injected/SBTContract-0x260ada56.sol",
+    "orig_file": "dataset/err-inj/origin/SBTContract-0x260ada56.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "setApprovalForAll",
+                    "numofargs": 2,
+                    "rule": "function setApprovalForAll(address _operator, bool _approved) external;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2960,
+                        2969
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2447,
+                        2447
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        4194,
+                        4197
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        3584,
+                        3594
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        3579,
+                        3579
+                    ],
+                    "to_replace": [
+                        "            return true;\n"
+                    ]
+                },
+                {
+                    "orig_range": [
+                        3581,
+                        3581
+                    ],
+                    "to_replace": [
+                        "        return !super.isApprovedForAll(owner, operator);\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

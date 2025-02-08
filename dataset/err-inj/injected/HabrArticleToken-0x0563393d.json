@@ -1,0 +1,86 @@
+{
+    "erc": "721",
+    "contract": "HabrArticleToken",
+    "inj_file": "dataset/err-inj/injected/HabrArticleToken-0x0563393d.sol",
+    "orig_file": "dataset/err-inj/origin/HabrArticleToken-0x0563393d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1608,
+                        1623
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "setApprovalForAll",
+                    "numofargs": 2,
+                    "rule": "function setApprovalForAll(address _operator, bool _approved) external;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1339,
+                        1341
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1094,
+                        1094
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "function getApproved(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1103,
+                        1103
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1330,
+                        1334
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n    --> dataset/err-inj/injected/HabrArticleToken-0x0563393d.sol:1416:73:\n     |\n1416 |         return (spender == owner || isApprovedForAll(owner, spender) || getApproved(tokenId) == spender);\n     |                                                                         ^^^^^^^^^^^\n\n"
+}

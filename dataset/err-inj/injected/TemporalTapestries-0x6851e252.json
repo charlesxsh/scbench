@@ -1,0 +1,110 @@
+{
+    "erc": "721",
+    "contract": "TemporalTapestries",
+    "inj_file": "dataset/err-inj/injected/TemporalTapestries-0x6851e252.sol",
+    "orig_file": "dataset/err-inj/origin/TemporalTapestries-0x6851e252.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1337,
+                        1337
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1189,
+                        1189
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1331,
+                        1331
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1383,
+                        1383
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1165,
+                        1165
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1402,
+                        1417
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) external view returns (uint256);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        58,
+                        58
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1059,
+                        1062
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

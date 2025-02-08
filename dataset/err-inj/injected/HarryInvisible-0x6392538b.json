@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "HarryInvisible",
+    "inj_file": "dataset/err-inj/injected/HarryInvisible-0x6392538b.sol",
+    "orig_file": "dataset/err-inj/origin/HarryInvisible-0x6392538b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        535,
+                        535
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        455,
+                        455
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        133,
+                        133
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryInvisible-0x6392538b.sol:495:34:\n    |\n495 |             uint256 heldTokens = balanceOf(recipient);\n    |                                  ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryInvisible-0x6392538b.sol:678:33:\n    |\n678 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryInvisible-0x6392538b.sol:678:54:\n    |\n678 |         return _totalSupply.sub(balanceOf(DEAD)).sub(balanceOf(ZERO));\n    |                                                      ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/HarryInvisible-0x6392538b.sol:682:29:\n    |\n682 |         return accuracy.mul(balanceOf(uniswapV2Pair).mul(2)).div(getCirculatingSupply());\n    |                             ^^^^^^^^^\n\n"
+}

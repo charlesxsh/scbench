@@ -1,0 +1,80 @@
+{
+    "erc": "20",
+    "contract": "herpderp",
+    "inj_file": "dataset/err-inj/injected/herpderp-0x33a148a3.sol",
+    "orig_file": "dataset/err-inj/origin/herpderp-0x33a148a3.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        146,
+                        146
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        84,
+                        84
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        155,
+                        157
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        161,
+                        161
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+978;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/herpderp-0x33a148a3.sol:760:27:\n    |\n760 |             newAmount >= (totalSupply() * 1) / 10000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/herpderp-0x33a148a3.sol:764:27:\n    |\n764 |             newAmount <= (totalSupply() * 5) / 1000,\n    |                           ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/herpderp-0x33a148a3.sol:773:25:\n    |\n773 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/herpderp-0x33a148a3.sol:781:25:\n    |\n781 |             newNum >= ((totalSupply() * 5) / 1000) / 1e18,\n    |                         ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/herpderp-0x33a148a3.sol:788:32:\n    |\n788 |         maxTransactionAmount = totalSupply();\n    |                                ^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/herpderp-0x33a148a3.sol:789:21:\n    |\n789 |         maxWallet = totalSupply();\n    |                     ^^^^^^^^^^^\n\n"
+}

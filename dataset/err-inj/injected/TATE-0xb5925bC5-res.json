@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "totalSupply: Returns the total token supply.",
+                "function": "totalSupply"
+            },
+            {
+                "rule": "balanceOf: Returns the account balance of another account with address _owner.",
+                "function": "balanceOf"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "YES"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES\n\nThe function `balanceOf` in the provided contract code violates the ERC-20 rule that requires it to return \"the account balance of the account with address _owner\". Instead of returning just the balance associated with the address, the function modifies the balance by adding a constant value of 216 to the result of `tokenFromReflection(_rOwned[account])`. This alteration does not comply with the standard ERC-20 implementation where the balance should reflect the actual tokens held by the address without any modification or adjustment.",
+            "YES\n\nThe function `totalSupply()` in the provided code violates the ERC-20 rule that requires it to return the total token supply. Instead of returning a constant total supply, the function adds an arbitrary number (690) to `_tTotal`, which deviates from the expected behavior of simply returning the predefined total supply of tokens. This could lead to inconsistencies and unexpected behavior in interactions with other contracts or services expecting a standard ERC-20 implementation.",
+            "YES"
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

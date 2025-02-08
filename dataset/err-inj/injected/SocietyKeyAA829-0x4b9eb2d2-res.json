@@ -1,0 +1,50 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function transferFrom should transfer _value amount of tokens from address _from to address _to, and MUST fire the Transfer event. The function SHOULD throw unless the _from account has deliberately authorized the sender of the message via some mechanism.",
+                "function": "_transfer"
+            },
+            {
+                "rule": "The function transferFrom is missing in the contract. It should allow tokens to be transferred from one account to another based on a previously set allowance.",
+                "function": "Missing transferFrom function"
+            },
+            {
+                "rule": "The approve function should set _value as the allowance of _spender over the caller's tokens. It should return a boolean value indicating whether the operation succeeded.",
+                "function": "_setAllowance"
+            },
+            {
+                "rule": "The contract should not implement additional restrictions such as blacklisting addresses without clear documentation and justification, as it deviates from the standard ERC20 behavior.",
+                "function": "toggleBlacklist"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null
+        ]
+    }
+}

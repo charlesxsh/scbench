@@ -1,0 +1,79 @@
+{
+    "erc": "20",
+    "contract": "Crack",
+    "inj_file": "dataset/err-inj/injected/Crack-0x67efb172.sol",
+    "orig_file": "dataset/err-inj/origin/Crack-0x67efb172.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "Indicates whether the approval was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        283,
+                        283
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        78,
+                        78
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        257,
+                        261
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "event": "Transfer",
+                    "rule": "emit evnet 'Transfer'",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        389,
+                        389
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"transfer\" not found or not visible after argument-dependent lookup in contract ERC20. Use \"address(...).transfer\" to access this address member.\n    --> dataset/err-inj/injected/Crack-0x67efb172.sol:1243:21:\n     |\n1243 |                     ERC20(tokenAddress).transfer(marketingFeeReceiver, tokens);\n     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

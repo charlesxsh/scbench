@@ -1,0 +1,69 @@
+{
+    "erc": "721",
+    "contract": "MatrixPunks",
+    "inj_file": "dataset/err-inj/injected/MatrixPunks-0xa9411695.sol",
+    "orig_file": "dataset/err-inj/origin/MatrixPunks-0xa9411695.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1687,
+                        1687
+                    ],
+                    "to_replace": [
+                        "        return address(739);"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "rule": "The address of the owner of the NFT",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1631,
+                        1631
+                    ],
+                    "to_replace": [
+                        "        return address(673);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

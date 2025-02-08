@@ -1,0 +1,90 @@
+{
+    "erc": "20",
+    "contract": "Vegetables",
+    "inj_file": "dataset/err-inj/injected/Vegetables-0x33b937c6.sol",
+    "orig_file": "dataset/err-inj/origin/Vegetables-0x33b937c6.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "function allowance(address _owner, address _spender) public view returns (uint256 remaining)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        191,
+                        193
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        20,
+                        20
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        182,
+                        184
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        18,
+                        18
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "function totalSupply() public view returns (uint256)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        17,
+                        17
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        178,
+                        180
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/Vegetables-0x33b937c6.sol:222:10:\n    |\n222 |  require(balanceOf(to) + amount <= _maxtaxop, \"Exceeds the maxWalletSize.\");\n    |          ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Vegetables-0x33b937c6.sol:230:33:\n    |\n230 |  uint256 contractTokenBalance = balanceOf(address(this));\n    |                                 ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Vegetables-0x33b937c6.sol:285:78:\n    |\n285 |  uniswapV2Router.addLiquidityETH{value: address(this).balance}(address(this),balanceOf(address(this)),0,0,owner(),block.timestamp);\n    |                                                                              ^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/Vegetables-0x33b937c6.sol:296:23:\n    |\n296 |  uint256 tokenBalance=balanceOf(address(this));\n    |                       ^^^^^^^^^\n\n"
+}

@@ -1,0 +1,97 @@
+{
+    "erc": "721",
+    "contract": "ContentCreator",
+    "inj_file": "dataset/err-inj/injected/ContentCreator-0xa9292a4f.sol",
+    "orig_file": "dataset/err-inj/origin/ContentCreator-0xa9292a4f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _approved, uint256 _tokenId) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1082,
+                        1082
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1284,
+                        1294
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": " throw if `msg.sender` is not the current NFT owner or an authorized operator of the current owner",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1286,
+                        1286
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_from` is not the current owner",
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1506,
+                        1506
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1512,
+                        1512
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1364,
+                        1364
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected identifier but got '('\n    --> dataset/err-inj/injected/ContentCreator-0xa9292a4f.sol:1284:16:\n     |\n1284 |         require(\n     |                ^\n\n"
+}

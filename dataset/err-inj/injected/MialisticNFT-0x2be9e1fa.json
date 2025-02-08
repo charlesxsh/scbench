@@ -1,0 +1,71 @@
+{
+    "erc": "721",
+    "contract": "MialisticNFT",
+    "inj_file": "dataset/err-inj/injected/MialisticNFT-0x2be9e1fa.sol",
+    "orig_file": "dataset/err-inj/origin/MialisticNFT-0x2be9e1fa.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "ApprovalForAll",
+                    "anchor_fn": "isApprovedForAll",
+                    "rule": "event 'Transfer' when an operator is enabled or disabled for an owner.",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1419,
+                        1419
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "rule": "function ownerOf(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        886,
+                        886
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1110,
+                        1114
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/MialisticNFT-0x2be9e1fa.sol\n\nError: Undeclared identifier. Did you mean \"_ownerOf\"?\n    --> dataset/err-inj/injected/MialisticNFT-0x2be9e1fa.sol:1638:30:\n     |\n1638 |         address tokenOwner = ownerOf(tokenId);\n     |                              ^^^^^^^\n\n"
+}

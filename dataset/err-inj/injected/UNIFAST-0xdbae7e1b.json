@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "UNIFAST",
+    "inj_file": "dataset/err-inj/injected/UNIFAST-0xdbae7e1b.sol",
+    "orig_file": "dataset/err-inj/origin/UNIFAST-0xdbae7e1b.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        515,
+                        515
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        431,
+                        431
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        516,
+                        516
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        594,
+                        594
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        365,
+                        368
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "function name() public view returns (string)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        267,
+                        269
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        202,
+                        202
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        307,
+                        307
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+178;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/UNIFAST-0xdbae7e1b.sol:374:14:\n    |\n374 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

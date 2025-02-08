@@ -1,0 +1,90 @@
+{
+    "erc": "20",
+    "contract": "EMC2Lord",
+    "inj_file": "dataset/err-inj/injected/EMC2Lord-0xa7271a72.sol",
+    "orig_file": "dataset/err-inj/origin/EMC2Lord-0xa7271a72.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "function balanceOf(address _owner) public view returns (uint256 balance)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        327,
+                        329
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        130,
+                        130
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transfer",
+                    "numofargs": 2,
+                    "rule": "function transfer(address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        339,
+                        342
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        139,
+                        139
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        175,
+                        179
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        376,
+                        390
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"balanceOf\" not found or not visible after argument-dependent lookup in type(contract super EMC2Lord).\n   --> dataset/err-inj/injected/EMC2Lord-0xa7271a72.sol:598:21:\n    |\n598 |             require(super.balanceOf(to) + amount <= maxHoldingAmount && super.balanceOf(to) + amount >= minHoldingAmount, \"Forbid\");\n    |                     ^^^^^^^^^^^^^^^\n\n"
+}

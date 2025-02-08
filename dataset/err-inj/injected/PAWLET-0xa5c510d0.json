@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "PAWLET",
+    "inj_file": "dataset/err-inj/injected/PAWLET-0xa5c510d0.sol",
+    "orig_file": "dataset/err-inj/origin/PAWLET-0xa5c510d0.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        237,
+                        243
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        32,
+                        32
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        403,
+                        406
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        393,
+                        393
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        396,
+                        396
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        385,
+                        385
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        251,
+                        258
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "symbol",
+                    "numofargs": 0,
+                    "rule": "string, the symbol of the token",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        207,
+                        207
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"approve\" not found or not visible after argument-dependent lookup in contract IERC20.\n   --> dataset/err-inj/injected/PAWLET-0xa5c510d0.sol:345:9:\n    |\n345 |         IERC20(dexPair).approve(address(dexRouter), type(uint).max);\n    |         ^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

@@ -1,0 +1,79 @@
+{
+    "erc": "721",
+    "contract": "ERC721ABurnableMock",
+    "inj_file": "dataset/err-inj/injected/MusicRoomDAO-0xc528dcf5.sol",
+    "orig_file": "dataset/err-inj/origin/MusicRoomDAO-0xc528dcf5.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "event": "Approval",
+                    "anchor_fn": "getApproved",
+                    "rule": "event 'Transfer' emits when the approved address for an NFT is changed or reaffirmed",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1164,
+                        1164
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        203,
+                        203
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        915,
+                        917
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "call",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "callee": "onERC721Received",
+                    "rule": "call 'onERC721Received' if `_to` is a smart contract (code size > 0)",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1182,
+                        1192
+                    ],
+                    "to_replace": [
+                        "    return true;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/MusicRoomDAO-0xc528dcf5.sol:885:39:\n    |\n885 |         if (_msgSender() != owner && !isApprovedForAll(owner, _msgSender())) {\n    |                                       ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/MusicRoomDAO-0xc528dcf5.sol:1058:13:\n     |\n1058 |             isApprovedForAll(prevOwnership.addr, _msgSender()) ||\n     |             ^^^^^^^^^^^^^^^^\n\n"
+}

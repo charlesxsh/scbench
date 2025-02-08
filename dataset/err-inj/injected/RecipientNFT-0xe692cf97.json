@@ -1,0 +1,58 @@
+{
+    "erc": "1155",
+    "contract": "RecipientNFT",
+    "inj_file": "dataset/err-inj/injected/RecipientNFT-0xe692cf97.sol",
+    "orig_file": "dataset/err-inj/origin/RecipientNFT-0xe692cf97.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "rule": "The _owner's balance of the token type requested",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        696,
+                        696
+                    ],
+                    "to_replace": [
+                        "        return _balances[id][account]+434;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        563,
+                        563
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        731,
+                        733
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/RecipientNFT-0xe692cf97.sol\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RecipientNFT-0xe692cf97.sol:741:37:\n    |\n741 |             from == _msgSender() || isApprovedForAll(from, _msgSender()),\n    |                                     ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/RecipientNFT-0xe692cf97.sol:758:37:\n    |\n758 |             from == _msgSender() || isApprovedForAll(from, _msgSender()),\n    |                                     ^^^^^^^^^^^^^^^^\n\n"
+}

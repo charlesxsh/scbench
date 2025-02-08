@@ -1,0 +1,126 @@
+{
+    "erc": "721",
+    "contract": "Token",
+    "inj_file": "dataset/err-inj/injected/Token-0x3196ec0a.sol",
+    "orig_file": "dataset/err-inj/origin/Token-0x3196ec0a.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1410,
+                        1410
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1176,
+                        1176
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1364,
+                        1364
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1358,
+                        1358
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `_tokenId` is not a valid NFT",
+                    "fn_params": [
+                        2
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1358,
+                        1358
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1216,
+                        1216
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1410,
+                        1410
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1364,
+                        1364
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1192,
+                        1192
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "rule": "True if `_operator` is an approved operator for `_owner`, false otherwise",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1168,
+                        1168
+                    ],
+                    "to_replace": [
+                        "        return !_operatorApprovals[owner][operator];\n"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

@@ -1,0 +1,52 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The `transferFrom` function should return a boolean value indicating whether the operation succeeded.",
+                "function": "transferFrom(address sender, address recipient, uint256 amount)"
+            },
+            {
+                "rule": "ERC20 tokens should not allow direct manipulation of balances or critical state variables through public functions.",
+                "function": "getValue"
+            },
+            {
+                "rule": "The `transfer` function should check the sender's balance before making external calls or transferring tokens.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

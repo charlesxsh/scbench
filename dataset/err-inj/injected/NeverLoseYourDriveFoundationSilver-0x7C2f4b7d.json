@@ -1,0 +1,73 @@
+{
+    "erc": "721",
+    "contract": "NeverLoseYourDriveFoundationSilver",
+    "inj_file": "dataset/err-inj/injected/NeverLoseYourDriveFoundationSilver-0x7C2f4b7d.sol",
+    "orig_file": "dataset/err-inj/origin/NeverLoseYourDriveFoundationSilver-0x7C2f4b7d.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": "function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1026,
+                        1031
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        1344,
+                        1355
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if NFTs assigned to zero address",
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "medium"
+                }
+            ],
+            "lines": []
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "getApproved",
+                    "numofargs": 1,
+                    "rule": "The approved address for this NFT, or the zero address if there is none",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        1286,
+                        1286
+                    ],
+                    "to_replace": [
+                        "        return address(905);"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Wrong argument count for function call: 4 arguments given but expected 3.\n    --> dataset/err-inj/injected/NeverLoseYourDriveFoundationSilver-0x7C2f4b7d.sol:1331:9:\n     |\n1331 |         safeTransferFrom(from, to, tokenId, \"\");\n     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n"
+}

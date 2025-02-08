@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "transfer function should return a boolean indicating success.",
+                "function": "transfer"
+            },
+            {
+                "rule": "approve function should return a boolean indicating success.",
+                "function": "approve"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "YES",
+            "NO",
+            "YES\n\nThe function `approve` in the provided code violates the ERC-20 rule that requires indicating whether the approval was successful. According to the ERC-20 standard, the `approve` function should return a boolean value that indicates the success of the operation. Typically, this should return `true` when the approval is successfully recorded.\n\nIn the given code, the `approve` function always returns `false` regardless of whether the `_approve` function successfully sets the allowance or not. This behavior can mislead other contracts or services interacting with this contract into thinking that the approval has failed when it may have succeeded. This is not compliant with the standard behavior expected from an ERC-20 token's `approve` function."
+        ],
+        "can_detect": [
+            true,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

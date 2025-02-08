@@ -1,0 +1,111 @@
+{
+    "erc": "20",
+    "contract": "Krygenbot",
+    "inj_file": "dataset/err-inj/injected/Krygenbot-0x54e3cd0e.sol",
+    "orig_file": "dataset/err-inj/origin/Krygenbot-0x54e3cd0e.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "Indicates whether the token transfer was successful",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        462,
+                        462
+                    ],
+                    "to_replace": [
+                        "        return false;\n"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        509,
+                        509
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        537,
+                        537
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        710,
+                        710
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        708,
+                        708
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        536,
+                        536
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        485,
+                        485
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        456,
+                        460
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Expected '(' but got identifier\n   --> dataset/err-inj/injected/Krygenbot-0x54e3cd0e.sol:460:14:\n    |\n460 |     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {\n    |              ^^^^^^^^^^^^^^^^^\n\n"
+}

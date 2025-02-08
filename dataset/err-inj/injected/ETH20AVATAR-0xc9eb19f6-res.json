@@ -1,0 +1,56 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "Every ERC-721 compliant contract must implement the ERC721 and ERC165 interfaces.",
+                "function": "Not implemented"
+            },
+            {
+                "rule": "The contract must handle the receipt of ERC721 tokens correctly by implementing the ERC721TokenReceiver interface if it will accept safe transfers.",
+                "function": "Not implemented"
+            },
+            {
+                "rule": "The contract must correctly return metadata for each NFT when the tokenURI function is called, adhering to the ERC721Metadata interface.",
+                "function": "_baseURI"
+            },
+            {
+                "rule": "The contract must provide a way to enumerate NFTs both by their index and by the owner, adhering to the ERC721Enumerable interface.",
+                "function": "Not implemented"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "NO",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            false,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "YES\n\nThe function `getApproved` in the provided code checks if the token ID exists by verifying the address part of the ownership data (extracted from the storage slot). If the address part is zero, which indicates that the token does not exist, the function reverts with a custom error `TokenDoesNotExist()`. This behavior is in compliance with the ERC-721 standard, which requires the function to throw (revert) if the token ID is not valid. Therefore, the function does not violate the ERC rule regarding the existence check of the token ID.",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

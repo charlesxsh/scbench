@@ -1,0 +1,82 @@
+{
+    "erc": "1155",
+    "contract": "BannyBugs",
+    "inj_file": "dataset/err-inj/injected/BannyBugs-0x01957500.sol",
+    "orig_file": "dataset/err-inj/origin/BannyBugs-0x01957500.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "rule": "The _owner's balance of the token type requested",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        696,
+                        696
+                    ],
+                    "to_replace": [
+                        "        return _balances[id][account]+991;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function balanceOf(address _owner, uint256 _id) external view returns (uint256);",
+                    "function": "balanceOf",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        694,
+                        697
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        533,
+                        533
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if length of `_ids` is not the same as length of `_values`",
+                    "function": "safeBatchTransferFrom",
+                    "numofargs": 5,
+                    "fn_params": [
+                        2,
+                        3
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        827,
+                        827
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Function, variable, struct or modifier declaration expected.\n   --> dataset/err-inj/injected/BannyBugs-0x01957500.sol:693:9:\n    |\n693 |         return _balances[id][account]+991;    }\n    |         ^^^^^^\n\n"
+}

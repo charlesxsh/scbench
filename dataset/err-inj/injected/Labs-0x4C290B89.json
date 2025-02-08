@@ -1,0 +1,83 @@
+{
+    "erc": "20",
+    "contract": "Labs",
+    "inj_file": "dataset/err-inj/injected/Labs-0x4C290B89.sol",
+    "orig_file": "dataset/err-inj/origin/Labs-0x4C290B89.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "approve",
+                    "numofargs": 2,
+                    "rule": "function approve(address _spender, uint256 _value) public returns (bool success)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2832,
+                        2836
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2652,
+                        2652
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2957,
+                        2957
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "decimals",
+                    "numofargs": 0,
+                    "rule": "function decimals() public view returns (uint8)",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        2783,
+                        2785
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        2693,
+                        2693
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> dataset/err-inj/injected/Labs-0x4C290B89.sol\n\nError: Undeclared identifier.\n    --> dataset/err-inj/injected/Labs-0x4C290B89.sol:3494:43:\n     |\n3494 |         _mint(msg.sender, 1000000 * 10 ** decimals());\n     |                                           ^^^^^^^^\n\n"
+}

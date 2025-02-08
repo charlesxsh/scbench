@@ -1,0 +1,48 @@
+{
+    "method1": {
+        "llm_res": [
+            {
+                "rule": "The function `decimals` should return the number of decimals the token uses - e.g. 8, means to divide the token amount by 100000000 to get its user representation.",
+                "function": "decimals"
+            },
+            {
+                "rule": "Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.",
+                "function": "_transfer"
+            }
+        ]
+    },
+    "method2": {
+        "llm_res": [
+            "NO",
+            "YES",
+            "NO"
+        ],
+        "can_detect": [
+            false,
+            true,
+            false
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    },
+    "method3": {
+        "llm_res": [
+            "NO",
+            "NO.\n\nThe ERC-20 standard does not specify a fixed number of decimals; it only requires that a `decimals` function is implemented to return the number of decimal places the token can be divided into. The actual number of decimals can vary between different tokens. In the provided code, the `decimals` function returns 12 (9 + 3), which is a valid implementation as long as it consistently represents the token's divisibility across the system. There is no rule in the ERC-20 standard that specifies the exact number of decimals a token must have, only that the function must correctly report whatever that number is.",
+            "NO"
+        ],
+        "can_detect": [
+            true,
+            false,
+            true
+        ],
+        "error": [
+            null,
+            null,
+            null
+        ]
+    }
+}

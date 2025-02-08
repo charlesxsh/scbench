@@ -1,0 +1,97 @@
+{
+    "erc": "20",
+    "contract": "DUSDToken",
+    "inj_file": "dataset/err-inj/injected/DUSDToken-0x7de11c07.sol",
+    "orig_file": "dataset/err-inj/origin/DUSDToken-0x7de11c07.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "return",
+                {
+                    "function": "allowance",
+                    "numofargs": 2,
+                    "rule": "the amount which _spender is still allowed to withdraw from _owner",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        574,
+                        574
+                    ],
+                    "to_replace": [
+                        "        return _allowances[owner][spender]+432;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        659,
+                        659
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        723,
+                        723
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        724,
+                        724
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        604,
+                        605
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": " SHOULD trigger a Transfer event with the _from address set to 0x0 when tokens are created",
+                    "event": "Transfer",
+                    "anchor_fn": "totalSupply",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        685,
+                        685
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

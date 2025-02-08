@@ -1,0 +1,105 @@
+{
+    "erc": "721",
+    "contract": "ZtrendZ",
+    "inj_file": "dataset/err-inj/injected/ZtrendZ-0xC4200952.sol",
+    "orig_file": "dataset/err-inj/origin/ZtrendZ-0xC4200952.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        638,
+                        638
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        910,
+                        910
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "interface",
+                {
+                    "function": "ownerOf",
+                    "numofargs": 1,
+                    "rule": "function ownerOf(uint256 _tokenId) external view returns (address);",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        61,
+                        61
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        645,
+                        649
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "safeTransferFrom",
+                    "numofargs": 4,
+                    "rule": " throw if `msg.sender` is not the current owner, an authorized operator, or the approved address for this NFT",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        788,
+                        788
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        638,
+                        638
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        910,
+                        910
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Member \"ownerOf\" not found or not visible after argument-dependent lookup in type(contract ERC721).\n   --> dataset/err-inj/injected/ZtrendZ-0xC4200952.sol:681:25:\n    |\n681 |         address owner = ERC721.ownerOf(tokenId);\n    |                         ^^^^^^^^^^^^^^\n\n"
+}

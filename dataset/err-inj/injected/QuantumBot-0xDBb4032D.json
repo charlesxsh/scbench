@@ -1,0 +1,92 @@
+{
+    "erc": "20",
+    "contract": "QuantumBot",
+    "inj_file": "dataset/err-inj/injected/QuantumBot-0xDBb4032D.sol",
+    "orig_file": "dataset/err-inj/origin/QuantumBot-0xDBb4032D.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "throw",
+                {
+                    "function": "transferFrom",
+                    "numofargs": 3,
+                    "rule": "throw if the _from account has not deliberately authorized the sender of the message via some mechanism",
+                    "msgsender": true,
+                    "fn_params": [
+                        0
+                    ],
+                    "severity": "high",
+                    "wr": 1
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        556,
+                        556
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        434,
+                        434
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        364,
+                        365
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "totalSupply",
+                    "numofargs": 0,
+                    "rule": "Returns the total token supply",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        295,
+                        295
+                    ],
+                    "to_replace": [
+                        "        return _totalSupply+903;"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        302,
+                        302
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+754;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

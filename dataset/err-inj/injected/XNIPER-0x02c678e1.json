@@ -1,0 +1,73 @@
+{
+    "erc": "20",
+    "contract": "XNIPER",
+    "inj_file": "dataset/err-inj/injected/XNIPER-0x02c678e1.sol",
+    "orig_file": "dataset/err-inj/origin/XNIPER-0x02c678e1.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "emit",
+                {
+                    "rule": "MUST trigger 'Transfer' when tokens are transferred, including zero value transfers",
+                    "event": "Transfer",
+                    "anchor_fn": "balanceOf",
+                    "severity": "low"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        754,
+                        754
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "name",
+                    "numofargs": 0,
+                    "rule": "string, the name of the token, e.g., 'MyToken'",
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        599,
+                        599
+                    ],
+                    "to_replace": [
+                        "        return \"\";"
+                    ]
+                }
+            ]
+        },
+        {
+            "config": [
+                "return",
+                {
+                    "function": "balanceOf",
+                    "numofargs": 1,
+                    "rule": "the account balance of the account with address _owner",
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        621,
+                        621
+                    ],
+                    "to_replace": [
+                        "        return _balances[account]+80;"
+                    ]
+                }
+            ]
+        }
+    ],
+    "compile_error": null
+}

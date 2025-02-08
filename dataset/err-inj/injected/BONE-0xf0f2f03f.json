@@ -1,0 +1,59 @@
+{
+    "erc": "1155",
+    "contract": "BONE",
+    "inj_file": "dataset/err-inj/injected/BONE-0xf0f2f03f.sol",
+    "orig_file": "dataset/err-inj/origin/BONE-0xf0f2f03f.sol",
+    "inj_errors": [
+        {
+            "config": [
+                "interface",
+                {
+                    "rule": "function isApprovedForAll(address _owner, address _operator) external view returns (bool);",
+                    "function": "isApprovedForAll",
+                    "numofargs": 2,
+                    "severity": "medium"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        571,
+                        571
+                    ],
+                    "to_replace": []
+                },
+                {
+                    "orig_range": [
+                        739,
+                        741
+                    ],
+                    "to_replace": []
+                }
+            ]
+        },
+        {
+            "config": [
+                "throw",
+                {
+                    "rule": " throw if `_to` is the zero address",
+                    "function": "safeTransferFrom",
+                    "numofargs": 5,
+                    "fn_params": [
+                        1
+                    ],
+                    "severity": "high"
+                }
+            ],
+            "lines": [
+                {
+                    "orig_range": [
+                        796,
+                        796
+                    ],
+                    "to_replace": []
+                }
+            ]
+        }
+    ],
+    "compile_error": "compile error Invalid compilation: \nInvalid solc compilation Error: Undeclared identifier.\n   --> dataset/err-inj/injected/BONE-0xf0f2f03f.sol:750:37:\n    |\n750 |             from == _msgSender() || isApprovedForAll(from, _msgSender()),\n    |                                     ^^^^^^^^^^^^^^^^\n\nError: Undeclared identifier.\n   --> dataset/err-inj/injected/BONE-0xf0f2f03f.sol:767:37:\n    |\n767 |             from == _msgSender() || isApprovedForAll(from, _msgSender()),\n    |                                     ^^^^^^^^^^^^^^^^\n\n"
+}
