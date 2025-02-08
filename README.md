@@ -1,5 +1,9 @@
-# SCBench
-A Large-Scale Dataset for Smart Contract Auditing
+# SCBench: A Large-Scale Dataset for Smart Contract Auditing
+This paper has been accepted for publication in the proceedings of the 2025 Second International Workshop on Large Language Models for Code
+
+Userful Links:
+- [Our Paper](scbench.pdf)
+- [LLM4Code](https://llm4code.github.io/)
 
 ## Project Structure
 ```
